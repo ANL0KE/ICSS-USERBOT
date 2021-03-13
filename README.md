@@ -13,10 +13,8 @@ A simple Telegram userbot based on Telethon .
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ANL0KE/ICSS-heroku) 
 
   
-## Support
+## Dev
    <a href="https://t.me/rruuurr"><img src="https://img.shields.io/badge/Source%20Dev%3F-here-green?&style=flat-square?&logo=telegram" width=220px></a></p>
 
    
-
-## Credits
-   - [@rruuurr](https://t.me/rruuurr) - ANL0KE (kimo)
+ - ANL0KE (kimo)
