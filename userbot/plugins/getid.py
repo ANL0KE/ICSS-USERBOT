@@ -1,4 +1,4 @@
-# get id code for icss edit by @rruuurr 
+# get id code for icss edit by @rruuurr
 
 from telethon.utils import pack_bot_file_id
 
