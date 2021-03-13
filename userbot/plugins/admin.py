@@ -59,8 +59,8 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@bot.on(admin_cmd(pattern="ضع صوره$"))
-@bot.on(sudo_cmd(pattern="ضع صوره$", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="ضع صوره$"))
+@icssbot.on(sudo_cmd(pattern="ضع صوره$", allow_sudo=True))
 @errors_handler
 async def set_group_photo(gpic):
     if gpic.fwd_from:
@@ -104,8 +104,8 @@ async def set_group_photo(gpic):
             )
 
 
-@bot.on(admin_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote"))
-@bot.on(sudo_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote"))
+@icssbot.on(sudo_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote", allow_sudo=True))
 @errors_handler
 async def promote(promt):
     if promt.fwd_from:
@@ -145,8 +145,8 @@ async def promote(promt):
         )
 
 
-@bot.on(admin_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote"))
-@bot.on(sudo_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote"))
+@icssbot.on(sudo_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote", allow_sudo=True))
 @errors_handler
 async def promote(promt):
     if promt.fwd_from:
@@ -186,8 +186,8 @@ async def promote(promt):
         )
 
 
-@bot.on(admin_cmd(pattern="تك(?: |$)(.*)", command="demote"))
-@bot.on(sudo_cmd(pattern="تك(?: |$)(.*)", command="demote", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="تك(?: |$)(.*)", command="demote"))
+@icssbot.on(sudo_cmd(pattern="تك(?: |$)(.*)", command="demote", allow_sudo=True))
 @errors_handler
 async def demote(dmod):
     if dmod.fwd_from:
@@ -227,8 +227,8 @@ async def demote(dmod):
         )
 
 
-@bot.on(admin_cmd(pattern="دي(?: |$)(.*)", command="ban"))
-@bot.on(sudo_cmd(pattern="دي(?: |$)(.*)", command="ban", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="دي(?: |$)(.*)", command="ban"))
+@icssbot.on(sudo_cmd(pattern="دي(?: |$)(.*)", command="ban", allow_sudo=True))
 @errors_handler
 async def ban(bon):
     if bon.fwd_from:
@@ -270,8 +270,8 @@ async def ban(bon):
         )
 
 
-@bot.on(admin_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban"))
-@bot.on(sudo_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban"))
+@icssbot.on(sudo_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban", allow_sudo=True))
 @errors_handler
 async def nothanos(unbon):
     if unbon.fwd_from:
@@ -301,7 +301,7 @@ async def nothanos(unbon):
         await catevent.edit("**- ❝ ⌊  تم رفـع جميـع القيـود بنجـاح  𓆰.**")
 
 
-@bot.on(admin_cmd(incoming=True))
+@icssbot.on(admin_cmd(incoming=True))
 async def watcher(event):
     if is_muted(event.sender_id, event.chat_id):
         try:
@@ -310,8 +310,8 @@ async def watcher(event):
             LOGS.info(str(e))
 
 
-@bot.on(admin_cmd(pattern="تقيد(?: |$)(.*)", command="mute"))
-@bot.on(sudo_cmd(pattern="تقيد(?: |$)(.*)", command="mute", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="تقيد(?: |$)(.*)", command="mute"))
+@icssbot.on(sudo_cmd(pattern="تقيد(?: |$)(.*)", command="mute", allow_sudo=True))
 async def startmute(event):
     if event.fwd_from:
         return
@@ -405,8 +405,8 @@ async def startmute(event):
             )
 
 
-@bot.on(admin_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute"))
-@bot.on(sudo_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute"))
+@icssbot.on(sudo_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute", allow_sudo=True))
 async def endmute(event):
     if event.fwd_from:
         return
@@ -467,8 +467,8 @@ async def endmute(event):
             )
 
 
-@bot.on(admin_cmd(pattern="طرد(?: |$)(.*)", command="kick"))
-@bot.on(sudo_cmd(pattern="طرد(?: |$)(.*)", command="kick", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="طرد(?: |$)(.*)", command="kick"))
+@icssbot.on(sudo_cmd(pattern="طرد(?: |$)(.*)", command="kick", allow_sudo=True))
 @errors_handler
 async def kick(usr):
     if usr.fwd_from:
@@ -507,8 +507,8 @@ async def kick(usr):
         )
 
 
-@bot.on(admin_cmd(pattern="تثبيت($| (.*))", command="pin"))
-@bot.on(sudo_cmd(pattern="تثبيت($| (.*))", command="pin", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="تثبيت($| (.*))", command="pin"))
+@icssbot.on(sudo_cmd(pattern="تثبيت($| (.*))", command="pin", allow_sudo=True))
 @errors_handler
 async def pin(msg):
     if msg.fwd_from:
@@ -543,8 +543,8 @@ async def pin(msg):
             pass
 
 
-@bot.on(admin_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin"))
-@bot.on(sudo_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin"))
+@icssbot.on(sudo_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin", allow_sudo=True))
 @errors_handler
 async def pin(msg):
     if msg.fwd_from:
