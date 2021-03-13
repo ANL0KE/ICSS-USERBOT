@@ -56,7 +56,11 @@ async def _(event):
     to_write_chat = await event.get_input_chat()
     chat = None
     if input_str:
-        mentions_heading = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n**⪼ مشرفـون في {} المجموعه :** \n".format(input_str)
+        mentions_heading = (
+            "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n**⪼ مشرفـون في {} المجموعه :** \n".format(
+                input_str
+            )
+        )
         mentions = mentions_heading
         try:
             chat = await event.client.get_entity(input_str)
@@ -108,7 +112,11 @@ async def _(event):
     if not input_str:
         chat = to_write_chat
     else:
-        mentions = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n**⪼ البوتـات في {} المجموعه :**\n".format(input_str)
+        mentions = (
+            "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n**⪼ البوتـات في {} المجموعه :**\n".format(
+                input_str
+            )
+        )
         try:
             chat = await event.client.get_entity(input_str)
         except Exception as e:
@@ -147,7 +155,11 @@ async def get_users(show):
             await edit_or_reply(show, "**هل أنت متأكد من أن هذه مجموعة?**")
             return
     else:
-        mentions_heading = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n⪼ الاعضاء  في {} المجموعه : \n".format(input_str)
+        mentions_heading = (
+            "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑹𝑶𝑼𝑷 𝑫𝑨𝑻𝑨 𓆪\n⪼ الاعضاء  في {} المجموعه : \n".format(
+                input_str
+            )
+        )
         mentions = mentions_heading
         try:
             chat = await show.client.get_entity(input_str)
