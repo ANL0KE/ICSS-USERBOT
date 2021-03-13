@@ -10,7 +10,8 @@ A simple Telegram userbot based on Telethon .
 [![GitHub issues](https://img.shields.io/github/issues/ANL0KE/ICSS?&style=flat-square&logo=github)](https://github.com/ANL0KE/ICSS/issues)
 [![PR Open](https://img.shields.io/github/issues-pr/ANL0KE/ICSS?&style=flat-square&logo=github)](https://github.com/ANL0KE/ICSS/pulls)
 [![PR Closed](https://img.shields.io/github/issues-pr-closed/ANL0KE/ICSS?&style=flat-square&logo=github)](https://github.com/ANL0KE/ICSS/pulls?q=is:closed)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/ANL0KE/ICSS?&style=flat-square&logo=github)](https://github.com/ANL0KE/ICSS/graphs/commit-activity)
+
+[![Github commit activty][(https://img.shields.io/github/commit-activity/m/ANL0KE/https://github.com/ANL0KE/ICSS?logo=github&style=flat-square)](https://github.com/ANL0KE/ICSS/graphs/commit-activity)
 
 
 
