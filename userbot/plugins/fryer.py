@@ -1,4 +1,3 @@
-
 """ Userbot module for frying stuff. ported by @NeoMatrix90 edit by: @rruuurr """
 
 import io
