@@ -161,7 +161,9 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده"
+            reply_pop_up_alert = (
+                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده"
+            )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -178,7 +180,9 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده"
+            reply_pop_up_alert = (
+                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده"
+            )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"secret_(.*)")))
@@ -194,7 +198,9 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     encrypted_tcxt = message["text"]
                     reply_pop_up_alert = encrypted_tcxt
                 else:
-                    reply_pop_up_alert = "لماذا كنت تبحث في هذا القرف ابتعد وقم بعملك الخاص، غبي"
+                    reply_pop_up_alert = (
+                        "لماذا كنت تبحث في هذا القرف ابتعد وقم بعملك الخاص، غبي"
+                    )
             except KeyError:
                 reply_pop_up_alert = "هذه الرسالة لم تعد موجودة في خادم بوت"
         else:
@@ -236,7 +242,9 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                         caption=plugin_name,
                     )
         else:
-            reply_pop_up_alert = "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده "
+            reply_pop_up_alert = (
+                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده "
+            )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
@@ -244,7 +252,9 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("menu closed")
         else:
-            reply_pop_up_alert = "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده "
+            reply_pop_up_alert = (
+                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده "
+            )
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))
