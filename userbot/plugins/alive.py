@@ -11,8 +11,8 @@ CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "𓆩 𝑾𝑬𝑳𝑪𝑶𝑴�
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  - ❝ ⌊ "
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="السورس$"))
-@bot.on(sudo_cmd(pattern="السورس$", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern="السورس$"))
+@icssbot.on(sudo_cmd(pattern="السورس$", allow_sudo=True))
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
@@ -47,8 +47,8 @@ async def amireallyalive(alive):
         )
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="البوت$"))
-@bot.on(sudo_cmd(pattern="البوت$", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern="البوت$"))
+@icssbot.on(sudo_cmd(pattern="البوت$", allow_sudo=True))
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
