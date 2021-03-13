@@ -134,9 +134,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             timestamp = int(time.time() * 2)
             newsecret = {str(timestamp): {"userid": u, "text": txct}}
 
-            buttons = [
-                custom.Button.inline("رؤيه الرساله", data=f"secret_{timestamp}")
-            ]
+            buttons = [custom.Button.inline("رؤيه الرساله", data=f"secret_{timestamp}")]
             result = builder.article(
                 title="secret message",
                 text=f" الهمسه الى {sandy}, هو الوحيد القادر على رؤيتها",
