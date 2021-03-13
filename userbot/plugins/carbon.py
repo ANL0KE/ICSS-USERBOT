@@ -1,4 +1,3 @@
-
 import asyncio
 import os
 import random
@@ -63,7 +62,7 @@ async def carbon_api(e):
     await asyncio.sleep(2)
     await cat.edit("**⌔∮ تم انشاء الكاربون**\n100%")
     file = "./carbon.png"
-    await cat.edit("**⌔∮ جاري التنزيل**)
+    await cat.edit("**⌔∮ جاري التنزيل**")
     await e.client.send_file(
         e.chat_id,
         file,
