@@ -1,3 +1,3 @@
 # uu
 
-[![هها](https://t.me/rruuurr)]
+![هها](https://t.me/rruuurr)
