@@ -1,4 +1,4 @@
-# ©icss - @rruuurr. 
+# ©icss - @rruuurr.
 """ لانشاء بوت او كروب او قناة """
 
 from telethon.tl import functions
