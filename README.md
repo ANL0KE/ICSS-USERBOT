@@ -19,4 +19,4 @@ A simple Telegram userbot based on Telethon .
    
 
 ## Credits
-   - Source Icss Dev [@rruuurr](https://t.me/rruuurr) - ANL0KE (kimo)
+   - [@rruuurr](https://t.me/rruuurr) - ANL0KE (kimo)
