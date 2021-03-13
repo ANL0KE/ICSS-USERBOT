@@ -13,7 +13,7 @@ A simple Telegram userbot based on Telethon .
 
   
 ## Support
-   <a href="https://t.me/NIIIN2"><img src="https://img.shields.io/badge/مطور%20السورس%3F-اضغط هنا-green?&style=flat-square?&logo=telegram" width=220px></a></p>
+   <a href="https://t.me/NIIIN2"><img src="https://img.shields.io/badge/source%20dev%3F-here-green&style=flat-square?&logo=telegram" width=220px></a></p>
    
 
 ## Credits
