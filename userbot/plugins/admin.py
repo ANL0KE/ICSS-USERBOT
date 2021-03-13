@@ -406,7 +406,9 @@ async def startmute(event):
 
 
 @icssbot.on(admin_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute"))
-@icssbot.on(sudo_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute", allow_sudo=True))
+@icssbot.on(
+    sudo_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute", allow_sudo=True)
+)
 async def endmute(event):
     if event.fwd_from:
         return
