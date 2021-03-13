@@ -1,4 +1,4 @@
-# ©ICSS™ 
+# ©ICSS™
 
 import asyncio
 import os
