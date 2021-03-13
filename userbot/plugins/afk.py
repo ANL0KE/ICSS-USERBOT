@@ -1,5 +1,5 @@
 # Afk plugin from - SOURCE ICSS.
-# _َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ #
+# _َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ_َ #
 
 import asyncio
 from datetime import datetime
@@ -26,7 +26,7 @@ class AFK:
 AFK_ = AFK()
 
 
-@bot.on(events.NewMessage(outgoing=True))
+@icssbot.on(events.NewMessage(outgoing=True))
 async def set_not_afk(event):
     if event.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
@@ -72,7 +72,7 @@ async def set_not_afk(event):
             )
 
 
-@bot.on(
+@icssbot.on(
     events.NewMessage(incoming=True, func=lambda e: bool(e.mentioned or e.is_private))
 )
 async def on_afk(event):
@@ -154,7 +154,7 @@ async def on_afk(event):
             )
 
 
-@bot.on(admin_cmd(pattern=r"نوم ?(.*)", outgoing=True))
+@icssbot.on(admin_cmd(pattern=r"نوم ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -199,7 +199,7 @@ async def _(event):
                 )
 
 
-@bot.on(admin_cmd(pattern=r"mafk ?(.*)", outgoing=True))
+@icssbot.on(admin_cmd(pattern=r"mafk ?(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
