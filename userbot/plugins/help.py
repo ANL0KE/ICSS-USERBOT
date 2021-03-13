@@ -18,9 +18,7 @@ async def cmd_list(event):
     reply_to_id = await reply_id(event)
     input_str = event.pattern_match.group(1)
     if input_str == "text":
-        string = (
-            "⌔∮ مجموع {count} الاوامر الموجوده في {plugincount} الاضافات المضافه في سورس اكسس. \n\n"
-        )
+        string = "⌔∮ مجموع {count} الاوامر الموجوده في {plugincount} الاضافات المضافه في سورس اكسس. \n\n"
         catcount = 0
         plugincount = 0
         for i in sorted(CMD_LIST):
@@ -42,7 +40,9 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**⌔∮ جميع اوامر سورس اكسس موجوده ستكون هنا فقط - [اضغط هنا]({url})**"
+            reply_text = (
+                f"**⌔∮ جميع اوامر سورس اكسس موجوده ستكون هنا فقط - [اضغط هنا]({url})**"
+            )
             await event.edit(reply_text)
             return
         await event.edit(string.format(count=catcount, plugincount=plugincount))
@@ -111,7 +111,9 @@ async def info(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**⌔∮ جميع اوامر سورس اكسس موجوده ستكون هنا فقط - [اضغط هنا]({url})**"
+            reply_text = (
+                f"**⌔∮ جميع اوامر سورس اكسس موجوده ستكون هنا فقط - [اضغط هنا]({url})**"
+            )
             await event.reply(reply_text, link_preview=False)
             return
         await event.reply(
