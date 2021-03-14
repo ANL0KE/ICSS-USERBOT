@@ -59,7 +59,9 @@ async def icssalive(icss):
     icss_caption += f"**  - اصدار اكسس ↫** `{catversion}`\n"
     icss_caption += f"**  - اصدار البايثون ↫** `{python_version()}\n`"
     icss_caption += f"**  - المستخدم ↫** {mention}\n"
-    results = await bot.inline_query(tgbotusername, icss_caption)  # pylint:disable=E0602
+    results = await bot.inline_query(
+        tgbotusername, icss_caption
+    )  # pylint:disable=E0602
     await results[0].click(icss.chat_id, reply_to=reply_to_id, hide_via=True)
     await icss.delete()
 
