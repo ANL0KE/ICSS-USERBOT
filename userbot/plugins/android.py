@@ -14,8 +14,8 @@ DEVICES_DATA = (
 )
 
 
-@bot.on(admin_cmd(pattern=r"ميكاسك"))
-@bot.on(sudo_cmd(pattern=r"ميكاسك", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern=r"ميكاسك"))
+@icssbot.on(sudo_cmd(pattern=r"ميكاسك", allow_sudo=True))
 async def kakashi(magisk):
     if magisk.fwd_from:
         return
@@ -43,8 +43,8 @@ async def kakashi(magisk):
     await edit_or_reply(magisk, releases)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"الجهاز(?: |$)(\S*)"))
-@bot.on(sudo_cmd(pattern=r"الجهاز(?: |$)(\S*)", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern=r"الجهاز(?: |$)(\S*)"))
+@icssbot.on(sudo_cmd(pattern=r"الجهاز(?: |$)(\S*)", allow_sudo=True))
 async def device_info(request):
     if request.fwd_from:
         return
@@ -78,8 +78,8 @@ async def device_info(request):
     await edit_or_reply(request, reply)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
-@bot.on(sudo_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)"))
+@icssbot.on(sudo_cmd(pattern=r"codename(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def codename_info(request):
     if request.fwd_from:
         return
@@ -125,8 +125,8 @@ async def codename_info(request):
     await edit_or_reply(request, reply)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
-@bot.on(sudo_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)"))
+@icssbot.on(sudo_cmd(pattern=r"specs(?: |)([\S]*)(?: |)([\s\S]*)", allow_sudo=True))
 async def devices_specifications(request):
     if request.fwd_from:
         return
@@ -190,8 +190,8 @@ async def devices_specifications(request):
     await edit_or_reply(request, reply)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
-@bot.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
+@bicssot.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
     if request.fwd_from:
         return
