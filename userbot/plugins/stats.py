@@ -72,15 +72,17 @@ async def stats(event):
     response += f"**⌔∮ القنوات :** {broadcast_channels} \n"
     response += f"**⌔∮ مشرف في المجموعه :** {admin_in_groups} \n"
     response += f"   - منشئ المجموعه : `{creator_in_groups}` \n"
-    response += f"   - رافع مشرفين في المجموعه : {admin_in_groups - creator_in_groups}` \n"
+    response += (
+        f"   - رافع مشرفين في المجموعه : {admin_in_groups - creator_in_groups}` \n"
+    )
     response += f"**⌔∮ مشرف في قناة :** {admin_in_broadcast_channels} \n"
     response += f"   - منشئ القناة: `{creator_in_channels}` \n"
-    response += (
-        f"   - رفع مشرفين في القناة : `{admin_in_broadcast_channels - creator_in_channels}` \n"
-    )
+    response += f"   - رفع مشرفين في القناة : `{admin_in_broadcast_channels - creator_in_channels}` \n"
     response += f"**⌔∮ الرسائل الغـير مقروئه :** {unread} \n"
     response += f"**⌔∮ الرسائل التي عمل لها غيـر مقروئه :** {unread_mentions} \n"
-    response += f"**⌔∮ الوقت المستغرق :** {stop_time:.02f}ثانيه \n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+    response += (
+        f"**⌔∮ الوقت المستغرق :** {stop_time:.02f}ثانيه \n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+    )
     await ics.edit(response)
 
 
@@ -222,7 +224,7 @@ async def _(event):
     else:
         uid = reply_message.sender_id
     chat = "@tgscanrobot"
-    icsevent = await edit_or_reply(event, "`Processing...`")
+    await edit_or_reply(event, "`Processing...`")
     async with event.client.conversation(chat) as conv:
         try:
             await conv.send_message(f"{uid}")
