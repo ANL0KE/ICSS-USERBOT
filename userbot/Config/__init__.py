@@ -1,1 +1,1 @@
-from .icss_config import Config
+from .icssconfig import Config
