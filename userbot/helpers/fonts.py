@@ -28,6 +28,10 @@ littleboxtextfont = "🄰🄱🄲🄳🄴🄵🄶🄷🄸🄹🄺🄻🄼🄽�
 
 doubletextfont = "ᎯℬℂⅅℰℱᎶℋℐᎫᏦℒℳℕᎾℙℚℛЅᏆUᏉᏇXᎽℤᎯℬℂⅅℰℱᎶℋℐᎫᏦℒℳℕᎾℙℚℛЅᏆUᏉᏇXᎽℤ1234567890\"'#$%&()*+,-./:;<=>?@[\\]^_`{|}~"
 
+mathboldatilicfont = "𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛1234567890\"'#$%&()*+,-./:;<=>?@[\\]^_`{|}~"
+
+mathsansboldfont = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890\"'#$%&()*+,-./:;<=>?@[\\]^_`{|}~"
+
 upsidefont = [
     "a",
     "b",
