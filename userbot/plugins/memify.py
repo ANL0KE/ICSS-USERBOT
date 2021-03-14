@@ -8,13 +8,13 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from . import (
     add_frame,
     asciiart,
-    icssmeeme,
-    icssmeme,
     convert_toimage,
     convert_tosticker,
     crop,
     flip_image,
     grayscale,
+    icssmeeme,
+    icssmeme,
     invert_colors,
     mirror_file,
     solarize,
@@ -50,7 +50,7 @@ async def memes(icss):
     reply = await icss.get_reply_message()
     if not reply:
         return await edit_delete(icss, "`Reply to supported Media...`")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     if icssinput:
         if ";" in icssinput:
@@ -82,7 +82,9 @@ async def memes(icss):
         await icssmeeme(top, bottom, CNG_FONTS, meme_file, meme)
     if cmd != "mmf":
         meme = convert_tosticker(meme)
-    await icss.client.send_file(icss.chat_id, meme, reply_to=catid, force_document=False)
+    await icss.client.send_file(
+        icss.chat_id, meme, reply_to=catid, force_document=False
+    )
     await output[0].delete()
     for files in (meme, meme_file):
         if files and os.path.exists(files):
@@ -118,7 +120,7 @@ async def memes(icss):
     if not reply:
         return await edit_delete(icss, "`Reply to supported Media...`")
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
     jisanidea = None
@@ -160,7 +162,7 @@ async def memes(icss):
         await edit_or_reply(icss, "`Reply to supported Media...`")
         return
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
     jisanidea = None
@@ -197,7 +199,7 @@ async def memes(icss):
     if not reply:
         return await edit_delete(icss, "`Reply to supported Media...`")
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
     jisanidea = None
@@ -234,7 +236,7 @@ async def memes(icww):
     if not reply:
         return await edit_delete(icss, "`Reply to supported Media...`")
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
     jisanidea = None
@@ -271,7 +273,7 @@ async def memes(icss):
     if not reply:
         return await edit_delete(cat, "`Reply to supported Media...`")
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
     jisanidea = None
@@ -308,7 +310,7 @@ async def memes(icss):
     if not reply:
         return await edit_delete(cat, "`Reply to supported Media...`")
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
     jisanidea = None
@@ -347,7 +349,7 @@ async def memes(icss):
     if not reply:
         return await edit_delete(icss, "`Reply to supported Media...`")
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
     jisanidea = None
@@ -399,7 +401,7 @@ async def memes(icss):
     if not reply:
         return await edit_delete(icss, "`Reply to supported Media...`")
     san = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icssid = await reply_id(icss)
+    await reply_id(icss)
     if not os.path.isdir("./temp"):
         os.mkdir("./temp")
     jisanidea = None
