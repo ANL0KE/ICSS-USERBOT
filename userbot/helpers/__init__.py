@@ -7,4 +7,4 @@ from .progress import *
 from .qhelper import process
 from .tools import *
 from .utils import *
-from .utils import _icsstools, _icssutils, _format
+from .utils import _format, _icsstools, _icssutils
