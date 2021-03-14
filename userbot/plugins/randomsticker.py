@@ -97,7 +97,6 @@ async def handler(event):
     await event.respond(file=random.choice(docs))
 
 
-
 @icssbot.on(admin_cmd(pattern="pat$", outgoing=True))
 @icssbot.on(sudo_cmd(pattern="pat$", allow_sudo=True))
 async def lastfm(event):
