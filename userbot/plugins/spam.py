@@ -41,9 +41,7 @@ async def spam_function(event, kimo, ics, sleeptimem, sleeptimet, DelaySpam=Fals
             await asyncio.sleep(sleeptimet)
     elif event.reply_to_msg_id and kimo.media:
         for _ in range(counter):
-            kimo = await event.client.send_file(
-                event.chat_id, kimk, caption=i.kimo
-            )
+            kimo = await event.client.send_file(event.chat_id, kimk, caption=i.kimo)
             await _icssutils.unsavegif(event, kimo)
             await asyncio.sleep(sleeptimem)
     elif event.reply_to_msg_id and i.kimo:
