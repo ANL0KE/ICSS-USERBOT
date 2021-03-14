@@ -18,31 +18,31 @@ async def media_to_pic(event, reply):
             "`In the replied message. I cant extract any image to procced further reply to proper media`",
         )
         return None
-    catmedia = await reply.download_media(file="./temp")
-    catevent = await edit_or_reply(event, f"`Transfiguration Time! Converting....`")
-    catfile = os.path.join("./temp/", "meme.png")
+    icssmedia = await reply.download_media(file="./temp")
+    icssevent = await edit_or_reply(event, f"`Transfiguration Time! Converting....`")
+    icssfile = os.path.join("./temp/", "meme.png")
     if mediatype == "Sticker":
-        if catmedia.endswith(".tgs"):
+        if icssmedia.endswith(".tgs"):
             await runcmd(
                 f"lottie_convert.py --frame 0 -if lottie -of png '{catmedia}' '{catfile}'"
             )
-        elif catmedia.endswith(".webp"):
-            im = Image.open(catmedia)
-            im.save(catfile)
+        elif icssmedia.endswith(".webp"):
+            im = Image.open(icssmedia)
+            im.save(icssfile)
     elif mediatype in ["Round Video", "Video", "Gif"]:
-        extractMetadata(createParser(catmedia))
-        await runcmd(f"rm -rf '{catfile}'")
-        await take_screen_shot(catmedia, 0, catfile)
-        if not os.path.exists(catfile):
+        extractMetadata(createParser(icssmedia))
+        await runcmd(f"rm -rf '{icssfile}'")
+        await take_screen_shot(icssmedia, 0, icssfile)
+        if not os.path.exists(icssfile):
             await edit_delete(
-                catevent, f"`Sorry. I can't extract a image from this {mediatype}`"
+                icssevent, f"`Sorry. I can't extract a image from this {mediatype}`"
             )
             return None
     else:
-        im = Image.open(catmedia)
-        im.save(catfile)
-    await runcmd(f"rm -rf '{catmedia}'")
-    return [catevent, catfile, mediatype]
+        im = Image.open(icssmedia)
+        im.save(icssfile)
+    await runcmd(f"rm -rf '{icssmedia}'")
+    return [icssevent, icssfile, mediatype]
 
 
 async def take_screen_shot(
