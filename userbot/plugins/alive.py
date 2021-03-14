@@ -5,7 +5,7 @@ from platform import python_version
 
 from telethon import version
 
-from . import ALIVE_NAME, StartTime, icssversion, get_readable_time, mention, reply_id
+from . import ALIVE_NAME, StartTime, get_readable_time, icssversion, mention, reply_id
 
 DEFAULTUSER = ALIVE_NAME or "ICSS"
 ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jpg"
