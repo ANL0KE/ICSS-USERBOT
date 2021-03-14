@@ -67,7 +67,9 @@ async def _(event):
             # now, remove the temporary file
             os.remove(required_file_name)
     else:
-        await icssevent.edit("Reply to a voice message, to get the relevant transcript.")
+        await icssevent.edit(
+            "Reply to a voice message, to get the relevant transcript."
+        )
 
 
 CMD_HELP.update(
