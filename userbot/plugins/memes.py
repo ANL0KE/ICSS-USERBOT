@@ -7,7 +7,7 @@ from cowpy import cow
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins, MessageEntityMentionName
 
-from . import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, icssmemes
+from . import ALIVE_NAME, BOTLOG, BOTLOG_CHATID
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "icss"
 
