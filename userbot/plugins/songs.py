@@ -155,7 +155,7 @@ async def _(event):
             f"Sorry!. I can't find any related video/audio for `{query}`"
         )
     await icsevent.edit("** ⪼ جاري تحميل الاغنيه انتظر قليلا🖤🎧 .**")
-    catthumb = Path(f"{icsname}.jpg")
+    Path(f"{icsname}.jpg")
     if not os.path.exists(icsthumb):
         icsthumb = Path(f"{icsname}.webp")
     elif not os.path.exists(icsthumb):
@@ -233,4 +233,3 @@ CMD_HELP.update(
         "
     }
 )
-
