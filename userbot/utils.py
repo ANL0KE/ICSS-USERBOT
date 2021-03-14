@@ -34,7 +34,13 @@ def load_module(shortname):
         import userbot.utils
 
         from .helpers.tools import media_type
-        from .helpers.utils import _icsstools, _icssutils, _format, install_pip, reply_id
+        from .helpers.utils import (
+            _format,
+            _icsstools,
+            _icssutils,
+            install_pip,
+            reply_id,
+        )
         from .managers import edit_delete, edit_or_reply
 
         path = Path(f"userbot/plugins/{shortname}.py")
