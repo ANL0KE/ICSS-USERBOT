@@ -29,7 +29,6 @@ EMOJI_SEN = [
 ]
 
 KANGING_STR = "⪼ جاري صنع الملصق  "
-    
 
 
 def verify_cond(catarray, text):
@@ -171,9 +170,7 @@ async def add_to_pack(
             pack = 1
         packname = pack_name(userid, pack, is_anim)
         packnick = pack_nick(username, pack, is_anim)
-        await icssevent.edit(
-            f"⌔∮ تبديل الى الحزمه {str(pack)} بسبب امتلاء الحزمه. "
-        )
+        await icssevent.edit(f"⌔∮ تبديل الى الحزمه {str(pack)} بسبب امتلاء الحزمه. ")
         await conv.send_message(packname)
         x = await conv.get_response()
         if x.text == "⌔∮ الحزمه المحدده غير صالحه. ":
