@@ -1,3 +1,5 @@
+# KutGif for icss by: @rruuurr
+
 from . import reply_id
 
 ICSS_IMG = "https://telegra.ph/file/787f0c1d759a8b4faa0fc.mp4"
