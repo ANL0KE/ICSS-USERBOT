@@ -86,8 +86,12 @@ async def on_edit(event):
             break
 
 
-@icssbot.on(admin_cmd(pattern=r"^s/((?:\\/|[^/])+)/((?:\\/|[^/])*)(/.*)?", outgoing=True))
-@icssbot.on(sudo_cmd(pattern=r"^s/((?:\\/|[^/])+)/((?:\\/|[^/])*)(/.*)?", allow_sudo=True))
+@icssbot.on(
+    admin_cmd(pattern=r"^s/((?:\\/|[^/])+)/((?:\\/|[^/])*)(/.*)?", outgoing=True)
+)
+@icssbot.on(
+    sudo_cmd(pattern=r"^s/((?:\\/|[^/])+)/((?:\\/|[^/])*)(/.*)?", allow_sudo=True)
+)
 async def on_regex(event):
     if event.fwd_from:
         return
