@@ -89,10 +89,10 @@ def check_data_base_heal_th():
 CMD_HELP.update(
     {
         "alive": "**Plugin :** `alive`\
-      \n\n  •  **Syntax : **`.alive` \
-      \n  •  **Function : **__status of bot will be showed__\
-      \n\n  •  **Syntax : **`.ialive` \
-      \n  •  **Function : **__inline status of bot will be shown.__\
-      \nSet `ALIVE_PIC` var for media in alive message"
+      \n\n  •  **Syntax : **`.السووس` \
+      \n  •  **Function : **لعرض معلومات السورس\
+      \n\n  •  **Syntax : **`.البوت` \
+      \n  •  **Function : **لعرض معلومات البوت.__\
+      \nقم باضافه `ALIVE_PIC` var لعرض الصوره او الفيديو عند كتابتك لامر السورس"
     }
 )
