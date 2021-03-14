@@ -10,7 +10,7 @@ A simple Telegram userbot based on Telethon .
 
 
 ## Source Icss - deploy
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ANL0KE/ICSS-heroku) 
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ANL0KE/ICSS-deploy) 
 
   
 ## Dev
