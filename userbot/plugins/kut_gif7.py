@@ -3,6 +3,7 @@ from . import reply_id
 ICSS_IMG = "https://telegra.ph/file/787f0c1d759a8b4faa0fc.mp4"
 ICSS_TEXT = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑪𝑼𝑻𝑬 𝑮𝑰𝑭 𓆪"
 
+
 @icssbot.on(admin_cmd(outgoing=True, pattern="ك7$"))
 @icssbot.on(sudo_cmd(pattern="ك7$", allow_sudo=True))
 async def kutgif(icss):
