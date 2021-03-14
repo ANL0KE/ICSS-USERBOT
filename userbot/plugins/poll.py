@@ -31,7 +31,8 @@ async def pollcreator(icsspoll):
             await icsspoll.delete()
         except PollOptionInvalidError:
             await edit_or_reply(
-                icsspoll, "⌔∮ الاستفتاء المستخدم غير صالح (قد تكون المعلومات طويلة جدا)."
+                icsspoll,
+                "⌔∮ الاستفتاء المستخدم غير صالح (قد تكون المعلومات طويلة جدا).",
             )
         except ForbiddenError:
             await edit_or_reply(icsspoll, "⌔∮ هذه الدردشة تحظر استطلاعات الرأي. ")
@@ -57,7 +58,7 @@ async def pollcreator(icsspoll):
             except PollOptionInvalidError:
                 await edit_or_reply(
                     icsspoll,
-                    "⌔∮ الاستفتاء المستخدم غير صالح (قد تكون المعلومات طويلة جدا)."
+                    "⌔∮ الاستفتاء المستخدم غير صالح (قد تكون المعلومات طويلة جدا).",
                 )
             except ForbiddenError:
                 await edit_or_reply(icsspoll, "⌔∮ هذه الدردشة تحظر استطلاعات الرأي. ")
