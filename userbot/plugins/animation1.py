@@ -1,10 +1,11 @@
 # edit by: @rruuurr for icss
+
 import asyncio
 from collections import deque
 
 from . import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "icss"
 
 
 @icssbot.on(admin_cmd(pattern="غبي$"))
