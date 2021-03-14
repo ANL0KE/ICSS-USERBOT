@@ -1,4 +1,4 @@
-- Source icss - Arabic
+- icss - Arabic userbot
 
 A simple Telegram userbot based on Telethon .
 [![ICSS logo](https://telegra.ph/file/91d5faee3d1967976362f.jpg)](https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSS%2Ftree%2Fbugs&template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSS)
