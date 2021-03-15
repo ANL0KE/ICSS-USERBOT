@@ -8,6 +8,10 @@ A simple Telegram userbot based on Telethon .
 ![Repo Size](https://img.shields.io/github/repo-size/sandy1709/catuserbot?&style=flat-square&logo=github)
 
 
+### Session String 
+<a href="https://repl.it/@ANL0KE/ICSS#main.py" target="_blank"><img src="https://img.shields.io/badge/run-string__session.py-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>    
+
+
 ## Source Icss - deploy
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ANL0KE/ICSS-deploy) 
 
