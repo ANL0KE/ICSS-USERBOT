@@ -1,4 +1,4 @@
-# Hey There 😒💕
+# Hey There !
 import os
 import sys
 import time
