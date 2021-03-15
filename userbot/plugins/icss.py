@@ -15,11 +15,11 @@ tosh = (
 )
 
 
-@icssbot.on(admin_cmd(pattern=r"icss$"))
+@icssbot.on(admin_cmd(pattern="icss", outgoing=True))
 async def kimo(ics):
     await ics.edit(icss)
 
 
-@icssbot.on(admin_cmd(pattern=r"poo$"))
+@icssbot.on(admin_cmd(pattern="poo", outgoing=true))
 async def poo(pio):
     await pio.edit(tosh)
