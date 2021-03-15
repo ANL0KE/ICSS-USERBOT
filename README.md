@@ -18,4 +18,4 @@ A simple Telegram userbot based on Telethon .
  - ANL0KE (kimo)
 
 ![icss dev](https://img.shields.io/endpoint?color=icative&label=%F0%9D%91%B0%F0%9D%91%AA%F0%9D%91%BA%F0%9D%91%BA%20%F0%9D%91%AB%F0%9D%91%AC%F0%9D%91%BD&logo=telegram&logoColor=success&style=social&url=https%3A%2F%2Ft.me%2Frruuurr) 
-![icss dev](https://img.shields.io/static/v1?label=<https://t.me/rruuurr>&message=<𝑰𝑪𝑺𝑺 𝑫𝑬𝑽>&color=<success>&logo=telegram&logoColor=success&style=social&url=https%3A%2F%2Ft.me%2Frruuurr) 
+![icss dev](https://img.shields.io/static/v1?label=<Icss>&message=<𝑰𝑪𝑺𝑺 𝑫𝑬𝑽>&color=<success>&logo=telegram&logoColor=success&style=social&url=https%3A%2F%2Ft.me%2Frruuurr) 
