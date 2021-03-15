@@ -13,7 +13,7 @@ async def icsf9(ics):
         return
     string = "".join(kim).lower()
     for normiecharacter in string:
-        if normiecharacter in normiefont:
+        if normiecharacter in icsf1:
             wcharacter = icsf9[icsf1.index(normiecharacter)]
             string = string.replace(normiecharacter, wcharacter)
     await ics.edit(string)
