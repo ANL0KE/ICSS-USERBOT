@@ -1,6 +1,6 @@
 # icss fonts
 
-icsff1 = [
+icsf1 = [
     "a",
     "b",
     "c",
@@ -28,7 +28,7 @@ icsff1 = [
     "y",
     "z",
 ]
-icsff2 = [
+icsf2 = [
     "𝙖",
     "𝙗",
     "𝙘",
