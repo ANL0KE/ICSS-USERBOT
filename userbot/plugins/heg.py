@@ -6,7 +6,7 @@ DEFULTUSER = ALIVE_NAME or "IcssBot"
 ICSST = " اهلا بك عزيزي في بوت اكسس "
 
 
-@icssbot.on(admin_cmd(outgoing=True, pattern="مده$"))
+@icssbot.on(admin_cmd(pattern="مده" ,outgoing=True))
 @icssbot.on(sudo_cmd(pattern="مده", allow_sudo=True))
 async def tim(lon):
     if lon.fwd_from:
