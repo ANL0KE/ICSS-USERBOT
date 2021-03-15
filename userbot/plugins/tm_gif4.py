@@ -5,8 +5,6 @@
 """
 
 
-import time
-
 from . import reply_id
 
 ICS_IMG = "https://telegra.ph/file/dccf11fffd3abda4a4f29.mp4"
