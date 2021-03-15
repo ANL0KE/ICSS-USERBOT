@@ -44,7 +44,9 @@ async def get_tz(con):
         return
 
 
-@icssbot.on(admin_cmd(outgoing=True, pattern="الوقت(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?"))
+@icssbot.on(
+    admin_cmd(outgoing=True, pattern="الوقت(?: |$)(.*)(?<![0-9])(?: |$)([0-9]+)?")
+)
 @icssbot.on(
     sudo_cmd(
         outgoing=True,
