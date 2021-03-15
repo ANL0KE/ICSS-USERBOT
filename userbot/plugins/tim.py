@@ -6,7 +6,7 @@
 
 import time
 
-from . import StartTime, get_readable_time, mention, reply_id
+from . import StartTime, ALIVE_NAME, get_readable_time, mention, reply_id
 
 DEFULTUSER = ALIVE_NAME or "ICSSbot"
 ICS_IMG = "https://telegra.ph/file/ca2467e77ffcd605cc54d.jpg"
