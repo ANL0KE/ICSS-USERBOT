@@ -9,8 +9,8 @@ import os
 from datetime import datetime as dt
 
 from PIL import Image, ImageDraw, ImageFont
-from pytz import country_names as i_n
-from pytz import country_timezones as i_tz
+from pytz import country_names as c_n
+from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
 FONT_FILE_TO_USE = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"
@@ -21,6 +21,7 @@ TZ_NUMBER = Config.TZ_NUMBER
 
 
 async def get_tz(con):
+    """ Get time zone of the given country. """
     if "(Uk)" in con:
         con = con.replace("Uk", "UK")
     if "(Us)" in con:
@@ -33,12 +34,12 @@ async def get_tz(con):
         con = con.replace("Minor Outlying Islands", "minor outlying islands")
     if "Nl" in con:
         con = con.replace("Nl", "NL")
-    for icode in i_n:
-        if con == i_n[icode]:
-            return i_tz[icode]
+    for c_code in c_n:
+        if con == c_n[c_code]:
+            return c_tz[c_code]
     try:
-        if i_n[con]:
-            return i_tz[con]
+        if c_n[con]:
+            return c_tz[con]
     except KeyError:
         return
 
@@ -52,6 +53,11 @@ async def get_tz(con):
     )
 )
 async def time_func(tdata):
+    """For .time command, return the time of
+    1. The country passed as an argument,
+    2. The default userbot country(set it by using .settime),
+    3. The server where the userbot runs.
+    """
     con = tdata.pattern_match.group(1).title()
     tz_num = tdata.pattern_match.group(2)
     t_form = "%H:%M"
@@ -59,7 +65,7 @@ async def time_func(tdata):
     c_name = ""
     if len(con) > 4:
         try:
-            c_name = i_n[con]
+            c_name = c_n[con]
         except KeyError:
             c_name = con
         timezones = await get_tz(con)
@@ -83,7 +89,7 @@ async def time_func(tdata):
             tz_num = int(tz_num)
             time_zone = timezones[tz_num - 1]
         else:
-            return_str = f"⌔∮ {c_name} لها مناطق زمنيه متعدده :n\n"
+            return_str = f"`{c_name} has multiple timezones:`\n\n"
 
             for i, item in enumerate(timezones):
                 return_str += f"`{i+1}. {item}`\n"
@@ -112,10 +118,46 @@ async def time_func(tdata):
         return
 
 
+# @icssbot.on(admin_cmd(pattern="time ?(.*)"))
+# @icssbot.on(sudo_cmd(pattern="time ?(.*)", allow_sudo=True))
+async def _(event):
+    if event.fwd_from:
+        return
+    reply_msg_id = None
+    current_time = dt.now().strftime(
+        f"⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡\n⚡ICSBOT TIMEZONE⚡\n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡\n   {LOCATION}\n  Time: %H:%M:%S \n  Date: %d.%m.%y \n⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡⚡"
+    )
+    input_str = event.pattern_match.group(1)
+    if event.sender_id != bot.uid:
+        reply_msg_id = event.message.id
+    if input_str:
+        current_time = input_str
+    elif event.reply_to_msg_id:
+        previous_message = await event.get_reply_message()
+        reply_msg_id = previous_message.id
+    if not os.path.isdir(Config.TEMP_DIR):
+        os.makedirs(Config.TEMP_DIR)
+    required_file_name = Config.TEMP_DIR + " " + str(dt.now()) + ".webp"
+    img = Image.new("RGBA", (350, 220), color=(0, 0, 0, 115))
+    fnt = ImageFont.truetype(FONT_FILE_TO_USE, 30)
+    drawn_text = ImageDraw.Draw(img)
+    drawn_text.text((10, 10), current_time, font=fnt, fill=(255, 255, 255))
+    img.save(required_file_name)
+    await event.client.send_file(
+        event.chat_id,
+        required_file_name,
+        reply_to=reply_msg_id,
+    )
+    os.remove(required_file_name)
+    await event.delete()
+
+
 CMD_HELP.update(
     {
         "time": "**Plugin : **`time`\
-        \n\n**Syntax : **`.الوقت <country name/code> <timezone number>` \
+        \n\n**Syntax : **`.الوقت <اسم الدوله/رمز الدوله> <timezone number>` \
     \n**Function : **__Get the time of a country. If a country has multiple timezones, it will list all of them and let you select one. here are [country names](https://telegra.ph/country-names-10-24)__\
+    \n\n**Syntax : **`.time` \
+    \n**Function : **__shows current default time you can change by changing TZ in heroku vars__"
     }
 )
