@@ -165,7 +165,7 @@ async def _(event):
 
 
 @icssbot.on(admin_cmd(outgoing=True, pattern="getpaste(?: |$)(.*)"))
-@icsabot.on(sudo_cmd(allow_sudo=True, pattern="getpaste(?: |$)(.*)"))
+@icssbot.on(sudo_cmd(allow_sudo=True, pattern="getpaste(?: |$)(.*)"))
 async def get_dogbin_content(dog_url):
     textx = await dog_url.get_reply_message()
     message = dog_url.pattern_match.group(1)
