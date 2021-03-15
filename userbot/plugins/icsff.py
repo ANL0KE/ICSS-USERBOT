@@ -1,5 +1,6 @@
 # icss fonts
 
+from . import icsfont
 
 @icssbot.on(admin_cmd(pattern="ho ?(.*)"))
 async def icsf9(ics):
