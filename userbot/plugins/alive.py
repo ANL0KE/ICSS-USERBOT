@@ -67,9 +67,7 @@ async def icssalive(icss):
     ics_c += f"**  - اصدار اكسس :** `{icssversion}`\n"
     ics_c += f"**  - اصدار البايثون :** `{python_version()}\n`"
     ics_c += f"**  - المستخدم :** {mention}\n"
-    results = await bot.inline_query(
-        icsbotun, ics_c
-    )  # pylint:disable=E0602
+    results = await bot.inline_query(icsbotun, ics_c)  # pylint:disable=E0602
     await results[0].click(icss.chat_id, reply_to=ics_id, hide_via=True)
     await icss.delete()
 
