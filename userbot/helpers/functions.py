@@ -9,7 +9,7 @@ from random import choice
 import PIL.ImageOps
 import requests
 from emoji import get_emoji_regexp
-from ICSS resources.states import states
+from ICSSresources.states import states
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import Channel, PollAnswer
 from validators.url import url
