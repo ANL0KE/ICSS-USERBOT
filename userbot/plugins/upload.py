@@ -83,7 +83,7 @@ async def upload(path, event, udir_event, icsflag=None):
         Files = os.listdir(path)
         Files = sortthings(Files, path)
         for file in Files:
-            icspath = os.path.join(path, file)
+            os.path.join(path, file)
             await upload(catpath, event, udir_event)
     elif os.path.isfile(path):
         caption_rts = os.path.basename(path)
@@ -287,9 +287,7 @@ async def video_icsf(event):
             os.remove(icsf)
         else:
             os.remove(icsf)
-            return await edit_delete(
-                icse, "`No thumb found to make it video note`", 5
-            )
+            return await edit_delete(icse, "`No thumb found to make it video note`", 5)
     if os.path.exists(PATH):
         icsid = event.reply_to_msg_id
         itime = time.time()
