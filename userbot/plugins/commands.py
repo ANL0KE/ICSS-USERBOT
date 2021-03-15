@@ -966,61 +966,35 @@ async def ge(user, event):
 
 ########################  SOURCE ICSS ~ BY: KIMO (@RRUUURR)  ########################
 
+from . import reply_id
 
-import time
-
-from . import StartTime, get_readable_time, reply_id
-
-DEFAULTUSER = "ICSS"
-CAT_IMG = "https://telegra.ph/file/b02c0afc76b7ae6cb111a.mp4"
-CUSTOM_ALIVE_TEXT = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑫𝑬𝑽𝑬𝑳𝑶𝑷𝑬𝑹 𓆪"
-EMOJI = "  𓄂† "
+ICS_IMG = "https://telegra.ph/file/b02c0afc76b7ae6cb111a.mp4"
+ICSS_TEXT = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑫𝑬𝑽𝑬𝑳𝑶𝑷𝑬𝑹 𓆪"
+ICSEM = "  𓄂† "
 
 
 @icssbot.on(admin_cmd(outgoing=True, pattern="المطور$"))
 @icssbot.on(sudo_cmd(pattern="المطور$", allow_sudo=True))
-async def amireallyalive(alive):
-    if alive.fwd_from:
+async def icsdev(kimo):
+    if kimo.fwd_from:
         return
-    reply_to_id = await reply_id(alive)
-    await get_readable_time((time.time() - StartTime))
-    _, check_sgnirts = check_data_base_heal_th()
-    if CAT_IMG:
-        cat_caption = f"**{CUSTOM_ALIVE_TEXT}**\n"
-        cat_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-        cat_caption += f"**{EMOJI}** 𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
-        cat_caption += f"**{EMOJI}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
-        cat_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
-        await alive.client.send_file(
-            alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
+    icsid = await reply_id(kimo)
+    if ICS_IMG:
+        ics_c = f"**{ICSS_TEXT}**\n"
+        ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+        ics_c += f"**{ICSME}** 𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
+        ics_c += f"**{ICSME}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
+        ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+        await kimo.client.send_file(
+            kimo.chat_id, ICS_IMG, caption=ics_c, reply_to=icsid
         )
-        await alive.delete()
+        await kimo.delete()
     else:
         await edit_or_reply(
-            alive,
-            f"**{CUSTOM_ALIVE_TEXT}**\n"
+            kimo,
+            f"**{ICSA_TEXT}**\n"
             f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-            f"**{EMOJI}** 𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
-            f"**{EMOJI}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
+            f"**{ICSME}** 𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
+            f"**{ICSME}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
             f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
         )
-
-
-def check_data_base_heal_th():
-    # https://stackoverflow.com/a/41961968
-    is_database_working = False
-    output = "✾"
-    if not Config.DB_URI:
-        return is_database_working, output
-    from userbot.plugins.sql_helper import SESSION
-
-    try:
-        # to check database we will execute raw query
-        SESSION.execute("SELECT 1")
-    except Exception as e:
-        output = f"❌ {str(e)}"
-        is_database_working = False
-    else:
-        output = "↫ "
-        is_database_working = True
-    return is_database_working, output
