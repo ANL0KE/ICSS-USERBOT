@@ -204,7 +204,7 @@ async def smrk(smk):
 
 
 @icssbot.on(admin_cmd(pattern="ftext (.*)"))
-@icaabot.on(sudo_cmd(pattern="ftext (.*)", allow_sudo=True))
+@icssbot.on(sudo_cmd(pattern="ftext (.*)", allow_sudo=True))
 async def payf(event):
     paytext = event.pattern_match.group(1)
     pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
@@ -242,7 +242,7 @@ async def wish_check(event):
 
 
 @icssbot.on(admin_cmd(outgoing=True, pattern="repo$"))
-@icaabot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
+@icssbot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
 async def source(e):
     await edit_or_reply(
         e,
