@@ -219,7 +219,7 @@ async def info(event):
         await catevent.edit("**لقد حدث خطأ غير متوقع**")
 
 
-@icsabot.on(admin_cmd(pattern="مسح المحظورين ?(.*)"))
+@icssbot.on(admin_cmd(pattern="مسح المحظورين ?(.*)"))
 @icssbot.on(sudo_cmd(pattern="مسح المحظورين ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
