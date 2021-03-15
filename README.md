@@ -15,6 +15,7 @@ A simple Telegram userbot based on Telethon .
   
 ## Dev
    <a href="https://t.me/rruuurr"><img src="https://img.shields.io/badge/Source%20Dev%3F-here-inactive?&style=plastic?&logo=telegram" width=220px></a></p>
+   https://img.shields.io/static/v1?label=<https://telegra.ph/file/95962c3bd4426b0c7b300.jpg>&Icss Dev=<Here>&success=<success>
 
    
  - ANL0KE (kimo)
