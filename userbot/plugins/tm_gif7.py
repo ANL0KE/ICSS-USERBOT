@@ -17,11 +17,11 @@ async def tmgif(ics):
         return
     reply_to_id = await reply_id(ics)
     if ICSS_IMG:
-        ics_caption = f"**{ICSS_TEXT}**\n"
-        ics_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-        ics_caption += f"**↫ المتـحركه السابعه 𓆰.**"
+        ics_c = f"**{ICSS_TEXT}**\n"
+        ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+        ics_c += f"**↫ المتـحركه السابعه 𓆰.**"
         await ics.client.send_file(
-            alive.chat_id, ICSS_IMG, caption=ics_caption, reply_to=reply_to_id
+            ics.chat_id, ICSS_IMG, caption=ics_c, reply_to=reply_to_id
         )
         await ics.delete()
     else:
