@@ -71,8 +71,8 @@ async def _(event):
         )
 
 
-@icaabot.on(admin_cmd(pattern=r"savepwel ?(.*)"))
-@icaabot.on(sudo_cmd(pattern=r"savepwel ?(.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern=r"savepwel ?(.*)"))
+@icssbot.on(sudo_cmd(pattern=r"savepwel ?(.*)", allow_sudo=True))
 async def save_welcome(event):
     if event.fwd_from:
         return
