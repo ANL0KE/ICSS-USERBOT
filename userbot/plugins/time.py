@@ -120,8 +120,8 @@ async def time_func(tdata):
         return
 
 
-# @icssbot.on(admin_cmd(pattern="time ?(.*)"))
-# @icssbot.on(sudo_cmd(pattern="time ?(.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="وقت ?(.*)"))
+@icssbot.on(sudo_cmd(pattern="وقت ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
