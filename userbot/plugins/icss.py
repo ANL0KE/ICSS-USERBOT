@@ -6,13 +6,6 @@ icss = [
     "|___\____|____/____/",
 ]
 
-
-@icssbot.on(admin_cmd(pattern="icss", outgoing=True))
-async def kimo(ics):
-    kim = icss
-    await ics.edit(kim)
-
-
 tosh = [
     "🔱 | 𝗻𝗮𝗺𝗲 :",
     "🔱 | 𝗳𝗿𝗼𝗺 :",
@@ -22,7 +15,13 @@ tosh = [
 ]
 
 
-@icssbot.on(admin_cmd(pattern="Poo", outgoing=True))
+@icssbot.on(admin_cmd(pattern="icss"))
+@icssbot.on(sudo_cmd(pattern"icss", allow_sudo=True)) 
+async def kimo(ics):
+    await edit_or_reply(ics, icss)
+
+
+@icssbot.on(admin_cmd(pattern="Poo"))
+@icssbot.on(sudo_cmd(pattern"poo", allow_sudo=True)) 
 async def poo(pio):
-    th = tosh
-    await pio.edit(th)
+    await edit_or_reply(pio, tosh)
