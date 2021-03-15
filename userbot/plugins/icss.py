@@ -15,10 +15,6 @@ T = (
 )
 
 
-
-
-
-
 @icssbot.on(admin_cmd(pattern="icss", outgoing=True))
 async def kimo(ics):
     return await edit_or_reply(ics, I)
