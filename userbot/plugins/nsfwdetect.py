@@ -4,7 +4,7 @@ import requests
 
 
 @icssbot.on(admin_cmd(pattern="detect$", outgoing=True))
-@icswbot.on(sudo_cmd(pattern="detect$", allow_sudo=True))
+@icssbot.on(sudo_cmd(pattern="detect$", allow_sudo=True))
 async def detect(event):
     if Config.DEEP_AI is None:
         return await edit_delete(
