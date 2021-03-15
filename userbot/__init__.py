@@ -7,8 +7,8 @@ from logging import DEBUG, INFO, basicConfig, getLogger
 import heroku3
 from dotenv import load_dotenv
 from requests import get
-from telethon import TelegramClient
-from telethon.sessions import StringSession
+from telethon import TelegramClient as tc
+from telethon.sessions import StringSession as ss
 
 from .Config import Config
 
@@ -18,19 +18,19 @@ icssversion = "1.0.0"
 if Config.STRING_SESSION:
     session_name = str(Config.STRING_SESSION)
     if session_name.endswith("="):
-        bot = TelegramClient(
-            StringSession(session_name), Config.APP_ID, Config.API_HASH
+        bot = tc(
+            ss(session_name), Config.APP_ID, Config.API_HASH
         )
     else:
-        bot = TelegramClient(
+        bot = tc(
             "TG_BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
         ).start(bot_token=Config.STRING_SESSION)
 else:
     session_name = "startup"
-    bot = TelegramClient(session_name, Config.APP_ID, Config.API_HASH)
+    bot = tc(session_name, Config.APP_ID, Config.API_HASH)
 
 
-CAT_ID = ["1035034432", "551290198"]
+ICS_ID = ["1035034432", "551290198"]
 
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
