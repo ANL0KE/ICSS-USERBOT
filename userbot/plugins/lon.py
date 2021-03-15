@@ -1,13 +1,9 @@
-import asyncio
-
 import random
 
 from telethon import events
 
 
-@icssbot.on(
-    events.NewMessage(pattern=r"\.(.*)", outgoing=True)
-)
+@icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -16,13 +12,9 @@ async def _(event):
         await event.edit("┏━━━┓\n┃┏━━┛\n┃┗━━┓\n┃┏━━┛\n┃┃\n┗┛")
 
 
-
-@icssbot.on(
-    admin_cmd(pattern="تحديث", outgoing=True)
-)
+@icssbot.on(admin_cmd(pattern="تحديث", outgoing=True))
 async def icss(ics):
     await ics.edit("**⪼ هذا الامر غير موجود اذا اردت معرفت السبب راسل المطور 𓆰**")
-
 
 
 ahk = [
@@ -44,7 +36,6 @@ ahk = [
 async def icss(ics):
     uu = random.choice(ahk)
     return await ics.edit(f"**⌔∮ نسبه نجاحك هيه -** `{uu}`")
-
 
 
 from telethon.tl.types import MessageEntityMentionName
