@@ -339,7 +339,7 @@ async def memes(icss):
 
 
 @icssbot.on(admin_cmd(pattern="zoom ?(.*)"))
-@icaabot.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
+@icssbot.on(sudo_cmd(pattern="zoom ?(.*)", allow_sudo=True))
 async def memes(icss):
     if icss.fwd_from:
         return
