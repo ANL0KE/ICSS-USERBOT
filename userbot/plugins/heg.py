@@ -20,5 +20,5 @@ async def tim(lon):
     icsid = await reply_id(icsid) 
     icst = await get_readable_time((time.time() - StartTime)) 
     await edit_or_reply(
-        lon, f"**{ICSST}**\n\n ⌔∮ المستخدم: {mention} \n⌔∮ المده: {icst}
+        lon, f"**{ICSST}**\n\n ⌔∮ المستخدم: {mention} \n⌔∮ المده: {icst}"
     )
