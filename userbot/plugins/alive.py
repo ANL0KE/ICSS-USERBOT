@@ -11,7 +11,7 @@ from platform import python_version
 
 from telethon import version
 
-from . import ALIVE_NAME, StartTime, get_readable_time, icssversion, mention, reply_id
+from . import ALIVE_NAME, StartTime, get_readable_time, icsv, mention, reply_id
 
 DEFAULTUSER = ALIVE_NAME or "ICSS"
 ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jpg"
@@ -32,7 +32,7 @@ async def icssalive(icss):
         ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
         ics_c += f"**{ICSEM} قاعدة البيانات ↫** `{check_sgnirts}`\n"
         ics_c += f"**{ICSEM} اصدار التليثون  ↫** `{version.__version__}\n`"
-        ics_c += f"**{ICSEM} اصدار اڪسس ↫** `{icssversion}`\n"
+        ics_c += f"**{ICSEM} اصدار اڪسس ↫** `{icsv}`\n"
         ics_c += f"**{ICSEM} اصدار البايثون ↫** `{python_version()}\n`"
         #        ics_c += f"**{ICSEM} مدة التشغيل ↫** `{icsupt}\n`"
         ics_c += f"**{ICSEM} المستخدم ↫** {mention}\n"
@@ -48,7 +48,7 @@ async def icssalive(icss):
             f"**{ICSS_TEXT}**\n\n"
             f"**{ICSEM} قاعدة البيانات ↫**  `{check_sgnirts}`\n"
             f"**{ICSEM} اصدار التليثون  ↫** `{version.__version__}\n`"
-            f"**{ICSEM} اصدار اڪسس ↫** `{icssversion}`\n"
+            f"**{ICSEM} اصدار اڪسس ↫** `{icsv}`\n"
             f"**{ICSEM} اصدار البايثون  ↫** `{python_version()}\n`"
             f"**{ICSEM} مدة التشغيل ↫** `{icsupt}\n`"
             f"**{ICSEM} المستخدم ↫** {mention}\n",
@@ -64,7 +64,7 @@ async def icssalive(icss):
     ics_id = await reply_id(icss)
     ics_c = f"𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪\n"
     ics_c += f"**  - اصدار التليثون :** `{version.__version__}\n`"
-    ics_c += f"**  - اصدار اكسس :** `{icssversion}`\n"
+    ics_c += f"**  - اصدار اكسس :** `{icsv}`\n"
     ics_c += f"**  - اصدار البايثون :** `{python_version()}\n`"
     ics_c += f"**  - المستخدم :** {mention}\n"
     results = await bot.inline_query(icsbotun, ics_c)  # pylint:disable=E0602
