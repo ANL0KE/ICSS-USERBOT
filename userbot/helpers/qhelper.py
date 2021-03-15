@@ -10,8 +10,6 @@ from fontTools.ttLib import TTFont
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 from telethon.tl import functions, types
 
-from .utils import _icssutils
-
 COLORS = [
     "#F07975",
     "#F49F69",
