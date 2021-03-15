@@ -17,9 +17,9 @@ tosh = (
 
 @icssbot.on(admin_cmd(pattern=r"icss$"))
 async def kimo(ics):
-    await edit_or_reply(ics, icss)
+    await ics.edit(icss)
 
 
 @icssbot.on(admin_cmd(pattern=r"poo$"))
 async def poo(pio):
-    await edit_or_reply(pio, tosh)
+    await pio.edit(tosh)
