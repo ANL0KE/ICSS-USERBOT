@@ -22,7 +22,7 @@ TZ_NUMBER = Config.TZ_NUMBER
 
 async def get_tz(con):
     if "(IQ)" in con: 
-        con = con.replace("Iq","IQ")
+        con = con.replace("Iq", "IQ")
     if "(Uk)" in con:
         con = con.replace("Uk", "UK")
     if "(Us)" in con:
