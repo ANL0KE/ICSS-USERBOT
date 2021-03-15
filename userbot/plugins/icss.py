@@ -15,13 +15,13 @@ tosh = [
 ]
 
 
-@icssbot.on(admin_cmd(pattern="icss"))
+@icssbot.on(admin_cmd(pattern="icss", outgoing=True))
 @icssbot.on(sudo_cmd(pattern"icss", allow_sudo=True)) 
 async def kimo(ics):
     await edit_or_reply(ics, icss)
 
 
-@icssbot.on(admin_cmd(pattern="Poo"))
+@icssbot.on(admin_cmd(pattern="Poo", outgoing=True))
 @icssbot.on(sudo_cmd(pattern"poo", allow_sudo=True)) 
 async def poo(pio):
     await edit_or_reply(pio, tosh)
