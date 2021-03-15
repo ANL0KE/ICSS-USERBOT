@@ -191,7 +191,7 @@ async def devices_specifications(request):
 
 
 @icssbot.on(admin_cmd(outgoing=True, pattern=r"twrp(?: |$)(\S*)"))
-@icssot.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
+@icssbot.on(sudo_cmd(pattern=r"twrp(?: |$)(\S*)", allow_sudo=True))
 async def twrp(request):
     if request.fwd_from:
         return
