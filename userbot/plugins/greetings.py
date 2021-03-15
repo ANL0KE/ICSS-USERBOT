@@ -1,6 +1,6 @@
 import random
 
-from . import catmemes
+from . import icssmemes
 
 
 @icssbot.on(admin_cmd(pattern=f"gm$", outgoing=True))
