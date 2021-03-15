@@ -72,7 +72,7 @@ async def translateme(trans):
 
 
 @icssbot.on(admin_cmd(pattern="lang trt (.*)", outgoing=True))
-@icaabot.on(sudo_cmd(pattern="lang trt (.*)", allow_sudo=True))
+@icssbot.on(sudo_cmd(pattern="lang trt (.*)", allow_sudo=True))
 async def lang(value):
     scraper = "Translator"
     global TRT_LANG
