@@ -14,16 +14,18 @@ from telethon.sessions import StringSession as ss
 from .Config import Config
 
 StartTime = time.time()
-icssversion = "1.0.0"
+icsv = "1.0.0"
 
 if Config.STRING_SESSION:
     session_name = str(Config.STRING_SESSION)
     if session_name.endswith("="):
-        bot = tc(ss(session_name), Config.APP_ID, Config.API_HASH)
-    else:
-        bot = tc("TG_BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH).start(
-            bot_token=Config.STRING_SESSION
+        bot = tc(
+            ss(session_name), Config.APP_ID, Config.API_HASH
         )
+    else:
+        bot = tc(
+            "TG_BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
+        ).start(bot_token=Config.STRING_SESSION)
 else:
     session_name = "startup"
     bot = tc(session_name, Config.APP_ID, Config.API_HASH)
