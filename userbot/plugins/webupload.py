@@ -19,7 +19,7 @@ link_regex = re.compile(
 )
 
 
-@icssot.on(admin_cmd(pattern="labstack( (.*)|$)"))
+@icssbot.on(admin_cmd(pattern="labstack( (.*)|$)"))
 @icssbot.on(sudo_cmd(pattern="labstack( (.*)|$)", allow_sudo=True))
 async def labstack(event):
     if event.fwd_from:
