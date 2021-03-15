@@ -69,8 +69,8 @@ async def icsf2(ics):
         await ics.edit("What I am Supposed to Weebify? Please Give Text Sir")
         return
     string = "".join(kim).lower()
-    for normiecharacter in string:
-        if normiecharacter in icsf1:
-            wcharacter = icsf2[icsf1.index(normiecharacter)]
-            string = string.replace(normiecharacter, wcharacter)
+    for icsf1character in string:
+        if icsf1character in icsf1:
+            wcharacter = icsf2[icsf1.index(icsf1character)]
+            string = string.replace(icsf1character, wcharacter)
     await ics.edit(string)
