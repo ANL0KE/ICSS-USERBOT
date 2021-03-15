@@ -147,9 +147,7 @@ async def ban(kimo):
         if reply:
             await reply.delete()
     except BadRequestError:
-        await icse.edit(
-            "`I dont have message nuking rights! But still he was banned!`"
-        )
+        await icse.edit("`I dont have message nuking rights! But still he was banned!`")
         return
     # Delete message and then tell that the command
     # is done gracefully
