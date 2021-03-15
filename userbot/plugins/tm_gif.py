@@ -44,7 +44,6 @@ async def _(event):
             )
 
 
-
 @icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
@@ -83,7 +82,6 @@ async def _(event):
                 "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
                 "𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪"
             )
-
 
 
 @icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -126,7 +124,6 @@ async def _(event):
             )
 
 
-
 @icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
     if event.fwd_from:
@@ -165,7 +162,6 @@ async def _(event):
                 "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
                 "𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪"
             )
-
 
 
 @icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
@@ -225,9 +221,7 @@ async def tmgif(kim):
         kim_c = f"**{ICSS_TEXT}**\n"
         kim_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         kim_c += f"**↫ المتـحركه الاولى 𓆰.**"
-        await kim.client.send_file(
-            kim.chat_id, ICS_IMG, caption=kim_c, reply_to=kimid
-        )
+        await kim.client.send_file(kim.chat_id, ICS_IMG, caption=kim_c, reply_to=kimid)
         await kim.delete()
     else:
         await edit_or_reply(
