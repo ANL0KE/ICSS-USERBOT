@@ -20,9 +20,7 @@ async def tmgif(lon):
         ics_c = f"**{ICSS_TEXT}**\n"
         ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         ics_c += f"**↫ المتـحركه الثانيه 𓆰.**"
-        await lon.client.send_file(
-            lon.chat_id, ICS_IMG, caption=ics_c, reply_to=lonid
-        )
+        await lon.client.send_file(lon.chat_id, ICS_IMG, caption=ics_c, reply_to=lonid)
         await lon.delete()
     else:
         await edit_or_reply(
