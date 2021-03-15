@@ -1,8 +1,6 @@
 import asyncio
 import random
 
-from . import icssmemes
-
 
 @icssbot.on(admin_cmd(outgoing=True, pattern="abuse$"))
 @icssbot.on(sudo_cmd(pattern="abuse$", allow_sudo=True))
