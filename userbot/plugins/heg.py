@@ -11,7 +11,7 @@ ICSST = " اهلا بك عزيزي في بوت اكسس "
 async def tim(lon):
     if lon.fwd_from:
         return
-    await reply_id(icsid)
+    await reply_id(lon)
     icst = await get_readable_time((time.time() - StartTime))
     await edit_or_reply(
         lon, f"**{ICSST}**\n\n ⌔∮ المستخدم: {mention} \n⌔∮ المده: {icst}"
