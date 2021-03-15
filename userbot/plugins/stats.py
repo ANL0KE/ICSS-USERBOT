@@ -71,13 +71,13 @@ async def stats(event):
     response += f"**⌔∮ المجموعات :** {groups} \n"
     response += f"**⌔∮ القنوات :** {broadcast_channels} \n"
     response += f"**⌔∮ مشرف في المجموعه :** {admin_in_groups} \n"
-    response += f"   - منشئ المجموعه : `{creator_in_groups}` \n"
+    response += f"`   - منشئ المجموعه : {creator_in_groups}` \n"
     response += (
-        f"   - رافع مشرفين في المجموعه : {admin_in_groups - creator_in_groups}` \n"
+        f"`   - رافع مشرفين في المجموعه : {admin_in_groups - creator_in_groups}` \n"
     )
-    response += f"**⌔∮ مشرف في قناة :** {admin_in_broadcast_channels} \n"
-    response += f"   - منشئ القناة: `{creator_in_channels}` \n"
-    response += f"   - رفع مشرفين في القناة : `{admin_in_broadcast_channels - creator_in_channels}` \n"
+    response += f"⌔∮ مشرف في قناة : {admin_in_broadcast_channels} \n"
+    response += f"`   - منشئ القناة: {creator_in_channels}` \n"
+    response += f"`   - رفع مشرفين في القناة : {admin_in_broadcast_channels - creator_in_channels}` \n"
     response += f"**⌔∮ الرسائل الغـير مقروئه :** {unread} \n"
     response += f"**⌔∮ الرسائل التي عمل لها غيـر مقروئه :** {unread_mentions} \n"
     response += (
