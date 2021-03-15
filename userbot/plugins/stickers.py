@@ -212,8 +212,8 @@ async def add_to_pack(
         return pack, packname
 
 
-@isccbot.on(admin_cmd(outgoing=True, pattern="ملصق ?(.*)"))
-@icsdbot.on(sudo_cmd(pattern="ملصق ?(.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern="ملصق ?(.*)"))
+@icssbot.on(sudo_cmd(pattern="ملصق ?(.*)", allow_sudo=True))
 async def kang(args):
     photo = None
     emojibypass = False
