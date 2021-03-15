@@ -9,6 +9,7 @@ from . import reply_id
 ICS_IMG = "https://telegra.ph/file/7fa9b1905df5840c7c77a.mp4"
 ICSS_TEXT = "𓆩𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑻𝑼𝑴𝑩𝑳𝑹 𝑮𝑰𝑭𓆪"
 
+
 @icssbot.on(admin_cmd(outgoing=True, pattern="ت6$"))
 @icssbot.on(sudo_cmd(pattern="ت6$", allow_sudo=True))
 async def tmgif(kimo):
