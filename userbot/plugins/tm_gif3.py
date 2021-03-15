@@ -1,7 +1,7 @@
 """
 ©icss : @rruuurr
   - Tumblr Gif
-  - Tumblr Gif = 7
+  - Tumblr Gif = 3
 """
 
 from . import reply_id
@@ -17,7 +17,7 @@ async def tmgif(i):
         return
     sic_id = await reply_id(i)
     if ICS_IMG:
-        ics_c = f"**{CUSTOM_ICSS_TEXT}**\n"
+        ics_c = f"**{ICSS_TEXT}**\n"
         ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         ics_c += f"**↫ المتـحركه الثالثه 𓆰.**"
         await i.client.send_file(i.chat_id, ICS_IMG, caption=ics_c, reply_to=sic_id)
@@ -25,7 +25,7 @@ async def tmgif(i):
     else:
         await edit_or_reply(
             i,
-            f"**{CUSTOM_ICSS_TEXT}**\n"
+            f"**{ICSS_TEXT}**\n"
             f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
             f"**↫ المتـحركه الثالثه 𓆰.**",
         )
