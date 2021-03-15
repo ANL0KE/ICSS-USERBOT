@@ -1,7 +1,5 @@
 import random
 
-from . import icssmemes
-
 
 @icssbot.on(admin_cmd(pattern=f"gm$", outgoing=True))
 @icssbot.on(sudo_cmd(pattern="gm$", allow_sudo=True))
