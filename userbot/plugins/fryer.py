@@ -9,7 +9,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeFilename
 
 
-@icaabot.on(admin_cmd(pattern="frybot$"))
+@icssbot.on(admin_cmd(pattern="frybot$"))
 @icssbot.on(sudo_cmd(pattern="frybot$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
