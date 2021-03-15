@@ -9,12 +9,11 @@ from random import choice
 import PIL.ImageOps
 import requests
 from emoji import get_emoji_regexp
+from ICSSresources.states import states
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import Channel, PollAnswer
 from validators.url import url
 from youtubesearchpython import VideosSearch
-
-from ICSS resources.states import states
 
 
 def utc_to_local(utc_datetime):
