@@ -18,7 +18,7 @@ async def tim(lon):
     if lon.fwd_from: 
        return
     icsid = await reply_id(icsid) 
-    icst = await get_readable_time((time.() - StartTime)) 
+    icst = await get_readable_time((time.time() - StartTime)) 
     await edit_or_reply(
          lon, f"**{ICSST}**\n\n ⌔∮ المستخدم: {mention} \n⌔∮ المده: {icst}
     )
