@@ -10,7 +10,7 @@ icss = [
 @icssbot.on(admin_cmd(pattern="icss", outgoing=True))
 async def kimo(ics):
     kim = icss
-    return await edit(ics, kim)
+    return await ics.edit(kim)
 
 
 tosh = [
@@ -25,4 +25,4 @@ tosh = [
 @icssbot.on(admin_cmd(pattern="Poo", outgoing=True))
 async def poo(pio):
     th = tosh
-    return await edit(pio, th)
+    return await pio.edit(th)
