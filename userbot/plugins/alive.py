@@ -1,4 +1,10 @@
-# alive - ©icss
+"""
+©icss : @rruuurr
+  - Alive Code For Icss
+  - Commend: .السورس
+  - Commend: .البوت
+"""
+
 
 import time
 from platform import python_version
@@ -10,7 +16,7 @@ from . import ALIVE_NAME, StartTime, get_readable_time, icssversion, mention, re
 DEFAULTUSER = ALIVE_NAME or "ICSS"
 ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jpg"
 ICSS_TEXT = Config.CUSTOM_ALIVE_TEXT or "𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪"
-E_ICSS = Config.CUSTOM_ALIVE_EMOJI or "  - ❝ ⌊ "
+ICSEM = Config.CUSTOM_ALIVE_EMOJI or "  ⌔∮ "
 
 
 @icssbot.on(admin_cmd(outgoing=True, pattern="السورس$"))
@@ -18,34 +24,34 @@ E_ICSS = Config.CUSTOM_ALIVE_EMOJI or "  - ❝ ⌊ "
 async def icssalive(icss):
     if icss.fwd_from:
         return
-    reply_to_id = await reply_id(icss)
-    uptime = await get_readable_time((time.time() - StartTime))
+    ics_id = await reply_id(icss)
+    icsupt = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
     if ICSS_IMG:
-        icss_caption = f"**{ICSS_TEXT}**\n"
-        icss_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-        icss_caption += f"**{E_ICSS} قاعدة البيانات ↫** `{check_sgnirts}`\n"
-        icss_caption += f"**{E_ICSS} اصدار التليثون  ↫** `{version.__version__}\n`"
-        icss_caption += f"**{E_ICSS} اصدار اڪسس ↫** `{icssversion}`\n"
-        icss_caption += f"**{E_ICSS} اصدار البايثون ↫** `{python_version()}\n`"
-        #        icss_caption += f"**{EMOJI} مدة التشغيل ↫** `{uptime}\n`"
-        icss_caption += f"**{E_ICSS} المستخدم ↫** {mention}\n"
-        icss_caption += f"**{E_ICSS} مطور السورس ↫** [اضغط هنا](t.me/rruuurr) 𓆰.\n"
-        icss_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+        ics_c = f"**{ICSS_TEXT}**\n"
+        ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
+        ics_c += f"**{ICSEM} قاعدة البيانات ↫** `{check_sgnirts}`\n"
+        ics_c += f"**{ICSEM} اصدار التليثون  ↫** `{version.__version__}\n`"
+        ics_c += f"**{ICSEM} اصدار اڪسس ↫** `{icssversion}`\n"
+        ics_c += f"**{ICSEM} اصدار البايثون ↫** `{python_version()}\n`"
+        #        ics_c += f"**{ICSEM} مدة التشغيل ↫** `{icsupt}\n`"
+        ics_c += f"**{ICSEM} المستخدم ↫** {mention}\n"
+        ics_c += f"**{ICSEM} مطور السورس ↫** [اضغط هنا](t.me/rruuurr) 𓆰.\n"
+        ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         await icss.client.send_file(
-            icss.chat_id, ICSS_IMG, caption=icss_caption, reply_to=reply_to_id
+            icss.chat_id, ICSS_IMG, caption=ics_c, reply_to=ics_id
         )
         await icss.delete()
     else:
         await edit_or_reply(
             icss,
             f"**{ICSS_TEXT}**\n\n"
-            f"**{E_ICSS} قاعدة البيانات ↫**  `{check_sgnirts}`\n"
-            f"**{E_ICSS} اصدار التليثون  ↫** `{version.__version__}\n`"
-            f"**{E_ICSS} اصدار اڪسس ↫** `{icssversion}`\n"
-            f"**{E_ICSS} اصدار البايثون  ↫** `{python_version()}\n`"
-            f"**{E_ICSS} مدة التشغيل ↫** `{uptime}\n`"
-            f"**{E_ICSS} المستخدم ↫** {mention}\n",
+            f"**{ICSEM} قاعدة البيانات ↫**  `{check_sgnirts}`\n"
+            f"**{ICSEM} اصدار التليثون  ↫** `{version.__version__}\n`"
+            f"**{ICSEM} اصدار اڪسس ↫** `{icssversion}`\n"
+            f"**{ICSEM} اصدار البايثون  ↫** `{python_version()}\n`"
+            f"**{ICSEM} مدة التشغيل ↫** `{icsupt}\n`"
+            f"**{ICSEM} المستخدم ↫** {mention}\n",
         )
 
 
@@ -54,17 +60,17 @@ async def icssalive(icss):
 async def icssalive(icss):
     if icss.fwd_from:
         return
-    tgbotusername = Config.TG_BOT_USERNAME
-    reply_to_id = await reply_id(icss)
-    icss_caption = f"𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪\n"
-    icss_caption += f"**  - اصدار التليثون ↫** `{version.__version__}\n`"
-    icss_caption += f"**  - اصدار اكسس ↫** `{icssversion}`\n"
-    icss_caption += f"**  - اصدار البايثون ↫** `{python_version()}\n`"
-    icss_caption += f"**  - المستخدم ↫** {mention}\n"
+    icsbotun = Config.TG_BOT_USERNAME
+    ics_id = await reply_id(icss)
+    ics_c = f"𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪\n"
+    ics_c += f"**  - اصدار التليثون :** `{version.__version__}\n`"
+    ics_c += f"**  - اصدار اكسس :** `{icssversion}`\n"
+    ics_c += f"**  - اصدار البايثون :** `{python_version()}\n`"
+    ics_c += f"**  - المستخدم :** {mention}\n"
     results = await bot.inline_query(
-        tgbotusername, icss_caption
+        icsbotun, ics_c
     )  # pylint:disable=E0602
-    await results[0].click(icss.chat_id, reply_to=reply_to_id, hide_via=True)
+    await results[0].click(icss.chat_id, reply_to=ics_id, hide_via=True)
     await icss.delete()
 
 
