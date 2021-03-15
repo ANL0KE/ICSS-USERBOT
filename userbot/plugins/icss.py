@@ -9,7 +9,7 @@ async def kimo(ics):
     )
 
 
-@icssbot.on(admin_cmd(pattern="poo", outgoing=true))
+@icssbot.on(admin_cmd(pattern="poo", outgoing=True))
 async def poo(pio):
     await pio.edit(
         "🔱 | 𝗻𝗮𝗺𝗲 :",
