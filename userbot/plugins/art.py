@@ -398,7 +398,7 @@ async def bluedevilshitos(shitos):
 
 
 @icssbot.on(admin_cmd(pattern=r"دس لايك$"))
-@icswbot.on(sudo_cmd(pattern="دس لايك$", allow_sudo=True))
+@icssbot.on(sudo_cmd(pattern="دس لايك$", allow_sudo=True))
 async def bluedevildislike(dislike):
     await edit_or_reply(dislike, R)
 
