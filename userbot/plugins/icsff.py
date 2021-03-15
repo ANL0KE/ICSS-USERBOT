@@ -1,6 +1,6 @@
 # icss fonts
 
-from ..icfotn.icsfonts import *
+from ..icsfotn.icsfonts import *
 
 
 @icssbot.on(admin_cmd(pattern="ho ?(.*)"))
