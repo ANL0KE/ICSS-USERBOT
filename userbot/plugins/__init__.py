@@ -176,11 +176,11 @@ async def icsalive():
         dyno = f"{AppHours}h {AppMinutes}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
-    return f"Catuserbot Stats\
-                 \n\nDatabase : {check_sgnirts}\
-                  \nSudo : {sudo}\
-                  \nUptime : {uptime}\
-                  \nDyno : {dyno}\
+    return f"**⌔∮ معلومات بوت اكسس***\
+                 \n - قاعده البيانات : {check_sgnirts}\
+                  \n - سودو : {sudo}\
+                  \n - مدة التشغيل : {uptime}\
+                  \n - مده الاستخدام : {dyno}\
                   "
 
 
