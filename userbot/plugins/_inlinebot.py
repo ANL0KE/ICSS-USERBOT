@@ -7,9 +7,9 @@ import time
 
 from telethon import Button, custom, events
 
-from . import CMD_LIST, icssalive
+from . import CMD_LIST, catalive
 
-ICS_IMG = Config.ALIVE_PIC or None
+CAT_IMG = Config.ALIVE_PIC or None
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
@@ -28,23 +28,23 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     Button.url("Repo", "https://github.com/ANL0KE/ICSS"),
                 )
             ]
-            if ICS_IMG and ICS_IMG.endswith((".jpg", ".png")):
-                result = builder.photo(= None
-                    ICS_IMG,
-                    # title="Alive ics",
+            if CAT_IMG and CAT_IMG.endswith((".jpg", ".png")):
+                result = builder.photo(
+                    CAT_IMG,
+                    # title="Alive cat",
                     text=query,
                     buttons=buttons,
                 )
-            elif ICS_IMG:
+            elif CAT_IMG:
                 result = builder.document(
-                    ICS_IMG,
-                    title="Alive ics",
+                    CAT_IMG,
+                    title="Alive cat",
                     text=query,
                     buttons=buttons,
                 )
             else:
                 result = builder.article(
-                    title="Alive ics",
+                    title="Alive cat",
                     text=query,
                     buttons=buttons,
                 )
@@ -53,8 +53,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© Icsuserbot Help",
-                text="{}\nالإضافات المحملة حاليا : {}".format(query, len(CMD_LIST)),
+                "© Userbot Help",
+                text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
@@ -112,12 +112,12 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 try:
                     u = await event.client.get_entity(u)
                     if u.username:
-                        kimo = f"@{u.username}"
+                        sandy = f"@{u.username}"
                     else:
-                        kimo = f"[{u.first_name}](tg://user?id={u.id})"
+                        sandy = f"[{u.first_name}](tg://user?id={u.id})"
                 except ValueError:
                     # ValueError: Could not find the input entity
-                    kimo = f"[user](tg://user?id={u})"
+                    sandy = f"[user](tg://user?id={u})"
             except ValueError:
                 # if u is username
                 try:
@@ -125,19 +125,21 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 except ValueError:
                     return
                 if u.username:
-                    kimo = f"@{u.username}"
+                    sandy = f"@{u.username}"
                 else:
-                    kimo = f"[{u.first_name}](tg://user?id={u.id})"
+                    sandy = f"[{u.first_name}](tg://user?id={u.id})"
                 u = int(u.id)
             except Exception:
                 return
             timestamp = int(time.time() * 2)
             newsecret = {str(timestamp): {"userid": u, "text": txct}}
 
-            buttons = [custom.Button.inline("رؤيه الرساله", data=f"secret_{timestamp}")]
+            buttons = [
+                custom.Button.inline("show message 🔐", data=f"secret_{timestamp}")
+            ]
             result = builder.article(
-                title="همسه",
-                text=f" الهمسه الى {kimo}, هو الوحيد القادر على رؤيتها",
+                title="secret message",
+                text=f"🔒 A whisper message to {sandy}, Only he/she can open it.",
                 buttons=buttons,
             )
             await event.answer([result] if result else None)
@@ -159,9 +161,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = (
-                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده"
-            )
+            reply_pop_up_alert = "Please get your own catuserbot, and don't use mine! Join @catuserbot17 help"
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -178,9 +178,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             # https://t.me/TelethonChat/115200
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = (
-                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده"
-            )
+            reply_pop_up_alert = "Please get your own catuserbot, and don't use mine! Join @catuserbot17 help "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"secret_(.*)")))
@@ -196,13 +194,11 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     encrypted_tcxt = message["text"]
                     reply_pop_up_alert = encrypted_tcxt
                 else:
-                    reply_pop_up_alert = (
-                        "لماذا كنت تبحث في هذا القرف ابتعد وقم بعملك الخاص، غبي"
-                    )
+                    reply_pop_up_alert = "why were you looking at this shit go away and do your own work, idiot"
             except KeyError:
-                reply_pop_up_alert = "هذه الرسالة لم تعد موجودة في خادم بوت"
+                reply_pop_up_alert = "This message no longer exists in bot server"
         else:
-            reply_pop_up_alert = "هذه الرساله لم تعد موجوده "
+            reply_pop_up_alert = "This message no longer exists "
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -225,11 +221,12 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += (
-                "استخدم .unload {} لحذف هذا plugin ©SOURCE ICSS".format(plugin_name)
+                "Use .unload {} to remove this plugin ©catuserbot".format(plugin_name)
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             except BaseException:
+                # https://github.com/Dark-Princ3/X-tra-Telegram/commit/275fd0ec26b284d042bf56de325472e088e6f364#diff-2b2df8998ff11b6c15893b2c8d5d6af3
                 with io.BytesIO(str.encode(reply_pop_up_alert)) as out_file:
                     out_file.name = "{}.txt".format(plugin_name)
                     await event.client.send_file(
@@ -240,19 +237,15 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                         caption=plugin_name,
                     )
         else:
-            reply_pop_up_alert = (
-                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده "
-            )
+            reply_pop_up_alert = "Please get your own catuserbot, and don't use mine! Join @catuserbot17 help "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == bot.uid:
-            await event.edit("⫷ القائمه مغلقه ⫸")
+            await event.edit("menu closed")
         else:
-            reply_pop_up_alert = (
-                "- يرجى الحصول على اكسس الخاص بك, انضم الى  @rruuurr للمساعده "
-            )
+            reply_pop_up_alert = "Please get your own catuserbot, and don't use mine! Join @catuserbot17 help "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))
@@ -300,11 +293,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⫷", data="{}_prev({})".format(prefix, modulo_page)
+                    "⌫", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline("Close", data="close"),
                 custom.Button.inline(
-                    "⫸", data="{}_next({})".format(prefix, modulo_page)
+                    "⌦", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
