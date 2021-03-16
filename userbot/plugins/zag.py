@@ -1694,7 +1694,7 @@ async def _(event):
 import asyncio
 import random
 
-from . import *
+from . import mention
 
 TOSHA = [
     """
