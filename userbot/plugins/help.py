@@ -41,7 +41,7 @@ async def cmd_list(event):
             )
             url = f"https://nekobin.com/{key}"
             reply_text = (
-                f"**⌔∮ جميع اوامر سورس اكسس موجوده ستكون هنا فقط - [اضغط هنا]({url})**"
+                f"**⌔∮ جميع اوامر سورس اكسس موجوده ستكون هنا - [الاوامر]({url})**"
             )
             await event.edit(reply_text)
             return
@@ -83,12 +83,12 @@ async def cmd_list(event):
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
 
-@icssbot.on(sudo_cmd(allow_sudo=True, pattern="help ?(.*)"))
+@icssbot.on(sudo_cmd(allow_sudo=True, pattern="جميع ?(.*)"))
 async def info(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    if input_str == "text":
+    if input_str == "الاوامر":
         string = "Total {count} commands found in {plugincount} sudo plugins of catuserbot\n\n"
         catcount = 0
         plugincount = 0
