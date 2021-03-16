@@ -15,7 +15,7 @@ from telethon.tl.types import ChatBannedRights
 
 import userbot.plugins.sql_helper.gban_sql_helper as gban_sql
 
-from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event, ICSS_ID
+from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event, CAT_ID
 from .sql_helper.mute_sql import is_muted, mute, unmute
 
 BANNED_RIGHTS = ChatBannedRights(
@@ -55,7 +55,7 @@ async def catgban(cat):
     if user.id == (await cat.client.get_me()).id:
         await cate.edit("**⪼ لا استطيـع حظر نفسـي 𓆰،**")
         return
-    if user.id in ICSS_ID:
+    if user.id in CAT_ID:
         await cate.edit("**╮ ❐  لا يمڪنني حظر مطـوري  ❏╰**")
         return
     try:
