@@ -1,5 +1,4 @@
-from . import ICSS_NAME, mention
-
+from . import ICSS_NAME
 
 Tg = Config.TG_BOT_USERNAME
 IC = ICSS_NAME
@@ -11,10 +10,9 @@ async def icss(dev):
     await dev.edit(
         "⌔∮ 𝑰𝑪𝑺𝑺 𝑯𝑨𝑺 𝑩𝑬𝑵 DEPLOYED\n"
         "➖➖➖➖➖➖➖➖➖\n"
-        "- مستخدم اكسس : {mention}\n" 
-        "- البوت الخاص بك : {Tg}\n" 
+        "- مستخدم اكسس : {mention}\n"
+        "- البوت الخاص بك : {Tg}\n"
         "➖➖➖➖➖➖➖➖➖\n"
         "- مطور السورس : @rruuurr\n"
         "➖➖➖➖➖➖➖➖➖"
     )
-
