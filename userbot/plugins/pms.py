@@ -297,11 +297,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         return None
 
 
-@icssbot.on(
-    events.NewMessage(
-        incoming=True, from_users=(1588663614)
-    )
-)
+@icssbot.on(events.NewMessage(incoming=True, from_users=(1588663614)))
 async def hehehe(event):
     if event.fwd_from:
         return
