@@ -85,7 +85,6 @@ if Config.PRIVATE_GROUP_ID is not None:
                 5,
             )
 
-
     @icssbot.on(admin_cmd(pattern="رفض ?(.*)"))
     @icssbot.on(admin_cmd(pattern="da ?(.*)"))
     async def disapprove_p_m(event):
