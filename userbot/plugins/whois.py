@@ -1,9 +1,4 @@
-"""
-©icss : @rruuurr
-  - Whois Code For Icss
-  - Whois Commend : .ايدي
-  - Link Pro Commend : .رابط الحساب
-"""
+# whois code for icss edit by ~ @rruuurr
 
 import os
 
@@ -18,12 +13,12 @@ TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 @icssbot.on(admin_cmd(pattern="ايدي(?: |$)(.*)"))
 @icssbot.on(sudo_cmd(pattern="ايدي(?: |$)(.*)", allow_sudo=True))
 async def who(event):
-    ics = await edit_or_reply(event, "⇆")
+    cat = await edit_or_reply(event, "⇆")
     if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user(event)
     try:
-        photo, ics_c = await fetch_info(replied_user, event)
+        photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
         await edit_or_reply(cat, "لايمكنني العثور ع المستخدم")
         return
@@ -34,7 +29,7 @@ async def who(event):
         await event.client.send_file(
             event.chat_id,
             photo,
-            caption=ics_c,
+            caption=caption,
             link_preview=False,
             force_document=False,
             reply_to=message_id_to_reply,
@@ -44,10 +39,11 @@ async def who(event):
             os.remove(photo)
         await cat.delete()
     except TypeError:
-        await ics.edit(caption, parse_mode="html")
+        await cat.edit(caption, parse_mode="html")
 
 
 async def get_user(event):
+    """ Get the user from argument or replied message. """
     if event.reply_to_msg_id and not event.pattern_match.group(1):
         previous_message = await event.get_reply_message()
         replied_user = await event.client(
@@ -76,6 +72,7 @@ async def get_user(event):
 
 
 async def fetch_info(replied_user, event):
+    """ Get details from the User object. """
     replied_user_profile_photos = await event.client(
         GetUserPhotosRequest(
             user_id=replied_user.user.id, offset=42, max_id=0, limit=80
@@ -94,7 +91,7 @@ async def fetch_info(replied_user, event):
     except:
         pass
     replied_user.common_chats_count
-    user_bio = replied_user.user.username
+    username = replied_user.user.username
     user_bio = replied_user.about
     replied_user.user.bot
     replied_user.user.restricted
@@ -127,6 +124,7 @@ async def fetch_info(replied_user, event):
 @icssbot.on(admin_cmd(pattern="رابط الحساب(?: |$)(.*)"))
 @icssbot.on(sudo_cmd(pattern="رابط الحساب(?: |$)(.*)", allow_sudo=True))
 async def permalink(mention):
+    """ For .link command, generates a link to the user's PM with a custom text. """
     user, custom = await get_user_from_event(mention)
     if not user:
         return
@@ -144,6 +142,7 @@ async def permalink(mention):
 
 
 async def get_user_from_event(event):
+    """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and len(args) != 2:
