@@ -7,9 +7,9 @@ import time
 
 from telethon import Button, custom, events
 
-from . import CMD_LIST, catalive
+from . import CMD_LIST, icssalive
 
-CAT_IMG = Config.ALIVE_PIC or None
+ICS_IMG = Config.ALIVE_PIC or None
 BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
@@ -21,30 +21,30 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         query = event.text
         hmm = re.compile("secret (.*) (.*)")
         match = re.findall(hmm, query)
-        if query.startswith("**SOURCE ICSS") and event.query.user_id == bot.uid:
+        if query.startswith("**Icsuserbot") and event.query.user_id == bot.uid:
             buttons = [
                 (
                     custom.Button.inline("Stats", data="stats"),
                     Button.url("Repo", "https://github.com/ANL0KE/ICSS"),
                 )
             ]
-            if CAT_IMG and CAT_IMG.endswith((".jpg", ".png")):
-                result = builder.photo(
-                    CAT_IMG,
-                    # title="Alive cat",
+            if ICS_IMG and ICS_IMG.endswith((".jpg", ".png")):
+                result = builder.photo(= None
+                    ICS_IMG,
+                    # title="Alive ics",
                     text=query,
                     buttons=buttons,
                 )
-            elif CAT_IMG:
+            elif ICS_IMG:
                 result = builder.document(
-                    CAT_IMG,
-                    title="Alive cat",
+                    ICS_IMG,
+                    title="Alive ics",
                     text=query,
                     buttons=buttons,
                 )
             else:
                 result = builder.article(
-                    title="Alive cat",
+                    title="Alive ics",
                     text=query,
                     buttons=buttons,
                 )
@@ -53,13 +53,13 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
-                "© Userbot Help",
+                "© Icsuserbot Help",
                 text="{}\nالإضافات المحملة حاليا : {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
             await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("أزرار مضمنة"):
+        elif event.query.user_id == bot.uid and query.startswith("Inline buttons"):
             markdown_note = query[14:]
             prev = 0
             note_data = ""
@@ -112,12 +112,12 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 try:
                     u = await event.client.get_entity(u)
                     if u.username:
-                        sandy = f"@{u.username}"
+                        kimo = f"@{u.username}"
                     else:
-                        sandy = f"[{u.first_name}](tg://user?id={u.id})"
+                        kimo = f"[{u.first_name}](tg://user?id={u.id})"
                 except ValueError:
                     # ValueError: Could not find the input entity
-                    sandy = f"[user](tg://user?id={u})"
+                    kimo = f"[user](tg://user?id={u})"
             except ValueError:
                 # if u is username
                 try:
@@ -125,9 +125,9 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 except ValueError:
                     return
                 if u.username:
-                    sandy = f"@{u.username}"
+                    kimo = f"@{u.username}"
                 else:
-                    sandy = f"[{u.first_name}](tg://user?id={u.id})"
+                    kimo = f"[{u.first_name}](tg://user?id={u.id})"
                 u = int(u.id)
             except Exception:
                 return
@@ -136,7 +136,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 
             buttons = [custom.Button.inline("رؤيه الرساله", data=f"secret_{timestamp}")]
             result = builder.article(
-                title="secret message",
+                title="همسه",
                 text=f" الهمسه الى {sandy}, هو الوحيد القادر على رؤيتها",
                 buttons=buttons,
             )
