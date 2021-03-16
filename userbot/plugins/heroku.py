@@ -1,9 +1,5 @@
-# Heroku manager for your catuserbot
+# Heroku manager for ur icssbot
 
-# CC- @refundisillegal\nSyntax:-\n.get var NAME\n.del var NAME\n.set var NAME
-
-# Copyright (C) 2020 Adek Maulana.
-# All rights reserved.
 
 import asyncio
 import math
@@ -44,16 +40,16 @@ async def variable(var):
     exe = var.pattern_match.group(1)
     heroku_var = app.config()
     if exe == "get":
-        cat = await edit_or_reply(var, "**⌔∮ جاري الحصول على المعلومات. **")
+        ics = await edit_or_reply(var, "**⌔∮ جاري الحصول على المعلومات. **")
         await asyncio.sleep(1.0)
         try:
             variable = var.pattern_match.group(2).split()[0]
             if variable in heroku_var:
-                return await cat.edit(
+                return await ics.edit(
                     "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑶𝑵𝑭𝑰𝑮 𝑽𝑨𝑹𝑺 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
                     f"\n **⌔∮** `{variable} = {heroku_var[variable]}` .\n"
                 )
-            return await cat.edit(
+            return await ics.edit(
                 "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑮𝑶𝑵𝑭𝑰𝑮 𝑽𝑨𝑹𝑺 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
                 f"\n **⌔∮ خطا :**\n-> {variable} غيـر موجود. "
             )
@@ -71,7 +67,7 @@ async def variable(var):
                         caption="`Output too large, sending it as a file`",
                     )
                 else:
-                    await cat.edit(
+                    await ics.edit(
                         "`[HEROKU]` ConfigVars:\n\n"
                         "================================"
                         f"\n```{result}```\n"
@@ -81,32 +77,32 @@ async def variable(var):
             return
     elif exe == "set":
         variable = "".join(var.text.split(maxsplit=2)[2:])
-        cat = await edit_or_reply(var, "⌔∮ جاري اعداد المعلومات")
+        ics = await edit_or_reply(var, "⌔∮ جاري اعداد المعلومات")
         if not variable:
-            return await cat.edit("⌔∮ .set var `<ConfigVars-name> <value>`")
+            return await ics.edit("⌔∮ .set var `<ConfigVars-name> <value>`")
         value = "".join(variable.split(maxsplit=1)[1:])
         variable = "".join(variable.split(maxsplit=1)[0])
         if not value:
-            return await cat.edit("⌔∮ .set var `<ConfigVars-name> <value>`")
+            return await ics.edit("⌔∮ .set var `<ConfigVars-name> <value>`")
         await asyncio.sleep(1.5)
         if variable in heroku_var:
-            await cat.edit(f"⌔∮ `{variable}` **تم تغيـره بنجاح** \n  **->** `{value}`")
+            await ics.edit(f"⌔∮ `{variable}` **تم تغيـره بنجاح** \n  **->** `{value}`")
         else:
-            await cat.edit(
+            await ics.edit(
                 f"⌔∮ `{variable}`** تم اضافته بنجاح مع value** \n **->**  `{value}`"
             )
         heroku_var[variable] = value
     elif exe == "del":
-        cat = await edit_or_reply(var, "⌔∮ الحصول على معلومات لحذف المتغير. ")
+        ics = await edit_or_reply(var, "⌔∮ الحصول على معلومات لحذف المتغير. ")
         try:
             variable = var.pattern_match.group(2).split()[0]
         except IndexError:
-            return await cat.edit("⌔∮ يرجى تحديد `Configvars` تريد حذفها. ")
+            return await ics.edit("⌔∮ يرجى تحديد `Configvars` تريد حذفها. ")
         await asyncio.sleep(1.5)
         if variable not in heroku_var:
-            return await cat.edit(f"⌔∮ `{variable}`**  غير موجود**")
+            return await ics.edit(f"⌔∮ `{variable}`**  غير موجود**")
 
-        await cat.edit(f"**⌔∮** `{variable}`  **تم حذفه بنجاح. **")
+        await ics.edit(f"**⌔∮** `{variable}`  **تم حذفه بنجاح. **")
         del heroku_var[variable]
 
 
@@ -167,11 +163,14 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
     return await dyno.edit(
         "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑫𝒀𝑵𝑶 𝑼𝑺𝑨𝑮𝑬 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-        f" **⌔∮ مدة اسـتخدامك لسورس اكسس**  **{Config.HEROKU_APP_NAME}**:\n"
+        f"**⌔∮ اسم التطبيق في هيروكو :**\n"
+        f"**   - معرف اشتراكك ⪼ {Config.HEROKU_APP_NAME}**"
+        f"\n\n"
+        f" **⌔∮ مدة اسـتخدامك لبوت اكسس : **\n"
         f"     -  `{AppHours}`**ساعه**  `{AppMinutes}`**دقيقه**  "
         f"**⪼**  `{AppPercentage}`**%**"
         "\n\n"
-        " **⌔∮ الساعات المتبقيه لاستخدامك سورس اكسس **\n"
+        " **⌔∮ الساعات المتبقيه لاستخدامك : **\n"
         f"     -  `{hours}`**ساعه**  `{minutes}`**دقيقه**  "
         f"**⪼**  `{percentage}`**%**"
     )
