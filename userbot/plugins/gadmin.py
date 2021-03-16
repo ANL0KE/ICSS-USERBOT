@@ -126,7 +126,7 @@ async def catgban(cat):
         gban_sql.catungban(user.id)
     else:
         await cate.edit(
-            f"⪼ [{user.first_name}](tg://user?id={user.id}) **⪼ ليس في قائمه الحظر الخاصه بك** 𓆰."
+            f"⪼ [{user.first_name}](tg://user?id={user.id}) ** ليس في قائمه الحظر الخاصه بك** 𓆰."
         )
         return
     san = []
