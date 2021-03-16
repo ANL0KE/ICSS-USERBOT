@@ -26,7 +26,7 @@ USER_BOT_WARN_ZERO = "⪼ لقد حذرتك من تكرار الرسائل . ا�
 
 if Config.PRIVATE_GROUP_ID is not None:
 
-    @icssbot.on(admin_cmd(outgoing=True))
+    @bot.on(admin_cmd(outgoing=True))
     async def you_dm_niqq(event):
         if event.fwd_from:
             return
