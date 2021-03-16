@@ -268,7 +268,7 @@ async def endgmute(event):
     if not is_muted(userid, "gmute"):
         return await edit_or_reply(
             event,
-            "**- ❝ ⌊هذا المستخدم غير مڪتوم 𓆰.**\n ⫷ [𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 ](t.me/rruuurr) ⫸",
+            "**- ❝ ⌊هذا المستخدم غير مڪتوم 𓆰.**",
         )
     try:
         unmute(userid, "gmute")
