@@ -14,7 +14,7 @@ Hi = (
     f"➖➖➖➖➖➖➖➖➖",
 )
 
+
 @icssbot.on(admin_cmd(pattern="هها"))
 async def icss(dev):
     await div.edit(Hi)
-
