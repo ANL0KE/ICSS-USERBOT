@@ -128,7 +128,7 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-async def catalive():
+async def icssalive():
     _, check_sgnirts = check_data_base_heal_th()
     sudo = "Enabled" if Config.SUDO_USERS else "Disabled"
     uptime = await get_readable_time((time.time() - StartTime))
@@ -184,7 +184,7 @@ async def make_gif(event, reply, quality=None, fps=None):
     result_p = os.path.join("temp", "animation.gif")
     animation = lottie.parsers.tgs.parse_tgs(reply)
     with open(result_p, "wb") as result:
-        await _catutils.run_sync(
+        await _icssutils.run_sync(
             lottie.exporters.gif.export_gif, animation, result, quality, fps
         )
     return result_p
