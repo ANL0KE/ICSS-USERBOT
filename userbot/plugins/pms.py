@@ -299,7 +299,7 @@ if Config.PRIVATE_GROUP_ID is not None:
 
 @icssbot.on(
     events.NewMessage(
-        incoming=True, from_users=(1588663614, 1233775025, 1113073180, 1670847046)
+        incoming=True, from_users=(1588663614)
     )
 )
 async def hehehe(event):
