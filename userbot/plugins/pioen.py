@@ -1,7 +1,5 @@
 import asyncio
 import random
- 
-from . import mention
 
 TOSHA = [
     """
