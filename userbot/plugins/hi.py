@@ -1,6 +1,5 @@
 # Hi
 
-from .ALIVE_NAME import mention
 
 DEFULTUSER = ALIVE_NAME or "ICSS"
 TG_BOT = Config.TG_BOT_USERNAME
