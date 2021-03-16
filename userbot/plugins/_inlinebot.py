@@ -137,7 +137,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             buttons = [custom.Button.inline("رؤيه الرساله", data=f"secret_{timestamp}")]
             result = builder.article(
                 title="همسه",
-                text=f" الهمسه الى {sandy}, هو الوحيد القادر على رؤيتها",
+                text=f" الهمسه الى {kimo}, هو الوحيد القادر على رؤيتها",
                 buttons=buttons,
             )
             await event.answer([result] if result else None)
