@@ -85,23 +85,6 @@ if Config.PRIVATE_GROUP_ID is not None:
                 5,
             )
 
-    @bot.on(events.NewMessage(outgoing=True))
-    async def you_dm_niqq(event):
-        if event.fwd_from:
-            return
-       chat = await event.get_chat()
-       if event.is_private:
-           if not pmpermit_sql.is_approved(chat.id):
-               if chat.id not in PM_WARNS:
-                   pmpermit_sql.approve(chat.id, "outgoing")
-                   logit = "**#السماح_التلقائي**\n⌔∮ المستخدم - [{}](tg://user?id={})".format(
-                       chat.first_name, chat.id
-                   )
-                   try:
-                       await borg.send_message(Var.PRIVATE_GROUP_ID, logit)
-                   except BaseException:
-                       pass
-
 
     @icssbot.on(admin_cmd(pattern="رفض ?(.*)"))
     @icssbot.on(admin_cmd(pattern="da ?(.*)"))
