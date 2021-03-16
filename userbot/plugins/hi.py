@@ -1,4 +1,4 @@
-from . import ALIVE_NAME, mention, BOT_USERNAME
+from . import ALIVE_NAME, BOT_USERNAME, mention
 
 DEFULTUSER = ALIVE_NAME or "ICSS"
 
