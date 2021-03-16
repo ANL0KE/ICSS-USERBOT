@@ -75,9 +75,9 @@ Which 𝒅𝒐𝒏'𝒕 𝑬𝒙𝒊𝒔𝒕.
 # edit @rruuurr
 
 
-@icssbot.on(admin_cmd(pattern="نبذه انكلش", outgoing=True))
+@icssbot.on(admin_cmd(pattern="انكلش"))
 async def ics(kimo):
-    await kimo.edit("**⌔∮ اهلا عزيزي -** {mention} **يتم تجهيز نبذه لاجلك.**")
+    await kimo.edit("**⌔∮ اهلا عزيزي يتم تجهيز نبذه لاجلك.**")
     await asyncio.sleep(2)
     tosh = random.choice(TOSHA)
     return await kimo.edit(f"{tosh}")
