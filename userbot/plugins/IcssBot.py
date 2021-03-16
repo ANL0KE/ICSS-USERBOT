@@ -13,4 +13,4 @@ ICSR = (
 @icssbot.on(admin_cmd(pattern="repo (.*)"))
 @icssbot.on(sudo_cmd(pattern="repo (.*)", allow_sudo=True))
 async def icsrepo(icsp):
-    await edit_or_reply(icsp, {ICSR})
+    await edit_or_reply(icsp, "{ICSR}")
