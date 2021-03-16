@@ -164,7 +164,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         pmpermit_sql.disapprove_all()
         await edit_delete(event, result, parse_mode=parse_pre, time=10)
 
-    @icssbot.on(events.NewMessage(incoming=True))
+    @bot.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         if event.sender_id == event.client.uid:
             return
@@ -289,7 +289,7 @@ if Config.PRIVATE_GROUP_ID is not None:
         return None
 
 
-@icssbot.on(events.NewMessage(incoming=True, from_users=(1588663614)))
+@bot.on(events.NewMessage(incoming=True, from_users=(1588663614)))
 async def hehehe(event):
     if event.fwd_from:
         return
