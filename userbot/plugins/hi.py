@@ -1,4 +1,3 @@
-
 from . import ALIVE_NAME, mention
 
 DEFULTUSER = ALIVE_NAME or "ICSS"
@@ -13,7 +12,7 @@ Hi = (
     f"➖➖➖➖➖➖➖➖➖",
 )
 
+
 @icssbot.on(admin_cmd(pattern="هها"))
 async def icss(dev):
     await div.edit(Hi)
-
