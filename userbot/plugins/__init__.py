@@ -12,7 +12,7 @@ from validators.url import url
 from .. import *
 from ..Config import Config
 from ..helpers import *
-from ..helpers import _icsstools, _icssutils, _format
+from ..helpers import _format, _icsstools, _icssutils
 
 # =================== CONSTANT ===================
 
