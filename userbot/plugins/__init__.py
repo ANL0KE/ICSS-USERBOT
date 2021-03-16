@@ -18,9 +18,10 @@ from ..helpers import _format, _icsstools, _icssutils
 
 USERID = Config.OWNER_ID or bot.uid
 ALIVE_NAME = Config.ALIVE_NAME
+ICSS_NAME = Config.ALIVE_NAME
 AUTONAME = Config.AUTONAME
 DEFAULT_BIO = Config.DEFAULT_BIO
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icssbot user"
 BOT_USERNAME = Config.TG_BOT_USERNAME
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
@@ -59,10 +60,10 @@ if Config.SPAMWATCH_API:
 else:
     spamwatch = None
 
-cat_users = [bot.uid]
+ics_users = [bot.uid]
 if Config.SUDO_USERS:
     for user in Config.SUDO_USERS:
-        cat_users.append(user)
+        ics_users.append(user)
 
 
 # ================================================
@@ -82,11 +83,11 @@ if Config.THUMB_IMAGE is not None:
             LOGS.info(str(e))
 
 
-def check(cat):
-    if "/start" in cat:
+def check(ics):
+    if "/start" in ics:
         return True
     try:
-        hi = re.search(cat.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
+        hi = re.search(ics.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
     except Exception:
         hi = False
     return bool(hi)
@@ -102,16 +103,8 @@ def set_key(dictionary, key, value):
     else:
         dictionary[key] = [dictionary[key], value]
 
-
-# UniBorg Telegram UseRBot
-# Copyright (C) 2020 @UniBorg
-# This code is licensed under
-# the "you can't use this for anything - public or private,
-# unless you know the two prime factors to the number below" license
-# 543935563961418342898620676239017231876605452284544942043082635399903451854594062955
-# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ
-# ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
-# uniborg
+# ICSS SOURCE
+# ARABIC USERBOT - @rruuurr
 
 
 def check_data_base_heal_th():
@@ -176,11 +169,11 @@ async def catalive():
         dyno = f"{AppHours}h {AppMinutes}m/{hours}h {minutes}m"
     except Exception as e:
         dyno = e
-    return f"Catuserbot Stats\
-                 \n\nDatabase : {check_sgnirts}\
-                  \nSudo : {sudo}\
-                  \nUptime : {uptime}\
-                  \nDyno : {dyno}\
+    return f"**⌔∮ معلومات بوت اكسس***\
+                 \n - قاعده البيانات : {check_sgnirts}\
+                  \n - سودو : {sudo}\
+                  \n - مدة التشغيل : {uptime}\
+                  \n - مده الاستخدام : {dyno}\
                   "
 
 
