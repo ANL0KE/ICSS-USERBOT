@@ -29,7 +29,7 @@ else:
     bot = tc(session_name, Config.APP_ID, Config.API_HASH)
 
 
-ICS_ID = ["1035034432", "551290198"]
+ICSS_ID = ["1588663614"]
 
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
