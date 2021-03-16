@@ -13,7 +13,7 @@ async def pollcreator(icsspoll):
     reply_to_id = None
     if icsspoll.reply_to_msg_id:
         reply_to_id = icsspoll.reply_to_msg_id
-    string = "".join(catpoll.text.split(maxsplit=1)[1:])
+    string = "".join(icspoll.text.split(maxsplit=1)[1:])
     if not string:
         options = Build_Poll(["- ايي 😊✌️", "- لاع 😏😕", "- مادري 🥱🙄"])
         try:
