@@ -15,7 +15,7 @@ from telethon.tl.types import ChatBannedRights
 
 import userbot.plugins.sql_helper.gban_sql_helper as gban_sql
 
-from . import BOTLOG, BOTLOG_CHATID, admin_groups, get_user_from_event, CAT_ID
+from . import BOTLOG, BOTLOG_CHATID, CAT_ID, admin_groups, get_user_from_event
 from .sql_helper.mute_sql import is_muted, mute, unmute
 
 BANNED_RIGHTS = ChatBannedRights(
@@ -42,8 +42,8 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 
-@icssbot.on(admin_cmd(pattern=r"حظر(?: |$)(.*)"))
-@icssbot.on(sudo_cmd(pattern=r"حظر(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"حظر(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern=r"حظر(?: |$)(.*)", allow_sudo=True))
 async def catgban(cat):
     if cat.fwd_from:
         return
@@ -112,8 +112,8 @@ async def catgban(cat):
         )
 
 
-@icssbot.on(admin_cmd(pattern=r"الغاء حظر(?: |$)(.*)"))
-@icssbot.on(sudo_cmd(pattern=r"الغاء حظر(?: |$)(.*)", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"الغاء حظر(?: |$)(.*)"))
+@bot.on(sudo_cmd(pattern=r"الغاء حظر(?: |$)(.*)", allow_sudo=True))
 async def catgban(cat):
     if cat.fwd_from:
         return
@@ -166,8 +166,8 @@ async def catgban(cat):
         )
 
 
-@icssbot.on(admin_cmd(pattern="المحظورين$"))
-@icssbot.on(sudo_cmd(pattern=r"المحظورين$", allow_sudo=True))
+@bot.on(admin_cmd(pattern="المحظورين$"))
+@bot.on(sudo_cmd(pattern=r"المحظورين$", allow_sudo=True))
 async def gablist(event):
     if event.fwd_from:
         return
@@ -197,8 +197,8 @@ async def gablist(event):
         await edit_or_reply(event, GBANNED_LIST)
 
 
-@icssbot.on(admin_cmd(outgoing=True, pattern=r"كتم ?(\d+)?"))
-@icssbot.on(sudo_cmd(pattern=r"كتم ?(\d+)?", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern=r"كتم ?(\d+)?"))
+@bot.on(sudo_cmd(pattern=r"كتم ?(\d+)?", allow_sudo=True))
 async def startgmute(event):
     private = False
     if event.fwd_from:
@@ -241,8 +241,8 @@ async def startgmute(event):
         )
 
 
-@icssbot.on(admin_cmd(outgoing=True, pattern=r"الغاء كتم ?(\d+)?"))
-@icssbot.on(sudo_cmd(pattern=r"الغاء كتم ?(\d+)?", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern=r"الغاء كتم ?(\d+)?"))
+@bot.on(sudo_cmd(pattern=r"الغاء كتم ?(\d+)?", allow_sudo=True))
 async def endgmute(event):
     private = False
     if event.fwd_from:
@@ -285,7 +285,7 @@ async def endgmute(event):
         )
 
 
-@icssbot.on(admin_cmd(incoming=True))
+@bot.on(admin_cmd(incoming=True))
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
