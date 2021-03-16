@@ -164,7 +164,7 @@ async def dyno_usage(dyno):
     return await dyno.edit(
         "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𝑫𝒀𝑵𝑶 𝑼𝑺𝑨𝑮𝑬 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         f"**⌔∮ اسم التطبيق في هيروكو :**\n"
-        f"**   - معرف اشتراكك ⪼ {Config.HEROKU_APP_NAME}**"
+        f"**    - معرف اشتراكك ⪼ {Config.HEROKU_APP_NAME}**"
         f"\n\n"
         f" **⌔∮ مدة اسـتخدامك لبوت اكسس : **\n"
         f"     -  `{AppHours}`**ساعه**  `{AppMinutes}`**دقيقه**  "
