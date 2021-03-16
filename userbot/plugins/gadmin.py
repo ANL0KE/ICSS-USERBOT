@@ -55,10 +55,7 @@ async def catgban(cat):
     if user.id == (await cat.client.get_me()).id:
         await cate.edit("**⪼ لا استطيـع حظر نفسـي 𓆰،**")
         return
-    if user.id in CAT_ID:
-        await cate.edit("**╮ ❐  لا يمڪنني حظر مطـوري  ❏╰**")
-        return
-    if user.id in ICS_ID:
+    if user.id in CAT_ID, ICS_ID:
         await cate.edit("**╮ ❐  لا يمڪنني حظر مطـوري  ❏╰**")
         return
     try:
