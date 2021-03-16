@@ -20,6 +20,11 @@ PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 CACHE = {}
 PMPERMIT_PIC = Config.PMPERMIT_PIC
+ICSS_PIC = (
+   PMPERMIT_PIC
+   if PMPERMIT_PIC
+   else "https://telegra.ph/file/8b848ceefd1d3e048dbe1.jpg"
+)
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "icssbot"
 USER_BOT_WARN_ZERO = "⪼ لقد حذرتك من تكرار الرسائل . الآن تم حظرك والإبلاغ عنك حتى إشعار آخر.\n**- #ججـاو 🚶🏼‍♂️❕،** "
 
@@ -40,7 +45,8 @@ if Config.PRIVATE_GROUP_ID is not None:
         ):
             pmpermit_sql.approve(chat.id, "مرفوض")
 
-    @icssbot.on(admin_cmd(pattern="(a|سماح)(?: |$)(.*)"))
+    @icssbot.on(admin_cmd(pattern="سماح ?(.*)"))
+    @icssbot.on(admin_cmd(pattern="a ?(.*)"))
     async def approve_p_m(event):
         if event.is_private:
             user = await event.get_chat()
@@ -79,7 +85,8 @@ if Config.PRIVATE_GROUP_ID is not None:
                 5,
             )
 
-    @icssbot.on(admin_cmd(pattern="(da|رفض)(?: |$)(.*)"))
+    @icssbot.on(admin_cmd(pattern="رفض ?(.*)"))
+    @icssbot.on(admin_cmd(pattern="da ?(.*)"))
     async def disapprove_p_m(event):
         if event.is_private:
             user = await event.get_chat()
@@ -156,7 +163,8 @@ if Config.PRIVATE_GROUP_ID is not None:
             caption="**قائمه السماح**",
         )
 
-    @icssbot.on(admin_cmd(pattern="(الكل|da all)$"))
+    @icssbot.on(admin_cmd(pattern="الكل$"))
+    @icssbot.on(admin_cmd(pattern="da all$"))
     async def disapprove_p_m(event):
         if event.fwd_from:
             return
@@ -289,7 +297,11 @@ if Config.PRIVATE_GROUP_ID is not None:
         return None
 
 
-@bot.on(events.NewMessage(incoming=True, from_users=(1588663614)))
+@icssbot.on(
+    events.NewMessage(
+       incoming=True, from_users=(1588663614, 1233775025, 1113073180, 1670847046)
+    )
+)
 async def hehehe(event):
     if event.fwd_from:
         return
