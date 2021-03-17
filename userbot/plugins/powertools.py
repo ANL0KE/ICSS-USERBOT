@@ -1,7 +1,7 @@
 import sys
 from os import execl
 
-from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP, bot
+from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP, bot, mention
 
 
 @icssbot.on(admin_cmd(pattern="اعادة تشغيل$"))
