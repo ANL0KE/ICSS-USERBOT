@@ -71,6 +71,6 @@ async def icsf2(ics):
     string = "".join(kim).lower()
     for icsf1character in string:
         if icsf1character in icsf1:
-            wcharacter = icsf2[icsf1.index(icsf1character)]
-            string = string.replace(icsf1character, wcharacter)
+            icsf2character = icsf2[icsf1.index(icsf1character)]
+            string = string.replace(icsf1character, icsf2character)
     await ics.edit(string)
