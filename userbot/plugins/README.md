@@ -1,20 +1,18 @@
-## Mandatory Imports
-```python3
-None
-```
-There is None Mandatory Imports. Because Config, bot and command are already automatically imported.
+## Icss - Userbot
 
-## Explanation
-The Mandatory Imports are now automatically imported.
+هذه هي اضافات اكسس بوت ماخوذه من عدة سورسرات وقمت بتعديلها وعربتها لكي يصبح ﭑڪثر جماليه وقمت باضافات جميله مثل الاسماء الجاهزه والمتحركات وغيرها 
 
-### Formation
-Now I will show a short script to show the formation of the desired script.
-```python3
+## Formation
 
-@icssbot.on(admin_cmd(pattern="alive", outgoing=True))
-@icssbot.on(sudo_cmd(pattern="alive", outgoing=True))
-async def hello_world(event):
-    if event.fwd_from:
+الآن سأظهر نص قصير لإظهار تكوين البرنامج النصي المطلوب.
+
+@icssbot.on(admin_cmd(pattern="اكسس", outgoing=True))
+@icssbot.on(sudo_cmd(pattern="اكسس", outgoing=True))
+async def icsbot(kim):
+    if kim.fwd_from:
         return
-    await edit_or_reply(event , "**HELLO WORLD**\n\nThe following is controlling me too!\n" + Config.SUDO_USERS)
-```
+    await edit_or_reply(kim , "**- اهلا بك في بوت اكسس**\n- هذا بوت معرب من اجلك استمتع" + Config.SUDO_USERS)
+
+
+- استمتعو به 💕
+- ANL0KE ( [DEV-SOURCE](https://t.me/rruuurr) )
