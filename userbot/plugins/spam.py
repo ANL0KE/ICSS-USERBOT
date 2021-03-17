@@ -17,13 +17,13 @@ async def icss(i):
 
 
 @icssbot.on(admin_cmd(pattern="سبام"))
-async def icss(i):
-    if not i.text[0].isalpha() and i.text[0] not in ("/", "#", "@", "!"):
-        message = i.text
+async def icss(ics):
+    if not ics.text[0].isalpha() and ics.text[0] not in ("/", "#", "@", "!"):
+        message = ics.text
         counter = int(message[6:8])
-        spam_message = str(i.text[8:])
-        await asyncio.wait([i.respond(spam_message) for i in range(counter)])
-        await i.delete()
+        spam_message = str(ics.text[8:])
+        await asyncio.wait([ics.respond(spam_message) for i in range(counter)])
+        await ics.delete()
 
 
 @icssbot.on(admin_cmd(pattern="bigspam"))
