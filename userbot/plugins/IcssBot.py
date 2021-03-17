@@ -1,5 +1,5 @@
 # Icss - Userbot
-
+# Owner - @rruuurr
 
 from . import mention
 
