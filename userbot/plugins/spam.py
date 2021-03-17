@@ -8,12 +8,12 @@ from . import *
 
 
 @icssbot.on(admin_cmd(pattern="tspam"))
-async def icss(i):
-    tspam = str(i.text[7:])
+async def icss(ics):
+    tspam = str(ics.text[7:])
     message = tspam.replace(" ", "")
     for letter in message:
-        await i.respond(letter)
-    await i.delete()
+        await ics.respond(letter)
+    await ics.delete()
 
 
 @icssbot.on(admin_cmd(pattern="سبام"))
@@ -33,7 +33,7 @@ async def icss(ics):
         counter = int(message[9:13])
         spam_message = str(ics.text[13:])
         for i in range(ics, counter):
-            await i.respond(spam_message)
+            await ics.respond(spam_message)
         await ics.delete()
 
 
