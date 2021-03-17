@@ -1,7 +1,7 @@
 import sys
 from os import execl
 
-from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP, bot, mention
+from . import BOTLOG, BOTLOG_CHATID, HEROKU_APP, bot
 
 
 @icssbot.on(admin_cmd(pattern="اعادة تشغيل$"))
@@ -14,8 +14,8 @@ async def _(event):
             BOTLOG_CHATID, "#اعادة_التشغيل \n" "⪼ بوت اكسس في وضع اعادة التشغيل انتظر"
         )
     await edit_or_reply(
-        event, 
-        "⌔∮ اهلا عزيزي - {mention}\nيتم الان اعادة تشغيل بوت اكسس يستغرق الامر 1-2 دقيقه."
+        event,
+        "⌔∮ اهلا عزيزي - {mention}\nيتم الان اعادة تشغيل بوت اكسس يستغرق الامر 1-2 دقيقه.",
     )
     await bot.disconnect()
     execl(sys.executable, sys.executable, *sys.argv)
