@@ -240,13 +240,6 @@ async def wish_check(event):
             reslt = f"What's your Wish? Should I consider you as Idiot by default ? 😜"
     await edit_or_reply(event, reslt)
 
-
-@icssbot.on(admin_cmd(outgoing=True, pattern="repo$"))
-@icssbot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
-async def source(e):
-    await edit_or_reply(
-        e,
-        "Click [here](https://github.com/sandy1709/catuserbot) to open this lit af repo.",
     )
 
 
@@ -355,8 +348,6 @@ CMD_HELP.update(
         \n  •  **Function : **Pay Respects.\
         \n\n  •  **Syntax :** `.wish <reply/text>`\
         \n  •  **Function : **Shows the chance of your success inspired from @CalsiBot.\
-        \n\n  •  **Syntax :** `.repo`\
-        \n  •  **Function : **Shows to source code link of catuserbot.\
         \n\n  •  **Syntax :** `.lfy <query>`\
         \n  •  **Function : **Let me Google that for you real quick !!\
         \n\n  •  **Syntax :** `.gbun <reason>`\
