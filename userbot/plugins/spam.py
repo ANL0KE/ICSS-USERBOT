@@ -5,10 +5,8 @@ import asyncio
 import os
 
 from . import *
-from . import admin_cmd as kimo
 
-
-@icssbot.on(kimo(pattern="tspam"))
+@icssbot.on(admin_cmd(pattern="tspam"))
 async def icss(i):
     tspam = str(i.text[7:])
     message = tspam.replace(" ", "")
@@ -17,7 +15,7 @@ async def icss(i):
     await i.delete()
 
 
-@icssbot.on(kimo(pattern="سبام"))
+@icssbot.on(admin_cmd(pattern="سبام"))
 async def icss(i):
     if not i.text[0].isalpha() and i.text[0] not in ("/", "#", "@", "!"):
         message = i.text
@@ -27,7 +25,7 @@ async def icss(i):
         await i.delete()
 
 
-@icssbot.on(kimo(pattern="bigspam"))
+@icssbot.on(admin_cmd(pattern="bigspam"))
 async def icss(ics):
     if not ics.text[0].isalpha() and ics.text[0] not in ("/", "#", "@", "!"):
         message = ics.text
@@ -38,7 +36,7 @@ async def icss(ics):
         await ics.delete()
 
 
-@icssbot.on(kimo(pattern="picspam"))
+@icssbot.on(admin_cmd(pattern="picspam"))
 async def tiny_pic_spam(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         reply = await e.get_reply_message()
@@ -52,7 +50,7 @@ async def tiny_pic_spam(e):
         await e.delete()
 
 
-@icssbot.on(kimo(pattern="delayspam ?(.*)"))
+@icssbot.on(admin_cmd(pattern="delayspam ?(.*)"))
 async def delayspammer(e):
     args = e.pattern_match.group(1)
     print(args)
