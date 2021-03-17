@@ -5,7 +5,7 @@
 ## Formation
 
 الآن سأظهر نص قصير لإظهار تكوين البرنامج النصي المطلوب.
-```
+```python3
 @icssbot.on(admin_cmd(pattern="اكسس", outgoing=True))
 @icssbot.on(sudo_cmd(pattern="اكسس", outgoing=True))
 async def icsbot(kim):
