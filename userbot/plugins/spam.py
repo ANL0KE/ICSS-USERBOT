@@ -6,6 +6,7 @@ import os
 
 from . import *
 
+
 @icssbot.on(admin_cmd(pattern="tspam"))
 async def icss(i):
     tspam = str(i.text[7:])
