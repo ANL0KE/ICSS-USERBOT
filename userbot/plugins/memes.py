@@ -241,7 +241,6 @@ async def wish_check(event):
     await edit_or_reply(event, reslt)
 
 
-
 @icssbot.on(admin_cmd(pattern="lfy ?(.*)"))
 @icssbot.on(sudo_cmd(pattern="lfy ?(.*)", allow_sudo=True))
 async def _(event):
