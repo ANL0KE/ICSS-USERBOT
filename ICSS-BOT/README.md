@@ -8,4 +8,4 @@ This is a userbot made for telegram. I made this userbot with help of all other 
 
 
 - 💕 استمتعو به
-- Goodby ANLOKE ( @rruuurr )
+- Goodby ANLOKE ( [KIMO DEV-SOURVE](https://t.me/rruuurr) )
