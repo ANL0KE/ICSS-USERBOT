@@ -240,7 +240,6 @@ async def wish_check(event):
             reslt = f"What's your Wish? Should I consider you as Idiot by default ? 😜"
     await edit_or_reply(event, reslt)
 
-    )
 
 
 @icssbot.on(admin_cmd(pattern="lfy ?(.*)"))
