@@ -15,7 +15,7 @@ async def _(event):
         )
     await edit_or_reply(
         event,
-        "⌔∮ اهلا عزيزي - {mention}\nيتم الان اعادة تشغيل بوت اكسس يستغرق الامر 1-2 دقيقه.",
+        f"⌔∮ اهلا عزيزي - {mention}\nيتم الان اعادة تشغيل بوت اكسس يستغرق الامر 1-2 دقيقه.",
     )
     await bot.disconnect()
     execl(sys.executable, sys.executable, *sys.argv)
