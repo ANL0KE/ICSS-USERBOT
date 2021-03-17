@@ -1,8 +1,9 @@
-# for -<*>~ SOURCE ICSS ~<*>- 
+# for -<*>~ SOURCE ICSS ~<*>-
 # edit By: @rruuurr
 
 import asyncio
 import os
+
 from . import *
 from . import admin_cmd as kimo
 
@@ -64,7 +65,7 @@ async def delayspammer(e):
     except BaseException:
         return await e.edit(
             f"**- الاستخدام :** {HNDLR}delayspam <delay time> <count> <msg>"
-            )
+        )
 
     if not msg[0].isalpha() and msg[0] in ("/", "#", "@", "!"):
         return
