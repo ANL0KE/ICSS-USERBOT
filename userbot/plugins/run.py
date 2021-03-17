@@ -1,6 +1,4 @@
 import asyncio
-from collections import deque
-
 
 
 @icssbot.on(admin_cmd(pattern="هااا$"))
