@@ -7,8 +7,8 @@ from telethon import TelegramClient
 
 from . import LOGS, bot
 from .Config import Config
-from .utils import load_module
 from .userbot.plugins.__init__ import mention
+from .utils import load_module
 
 
 async def add_bot(bot_token):
