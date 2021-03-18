@@ -15,6 +15,7 @@ async def icsrepo(icsp):
         f"- 𝑺𝑶𝑼𝑹𝑪𝑬 𝑹𝑬𝑷𝑶 ⪼ [𝑪𝑳𝑰𝑪𝑲 𝑯𝑬𝑹𝑬](https://github.com/ANL0KE/ICSS)\n",
     )
 
+
 @icssbot.on(admin_cmd(pattern="رابط السورس$"))
 @icssbot.on(sudo_cmd(pattern="رابط السورس$", allow_sudo=True))
 async def icsrepo(icsp):
