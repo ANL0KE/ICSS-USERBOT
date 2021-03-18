@@ -1,3 +1,6 @@
+# Icss - Userbot
+# Owner - Kimo
+
 import glob
 from pathlib import Path
 from sys import argv
@@ -8,12 +11,7 @@ from telethon import TelegramClient
 from . import LOGS, bot
 from .Config import Config
 from .utils import load_module
-
-USERID = Config.OWNER_ID
-ALIVE_NAME = Config.ALIVE_NAME
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
-mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
-
+from .kimo import *
 
 async def add_bot(bot_token):
     await bot.start(bot_token)
@@ -59,8 +57,13 @@ async def startupmessage():
         if Config.PRIVATE_GROUP_BOT_API_ID:
             await bot.send_message(
                 Config.PRIVATE_GROUP_BOT_API_ID,
-                f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 ⤵︎\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ مبروك عزيزي** {mention}\n** اكتب الان .ايدي او .بنك لترى ما اذا كان بوت اكسس يعمل**\
-        \n ⪼ إذا كنت بحاجة إلى مساعدة راسل مطوري\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n 𓆰 𝙎𝙊𝙐𝙍𝘾𝞝 𝙄𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr)  𓆪",
+                f"**⌔∮ تم تحديث سورس اكسس بنجاح❕.**\n"
+                f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+                f"اكتب .بنك لتحقق اذا ما كان البوت يعمل \n"
+                f"- المستخدم : {icsme}\n"
+                f"- بوت المستخدم : {ICSBOT}\n"
+                f"- المطور : {DEV}\n"
+                f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
                 link_preview=False,
             )
     except Exception as e:
