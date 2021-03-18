@@ -7,7 +7,7 @@ from telethon import TelegramClient
 
 from . import LOGS, bot
 from .Config import Config
-from .userbot.plugins.__init__ import mention
+from .plugins.__init__ import mention
 from .utils import load_module
 
 
