@@ -5,7 +5,7 @@ from sys import argv
 import telethon.utils
 from telethon import TelegramClient
 
-from . import LOGS, bot
+from . import LOGS, bot, mention
 from .Config import Config
 from .utils import load_module
 
@@ -45,7 +45,7 @@ for name in files:
 LOGS.info("⫷ بوت اكسس يعمل بنجاح ⫸")
 LOGS.info(
     "⫷ مبروك عزيزي اكتب الان .ايدي لترى ما اذا كان البوت يعمل ⫸\
-    \n ⫷ إذا كنت بحاجة إلى مساعدة ، فتوجه إلى مطورس السورس https://t.me/rruuurr ⫸"
+    \n ⫷ إذا كنت بحاجة إلى مساعدة ، فتوجه إلى مطور السورس @rruuurr ⫸"
 )
 
 
@@ -54,7 +54,7 @@ async def startupmessage():
         if Config.PRIVATE_GROUP_BOT_API_ID:
             await bot.send_message(
                 Config.PRIVATE_GROUP_BOT_API_ID,
-                "𓆰 𝑺𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 ⤵︎\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ مبروك عزيزي اكتب الان .ايدي لترى ما اذا كان بوت اكسس يعمل**\
+                f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 ⤵︎\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ مبروك عزيزي** {mention}\n** اكتب الان .ايدي او .بنك لترى ما اذا كان بوت اكسس يعمل**\
         \n ⪼ إذا كنت بحاجة إلى مساعدة راسل مطوري\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n 𓆰 𝙎𝙊𝙐𝙍𝘾𝞝 𝙄𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr)  𓆪",
                 link_preview=False,
             )
