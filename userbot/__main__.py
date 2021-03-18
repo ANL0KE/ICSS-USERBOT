@@ -8,11 +8,7 @@ from telethon import TelegramClient
 from . import LOGS, bot
 from .Config import Config
 from .utils import load_module
-
-USERID = Config.OWNER_ID or bot.uid
-ALIVE_NAME = Config.ALIVE_NAME
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
-mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+from .userbot.plugins.__init__ import mention
 
 
 async def add_bot(bot_token):
