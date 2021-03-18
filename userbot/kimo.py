@@ -3,5 +3,5 @@ from .Config import Config
 USERID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
-BOT_USERNAME = Config.TG_BOT_USERNAME
+ICSBOT = Config.TG_BOT_USERNAME
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
