@@ -238,11 +238,3 @@ async def tmgif(kim):
         kim_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         kim_c += f"**↫ المتـحركه الاولى 𓆰.**"
         await kim.client.send_file(kim.chat_id, tm_gif, caption=kim_c, reply_to=kimid)
-        await kim.delete()
-    else:
-        await edit_or_reply(
-            kim,
-            f"**{TMTE}**\n"
-            f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-            f"**↫ المتـحركه الاولى 𓆰.**",
-        )
