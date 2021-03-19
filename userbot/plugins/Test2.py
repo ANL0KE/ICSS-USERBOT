@@ -1,5 +1,5 @@
 
-from . import reply_id, icsgif1, icstext
+from . import reply_id, Icsgif1, icstext
 
 
 @icssbot.on(
@@ -16,7 +16,7 @@ async def kutgif(icss):
     if icss.fwd_from:
         return
     reply_to_id = await reply_id(icss)
-    if icsgif1:
+    if Icsgif1:
         icss_caption = f"**{icstext}**\n"
         icss_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         icss_caption += f"**↫ المتـحركه الاولى 𓆰.**"
