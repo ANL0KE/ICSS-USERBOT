@@ -53,7 +53,7 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑯𝑬𝑳𝑷 𝑴𝑬𝑵𝑼 𓆪\n ⌔∮ اهلا بك عزيزي DEFAULTUSER}
+            help_string = f"""𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑯𝑬𝑳𝑷 𝑴𝑬𝑵𝑼 𓆪\n ⌔∮ اهلا بك عزيزي {DEFAULTUSER}
 هنا ستجد جميع الاوامر فقط اضغط على اسم الملف وستضهر الاوامر الخاصه به"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbu,
