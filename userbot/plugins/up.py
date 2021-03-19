@@ -1,9 +1,4 @@
-# Ultroid - UserBot
-# Copyright (C) 2020 TeamUltroid
-#
-# This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
-# PLease read the GNU Affero General Public License in
-# <https://www.github.com/TeamUltroid/Ultroid/blob/main/LICENSE/>.
+# updater for icss
 
 import asyncio
 import sys
@@ -12,9 +7,11 @@ from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from . import get_string
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
+HEROKU_API_KEY = Config.HEROKU_API_KEY or None
+UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
+UPSTREAM_REPO_URL = Config.UPSTREAM_REPO_URL
 
-UPSTREAM_REPO_URL = "https://github.com/ANL0KE/ICSS"
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
 )
@@ -22,13 +19,36 @@ requirements_path = path.join(
 
 async def gen_chlog(repo, diff):
     ch_log = ""
-    d_form = "On %d/%m/%y at %H:%M:%S"
+    d_form = "%d/%m/%y"
     for c in repo.iter_commits(diff):
-        ch_log += f"**#{c.count()}** : {c.committed_datetime.strftime(d_form)} : [{c.summary}]({UPSTREAM_REPO_URL.rstrip('/')}/commit/{c}) by `{c.author}`\n"
+        ch_log += (
+            f"  • {c.summary} ({c.committed_datetime.strftime(d_form)}) <{c.author}>\n"
+        )
     return ch_log
 
 
-async def updateme_requirements():
+async def print_changelogs(event, ac_br, changelog):
+    changelog_str = f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ يوجـد تحـديث جديد لسورس اكسس ༗. \n\n⪼ التحديثات ⱒ**\n`{changelog}`\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n 𓆰 𝙎𝙊𝙐𝙍𝘾𝞝 𝘿𝙀𝙑 - @rruuurr 𓆪"
+    if len(changelog_str) > 4096:
+        await event.edit("`Changelog is too big, view the file to see it.`")
+        with open("output.txt", "w+") as file:
+            file.write(changelog_str)
+        await event.client.send_file(
+            event.chat_id,
+            "output.txt",
+            reply_to=event.id,
+        )
+        remove("output.txt")
+    else:
+        await event.client.send_message(
+            event.chat_id,
+            changelog_str,
+            reply_to=event.id,
+        )
+    return True
+
+
+async def update_requirements():
     reqs = str(requirements_path)
     try:
         process = await asyncio.create_subprocess_shell(
@@ -42,117 +62,34 @@ async def updateme_requirements():
         return repr(e)
 
 
-@icssbot.on(
-    admin_cmd(
-        pattern="up ?(.*)",
-    )
-)
-async def upstream(ups):
-    pagal = await eor(ups, get_string("upd_1"))
-    conf = ups.pattern_match.group(1)
-    off_repo = UPSTREAM_REPO_URL
-    try:
-        txt = get_string("upd_2")
-        repo = Repo()
-    except NoSuchPathError as error:
-        await eod(pagal, f"{txt}\n`directory {error} is not found`", time=10)
-        repo.__del__()
-        return
-    except GitCommandError as error:
-        await eod(pagal, f"{txt}\n`Early failure! {error}`", time=10)
-        repo.__del__()
-        return
-    except InvalidGitRepositoryError as error:
-        if conf != "now":
-            await eod(
-                pagal,
-                f"**Unfortunately, the directory {error} does not seem to be a git repository.Or Maybe it just needs a sync verification with {GIT_REPO_NAME} But we can fix that by force updating the userbot using** `.update now.`",
-                time=30,
-            )
-            return
-        repo = Repo.init()
-        origin = repo.create_remote("upstream", off_repo)
-        origin.fetch()
-        repo.create_head("main", origin.refs.main)
-        repo.heads.main.set_tracking_branch(origin.refs.main)
-        repo.heads.main.checkout(True)
-    ac_br = repo.active_branch.name
-    #    if ac_br != "main":
-    #        await eod(
-    #            pagal,
-    #            f"**[UPDATER]:**` You are on ({ac_br})\n Please change to the main branch.`",
-    #        )
-    #        repo.__del__()
-    #        return
-    try:
-        repo.create_remote("upstream", off_repo)
-    except BaseException:
-        pass
-    ups_rem = repo.remote("upstream")
-    ups_rem.fetch(ac_br)
-    changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
-    if "now" not in conf:
-        if changelog:
-            changelog_str = get_string("upd_3").format(
-                ac_br, UPSTREAM_REPO_URL, ac_br, changelog
-            )
-            if len(changelog_str) > 4096:
-                await eor(pagal, get_string("upd_4"))
-                file = open("output.txt", "w+")
-                file.write(changelog_str)
-                file.close()
-                await ups.client.send_file(
-                    ups.chat_id,
-                    "output.txt",
-                    caption=get_string("upd_5").format(hndlr),
-                    reply_to=ups.id,
-                )
-                remove("output.txt")
-            else:
-                return await eod(
-                    pagal, get_string("upd_6").format(changelog_str, hndlr)
-                )
-        else:
-            await eod(
-                pagal,
-                get_string("upd_7").format(ac_br, UPSTREAM_REPO_URL, ac_br),
-                time=10,
-            )
-            repo.__del__()
-            return
-    if Var.HEROKU_API is not None:
+async def deploy(event, repo, ups_rem, ac_br, txt):
+    if HEROKU_API_KEY is not None:
         import heroku3
 
-        heroku = heroku3.from_key(Var.HEROKU_API)
+        heroku = heroku3.from_key(HEROKU_API_KEY)
         heroku_app = None
         heroku_applications = heroku.apps()
-        if not Var.HEROKU_APP_NAME:
-            await eod(
-                pagal,
-                "`Please set up the `HEROKU_APP_NAME` variable to be able to update userbot.`",
-                time=10,
+        if HEROKU_APP_NAME is None:
+            await event.edit(
+                "`Please set up the` **HEROKU_APP_NAME** `Var`"
+                " to be able to deploy your userbot...`"
             )
             repo.__del__()
             return
         for app in heroku_applications:
-            if app.name == Var.HEROKU_APP_NAME:
+            if app.name == HEROKU_APP_NAME:
                 heroku_app = app
                 break
         if heroku_app is None:
-            await eod(
-                pagal,
-                f"{txt}\n`Invalid Heroku credentials for updating userbot dyno.`",
-                time=10,
-            )
-            repo.__del__()
-            return
-        await eor(
-            pagal, "`Userbot dyno build in progress, please wait for it to complete.`"
+            await event.edit(f"{txt}\n" "بيانات اعتماد هيروكو غير صالحة لتنصيب اكسس")
+            return repo.__del__()
+        await event.edit(
+            "**تنصيب تحديث اكسس قيد التقدم ، يرجى الانتظار حتى تنتهي العملية ، وعادة ما يستغرق التحديث من 4 إلى 5 دقائق.**"
         )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
-            "https://", "https://api:" + Var.HEROKU_API + "@"
+            "https://", "https://api:" + HEROKU_API_KEY + "@"
         )
         if "heroku" in repo.remotes:
             remote = repo.remote("heroku")
@@ -160,24 +97,151 @@ async def upstream(ups):
         else:
             remote = repo.create_remote("heroku", heroku_git_url)
         try:
-            remote.push(refspec=f"HEAD:refs/heads/{ac_br}", force=True)
-        except GitCommandError as error:
-            await eod(pagal, f"{txt}\n`Here is the error log:\n{error}`", time=10)
-            repo.__del__()
-            return
-        await eod(pagal, "`Successfully Updated!\nRestarting, please wait...`", time=60)
+            remote.push(refspec="HEAD:refs/heads/master", force=True)
+        except Exception as error:
+            await event.edit(f"{txt}\n`Here is the error log:\n{error}`")
+            return repo.__del__()
+        build = app.builds(order_by="created_at", sort="desc")[0]
+        if build.status == "failed":
+            await event.edit(
+                "`Build failed!\n" "Cancelled or there were some errors...`"
+            )
+            await asyncio.sleep(5)
+            return await event.delete()
+        await event.edit("`Successfully deployed!\n" "Restarting, please wait...`")
     else:
-        # Classic Updater, pretty straightforward.
-        try:
-            ups_rem.pull(ac_br)
-        except GitCommandError:
-            repo.git.reset("--hard", "FETCH_HEAD")
-        await updateme_requirements()
-        await eod(
-            pagal,
-            "`Successfully Updated!\nBot is restarting... Wait for a second!`",
+        await event.edit("`Please set up`  **HEROKU_API_KEY**  ` Var...`")
+    return
+
+
+async def update(event, repo, ups_rem, ac_br):
+    try:
+        ups_rem.pull(ac_br)
+    except GitCommandError:
+        repo.git.reset("--hard", "FETCH_HEAD")
+    await update_requirements()
+    await event.edit(
+        "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ تم التحديث بنجاح ✅**\n ** جارٍ إعادة تشغيل بوت اكسس ، انتظر 𓆰.**"
+    )
+    # Spin a new instance of bot
+    args = [sys.executable, "-m", "userbot"]
+    execle(sys.executable, *args, environ)
+    return
+
+
+@icssbot.on(
+    admin_cmd(
+       outgoing=True, pattern=r"تحديث($| (الان|البوت))"
+   )
+)
+@icssbot.on(
+    sudo_cmd( 
+       pattern="تحديث($| (الان|البوت))", allow_sudo=True
+    )
+)
+async def upstream(event):
+    "بالنسبة لأمر التحديث ، تحقق مما إذا كان بوت اكسس محدثًا ، أو قم بالتحديث إذا تم بتحديثه"
+    conf = event.pattern_match.group(1).strip()
+    event = await edit_or_reply(
+        event,
+        "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ جاري البحث عن التحديثات  🌐.. 𓆰،**",
+    )
+    off_repo = UPSTREAM_REPO_URL
+    force_update = False
+    if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
+        return await edit_or_reply(
+            event,
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ اضبط المتغيرات المطلوبة أولاً لتحديث بوت اكسس 𓆰،**",
         )
-        # Spin a new instance of bot
-        args = [sys.executable, "./resources/startup/deploy.sh"]
-        execle(sys.executable, *args, environ)
+    try:
+        txt = "`عفوًا .. لا يمكن لبرنامج التحديث المتابعة بسبب "
+        txt += "حدثت بعض المشاكل`\n\n**تتبع السجل:**\n"
+        repo = Repo()
+    except NoSuchPathError as error:
+        await event.edit(f"{txt}\nالدليل {error} غير موجود")
+        return repo.__del__()
+    except GitCommandError as error:
+        await event.edit(f"{txt}\n`فشل مبكر! {error}`")
+        return repo.__del__()
+    except InvalidGitRepositoryError as error:
+        if conf is None:
+            return await event.edit(
+                f"`Unfortunately, the directory {error} "
+                "does not seem to be a git repository.\n"
+                "But we can fix that by force updating the userbot using "
+                ".update now.`"
+            )
+        repo = Repo.init()
+        origin = repo.create_remote("upstream", off_repo)
+        origin.fetch()
+        force_update = True
+        repo.create_head("master", origin.refs.master)
+        repo.heads.master.set_tracking_branch(origin.refs.master)
+        repo.heads.master.checkout(True)
+    ac_br = repo.active_branch.name
+    if ac_br != UPSTREAM_REPO_BRANCH:
+        await event.edit(
+            "**[UPDATER]:**\n"
+            f"`Looks like you are using your own custom branch ({ac_br}). "
+            "in that case, Updater is unable to identify "
+            "which branch is to be merged. "
+            "please checkout to any official branch`"
+        )
+        return repo.__del__()
+    try:
+        repo.create_remote("upstream", off_repo)
+    except BaseException:
+        pass
+    ups_rem = repo.remote("upstream")
+    ups_rem.fetch(ac_br)
+    changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
+    # Special case for deploy
+    if conf == "البوت":
+        await event.edit(
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تنصيب التحديث  انتظر 🌐 𓆰،**"
+        )
+        await deploy(event, repo, ups_rem, ac_br, txt)
         return
+    if changelog == "" and not force_update:
+        await event.edit(
+            "\n𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ سورس اكسس محدث لأخر اصدار ༗. **"
+            #             f"**{UPSTREAM_REPO_BRANCH}**\n"
+        )
+        return repo.__del__()
+    if conf == "" and not force_update:
+        await print_changelogs(event, ac_br, changelog)
+        await event.delete()
+        return await event.respond(
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n⪼ اضغط هنا **للتحديث السريع ↫ **[`.تحديث الان`] او اضغط هنا **لتنصيب التحديث** وقد يستغرق 5 دقائق ↫ [`.تحديث البوت`]"
+        )
+
+    if force_update:
+        await event.edit(
+            "`Force-Syncing to latest stable userbot code, please wait...`"
+        )
+    if conf == "الان":
+        await event.edit(
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تحديث بوت اكسس انتظر 🌐..𓆰،**"
+        )
+        await update(event, repo, ups_rem, ac_br)
+    return
+
+
+
+
+CMD_HELP.update(
+    {
+        "updater": "**Plugin : **`updater`"
+        "\n\n  •  **Syntax : **`.update`"
+        "\n  •  **Function :** Checks if the main userbot repository has any updates "
+        "and shows a changelog if so."
+        "\n\n  •  **Syntax : **`.update now`"
+        "\n  •  **Function :** Update your userbot, "
+        "if there are any updates in your userbot repository.if you restart these goes back to last time when you deployed"
+        "\n\n  •  **Syntax : **`.update deploy`"
+        "\n  •  **Function :** Deploy your userbot.So even you restart it doesnt go back to previous version"
+        "\nThis will triggered deploy always, even no updates."
+        "\n\n  •  **Syntax : **`.badcat`"
+        "\n  •  **Function :** Shifts from official cat repo to jisan's repo(for gali commands)"
+    }
+)
