@@ -1,3 +1,5 @@
+
+
 from . import CMD_LIST, ALIVE_NAME
 from platform import uname
 import sys
@@ -53,7 +55,8 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"⌔∮ اهلا بك عزيزي {DEFAULTUSER}\n هنا ستجد جميع الاوامر فقط اضغط على اسم الملف وستضهر الاوامر الخاصه به"
+            help_string = f"""⌔∮ Icssbot Helper Provided by {DEFAULTUSER} \n
+Icssbot Helper to reveal all the commands\nDo .help plugin_name for commands, in case popup doesn't appear."""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbu,
                 help_string
@@ -64,3 +67,4 @@ async def cmd_list(event):
                 hide_via=True
             )
             await event.delete()
+
