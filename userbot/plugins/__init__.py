@@ -61,10 +61,10 @@ if Config.SPAMWATCH_API:
 else:
     spamwatch = None
 
-cat_users = [bot.uid]
+ics_users = [bot.uid]
 if Config.SUDO_USERS:
     for user in Config.SUDO_USERS:
-        cat_users.append(user)
+        ics_users.append(user)
 
 
 # ================================================
@@ -103,17 +103,6 @@ def set_key(dictionary, key, value):
         dictionary[key].append(value)
     else:
         dictionary[key] = [dictionary[key], value]
-
-
-# UniBorg Telegram UseRBot
-# Copyright (C) 2020 @UniBorg
-# This code is licensed under
-# the "you can't use this for anything - public or private,
-# unless you know the two prime factors to the number below" license
-# 543935563961418342898620676239017231876605452284544942043082635399903451854594062955
-# വിവരണം അടിച്ചുമാറ്റിക്കൊണ്ട് പോകുന്നവർ
-# ക്രെഡിറ്റ് വെച്ചാൽ സന്തോഷമേ ഉള്ളു..!
-# uniborg
 
 
 def check_data_base_heal_th():
