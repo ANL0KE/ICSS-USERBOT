@@ -129,16 +129,8 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@icssbot.on(
-    admin_cmd(
-       outgoing=True, pattern=r"تحديث($| (الان|البوت))"
-   )
-)
-@icssbot.on(
-    sudo_cmd( 
-       pattern="تحديث($| (الان|البوت))", allow_sudo=True
-    )
-)
+@icssbot.on(admin_cmd(outgoing=True, pattern=r"تحديث($| (الان|البوت))"))
+@icssbot.on(sudo_cmd(pattern="تحديث($| (الان|البوت))", allow_sudo=True))
 async def upstream(event):
     "بالنسبة لأمر التحديث ، تحقق مما إذا كان بوت اكسس محدثًا ، أو قم بالتحديث إذا تم بتحديثه"
     conf = event.pattern_match.group(1).strip()
@@ -225,8 +217,6 @@ async def upstream(event):
         )
         await update(event, repo, ups_rem, ac_br)
     return
-
-
 
 
 CMD_HELP.update(
