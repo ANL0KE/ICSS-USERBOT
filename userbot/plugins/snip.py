@@ -4,7 +4,7 @@ from . import BOTLOG_CHATID, ics_users
 from .sql_helper.snip_sql import add_note, get_note, get_notes, rm_note
 
 
-@icssbot.on(events.NewMessage(pattern=r"\#(\S+)", from_users=cat_users))
+@icssbot.on(events.NewMessage(pattern=r"\#(\S+)", from_users=ics_users))
 async def incom_note(getnt):
     try:
         if not (await getnt.get_sender()).bot:
