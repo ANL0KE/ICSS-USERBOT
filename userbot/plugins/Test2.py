@@ -8,7 +8,7 @@ from userbot import bot
 async def awake(event):
   ics = f"ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSBOT}\n\n"
   ics += "ᴀʟʟ sʏsᴛᴇᴍ ɪs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n\n"
-  ics += f"{BOT} ᴏs : 3.0 ʟᴀsᴛᴇsᴛ\n\n"
+  ics += f"{ICSBOT} ᴏs : 3.0 ʟᴀsᴛᴇsᴛ\n\n"
   ics += f"ᴍʏ ᴍᴀsᴛᴇʀ @{bot.me.username} ☺️\n\n"
   ics += "ғᴜʟʟʏ ᴜᴘᴅᴀᴛᴇᴅ ʙᴏᴛ\n\n"
   ics += "ᴛᴇʟᴇᴛʜᴏɴ : 1.20 LATEST\n\n"
