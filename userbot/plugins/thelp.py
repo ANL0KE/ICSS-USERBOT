@@ -19,7 +19,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss - Userbot"
 )
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/" , "#", "-", "_", "@"):
-        tgbu = Var.TG_BOT_USERNAME
+        tgbu = Config.TG_BOT_USERNAME
         input_str = event.pattern_match.group(1)
         if tgbu is None or input_str == "text":
             string = ""
