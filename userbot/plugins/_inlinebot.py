@@ -54,7 +54,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "Icss - Userbot",
-                text="{}\nCurrently Loaded Plugins: {}".format(query, len(CMD_LIST)),
+                text="{}\n⌔∮ Plugins: {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
@@ -221,7 +221,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             else:
                 reply_pop_up_alert = help_string
             reply_pop_up_alert += (
-                "Use .unload {} to remove this plugin ©catuserbot".format(plugin_name)
+                "⌔∮ اوامر بوت اكسس الموجوده في {} ".format(plugin_name)
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
