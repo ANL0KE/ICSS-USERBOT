@@ -1,6 +1,6 @@
 from telethon import events
 
-from . import BOTLOG_CHATID, cat_users
+from . import BOTLOG_CHATID, ics_users
 from .sql_helper.snip_sql import add_note, get_note, get_notes, rm_note
 
 
