@@ -19,7 +19,7 @@ Ulodya = [
     )
 )
 async def icss(ics):
-   Ulo = random.choics(Ulodya)
+   Ulo = random.choice(Ulodya)
    await icss.edit("وجع انتظر")
    await asyncio.sleep(3)
    await edit_or_reply("{Ulo}")
