@@ -1,6 +1,6 @@
 # Icss - Userbot
 # من هنا يتم تحميل المتحركات
-# gif uploaded from here
+# gif loaded from here
 
 KUTTE = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑪𝑼𝑻𝑬 𝑮𝑰𝑭 𓆪"
 kut_gif = "https://telegra.ph/file/eea08954a3f302fc9add0.mp4"
