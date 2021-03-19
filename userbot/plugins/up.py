@@ -44,7 +44,7 @@ async def updateme_requirements():
 
 @icssbot.on(
     admin_cmd(
-       pattern="up ?(.*)",
+        pattern="up ?(.*)",
     )
 )
 async def upstream(ups):
