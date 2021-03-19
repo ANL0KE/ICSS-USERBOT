@@ -1,5 +1,6 @@
 
-from . import reply_id, Icsgif1, icstext
+from . import reply_id
+from .icsgif import Icsgif1, icstext
 
 
 @icssbot.on(
