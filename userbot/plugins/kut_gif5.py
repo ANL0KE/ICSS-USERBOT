@@ -17,7 +17,7 @@ async def kutgif(icss):
     if icss.fwd_from:
         return
     reply_to_id = await reply_id(icss)
-    if ICSS_IMG:
+    if kut_gif5:
         kutc = f"**{KUTTE}**\n"
         kutc += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         kutc += f"**↫ المتـحركه الخامسه 𓆰.**"
