@@ -24,11 +24,3 @@ async def kutgif(icss):
         await icss.client.send_file(
             icss.chat_id, kut_gif6, caption=kutc, reply_to=reply_to_id
         )
-        await alive.delete()
-    else:
-        await edit_or_reply(
-            icss,
-            f"**{KUTTE}**\n"
-            f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-            f"**↫ المتـحركه السادسه 𓆰.**",
-        )
