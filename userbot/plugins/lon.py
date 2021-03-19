@@ -12,7 +12,7 @@ async def _(event):
         await event.edit("┏━━━┓\n┃┏━━┛\n┃┗━━┓\n┃┏━━┛\n┃┃\n┗┛")
 
 
-@icssbot.on(admin_cmd(pattern="تحديث", outgoing=True))
+@icssbot.on(admin_cmd(pattern="مدري شنو", outgoing=True))
 async def icss(ics):
     await ics.edit("**⪼ هذا الامر غير موجود اذا اردت معرفت السبب راسل المطور 𓆰**")
 
