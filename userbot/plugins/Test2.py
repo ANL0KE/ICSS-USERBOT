@@ -22,7 +22,7 @@ async def kutgif(icss):
         icss_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         icss_caption += f"**↫ المتـحركه الاولى 𓆰.**"
         await icss.client.send_file(
-            icss.chat_id, ICSS_IMG, caption=icss_caption, reply_to=reply_to_id
+            icss.chat_id, Icsgif1, caption=icss_caption, reply_to=reply_to_id
         )
         await icss.delete()
     else:
