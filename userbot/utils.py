@@ -73,6 +73,7 @@ def load_module(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.borg = bot
         mod.icssbot = bot
+        mod.icss = bot
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
