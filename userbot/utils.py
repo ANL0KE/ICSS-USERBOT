@@ -59,8 +59,7 @@ def load_module(shortname):
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
         mod.admin_cmd = admin_cmd
-        mod.admin_cmd = icss_cmd
-        mod.icss_cmd = icss_cmd
+        mod.icss_cmd = admin_cmd
         mod._icssutils = _icssutils
         mod._icsstools = _icsstools
         mod.media_type = media_type
@@ -68,6 +67,7 @@ def load_module(shortname):
         mod.install_pip = install_pip
         mod.parse_pre = _format.parse_pre
         mod.edit_or_reply = edit_or_reply
+        mod.eor = edit_or_reply
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
         sys.modules["uniborg.util"] = userbot.utils
