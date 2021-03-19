@@ -1,3 +1,6 @@
+# Icss - Userbot
+# Icss - Utils
+
 import asyncio
 import datetime
 import importlib
@@ -56,6 +59,8 @@ def load_module(shortname):
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
         mod.admin_cmd = admin_cmd
+        mod.admin_cmd = icss_cmd
+        mod.icss_cmd = icss_cmd
         mod._icssutils = _icssutils
         mod._icsstools = _icsstools
         mod.media_type = media_type
