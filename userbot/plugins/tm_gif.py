@@ -8,9 +8,13 @@
 import random
 
 from telethon import events
+from .IcssGif import *
 
-
-@icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@icssbot.on(
+    events.NewMessage(
+       pattern=r"\.(.*)", outgoing=True
+    )
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -44,7 +48,11 @@ async def _(event):
             )
 
 
-@icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@icssbot.on(
+    events.NewMessage(
+       pattern=r"\.(.*)", outgoing=True
+    )
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -84,7 +92,11 @@ async def _(event):
             )
 
 
-@icssbot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
+@icssbot.on(
+    events.NewMessage(
+       pattern=r"\.(.*)", outgoing=True
+    )
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -207,26 +219,30 @@ async def _(event):
 # ها هلو شلونك شكو ماكو شخبارك شوضعك امورك صحتك حياتك شغلاتك !
 
 
-ICS_IMG = "https://telegra.ph/file/0f57dc58339a693ae3db2.mp4"
-ICSS_TEXT = "𓆩𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑻𝑼𝑴𝑩𝑳𝑹 𝑮𝑰𝑭𓆪"
-
-
-@icssbot.on(admin_cmd(outgoing=True, pattern="ت1$"))
-@icssbot.on(sudo_cmd(pattern="ت1$", allow_sudo=True))
+@icssbot.on(
+    admin_cmd(
+       outgoing=True, pattern="ت1$"
+    )
+)
+@icssbot.on(
+    sudo_cmd(
+       pattern="ت1$", allow_sudo=True
+    )
+)
 async def tmgif(kim):
     if kim.fwd_from:
         return
     kimid = await reply_id(kim)
-    if ICS_IMG:
-        kim_c = f"**{ICSS_TEXT}**\n"
+    if tm_gif:
+        kim_c = f"**{TMTE}**\n"
         kim_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         kim_c += f"**↫ المتـحركه الاولى 𓆰.**"
-        await kim.client.send_file(kim.chat_id, ICS_IMG, caption=kim_c, reply_to=kimid)
+        await kim.client.send_file(kim.chat_id, tm_gif, caption=kim_c, reply_to=kimid)
         await kim.delete()
     else:
         await edit_or_reply(
             kim,
-            f"**{ICSS_TEXT}**\n"
+            f"**{TMTE}**\n"
             f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
             f"**↫ المتـحركه الاولى 𓆰.**",
         )
