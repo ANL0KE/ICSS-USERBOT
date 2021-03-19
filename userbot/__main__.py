@@ -58,12 +58,12 @@ async def startupmessage():
         if Config.PRIVATE_GROUP_BOT_API_ID:
             await bot.send_message(
                 Config.PRIVATE_GROUP_BOT_API_ID,
-                f"**⌔∮ تم تحديث سورس اكسس بنجاح❕.**\n"
-                f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-                f"اكتب .بنك لتحقق اذا ما كان البوت يعمل\n"
-                f"- المستخدم : {icsme}\n"
-                f"- بوت المستخدم : {ICSBOT}\n"
-                f"- المطور : {DEV}\n"
+                f"**⌔∮ تم تحديث سورس اكسس 𓄂 **\n"
+                f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
+                f"⩫ اكتب .بنك لتحقق اذا ما كان البوت يعمل \n"
+                f"**⩫ المستخدم : **{icsme} \n"
+                f"**⩫ بوت المستخدم :** {ICSBOT} \n"
+                f"**⩫ للمساعده :** {DEV}\n"
                 f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
                 link_preview=False,
             )
