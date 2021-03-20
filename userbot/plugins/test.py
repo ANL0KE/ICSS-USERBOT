@@ -1,3 +1,3 @@
-@icssbot.on(admin_cmd(pattern="هيج", outgoing=True))
+@ics_cmd(pattern="هيج", outgoing=True))
 async def icss(ics):
     await ics.edit(" هها هلو")
