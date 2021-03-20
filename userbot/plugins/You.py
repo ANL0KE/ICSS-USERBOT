@@ -11,6 +11,7 @@ import requests
 from telegraph import Telegraph, upload_file
 
 ##################--CONSTANTS--##################
+OWNER_ID = Config.OWNER_ID
 LOAD_MYBOT = Config.TG_BOT_USERNAME
 Heroku = Config.HEROKU_API_KEY
 BOT_PIC = Config.ALIVE_PIC if Config.ALIVE_PIC else None
@@ -32,7 +33,7 @@ auth_url = r["auth_url"]
      )
 )  # pylint: disable=oof
 async def start_all(event):
-    if event.chat_id == OWNER_ID:
+    if event.chat_id == OWNER_IDOWNER_ID:
         return
     target = event.sender_id
     if present_in_userbase(target):
