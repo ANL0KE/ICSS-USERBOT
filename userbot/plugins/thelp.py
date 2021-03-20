@@ -55,7 +55,10 @@ async def cmd_list(event):
         else:
             help_string = f"""⌔∮ Icssbot Helper Provided by {DEFAULTUSER} \n
 Icssbot Helper to reveal all the commands\nDo .help plugin_name for commands, in case popup doesn't appear."""
-            results = await bot.inline_query(tgbu, help_string)
+            results = await bot.inline_query(
+                tgbu, 
+                help_string
+            )
             await results[0].click(
                 event.chat_id,
                 reply_to=event.reply_to_msg_id,
