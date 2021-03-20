@@ -74,7 +74,9 @@ def load_module(shortname):
         mod.borg = bot
         mod.icssbot = bot
         mod.ics_cmd = admin_cmd, bot
+        mod.ics_cmd = ics_cmd       
         mod.icss = bot
+        mod.icss = icss
         # support for paperplaneextended
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
