@@ -12,7 +12,7 @@ from telegraph import Telegraph, upload_file
 
 ##################--CONSTANTS--##################
 LOAD_MYBOT = Config.TG_BOT_USERNAME
-Heroku = Config.HEROKU_API_KEY)
+Heroku = Config.HEROKU_API_KEY
 BOT_PIC = Config.ALIVE_PIC if Config.ALIVE_PIC else None
 heroku_api = "https://api.heroku.com"
 path = Config.TMP_DOWNLOAD_DIRECTORY
