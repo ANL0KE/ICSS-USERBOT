@@ -14,7 +14,7 @@ from telethon.tl.types import InputWebDocument
 from . import *
 
 # ================================================#
-notmine = "This bot is for {}".format(OWNER_NAME)
+notmine = "This bot is for {}".format(ALIVE_NAME)
 ULTROID_PIC = "https://telegra.ph/file/11245cacbffe92e5d5b14.jpg"
 helps = get_string("inline_1")
 
@@ -33,7 +33,7 @@ async def e(o):
         b = o.builder
         uptime = grt((time.time() - start_time))
         ALIVEMSG = get_string("alive_1").format(
-            OWNER_NAME,
+            ALIVE_NAME,
             ultroid_version,
             uptime,
             pyver(),
@@ -46,7 +46,7 @@ async def e(o):
                 url="https://t.me/rruuurr",
                 description="Userbot | Telethon ",
                 text=ALIVEMSG,
-                thumb=InputWebDocument(ULTROID_PIC, 0, "image/jpeg", []),
+                thumb=InputWebDocument(ALIVE_PIC, 0, "image/jpeg", []),
                 buttons=[
                     [Button.url(text="Support Group", url="t.me/rruuurr")],
                     [
@@ -74,7 +74,7 @@ if Config.BOT_USERNAME is not None and asst is not None:
                 for y in x:
                     z.append(y)
             cmd = len(z) + 10
-            bn = Var.BOT_USERNAME
+            bn = Config.BOT_USERNAME
             if bn.startswith("@"):
                 bnn = bn.replace("@", "")
             else:
@@ -85,7 +85,7 @@ if Config.BOT_USERNAME is not None and asst is not None:
                 url="https://t.me/rruuurr",
                 thumb=InputWebDocument(ALIVE_PIC, 0, "image/jpeg", []),
                 text=get_string("inline_4").format(
-                    OWNER_NAME, len(PLUGINS) - 5, len(ADDONS), cmd
+                    ALIVE_NAME, len(PLUGINS) - 5, len(ADDONS), cmd
                 ),
                 buttons=[
                     [
@@ -218,14 +218,14 @@ if Config.BOT_USERNAME is not None and asst is not None:
     @callback("hrrrr")
     @owner
     async def on_plug_in_callback_query_handler(event):
-        xhelps = helps.format(OWNER_NAME, len(PLUGINS) - 5)
+        xhelps = helps.format(ALIVE_NAME, len(PLUGINS) - 5)
         buttons = paginate_help(0, PLUGINS, "helpme")
         await event.edit(f"{xhelps}", buttons=buttons, link_preview=False)
 
     @callback("frrr")
     @owner
     async def addon(event):
-        halp = zhelps.format(OWNER_NAME, len(ADDONS))
+        halp = zhelps.format(ALIVE_NAME, len(ADDONS))
         if len(ADDONS) > 0:
             buttons = paginate_addon(0, ADDONS, "addon")
             await event.edit(f"{halp}", buttons=buttons, link_preview=False)
@@ -288,7 +288,7 @@ if Config.BOT_USERNAME is not None and asst is not None:
     @callback("back")
     @owner
     async def backr(event):
-        xhelps = helps.format(OWNER_NAME, len(PLUGINS) - 5)
+        xhelps = helps.format(ALIVE_NAME, len(PLUGINS) - 5)
         current_page_number = int(upage)
         buttons = paginate_help(current_page_number, PLUGINS, "helpme")
         await event.edit(f"{xhelps}", buttons=buttons, link_preview=False)
@@ -296,7 +296,7 @@ if Config.BOT_USERNAME is not None and asst is not None:
     @callback("buck")
     @owner
     async def backr(event):
-        xhelps = zhelps.format(OWNER_NAME, len(ADDONS))
+        xhelps = zhelps.format(ALIVE_NAME, len(ADDONS))
         current_page_number = int(addpage)
         buttons = paginate_addon(current_page_number, ADDONS, "addon")
         await event.edit(f"{xhelps}", buttons=buttons, link_preview=False)
@@ -304,7 +304,7 @@ if Config.BOT_USERNAME is not None and asst is not None:
     @callback("open")
     @owner
     async def opner(event):
-        bn = Var.BOT_USERNAME
+        bn = Config.BOT_USERNAME
         if bn.startswith("@"):
             bnn = bn.replace("@", "")
         else:
@@ -332,7 +332,7 @@ if Config.BOT_USERNAME is not None and asst is not None:
         cmd = len(z) + 10
         await event.edit(
             get_string("inline_4").format(
-                OWNER_NAME, len(PLUGINS) - 5, len(ADDONS), cmd
+                ALIVE_NAME, len(PLUGINS) - 5, len(ADDONS), cmd
             ),
             buttons=buttons,
             link_preview=False,
@@ -415,7 +415,7 @@ if Config.BOT_USERNAME is not None and asst is not None:
             reply_pop_up_alert = "{} has no detailed help...".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n© @TheUltroid"
+        reply_pop_up_alert += "\n© @rruurr"
         try:
             if event.query.user_id in sed:
                 await event.edit(
