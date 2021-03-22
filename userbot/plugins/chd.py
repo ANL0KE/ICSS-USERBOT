@@ -7,8 +7,17 @@ import subprocess
 location = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "temp")
 
 
-@icssbot.on(admin_cmd(pattern=r"getc(?: |$)(.*)"))
-@icssbot.on(sudo_cmd(pattern="getc(?: |$)(.*)", allow_sudo=True))
+@icss(
+    icss_cmd(
+       pattern=r"getc(?: |$)(.*)"
+    )
+)
+@icss(
+    sudo_cmd(
+       pattern="getc(?: |$)(.*)", 
+       allow_sudo=True
+    )
+)
 async def get_media(event):
     if event.fwd_from:
         return
@@ -41,8 +50,17 @@ async def get_media(event):
     await event.edit(f"Successfully downloaded {output} number of media files")
 
 
-@icssbot.on(admin_cmd(pattern="geta(?: |$)(.*)"))
-@icssbot.on(sudo_cmd(pattern="geta(?: |$)(.*)", allow_sudo=True))
+@icss(
+    icss_cmd(
+       pattern="geta(?: |$)(.*)"
+    )
+)
+@icss(
+    sudo_cmd(
+       pattern="geta(?: |$)(.*)",
+       allow_sudo=True
+    )
+)
 async def get_media(event):
     if event.fwd_from:
         return
