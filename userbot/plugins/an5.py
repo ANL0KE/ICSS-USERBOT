@@ -1,4 +1,4 @@
-# animation5 for icss edit by ~ @rruuurr
+# animation5 for icssuserbot edit by ~ @rruuurr
 
 import asyncio
 
