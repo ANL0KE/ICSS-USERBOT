@@ -6,16 +6,8 @@
 
 الآن سأظهر نص قصير لإظهار تكوين البرنامج النصي المطلوب.
 ```python3
-@icss(
-    icss_cmd(
-       pattern="اكسس", outgoing=True
-    )
-)
-@icss(
-    sudo_cmd(
-       pattern="اكسس", outgoing=True
-    )
-)
+@icss(icss_cmd(pattern="اكسس", outgoing=True))
+@icss(sudo_cmd(pattern="اكسس", outgoing=True))
 async def icsbot(kim):
     if kim.fwd_from:
         return
