@@ -19,11 +19,11 @@ async def wspr(kimo):
        outgoing=True, pattern="هسمه$"
     )
 )
-async def tmgif(lon):
-    if lon.fwd_from:
+async def kimo(tosh):
+    if tosh.fwd_from:
         return
-    lonid = await rd(lon)
+    ti = await rd(tosh)
     if WPIC:
         ics_c = f"@bot_username secret @NIIIN2 الرساله\n"
         ics_c += f"اذا تريد ترسل همسه من خلال البوت الخاص بك يجب كتابه اولا #معرف_البوت ثم #secret ثم تكتب #معرف_الي_تريد_تهمسله ثم #الرساله وستضهر ايقونه وتضغط عليها وبس 🖤✨."
-        await lon.client.send_file(lon.chat_id, WPIC, caption=ics_c, reply_to=lonid)
+        await tosh.client.send_file(tosh.chat_id, WPIC, caption=ics_c, reply_to=ti)
