@@ -1,5 +1,5 @@
 # Hey there
-from icssconfig import Config
+from icss_config import Config
 
 
 class Development(Config):
