@@ -2,7 +2,7 @@
 from telethon import events, Button, custom
 import re, os
 from . import ICSBOT
-from userbot import bot
+
 @tgbot.on(events.NewMessage(pattern=("/alive|/start")))
 async def awake(event):
  ics = "hii\n"
