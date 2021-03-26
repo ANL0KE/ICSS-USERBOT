@@ -15,7 +15,7 @@ async def wspr(kimo):
 
 @icss(
     icss_cmd(
-        pattern="همسه$"
+       pattern="همسه$"
     )
 )
 async def kimo(tosh):
