@@ -58,12 +58,16 @@ def load_module(shortname):
         mod.sudo_cmd = sudo_cmd
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
+        mod.rd = reply_id
         mod.admin_cmd = admin_cmd
         mod.icss_cmd = admin_cmd
         mod._icssutils = _icssutils
+        mod.icut = _icssutils
         mod._icsstools = _icsstools
+        mod.icto = _icsstools
         mod.media_type = media_type
         mod.edit_delete = edit_delete
+        mod.ed = edit_delete
         mod.install_pip = install_pip
         mod.parse_pre = _format.parse_pre
         mod.edit_or_reply = edit_or_reply
