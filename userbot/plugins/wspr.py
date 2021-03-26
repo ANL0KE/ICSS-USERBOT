@@ -15,12 +15,12 @@ async def wspr(kimo):
 
 @icssbot.on(icss_cmd(pattern="همسه"))
 async def kimo(tosh):
-    ri = await rd(tosh)
-    if W:
-    c = """@bot_username secret @NIIIN2 الرساله
+   ri = await rd(tosh)
+   if W:
+   c = """@bot_username secret @NIIIN2 الرساله
 
 اذا تريد ترسل همسه من خلال البوت الخاص بك يجب كتابه اولا #معرف_البوت ثم #secret ثم تكتب #معرف_الي_تريد_تهمسله ثم #الرساله وستضهر ايقونه وتضغط عليها وبس 🖤✨.
 """
-    await tosh.client.send_file(
-         tosh.chat_id, W, caption=c, reply_to=ri
-    )
+   await tosh.client.send_file(
+       tosh.chat_id, W, caption=c, reply_to=ri
+   )
