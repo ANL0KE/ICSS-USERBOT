@@ -13,11 +13,7 @@ async def wspr(kimo):
   "𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪"
     
 
-@icss(
-    icss_cmd(
-       pattern="همسه$"
-    )
-)
+@icss(icss_cmd(pattern="همسه"))
 async def kimo(tosh):
     ri = await rd(tosh)
     if W:
