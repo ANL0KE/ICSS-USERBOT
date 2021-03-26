@@ -85,11 +85,11 @@ if Config.THUMB_IMAGE is not None:
             LOGS.info(str(e))
 
 
-def check(cat):
-    if "/start" in cat:
+def check(tosh):
+    if "/start" in tosh:
         return True
     try:
-        hi = re.search(cat.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
+        hi = re.search(tosh.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
     except Exception:
         hi = False
     return bool(hi)
@@ -126,7 +126,7 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-async def catalive():
+async def icsa():
     _, check_sgnirts = check_data_base_heal_th()
     sudo = "Enabled" if Config.SUDO_USERS else "Disabled"
     uptime = await get_readable_time((time.time() - StartTime))
