@@ -14,7 +14,7 @@ from telethon.tl.types import Channel, PollAnswer
 from validators.url import url
 from youtubesearchpython import VideosSearch
 
-from .resources.states import states
+from resources.states import states
 
 
 def utc_to_local(utc_datetime):
