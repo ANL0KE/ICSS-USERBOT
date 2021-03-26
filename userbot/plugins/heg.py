@@ -1,6 +1,6 @@
 import time
 
-from . import StartTime, get_readable_time, mention, rid
+from . import StartTime, get_readable_time, mention, rd
 
 @icss(
     icss_cmd(
@@ -15,7 +15,7 @@ from . import StartTime, get_readable_time, mention, rid
 async def tim(lon):
     if lon.fwd_from:
         return
-    await rid(lon)
+    await rd(lon)
     icst = await get_readable_time((time.time() - StartTime))
     await eor(
         lon, f"**{ICSST}**\n\n ⌔∮ المستخدم: {mention} \n⌔∮ المده: {icst}"
