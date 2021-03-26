@@ -6,12 +6,20 @@
 
 الآن سأظهر نص قصير لإظهار تكوين البرنامج النصي المطلوب.
 ```python3
-@icssbot.on(admin_cmd(pattern="اكسس", outgoing=True))
-@icssbot.on(sudo_cmd(pattern="اكسس", outgoing=True))
+@icss(
+    icss_cmd(
+       pattern="اكسس", outgoing=True
+    )
+)
+@icss(
+    sudo_cmd(
+       pattern="اكسس", outgoing=True
+    )
+)
 async def icsbot(kim):
     if kim.fwd_from:
         return
-    await edit_or_reply(kim , "**- اهلا بك في بوت اكسس**\n- هذا بوت معرب من اجلك استمتع" + Config.SUDO_USERS)
+    await eor(kim , "**- اهلا بك في بوت اكسس**\n- هذا بوت معرب من اجلك استمتع" + Config.SUDO_USERS)
 ```
 
 - استمتعو به 💕
