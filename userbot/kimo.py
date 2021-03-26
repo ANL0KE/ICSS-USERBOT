@@ -1,4 +1,4 @@
-from .utils import bot
+from . import bot
 from .Config import Config
 
 USERID = Config.OWNER_ID or bot.uid
