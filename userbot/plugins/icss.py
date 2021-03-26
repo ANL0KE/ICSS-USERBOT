@@ -15,11 +15,11 @@ T = (
 )
 
 
-@icssbot.on(admin_cmd(pattern="icss", outgoing=True))
+@icss(icss_cmd(pattern="icss", outgoing=True))
 async def kimo(ics):
-    return await edit_or_reply(ics, I)
+    return await eor(ics, I)
 
 
-@icssbot.on(admin_cmd(pattern="poo", outgoing=True))
+@icss(icss_cmd(pattern="poo", outgoing=True))
 async def poo(pio):
-    return await edit_or_reply(pio, T)
+    return await eor(pio, T)
