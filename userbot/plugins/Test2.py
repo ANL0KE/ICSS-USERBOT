@@ -5,8 +5,8 @@ from . import ICSBOT
 
 @tgbot.on(events.NewMessage(pattern=("/alive|/start")))
 async def awake(event):
- ics = "hii\n"
- ics += f"heloo {ICSBOT}"
+  ics = "hii\n"
+  ics += f"heloo {ICSBOT}"
   BUTTON = [[Button.url("𝙼𝙰𝚂𝚃𝙴𝚁", f"https://t.me/{bot.me.username}"), Button.url(f"{ICSBOT} 𝚁𝙴𝙿𝙾", "https://github.com/ANL0KE/ICSS-USERBOT")]]
   await event.send_file(event.chat_id, caption=ics, buttons=BUTTON)
 
