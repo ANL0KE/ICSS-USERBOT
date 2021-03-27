@@ -5,11 +5,11 @@ from userbot.Config import Config
 from userbot.assistant.tosh import *
 from . import ICSBOT
 
-LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")
+LOAD_MYBOT = Config.TG_BOT_USERNAME
 BOT_PIC = Config.ALIVE_PIC if ALIVE_PIC else None
 OWNER_ID = Config.OWNER_ID
 
-@bot.on(events.NewMessage(pattern=("/alive|")))
+@bot.on(events.NewMessage(pattern=("/alive")))
 async def awake(event):
   ics = "hii\n"
   ics += f"heloo {ICSBOT}"
@@ -19,7 +19,7 @@ async def awake(event):
 
 @tgbot.on(events.NewMessage(pattern=("/repo|#repo")))
 async def repo(event):
-  await bot.send_message(event.chat, "thnx", buttons=[[Button.url("⚜️ icsd ⚜️", "https://github.com/ANL0KE/ICSS-USERBOT")]])
+  await tgbot.send_message(event.chat, "thnx", buttons=[[Button.url("⚜️ icsd ⚜️", "https://github.com/ANL0KE/ICSS-USERBOT")]])
 
 
 @bot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
