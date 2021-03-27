@@ -12,7 +12,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 
-from . import name_dl, song_dl, video_dl, yt_search, mention
+from . import mention, name_dl, song_dl, video_dl, yt_search
 
 # =========================================================== #
 #                           STRINGS                           #
@@ -26,7 +26,7 @@ SONGBOT_BLOCKED_STRING = "<code>Please unblock @songdl_bot and try again</code>"
 # =========================================================== #
 
 
-@icssbot.on(admin_cmd(pattern="(بحث|song320)($| (.*))"))
+@icssbot.on(icss_cmd(pattern="(بحث|song320)($| (.*))"))
 @icssbot.on(sudo_cmd(pattern="(بحث|song320)($| (.*))", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
@@ -41,11 +41,11 @@ async def _(event):
     else:
         await edit_or_reply(event, "`What I am Supposed to find `")
         return
-    ics = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icsevent = await edit_or_reply(event, "**⪼ جاري البحث عن الاغنـيه 🖤🎧 ،**")
+    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    catevent = await edit_or_reply(event, "**⪼ جاري البحث عن الاغنـيه 🖤🎧 ،**")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await cevent.edit(
+        return await catevent.edit(
             f"Sorry!. I can't find any related video/audio for `{query}`"
         )
     cmd = event.pattern_match.group(1)
@@ -57,43 +57,43 @@ async def _(event):
     # thumb_cmd = thumb_dl.format(video_link=video_link)
     name_cmd = name_dl.format(video_link=video_link)
     try:
-        ics = Get(ics)
-        await event.client(ics)
+        cat = Get(cat)
+        await event.client(cat)
     except BaseException:
         pass
     stderr = (await _catutils.runcmd(song_cmd))[1]
     if stderr:
-        return await icsevent.edit(f"**⌔∮ خطأ :** `{stderr}`.")
-    icsname, stderr = (await _icssutils.runcmd(name_cmd))[:2]
+        return await catevent.edit(f"**Error :** `{stderr}`")
+    catname, stderr = (await _catutils.runcmd(name_cmd))[:2]
     if stderr:
-        return await icsevent.edit(f"**⌔∮ خطأ :** `{stderr}`.")
+        return await catevent.edit(f"**Error :** `{stderr}`")
     # stderr = (await runcmd(thumb_cmd))[1]
-    icsname = os.path.splitext(icsname)[0]
+    catname = os.path.splitext(catname)[0]
     # if stderr:
-    #    return await icsevent.edit(f"**⌔∮ خطأ :** `{stderr}`.")
-    song_file = Path(f"{icsname}.mp3")
+    #    return await catevent.edit(f"**Error :** `{stderr}`")
+    song_file = Path(f"{catname}.mp3")
     if not os.path.exists(song_file):
-        return await icsevent.edit(
+        return await catevent.edit(
             f"Sorry!. I can't find any related video/audio for `{query}`"
         )
-    await icsevent.edit("** ⪼ جاري تحميل الاغنيه انتظر قليلا🖤🎧 .**")
-    icsthumb = Path(f"{icsname}.jpg")
-    if not os.path.exists(icsthumb):
-        icsthumb = Path(f"{icsname}.webp")
-    elif not os.path.exists(icsthumb):
-        icsthumb = None
+    await catevent.edit("** ⪼ جاري تحميل الاغنيه انتظر قليلا🖤🎧 .**")
+    catthumb = Path(f"{catname}.jpg")
+    if not os.path.exists(catthumb):
+        catthumb = Path(f"{catname}.webp")
+    elif not os.path.exists(catthumb):
+        catthumb = None
 
     await event.client.send_file(
         event.chat_id,
         song_file,
         force_document=False,
-        caption=f"**⌔∮ الاغنيه :** {query}\n**⌔∮ للمستخدم :** {mention}",
-        thumb=icsthumb,
+        caption=f"**⌔∮ الاغنيه :** {query}\n**⌔∮ تم التحميل بواسطة :** {mention}",
+        thumb=catthumb,
         supports_streaming=True,
         reply_to=reply_to_id,
     )
     await catevent.delete()
-    for files in (icsthumb, song_file):
+    for files in (catthumb, song_file):
         if files and os.path.exists(files):
             os.remove(files)
 
@@ -122,91 +122,91 @@ async def _(event):
     else:
         event = await edit_or_reply(event, "What I am Supposed to find")
         return
-    ics = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icsevent = await edit_or_reply(event, "**⪼ جاري البحث عن الاغنـيه 🖤🎧 ،**")
+    cat = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
+    catevent = await edit_or_reply(event, "**⪼ جاري البحث عن الاغنـيه 🖤🎧 ،**")
     video_link = await yt_search(str(query))
     if not url(video_link):
-        return await icsevent.edit(
+        return await catevent.edit(
             f"Sorry!. I can't find any related video/audio for `{query}`"
         )
     # thumb_cmd = thumb_dl.format(video_link=video_link)
     name_cmd = name_dl.format(video_link=video_link)
     video_cmd = video_dl.format(video_link=video_link)
-    stderr = (await _icssutils.runcmd(video_cmd))[1]
+    stderr = (await _catutils.runcmd(video_cmd))[1]
     if stderr:
-        return await icsevent.edit(f"**⌔∮ خطأ :** `{stderr}`.")
-    icsname, stderr = (await _icssutils.runcmd(name_cmd))[:2]
+        return await catevent.edit(f"**Error :** `{stderr}`")
+    catname, stderr = (await _catutils.runcmd(name_cmd))[:2]
     if stderr:
-        return await icsevent.edit(f"**⌔∮ خطأ :** `{stderr}`.")
+        return await catevent.edit(f"**Error :** `{stderr}`")
     # stderr = (await runcmd(thumb_cmd))[1]
     try:
-        kim = Get(kim)
-        await event.client(kim)
+        cat = Get(cat)
+        await event.client(cat)
     except BaseException:
         pass
     # if stderr:
-    #    return await catevent.edit(f"**خطا :** `{stderr}`")
-    icsname = os.path.splitext(icsname)[0]
-    vsong_file = Path(f"{icsname}.mp4")
+    #    return await catevent.edit(f"**Error :** `{stderr}`")
+    catname = os.path.splitext(catname)[0]
+    vsong_file = Path(f"{catname}.mp4")
     if not os.path.exists(vsong_file):
-        vsong_file = Path(f"{icsname}.mkv")
+        vsong_file = Path(f"{catname}.mkv")
     elif not os.path.exists(vsong_file):
-        return await icsevent.edit(
+        return await catevent.edit(
             f"Sorry!. I can't find any related video/audio for `{query}`"
         )
-    await icsevent.edit("** ⪼ جاري تحميل الاغنيه انتظر قليلا🖤🎧 .**")
-    Path(f"{icsname}.jpg")
-    if not os.path.exists(icsthumb):
-        icsthumb = Path(f"{icsname}.webp")
-    elif not os.path.exists(icsthumb):
-        icsthumb = None
+    await catevent.edit("** ⪼ جاري تحميل الاغنيه انتظر قليلا🖤🎧 .**")
+    catthumb = Path(f"{catname}.jpg")
+    if not os.path.exists(catthumb):
+        catthumb = Path(f"{catname}.webp")
+    elif not os.path.exists(catthumb):
+        catthumb = None
     await event.client.send_file(
         event.chat_id,
         vsong_file,
         force_document=False,
-        caption=f"**⌔∮ الاغنيه :** {query}\n**⌔∮ للمستخدم :** {mention}",
-        thumb=icsthumb,
+        caption=query,
+        thumb=catthumb,
         supports_streaming=True,
         reply_to=reply_to_id,
     )
-    await icsevent.delete()
-    for files in (icsthumb, vsong_file):
+    await catevent.delete()
+    for files in (catthumb, vsong_file):
         if files and os.path.exists(files):
             os.remove(files)
 
 
-@icssbot.on(admin_cmd(pattern="song2 (.*)"))
-@icssbot.on(sudo_cmd(pattern="song2 (.*)", allow_sudo=True))
-async def icss_song_fetcer(event):
+@bot.on(admin_cmd(pattern="song2 (.*)"))
+@bot.on(sudo_cmd(pattern="song2 (.*)", allow_sudo=True))
+async def cat_song_fetcer(event):
     if event.fwd_from:
         return
     song = event.pattern_match.group(1)
     chat = "@songdl_bot"
     reply_id_ = await reply_id(event)
-    icsevent = await edit_or_reply(event, SONG_SEARCH_STRING, parse_mode="html")
+    catevent = await edit_or_reply(event, SONG_SEARCH_STRING, parse_mode="html")
     async with event.client.conversation(chat) as conv:
         try:
             purgeflag = await conv.send_message("/start")
             await conv.get_response()
             await conv.send_message(song)
-            tsh = await conv.get_response()
-            while tsh.edit_hide != True:
+            hmm = await conv.get_response()
+            while hmm.edit_hide != True:
                 await asyncio.sleep(0.1)
-                tsh = await event.client.get_messages(chat, ids=tshid)
+                hmm = await event.client.get_messages(chat, ids=hmm.id)
             baka = await event.client.get_messages(chat)
             if baka[0].message.startswith(
                 ("I don't like to say this but I failed to find any such song.")
             ):
                 await delete_messages(event, chat, purgeflag)
                 return await edit_delete(
-                    icsevent, SONG_NOT_FOUND, parse_mode="html", time=5
+                    catevent, SONG_NOT_FOUND, parse_mode="html", time=5
                 )
-            await icsevent.edit(SONG_SENDING_STRING, parse_mode="html")
+            await catevent.edit(SONG_SENDING_STRING, parse_mode="html")
             await baka[0].click(0)
             music = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await icsevent.edit(SONGBOT_BLOCKED_STRING, parse_mode="html")
+            await catevent.edit(SONGBOT_BLOCKED_STRING, parse_mode="html")
             return
         await event.client.send_file(
             event.chat_id,
@@ -215,7 +215,7 @@ async def icss_song_fetcer(event):
             parse_mode="html",
             reply_to=reply_id_,
         )
-        await icsevent.delete()
+        await catevent.delete()
         await delete_messages(event, chat, purgeflag)
 
 
