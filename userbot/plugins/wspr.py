@@ -1,4 +1,4 @@
-from . import rd 
+from . import reply_id as rd
 from userbot.kimo import *
 
 
