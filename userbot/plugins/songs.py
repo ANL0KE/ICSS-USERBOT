@@ -164,7 +164,7 @@ async def _(event):
         event.chat_id,
         vsong_file,
         force_document=False,
-        caption=query,
+        caption=f"**⌔∮ الاغنيه :** {query}\n**⌔∮ للمستخدم :** {mention}",
         thumb=icsthumb,
         supports_streaming=True,
         reply_to=reply_to_id,
