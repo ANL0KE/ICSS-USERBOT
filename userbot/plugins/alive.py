@@ -65,7 +65,7 @@ async def ica(alive):
     icsi = await rd(alive)
     ics_caption = f"**⌔∮ بوت اكسس يعمل بنجاح - {ICSB}**\n"
     ics_caption += f"**  - اصدار التليثون :** `{version.__version__}\n`"
-    ics_caption += f"**  - اصدار اكسس :** `{catversion}`\n"
+    ics_caption += f"**  - اصدار اكسس :** `{icsv}`\n"
     ics_caption += f"**  - اصدار البايثون :** `{python_version()}\n`"
     ics_caption += f"**  - المستخدم :** {mention}\n"
     results = await bot.inline_query(icsbot, ics_caption)  # pylint:disable=E0602
