@@ -4,12 +4,12 @@
 from . import mention
 
 
-@icss(
+@icssbot.on(
     icss_cmd(
        pattern="repo$"
     )
 )
-@icss(
+@icssbot.on(
     sudo_cmd(
        pattern="repo$", allow_sudo=True
     )
@@ -24,12 +24,12 @@ async def icsrepo(icsp):
     )
 
 
-@icss(
+@icssbot.on(
     icss_cmd(
        pattern="رابط السورس$"
     )
 )
-@icss(
+@icssbot.on(
     sudo_cmd(
        pattern="رابط السورس$", allow_sudo=True
     )
