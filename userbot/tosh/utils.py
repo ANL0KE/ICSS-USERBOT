@@ -94,4 +94,4 @@ async def ed(event, text, time=None, parse_mode=None, link_preview=None):
             text, link_preview=link_preview, parse_mode=parse_mode
         )
     await asyncio.sleep(time)
-    return await ivse.delete()
+    return await icse.delete()
