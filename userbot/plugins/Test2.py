@@ -2,6 +2,7 @@
 from telethon import events, Button, custom
 import re, os
 from userbot.Config import Config
+from userbot.assistant.tosh import *
 from . import ICSBOT
 
 LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")
