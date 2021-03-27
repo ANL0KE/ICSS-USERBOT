@@ -87,7 +87,7 @@ async def _(event):
         event.chat_id,
         song_file,
         force_document=False,
-        caption=query,
+        caption=f"**⌔∮ الاغنيه :** {query}\n**⌔∮ للمستخدم :** {mention}",
         thumb=icsthumb,
         supports_streaming=True,
         reply_to=reply_to_id,
@@ -145,7 +145,7 @@ async def _(event):
     except BaseException:
         pass
     # if stderr:
-    #    return await catevent.edit(f"**Error :** `{stderr}`")
+    #    return await catevent.edit(f"**خطا :** `{stderr}`")
     icsname = os.path.splitext(icsname)[0]
     vsong_file = Path(f"{icsname}.mp4")
     if not os.path.exists(vsong_file):
@@ -211,7 +211,7 @@ async def icss_song_fetcer(event):
         await event.client.send_file(
             event.chat_id,
             music,
-            caption=f"<b>➥ Song :- <code>{song}</code></b>",
+            caption=f"<b>⌔∮ الاغنيه :- <code>{song}</code></b>",
             parse_mode="html",
             reply_to=reply_id_,
         )
