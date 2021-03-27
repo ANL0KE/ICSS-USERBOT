@@ -18,7 +18,7 @@ from ..helpers import _format, _icsstools, _icssutils
 
 # =================== CONSTANT ===================
 
-USERID = Config.OWNER_ID or bot.uid
+USERID = bot.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME
 AUTONAME = Config.AUTONAME
 DEFAULT_BIO = Config.DEFAULT_BIO
