@@ -1,4 +1,5 @@
-from . import mention
+# Hey There 
+
 from userbot.kimo import *
 
 @icssbot.on(
@@ -7,6 +8,4 @@ from userbot.kimo import *
     )
 )
 async def mybot(k):
-    await k.edit( 
-        f"**⌔∮ اهلا عزيزي** {mention}\n**⌔∮ البوت - {ICSB}**"
-    )
+    await eor(k, f"**⌔∮ البوت المستخدم - {ICSB}**")
