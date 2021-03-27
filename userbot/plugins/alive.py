@@ -9,6 +9,7 @@
 import time
 from platform import python_version
 from telethon import version
+from userbot.kimo import *
 
 from . import ALIVE_NAME, StartTime, get_readable_time, icsv, mention
 from . import reply_id as rd
@@ -57,19 +58,20 @@ async def ica(icss):
 
 @bot.on(admin_cmd(outgoing=True, pattern="البوت$"))
 @bot.on(sudo_cmd(pattern="البوت$", allow_sudo=True))
-async def ica(icss):
-    if icss.fwd_from:
+async def ica(alive):
+    if alive.fwd_from:
         return
-    icsbotun = Config.TG_BOT_USERNAME
-    ics_id = await rd(icss)
-    ics_c = f"𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪\n"
-    ics_c += f"**  - اصدار التليثون :** `{version.__version__}\n`"
-    ics_c += f"**  - اصدار اكسس :** `{icsv}`\n"
-    ics_c += f"**  - اصدار البايثون :** `{python_version()}\n`"
-    ics_c += f"**  - المستخدم :** {mention}\n"
-    results = await bot.inline_query(icsbotun, ics_c)  # pylint:disable=E0602
-    await results[0].click(icss.chat_id, reply_to=ics_id, hide_via=True)
-    await icss.delete()
+    icsbot = Config.TG_BOT_USERNAME
+    icsi = await rd(alive)
+    ics_caption = f"**⌔∮ بوت اكسس يعمل بنجاح - {ICSB}**\n"
+    ics_caption += f"**  - اصدار التليثون :** `{version.__version__}\n`"
+    ics_caption += f"**  - اصدار اكسس :** `{catversion}`\n"
+    ics_caption += f"**  - اصدار البايثون :** `{python_version()}\n`"
+    ics_caption += f"**  - المستخدم :** {mention}\n"
+    results = await bot.inline_query(icsbot, ics_caption)  # pylint:disable=E0602
+    await results[0].click(alive.chat_id, reply_to=icsi, hide_via=True)
+    await alive.delete()
+
 
 
 def check_data_base_heal_th():
