@@ -58,7 +58,7 @@ async def ica(icss):
 
 @bot.on(admin_cmd(outgoing=True, pattern="البوت$"))
 @bot.on(sudo_cmd(pattern="البوت$", allow_sudo=True))
-async def ica(alive):
+async def amireallyalive(alive):
     if alive.fwd_from:
         return
     icsbot = Config.TG_BOT_USERNAME
