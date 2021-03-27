@@ -8,10 +8,10 @@
 
 import time
 from platform import python_version
-
 from telethon import version
 
-from . import ALIVE_NAME, StartTime, get_readable_time, icsv, mention, rd
+from . import ALIVE_NAME, StartTime, get_readable_time, icsv, mention
+from . import reply_id as rd
 
 DEFAULTUSER = ALIVE_NAME or "ICSS"
 ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jpg"
