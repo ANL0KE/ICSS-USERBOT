@@ -5,7 +5,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
 
-from ...managers import edit_delete, edit_or_reply
+from ...tosh import ed, eor
 from ..tools import media_type
 from .utils import runcmd
 
@@ -13,18 +13,18 @@ from .utils import runcmd
 async def media_to_pic(event, reply):
     mediatype = media_type(reply)
     if mediatype not in ["Photo", "Round Video", "Gif", "Sticker", "Video"]:
-        await edit_delete(
+        await ed(
             event,
             "`In the replied message. I cant extract any image to procced further reply to proper media`",
         )
         return None
     icssmedia = await reply.download_media(file="./temp")
-    icssevent = await edit_or_reply(event, f"`Transfiguration Time! Converting....`")
+    icssevent = await eor(event, f"`Transfiguration Time! Converting....`")
     icssfile = os.path.join("./temp/", "meme.png")
     if mediatype == "Sticker":
         if icssmedia.endswith(".tgs"):
             await runcmd(
-                f"lottie_convert.py --frame 0 -if lottie -of png '{catmedia}' '{catfile}'"
+                f"lottie_convert.py --frame 0 -if lottie -of png '{icssmedia}' '{icssfile}'"
             )
         elif icssmedia.endswith(".webp"):
             im = Image.open(icssmedia)
