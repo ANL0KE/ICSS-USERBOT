@@ -5,7 +5,7 @@ from userbot.kimo import *
 WPIC = "https://telegra.ph/file/dfd7fc05a81748a87761c.jpg"
 
 
-@icssbot.on(admin_cmd(pattern="م21"))
+@icss(icss_cmd(pattern="م21"))
 async def wspr(kimo):
     await kimo.edit(
         "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑺𝑬𝑪𝑹𝑬𝑻 𝑴𝑺𝑮 𓆪\n"
@@ -18,7 +18,7 @@ async def wspr(kimo):
 
 
 # Wespr - همسه
-@icssbot.on(admin_cmd(outgoing=True, pattern="همسه$"))
+@icss(icss_cmd(outgoing=True, pattern="همسه$"))
 async def kimo(lon):
     if lon.fwd_from:
         return
