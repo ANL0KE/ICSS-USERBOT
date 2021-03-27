@@ -22,7 +22,7 @@ async def repo(event):
   await tgbot.send_message(event.chat, "thnx", buttons=[[Button.url("⚜️ icsd ⚜️", "https://github.com/ANL0KE/ICSS-USERBOT")]])
 
 
-@bot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
+@tgbot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
 async def start_all(event):
     if event.chat_id == OWNER_ID:
         return
@@ -36,7 +36,7 @@ async def start_all(event):
             pass
     if LOAD_MYBOT == "False":
         if BOT_PIC:
-            await bot.send_file(event.chat_id,
+            await tgbot.send_file(event.chat_id,
                                   BOT_PIC,
                                   caption=startotherdis,
                                   buttons=[
@@ -45,7 +45,7 @@ async def start_all(event):
                                           data="wew"))]
                                   )
         else:
-            await bot.send_message(event.chat_id,
+            await tgbot.send_message(event.chat_id,
                                      startotherdis,
                                      buttons=[
                                          (Button.inline(
@@ -54,7 +54,7 @@ async def start_all(event):
                                      )
     elif LOAD_MYBOT == "True":
         if BOT_PIC:
-            await bot.send_file(event.chat_id,
+            await tgbot.send_file(event.chat_id,
                                   BOT_PIC,
                                   caption=startotherena,
                                   buttons=[
@@ -65,7 +65,7 @@ async def start_all(event):
                                   ]
                                   )
         else:
-            await bot.send_message(event.chat_id,
+            await tgbot.send_message(event.chat_id,
                                      startotherena,
                                      buttons=[
                                          [Button.url(
