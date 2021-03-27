@@ -11,7 +11,7 @@ from platform import python_version
 
 from telethon import version
 
-from . import ALIVE_NAME, StartTime, get_readable_time, icsv, mention, reply_id
+from . import ALIVE_NAME, StartTime, get_readable_time, icsv, mention, rd
 
 DEFAULTUSER = ALIVE_NAME or "ICSS"
 ICSS_IMG = Config.ALIVE_PIC or "https://telegra.ph/file/499596b18292c0e43ac56.jpg"
@@ -21,10 +21,10 @@ ICSEM = Config.CUSTOM_ALIVE_EMOJI or "  ⌔∮ "
 
 @icssbot.on(admin_cmd(outgoing=True, pattern="السورس$"))
 @icssbot.on(sudo_cmd(pattern="السورس$", allow_sudo=True))
-async def icssalive(icss):
+async def ica(icss):
     if icss.fwd_from:
         return
-    ics_id = await reply_id(icss)
+    ics_id = await rd(icss)
     icsupt = await get_readable_time((time.time() - StartTime))
     _, check_sgnirts = check_data_base_heal_th()
     if ICSS_IMG:
@@ -43,7 +43,7 @@ async def icssalive(icss):
         )
         await icss.delete()
     else:
-        await edit_or_reply(
+        await eor(
             icss,
             f"**{ICSS_TEXT}**\n\n"
             f"**{ICSEM} قاعدة البيانات ↫**  `{check_sgnirts}`\n"
@@ -55,13 +55,13 @@ async def icssalive(icss):
         )
 
 
-@icssbot.on(admin_cmd(outgoing=True, pattern="البوت$"))
-@icssbot.on(sudo_cmd(pattern="البوت$", allow_sudo=True))
-async def icssalive(icss):
+@bot.on(admin_cmd(outgoing=True, pattern="البوت$"))
+@bot.on(sudo_cmd(pattern="البوت$", allow_sudo=True))
+async def ica(icss):
     if icss.fwd_from:
         return
     icsbotun = Config.TG_BOT_USERNAME
-    ics_id = await reply_id(icss)
+    ics_id = await rd(icss)
     ics_c = f"𓆩 𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 𓆪\n"
     ics_c += f"**  - اصدار التليثون :** `{version.__version__}\n`"
     ics_c += f"**  - اصدار اكسس :** `{icsv}`\n"
