@@ -22,7 +22,7 @@ async def repo(event):
   await bot.send_message(event.chat, "thnx", buttons=[[Button.url("⚜️ icsd ⚜️", "https://github.com/ANL0KE/ICSS-USERBOT")]])
 
 
-@tgbot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
+@bot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
 async def start_all(event):
     if event.chat_id == OWNER_ID:
         return
@@ -36,7 +36,7 @@ async def start_all(event):
             pass
     if LOAD_MYBOT == "False":
         if BOT_PIC:
-            await tgbot.send_file(event.chat_id,
+            await bot.send_file(event.chat_id,
                                   BOT_PIC,
                                   caption=startotherdis,
                                   buttons=[
@@ -45,7 +45,7 @@ async def start_all(event):
                                           data="wew"))]
                                   )
         else:
-            await tgbot.send_message(event.chat_id,
+            await bot.send_message(event.chat_id,
                                      startotherdis,
                                      buttons=[
                                          (Button.inline(
@@ -54,22 +54,22 @@ async def start_all(event):
                                      )
     elif LOAD_MYBOT == "True":
         if BOT_PIC:
-            await tgbot.send_file(event.chat_id,
+            await bot.send_file(event.chat_id,
                                   BOT_PIC,
                                   caption=startotherena,
                                   buttons=[
                                       [Button.url(
-                                          "TeleBot", url="https://github.com/xditya/TeleBot")],
+                                          "TeleBot", url="https://github.com/ANL0KE/ICSS-USERBOT")],
                                       [Button.inline(
                                           "Whats this?", data="telebot")]
                                   ]
                                   )
         else:
-            await tgbot.send_message(event.chat_id,
+            await bot.send_message(event.chat_id,
                                      startotherena,
                                      buttons=[
                                          [Button.url(
-                                             "TeleBot", url="https://github.com/xditya/TeleBot")],
+                                             "Kimo", url="https://t.me/rruuurr")],
                                          [Button.inline(
                                              "Whats this?", data="telebot")]
                                      ]
