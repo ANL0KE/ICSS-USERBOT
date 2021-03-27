@@ -4,7 +4,7 @@
 
 from userbot.Config import Config
 
-@icss(icss_cmd(pattern="م22"))
+@icssbot.on(icss_cmd(pattern="م22"))
 async def wspr(kimo):
     await kimo.edit(
         "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑪𝑶𝑴𝑴𝑬𝑵𝑫𝑺 𓆪\n"
@@ -15,7 +15,7 @@ async def wspr(kimo):
         "𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪"
     )
 
-@icss(
+@icssbot.on(
     icss_cmd(
        pattern="اكس او$"
     )
