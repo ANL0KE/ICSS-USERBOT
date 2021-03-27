@@ -1,7 +1,7 @@
 from telethon.tl.types import MessageEntityMentionName
 
 from ...Config import Config
-from ...managers import edit_delete
+from ...tosh import ed
 
 
 async def reply_id(event):
@@ -24,7 +24,7 @@ async def get_user_from_event(event, icssevent=None, secondgroup=None):
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
         if previous_message.from_id is None and not event.is_private:
-            await edit_delete(icssevent, "`Well that's an anonymous admin !`")
+            await ed(icssevent, "`Well that's an anonymous admin !`")
             return None, None
         user_obj = await event.client.get_entity(previous_message.sender_id)
         extra = event.pattern_match.group(1)
@@ -35,7 +35,7 @@ async def get_user_from_event(event, icssevent=None, secondgroup=None):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await edit_delete(icssevent, "`Pass the user's username, id or reply!`", 5)
+            await ed(icssevent, "`Pass the user's username, id or reply!`", 5)
             return None, None
         if event.message.entities:
             probable_user_mention_entity = event.message.entities[0]
@@ -46,6 +46,6 @@ async def get_user_from_event(event, icssevent=None, secondgroup=None):
         try:
             user_obj = await event.client.get_entity(user)
         except (TypeError, ValueError):
-            await edit_delete(icssevent, "`Couldn't fetch user to procced further`", 5)
+            await ed(icssevent, "`Couldn't fetch user to procced further`", 5)
             return None, None
     return user_obj, extra
