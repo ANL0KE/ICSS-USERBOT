@@ -528,12 +528,8 @@ def load_admin(shortname):
         LOGS.info("⫷ يتم تنزيل الادمن ⫸")
         LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
     else:
-        import importlib
-        import sys
-        from pathlib import Path
-
         path = Path(f"userbot/plugins/Admin/{shortname}.py")
-        name = "telebot.plugins.Admin.{}".format(shortname)
+        name = "userbot.plugins.Admin.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.tgbot = bot.tgbot
