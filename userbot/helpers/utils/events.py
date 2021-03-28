@@ -1,7 +1,7 @@
 from telethon.tl.types import MessageEntityMentionName
 
 from ...Config import Config
-from ...tosh import ed
+from ...managers import edit_delete as ed
 
 
 async def reply_id(event):
