@@ -1,12 +1,6 @@
 """
 ©icss : @rruuurr
   - Tumblr Gif -1
-  - Tumblr Gif -2
-  - Tumblr Gif -3
-  - Tumblr Gif -4
-  - Tumblr Gif -5
-  - Tumblr Gif -6
-  - Tumblr Gif -7
 
 """
 
@@ -27,8 +21,8 @@ async def tmgif(kim):
         await kim.client.send_file(kim.chat_id, tm_gif, caption=kim_c, reply_to=kimid)
 
 
-@icssbot.on(icss_cmd(outgoing=True, pattern="ت1$"))
-@icssbot.on(sudo_cmd(pattern="ت1$", allow_sudo=True))
+@icssbot.on(icss_cmd(outgoing=True, pattern="ت2$"))
+@icssbot.on(sudo_cmd(pattern="ت2$", allow_sudo=True))
 async def tmgif(lon):
     if lon.fwd_from:
         return
@@ -40,8 +34,8 @@ async def tmgif(lon):
         await lon.client.send_file(lon.chat_id, tm_gif2, caption=ics_c, reply_to=lonid)
 
 
-@icssbot.on(icss_cmd(outgoing=True, pattern="ت1$"))
-@icssbot.on(sudo_cmd(pattern="ت1$", allow_sudo=True))
+@icssbot.on(icss_cmd(outgoing=True, pattern="ت3$"))
+@icssbot.on(sudo_cmd(pattern="ت3$", allow_sudo=True))
 async def tmgif(i):
     if i.fwd_from:
         return
@@ -53,8 +47,8 @@ async def tmgif(i):
         await i.client.send_file(i.chat_id, tm_gif3, caption=tumc, reply_to=sic_id)
 
 
-@icssbot.on(icss_cmd(outgoing=True, pattern="ت1$"))
-@icssbot.on(sudo_cmd(pattern="ت1$", allow_sudo=True))
+@icssbot.on(icss_cmd(outgoing=True, pattern="ت4$"))
+@icssbot.on(sudo_cmd(pattern="ت4$", allow_sudo=True))
 async def tmgif(lon):
     if lon.fwd_from:
         return
@@ -68,8 +62,8 @@ async def tmgif(lon):
         )
 
 
-@icssbot.on(icss_cmd(outgoing=True, pattern="ت1$"))
-@icssbot.on(sudo_cmd(pattern="ت1$", allow_sudo=True))
+@icssbot.on(icss_cmd(outgoing=True, pattern="ت5$"))
+@icssbot.on(sudo_cmd(pattern="ت5$", allow_sudo=True))
 
 async def tmgif(tosh):
     if tosh.fwd_from:
@@ -84,8 +78,8 @@ async def tmgif(tosh):
         )
 
 
-@icssbot.on(icss_cmd(outgoing=True, pattern="ت1$"))
-@icssbot.on(sudo_cmd(pattern="ت1$", allow_sudo=True))
+@icssbot.on(icss_cmd(outgoing=True, pattern="ت6$"))
+@icssbot.on(sudo_cmd(pattern="ت6$", allow_sudo=True))
 
 async def tmgif(kimo):
     if kimo.fwd_from:
@@ -100,8 +94,8 @@ async def tmgif(kimo):
         )
 
 
-@icssbot.on(icss_cmd(outgoing=True, pattern="ت1$"))
-@icssbot.on(sudo_cmd(pattern="ت1$", allow_sudo=True))
+@icssbot.on(icss_cmd(outgoing=True, pattern="ت7$"))
+@icssbot.on(sudo_cmd(pattern="ت7$", allow_sudo=True))
 async def tmgif(ics):
     if ics.fwd_from:
         return
