@@ -1,6 +1,7 @@
 import time
 
-from . import StartTime, mention, rd
+from . import StartTime, mention
+from . imporr relly_id as rd
 from . import get_readable_time as grt
 
 @icssbot.on(
