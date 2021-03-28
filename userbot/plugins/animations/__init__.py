@@ -1,9 +1,10 @@
-# Hey there
+#   ICSS - USERBOT
+#   OWNER - ANL0KE 
+#   TELE - NIIIN2
+
+# ======================================================= #
 
 from userbot.Config import Config
-
-# =================== OWNER - ANL0KE =================== #
-
 USERID = Config.OWNER_ID 
 ALIVE_NAME = Config.ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
