@@ -55,7 +55,7 @@ async def _(event):
     cmd = event.pattern_match.group(1)
     if cmd == "بحث":
         q = "128k"
-    elif cmd == "song320":
+    elif cmd == "اغنيه":
         q = "320k"
     song_cmd = song_dl.format(QUALITY=q, video_link=video_link)
     # thumb_cmd = thumb_dl.format(video_link=video_link)
@@ -187,8 +187,8 @@ async def _(event):
             os.remove(files)
 
 
-@icssbot.on(admin_cmd(pattern="song2 (.*)"))
-@icssbot.on(sudo_cmd(pattern="song2 (.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="اغنيه (.*)"))
+@icssbot.on(sudo_cmd(pattern="اغنيه (.*)", allow_sudo=True))
 async def icssongfetcer(event):
     if event.fwd_from:
         return
