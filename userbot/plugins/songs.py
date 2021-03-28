@@ -15,17 +15,6 @@ from validators.url import url
 
 from . import mention, name_dl, song_dl, video_dl, yt_search
 
-# =========================================================== #
-#                           الردود                           #
-# =========================================================== #
-SONG_SEARCH_STRING = "⌔∮ جاري البحث عن الاغنـيه 🖤🎧 ،"
-SONG_NOT_FOUND = "⌔∮ آسف ، لا يمكنني العثور على أي أغنية كهذه  ⇲"
-SONG_SENDING_STRING = "⌔∮ جاري تحميل الاغنيه انتظر قليلا🖤🎧."
-SONGBOT_BLOCKED_STRING = "⌔∮ قم بإلغاء الحظر عن @songdl_bot ⇲"
-# =========================================================== #
-#                                                             #
-# =========================================================== #
-
 
 @bot.on(admin_cmd(pattern="(بحث|song320)($| (.*))"))
 @bot.on(sudo_cmd(pattern="(بحث|song320)($| (.*))", allow_sudo=True))
@@ -88,7 +77,7 @@ async def _(event):
         event.chat_id,
         song_file,
         force_document=False,
-        caption=f"**⌔∮ الاغنيه :** {query}",
+        caption=f"**⌔∮ الاغنيه :** {query}\n**⌔∮ للمستخدم :** {mention}",
         thumb=icsthb,
         supports_streaming=True,
         reply_to=reply_to_id,
@@ -212,7 +201,7 @@ async def icssongfetcer(event):
         await event.client.send_file(
             event.chat_id,
             music,
-            caption=f"<b>⌔∮ الاغنيه :- <code>{song}</code></b>",
+            caption=f"**⌔∮ الاغنيه :** {query}\n**⌔∮ للمستخدم :** {mention}",
             parse_mode="html",
             reply_to=reply_id_,
         )
