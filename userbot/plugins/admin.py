@@ -1,5 +1,4 @@
 # admin code for ICSS edit By: @rruuurr
-
 from asyncio import sleep
 
 from telethon import functions
