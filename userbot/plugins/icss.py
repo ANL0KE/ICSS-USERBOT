@@ -15,11 +15,11 @@ T = (
 )
 
 
-@icss(icss_cmd(pattern="icss", outgoing=True))
+@icssbot.on(icss_cmd(pattern="icss", outgoing=True))
 async def kimo(ics):
     return await eor(ics, I)
 
 
-@icss(icss_cmd(pattern="poo", outgoing=True))
+@icssbot.on(icss_cmd(pattern="poo", outgoing=True))
 async def poo(pio):
     return await eor(pio, T)
