@@ -4,13 +4,13 @@ from . import reply_id as rd
 from .IcssGif import *
 
 
-@icssbot.on(
+# @icssbot.on(
     icss_cmd(
        outgoing=True, 
        pattern="ك1$",
     )
 )
-@icssbot.on(
+# @icssbot.on(
     sudo_cmd(
        pattern="ك1$", 
        allow_sudo=True, 
