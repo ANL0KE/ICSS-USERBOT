@@ -1,12 +1,10 @@
-"""command: .hack & .thack """
-# thx to @r4v4n4
 import asyncio
 
 from telethon.tl.functions.users import GetFullUserRequest
 
 from . import ALIVE_NAME
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "icss"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss - Userbot"
 
 
 @icssbot.on(admin_cmd(pattern=r"تهكير$", outgoing=True))
@@ -19,11 +17,11 @@ async def _(event):
         await event.client(GetFullUserRequest(reply_message.sender_id))
         idd = reply_message.sender_id
         if idd == 1588663614:
-            await edit_or_reply(
+            await eor(
                 event, "**⌔∮ انه مطور السورس **\n⪼ لا استطيع تهكير مطوري"
             )
         else:
-            event = await edit_or_reply(event, "╮ ❐ جاري تهكير المستخدم 𓅫╰")
+            event = await eor(event, "╮ ❐ جاري تهكير المستخدم 𓅫╰")
             animation_chars = [
                 "**⌔∮ جاري الاتصال بخوادم اكسس المتخصصه بالـتهكير**",
                 "**⌔∮ تم تحديد المستخدم لتهكيره**",
@@ -53,7 +51,7 @@ async def _(event):
         return
     animation_interval = 2
     animation_ttl = range(12)
-    event = await edit_or_reply(event, "thack")
+    event = await eor(event, "thack")
     animation_chars = [
         "**Connecting To Telegram Data Centre**",
         f"Target Selected By Hacker: {DEFAULTUSER}",
@@ -79,7 +77,7 @@ async def _(event):
         return
     animation_interval = 2
     animation_ttl = range(15)
-    event = await edit_or_reply(event, "wahack..")
+    event = await eor(event, "wahack..")
     animation_chars = [
         "Looking for WhatsApp databases in targeted person...",
         " User online: True\nTelegram access: True\nRead Storage: True ",
