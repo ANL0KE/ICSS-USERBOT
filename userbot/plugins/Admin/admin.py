@@ -1,6 +1,5 @@
 #     Icss - Userbot
 #     edit - @rruuurr
-#     this code from sandy thnx to him
 
 # ====================================================== #
 
@@ -79,13 +78,13 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ====================================================== #
 
 
-@bot.on(admin_cmd(pattern="ضع صوره$"))
-@bot.on(sudo_cmd(pattern="ضع صوره$", allow_sudo=True))
+@icssbot.on(icss_cmd(pattern="ضع صوره$"))
+@icssbot.on(sudo_cmd(pattern="ضع صوره$", allow_sudo=True))
 async def set_group_photo(gpic):
     if gpic.fwd_from:
         return
     if not gpic.is_group:
-        await edit_or_reply(
+        await eor(
             gpic,
             "** ⪼ لا اعتقد ان ۿذه مجمـوعه 𓆰،**\n ⫷ [𝙎𝙊𝙐𝙍𝘾𝞝  𝙞𝘾𝙎𝙎 ](t.me/rruuurr) ⫸",
         )
@@ -99,22 +98,22 @@ async def set_group_photo(gpic):
         elif "image" in replymsg.media.document.mime_type.split("/"):
             photo = await gpic.client.download_file(replymsg.media.document)
         else:
-            await edit_or_reply(gpic, INVALID_MEDIA)
-    sandy = None
+            await eor(gpic, INVALID_MEDIA)
+    kimo = None
     if photo:
         try:
             await gpic.client(
                 EditPhotoRequest(gpic.chat_id, await gpic.client.upload_file(photo))
             )
-            await edit_or_reply(gpic, CHAT_PP_CHANGED)
-            sandy = True
+            await eor(gpic, CHAT_PP_CHANGED)
+            kimo = True
         except PhotoCropSizeSmallError:
-            await edit_or_reply(gpic, PP_TOO_SMOL)
+            await eor(gpic, PP_TOO_SMOL)
         except ImageProcessFailedError:
-            await edit_or_reply(gpic, PP_ERROR)
+            await eor(gpic, PP_ERROR)
         except Exception as e:
-            await edit_or_reply(gpic, f"**خطأ : **`{str(e)}`")
-        if BOTLOG and sandy:
+            await eor(gpic, f"**خطأ : **`{str(e)}`")
+        if BOTLOG and kimo:
             await gpic.client.send_message(
                 BOTLOG_CHATID,
                 "#صوره_المجموعه\n"
@@ -122,11 +121,12 @@ async def set_group_photo(gpic):
                 f"الدردشه: {gpic.chat.title}(`{gpic.chat_id}`)",
             )
 
+
 # ====================================================== #
 
 
-@bot.on(admin_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote"))
-@bot.on(sudo_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote", allow_sudo=True))
+@icssbot.on(icss_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote"))
+@icssbot.on(sudo_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote", allow_sudo=True))
 async def promote(promt):
     if promt.fwd_from:
         return
@@ -134,7 +134,7 @@ async def promote(promt):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await edit_or_reply(promt, NO_ADMIN)
+        await eor(promt, NO_ADMIN)
         return
     new_rights = ChatAdminRights(
         add_admins=False,
@@ -144,7 +144,7 @@ async def promote(promt):
         delete_messages=True,
         pin_messages=True,
     )
-    catevent = await edit_or_reply(promt, "**╮ ❐  جـاري ࢪفعه مشرف  ❏╰**")
+    icse = await eor(promt, "**╮ ❐  جـاري ࢪفعه مشرف  ❏╰**")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "مشرف"
@@ -152,9 +152,9 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await catevent.edit("**- ❝ ⌊  تم تـرقيتـه مشـرف 𓆰.**")
+        await icse.edit("**- ❝ ⌊  تم تـرقيتـه مشـرف 𓆰.**")
     except BadRequestError:
-        await catevent.edit(NO_PERM)
+        await icse.edit(NO_PERM)
         return
     if BOTLOG:
         await promt.client.send_message(
@@ -164,11 +164,12 @@ async def promote(promt):
             f"الدردشه: {promt.chat.title}(`{promt.chat_id}`)",
         )
 
+
 # ====================================================== #
 
 
-@bot.on(admin_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote"))
-@bot.on(sudo_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote", allow_sudo=True))
+@icssbot.on(icss_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote"))
+@icssbot.on(sudo_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote", allow_sudo=True))
 async def promote(promt):
     if promt.fwd_from:
         return
@@ -176,7 +177,7 @@ async def promote(promt):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await edit_or_reply(promt, NO_ADMIN)
+        await eor(promt, NO_ADMIN)
         return
     new_rights = ChatAdminRights(
         add_admins=True,
@@ -186,7 +187,7 @@ async def promote(promt):
         delete_messages=True,
         pin_messages=True,
     )
-    catevent = await edit_or_reply(promt, "**╮ ❐  جـاري ࢪفعه مالك  ❏╰**")
+    icse = await eor(promt, "**╮ ❐  جـاري ࢪفعه مالك  ❏╰**")
     user, rank = await get_user_from_event(promt)
     if not rank:
         rank = "مالك"
@@ -194,9 +195,9 @@ async def promote(promt):
         return
     try:
         await promt.client(EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await catevent.edit("**- ❝ ⌊  تم تـرقيتـه مالك 𓆰.**")
+        await icse.edit("**- ❝ ⌊  تم تـرقيتـه مالك 𓆰.**")
     except BadRequestError:
-        await catevent.edit(NO_PERM)
+        await icse.edit(NO_PERM)
         return
     if BOTLOG:
         await promt.client.send_message(
@@ -209,8 +210,9 @@ async def promote(promt):
 
 # ====================================================== #
 
-@bot.on(admin_cmd(pattern="تك(?: |$)(.*)", command="demote"))
-@bot.on(sudo_cmd(pattern="تك(?: |$)(.*)", command="demote", allow_sudo=True))
+
+@icssbot.on(icss_cmd(pattern="تك(?: |$)(.*)", command="demote"))
+@icssbot.on(sudo_cmd(pattern="تك(?: |$)(.*)", command="demote", allow_sudo=True))
 async def demote(dmod):
     if dmod.fwd_from:
         return
@@ -218,9 +220,9 @@ async def demote(dmod):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await edit_or_reply(dmod, NO_ADMIN)
+        await eor(dmod, NO_ADMIN)
         return
-    catevent = await edit_or_reply(dmod, "↮")
+    icse = await eor(dmod, "↮")
     rank = "مشرف"
     user = await get_user_from_event(dmod)
     user = user[0]
@@ -237,9 +239,9 @@ async def demote(dmod):
     try:
         await dmod.client(EditAdminRequest(dmod.chat_id, user.id, newrights, rank))
     except BadRequestError:
-        await catevent.edit(NO_PERM)
+        await icse.edit(NO_PERM)
         return
-    await catevent.edit("**- ❝ ⌊  تم تنزلـيه من الاشـرف بنجـاح  𓆰.**")
+    await icse.edit("**- ❝ ⌊  تم تنزلـيه من الاشـرف بنجـاح  𓆰.**")
     if BOTLOG:
         await dmod.client.send_message(
             BOTLOG_CHATID,
@@ -248,11 +250,12 @@ async def demote(dmod):
             f"الدردشه: {dmod.chat.title}(`{dmod.chat_id}`)",
         )
 
+
 # ====================================================== #
 
 
-@bot.on(admin_cmd(pattern="دي(?: |$)(.*)", command="ban"))
-@bot.on(sudo_cmd(pattern="دي(?: |$)(.*)", command="ban", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="دي(?: |$)(.*)", command="ban"))
+@icssbot.on(sudo_cmd(pattern="دي(?: |$)(.*)", command="ban", allow_sudo=True))
 async def ban(bon):
     if bon.fwd_from:
         return
@@ -260,30 +263,30 @@ async def ban(bon):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await edit_or_reply(bon, NO_ADMIN)
+        await eor(bon, NO_ADMIN)
         return
     user, reason = await get_user_from_event(bon)
     if not user:
         return
-    catevent = await edit_or_reply(bon, "**╮ ❐  جـاري حظره  ❏╰**")
+    icse = await eor(bon, "**╮ ❐  جـاري حظره  ❏╰**")
     try:
         await bon.client(EditBannedRequest(bon.chat_id, user.id, BANNED_RIGHTS))
     except BadRequestError:
-        await catevent.edit(NO_PERM)
+        await icse.edit(NO_PERM)
         return
     try:
         reply = await bon.get_reply_message()
         if reply:
             await reply.delete()
     except BadRequestError:
-        await catevent.edit(
+        await icse.edit(
             "** ⪼ ليس لدي صلاحيـة حذف الرسـائل لڪنه لايـزال محظـور 𓆰،**"
         )
         return
     if reason:
-        await catevent.edit(f"`{str(user.id)}` محظور !!\n دقيقه: {reason}")
+        await icse.edit(f"`{str(user.id)}` محظور !!\n دقيقه: {reason}")
     else:
-        await catevent.edit(f"`{str(user.id)}` محظور !!")
+        await icse.edit(f"`{str(user.id)}` محظور !!")
     if BOTLOG:
         await bon.client.send_message(
             BOTLOG_CHATID,
@@ -292,11 +295,12 @@ async def ban(bon):
             f"الدردشه: {bon.chat.title}(`{bon.chat_id}`)",
         )
 
+
 # ====================================================== #
 
 
-@bot.on(admin_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban"))
-@bot.on(sudo_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban", allow_sudo=True))
+@icssbot.on(icss_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban"))
+@icssbot.on(sudo_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban", allow_sudo=True))
 async def nothanos(unbon):
     if unbon.fwd_from:
         return
@@ -304,16 +308,16 @@ async def nothanos(unbon):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await edit_or_reply(unbon, NO_ADMIN)
+        await eor(unbon, NO_ADMIN)
         return
-    catevent = await edit_or_reply(unbon, "**╮ ❐  جـاري رفـع القيـود  ❏╰**")
+    icse = await eor(unbon, "**╮ ❐  جـاري رفـع القيـود  ❏╰**")
     user = await get_user_from_event(unbon)
     user = user[0]
     if not user:
         return
     try:
         await unbon.client(EditBannedRequest(unbon.chat_id, user.id, UNBAN_RIGHTS))
-        await catevent.edit("تم رفع جميع القيود")
+        await ics.edit("تم رفع جميع القيود")
         if BOTLOG:
             await unbon.client.send_message(
                 BOTLOG_CHATID,
@@ -322,9 +326,11 @@ async def nothanos(unbon):
                 f"الدردشه: {unbon.chat.title}(`{unbon.chat_id}`)",
             )
     except UserIdInvalidError:
-        await catevent.edit("**- ❝ ⌊  تم رفـع جميـع القيـود بنجـاح  𓆰.**")
+        await icse.edit("**- ❝ ⌊  تم رفـع جميـع القيـود بنجـاح  𓆰.**")
+
 
 # ====================================================== #
+
 
 @bot.on(admin_cmd(incoming=True))
 async def watcher(event):
@@ -334,10 +340,12 @@ async def watcher(event):
         except Exception as e:
             LOGS.info(str(e))
 
+
 # ====================================================== #
 
-@bot.on(admin_cmd(pattern="تقيد(?: |$)(.*)", command="mute"))
-@bot.on(sudo_cmd(pattern="تقيد(?: |$)(.*)", command="mute", allow_sudo=True))
+
+@icssbot.on(icss_cmd(pattern="تقيد(?: |$)(.*)", command="mute"))
+@icssbot.on(sudo_cmd(pattern="تقيد(?: |$)(.*)", command="mute", allow_sudo=True))
 async def startmute(event):
     if event.fwd_from:
         return
@@ -369,14 +377,14 @@ async def startmute(event):
         if not user:
             return
         if user.id == bot.uid:
-            return await edit_or_reply(event, "**- ❝ ⌊  لا استـطيع تقيـد نفـسي  𓆰.**")
+            return await eor(event, "**- ❝ ⌊  لا استـطيع تقيـد نفـسي  𓆰.**")
         if is_muted(user.id, event.chat_id):
-            return await edit_or_reply(event, "**╮ ❐ المسـتخدم مقيد بالفعـل  ❏╰**")
+            return await eor(event, "**╮ ❐ المسـتخدم مقيد بالفعـل  ❏╰**")
         try:
             admin = chat.admin_rights
             creator = chat.creator
             if not admin and not creator:
-                await edit_or_reply(
+                await eor(
                     event, "** ⪼ لا استطيع تقـيد شخص بـدون صلاحـيات الشرفـين 𓆰،** "
                 )
                 return
@@ -387,9 +395,9 @@ async def startmute(event):
             )
             try:
                 if result.participant.banned_rights.send_messages:
-                    return await edit_or_reply(
+                    return await eor(
                         event,
-                        "مقيد بالفعل~~",
+                        "**مقيد بالفعل- **",
                     )
             except:
                 pass
@@ -397,28 +405,28 @@ async def startmute(event):
         except UserAdminInvalidError:
             if "admin_rights" in vars(chat) and vars(chat)["admin_rights"] is not None:
                 if chat.admin_rights.delete_messages is not True:
-                    return await edit_or_reply(
+                    return await eor(
                         event,
                         "**⪼ لا يمكنك كتم أي شخص إذا لم يكن لديك إذن حذف الرسائل  𓆰،**",
                     )
             elif "creator" not in vars(chat):
-                return await edit_or_reply(
+                return await eor(
                     event, "**⪼ لا يمكنك كتم أي شخص بدون صلاحيه مشرفين  𓆰، ** "
                 )
             try:
                 mute(user.id, event.chat_id)
             except Exception as e:
-                return await edit_or_reply(event, "حدث خطأ!\nالخطأ هو " + str(e))
+                return await eor(event, "حدث خطأ!\nالخطأ هو " + str(e))
         except Exception as e:
-            return await edit_or_reply(event, f"**خطأ : **`{str(e)}`")
+            return await eor(event, f"**خطأ : **`{str(e)}`")
         if reason:
-            await edit_or_reply(
+            await eor(
                 event,
                 f" المستخدم ↫[{user.first_name}](tg://user?id={user.id})تم تقيده بنجاح✅"
                 #                 f"`Reason:`{reason}",
             )
         else:
-            await edit_or_reply(
+            await eor(
                 event,
                 f"المستخدم ↫[{user.first_name}](tg://user?id={user.id})تم تقيده بنجاح✅",
             )
@@ -430,10 +438,12 @@ async def startmute(event):
                 f"الدردشه: {event.chat.title}(`{event.chat_id}`)",
             )
 
+
 # ====================================================== #
 
-@bot.on(admin_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute"))
-@bot.on(sudo_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute", allow_sudo=True))
+
+@icssbot.on(icss_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute"))
+@icssbot.on(sudo_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute", allow_sudo=True))
 async def endmute(event):
     if event.fwd_from:
         return
@@ -478,13 +488,13 @@ async def endmute(event):
                             EditBannedRequest(event.chat_id, user.id, UNBAN_RIGHTS)
                         )
                 except:
-                    return await edit_or_reply(
+                    return await eor(
                         event,
                         "هذا المستخدم غير مقيد هنا~~",
                     )
         except Exception as e:
-            return await edit_or_reply(event, f"**خطأ : **`{str(e)}`")
-        await edit_or_reply(event, "** - ❝ ⌊  تم رفـع القيـود عـنه  𓆰.**")
+            return await eor(event, f"**خطأ : **`{str(e)}`")
+        await eor(event, "** - ❝ ⌊  تم رفـع القيـود عـنه  𓆰.**")
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
@@ -493,10 +503,12 @@ async def endmute(event):
                 f"الدردشه: {event.chat.title}(`{event.chat_id}`)",
             )
 
+
 # ====================================================== #
 
-@bot.on(admin_cmd(pattern="طرد(?: |$)(.*)", command="kick"))
-@bot.on(sudo_cmd(pattern="طرد(?: |$)(.*)", command="kick", allow_sudo=True))
+
+@icssbot.on(icss_cmd(pattern="طرد(?: |$)(.*)", command="kick"))
+@icssbot.on(sudo_cmd(pattern="طرد(?: |$)(.*)", command="kick", allow_sudo=True))
 async def kick(usr):
     if usr.fwd_from:
         return
@@ -504,25 +516,25 @@ async def kick(usr):
     admin = chat.admin_rights
     creator = chat.creator
     if not admin and not creator:
-        await edit_or_reply(usr, NO_ADMIN)
+        await eor(usr, NO_ADMIN)
         return
     user, reason = await get_user_from_event(usr)
     if not user:
-        await edit_or_reply(usr, "**تعذر جلب المستخدم.**")
+        await eor(usr, "**تعذر جلب المستخدم.**")
         return
-    catevent = await edit_or_reply(usr, "**جـاري طرد...**")
+    icse = await eor(usr, "**جـاري طرد...**")
     try:
         await usr.client.kick_participant(usr.chat_id, user.id)
         await sleep(0.5)
     except Exception as e:
-        await catevent.edit(NO_PERM + f"\n{str(e)}")
+        await icse.edit(NO_PERM + f"\n{str(e)}")
         return
     if reason:
-        await catevent.edit(
+        await icse.edit(
             f"**- ❝ ⌊  تم طرد** [{user.first_name}](tg://user?id={user.id})  𓆰."
         )
     else:
-        await catevent.edit(
+        await icse.edit(
             f"**- ❝ ⌊  تم طرد** [{user.first_name}](tg://user?id={user.id})  𓆰."
         )
     if BOTLOG:
@@ -533,10 +545,12 @@ async def kick(usr):
             f"الدردشه: {usr.chat.title}(`{usr.chat_id}`)\n",
         )
 
+
 # ====================================================== #
 
-@bot.on(admin_cmd(pattern="تثبيت($| (.*))", command="pin"))
-@bot.on(sudo_cmd(pattern="تثبيت($| (.*))", command="pin", allow_sudo=True))
+
+@icssbot.on(icss_cmd(pattern="تثبيت($| (.*))", command="pin"))
+@icssbot.on(sudo_cmd(pattern="تثبيت($| (.*))", command="pin", allow_sudo=True))
 async def pin(msg):
     if msg.fwd_from:
         return
@@ -552,9 +566,9 @@ async def pin(msg):
     try:
         await msg.client.pin_message(msg.chat_id, to_pin, notify=is_silent)
     except BadRequestError:
-        return await edit_delete(msg, NO_PERM, 5)
+        return await ed(msg, NO_PERM, 5)
     except Exception as e:
-        return await edit_delete(msg, f"`{str(e)}`", 5)
+        return await ed(msg, f"`{str(e)}`", 5)
     await edit_delete(msg, "**تم التثبيت بنجاح✔**", 3)
     user = await get_user_from_id(msg.sender_id, msg)
     if BOTLOG and not msg.is_private:
@@ -569,10 +583,12 @@ async def pin(msg):
         except:
             pass
 
+
 # ====================================================== #
 
-@bot.on(admin_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin"))
-@bot.on(sudo_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin", allow_sudo=True))
+
+@icssbot.on(icss_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin"))
+@icssbot.on(sudo_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin", allow_sudo=True))
 async def pin(msg):
     if msg.fwd_from:
         return
@@ -581,7 +597,7 @@ async def pin(msg):
     to_unpin = msg.reply_to_msg_id
     options = (msg.pattern_match.group(1)).strip()
     if not to_unpin and options != "الكل":
-        await edit_delete(
+        await ed(
             msg,
             "**يمكنك الرد على رسالة لإلغاء تثبيتها أو استخدام .الغاء تثبيت الكل**",
             5,
@@ -591,23 +607,23 @@ async def pin(msg):
         try:
             await msg.client.unpin_message(msg.chat_id, to_unpin)
         except BadRequestError:
-            return await edit_delete(msg, NO_PERM, 5)
+            return await ed(msg, NO_PERM, 5)
         except Exception as e:
-            return await edit_delete(msg, f"`{str(e)}`", 5)
+            return await ed(msg, f"`{str(e)}`", 5)
     elif options == "الكل":
         try:
             await msg.client.unpin_message(msg.chat_id)
         except BadRequestError:
-            return await edit_delete(msg, NO_PERM, 5)
+            return await ed(msg, NO_PERM, 5)
         except Exception as e:
-            return await edit_delete(msg, f"`{str(e)}`", 5)
+            return await ed(msg, f"`{str(e)}`", 5)
     else:
-        return await edit_delete(
+        return await ed(
             msg,
             "** - ❝ ⌊   يمكنك الرد على رسالة لإلغاء تثبيتها أو استخدام .الغاء تثبيت الكل 𓆰.**",
             5,
         )
-    await edit_delete(msg, "**تم إلغاء التثبيت بنجاح✔**", 3)
+    await ed(msg, "**تم إلغاء التثبيت بنجاح✔**", 3)
     user = await get_user_from_id(msg.sender_id, msg)
     if BOTLOG and not msg.is_private:
         try:
