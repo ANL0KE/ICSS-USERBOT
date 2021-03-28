@@ -46,6 +46,8 @@ else:
         LOGS.error(f"TG_BOT_TOKEN - {str(e)}")
         sys.exit()
 
+
+# For all plugins
 path = "userbot/plugins/*.py"
 files = glob.glob(path)
 for name in files:
@@ -61,6 +63,8 @@ for name in files:
             os.remove(Path(f"userbot/plugins/{shortname}.py"))
             LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
+
+# For admin tools
 path = "userbot/plugins/Admin/*.py"
 files = glob.glob(path)
 for name in files:
@@ -76,6 +80,24 @@ for name in files:
             os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
             LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
+
+# for animations
+path = "userbot/plugins/animations/*.py"
+files = glob.glob(path)
+for name in files:
+    with open(name) as f:
+        path1 = Path(f.name)
+        shortname = path1.stem
+        try:
+            if shortname.replace(".py", "") not in Config.NO_LOAD:
+                load_admin(shortname.replace(".py", ""))
+            else:
+                os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
+        except Exception as e:
+            os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
+            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+
+
 LOGS.info("⫷ بوت اكسس يعمل بنجاح الان ⫸")
 LOGS.info("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
 
@@ -88,9 +110,9 @@ async def startupmessage():
                 f"**⌔∮ تم تحديث سورس اكسس 𓄂 **\n"
                 f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
                 f"**⩫ اكتب .بنك لتحقق اذا ما كان البوت يعمل **\n"
-                f"**⩫ المستخدم :** {ICSM} \n"
-                f"**⩫ بوت المستخدم : {ICSB}** \n"
-                f"**⩫ للمساعده : {ICSE}**\n"
+                f"**- المستخدم :** {ICSM} \n"
+                f"**- بوت المستخدم : {ICSB}** \n"
+                f"**- للمساعده : {ICSE}**\n"
                 f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
                 link_preview=False,
             )
