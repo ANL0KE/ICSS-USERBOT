@@ -525,6 +525,18 @@ def load_admin(shortname):
         spec.loader.exec_module(mod)
         LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
     else:
+        import userbot.utils
+
+        from .helpers.tools import media_type
+        from .helpers.utils import (
+            _format,
+            _icsstools,
+            _icssutils,
+            install_pip,
+            reply_id,
+        )
+        from .managers import edit_delete, edit_or_reply
+
         path = Path(f"userbot/plugins/Admin/{shortname}.py")
         name = "userbot.plugins.Admin.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
