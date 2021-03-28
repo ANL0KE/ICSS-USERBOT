@@ -5,7 +5,8 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from PIL import Image
 
-from ...tosh import ed, eor
+from ...managers import edit_delete as ed
+from ...managers import edit_or_reply as eor
 from ..tools import media_type
 from .utils import runcmd
 
