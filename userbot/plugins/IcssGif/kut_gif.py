@@ -1,7 +1,7 @@
 # KutGif for icss by: @rruuurr
 
-from . import reply_id
-from .IcssGif import *
+from .. import reply_id
+from . import *
 
 
 @icssbot.on(
