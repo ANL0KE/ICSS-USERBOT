@@ -512,28 +512,63 @@ def command(**args):
     return decorator
 
 
+
+
 def load_admin(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import importlib
-        import sys
-        from pathlib import Path
-
         path = Path(f"userbot/plugins/Admin/{shortname}.py")
         name = "userbot.plugins.Admin.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("⫷ يتم تنزيل الادمن ⫸")
         LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
     else:
+        import userbot.utils
+
+        from .helpers.tools import media_type
+        from .helpers.utils import (
+            _format,
+            _icsstools,
+            _icssutils,
+            install_pip,
+            reply_id,
+        )
+        from .managers import edit_delete, edit_or_reply
+
         path = Path(f"userbot/plugins/Admin/{shortname}.py")
         name = "userbot.plugins.Admin.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
+        mod.bot = bot
+        mod.LOGS = LOGS
+        mod.Config = Config
+        mod._format = _format
         mod.tgbot = bot.tgbot
+        mod.sudo_cmd = sudo_cmd
+        mod.CMD_HELP = CMD_HELP
+        mod.reply_id = reply_id
+        mod.rd = reply_id
+        mod.admin_cmd = admin_cmd
+        mod.icss_cmd = admin_cmd
+        mod._icssutils = _icssutils
+        mod.icut = _icssutils
+        mod._icsstools = _icsstools
+        mod.icto = _icsstools
+        mod.media_type = media_type
+        mod.edit_delete = edit_delete
+        mod.ed = edit_delete
+        mod.install_pip = install_pip
+        mod.parse_pre = _format.parse_pre
+        mod.edit_or_reply = edit_or_reply
+        mod.eor = edit_or_reply
+        mod.logger = logging.getLogger(shortname)
+        sys.modules["uniborg.util"] = userbot.utils
+        mod.borg = bot
+        mod.icssbot = bot
+        mod.icss = bot
+        sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.Admin." + shortname] = mod
-        LOGS.info("⫷ تم الاستيراد الادمن بنجاح ⫸ " + shortname)
-
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
