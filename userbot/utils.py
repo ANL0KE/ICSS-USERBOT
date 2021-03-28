@@ -535,7 +535,7 @@ def load_admin(shortname):
             install_pip,
             reply_id,
         )
-        from .managers import edit_delete, edit_or_reply
+        from .tosh import ed, eor
 
         path = Path(f"userbot/plugins/Admin/{shortname}.py")
         name = "userbot.plugins.Admin.{}".format(shortname)
@@ -551,12 +551,12 @@ def load_admin(shortname):
         mod.rd = reply_id
         mod.admin_cmd = admin_cmd
         mod.icss_cmd = admin_cmd
-        mod.edit_delete = edit_delete
-        mod.ed = edit_delete
-        mod.install_pip = install_pip
-        mod.edit_or_reply = edit_or_reply
-        mod.eor = edit_or_reply
+        mod.ed = ed
+        mod.edit_delete = ed
+        mod.eor = eor
+        mod.edit_or_reply = eor
         mod.logger = logging.getLogger(shortname)
+        sys.modules["uniborg.util"] = userbot.utils
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.Admin." + shortname] = mod
