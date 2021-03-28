@@ -1,5 +1,6 @@
 """
-Edit by: @rruuurr ( https://t.me/rruuurr  )
+By  : @sandy1709 ( https://t.me/mrconfused  )
+Edit: @rruuurr ( https://t.me/rruuurr  )
 """
 # songs finder for Icss
 
@@ -26,8 +27,8 @@ SONGBOT_BLOCKED_STRING = "<code>Please unblock @songdl_bot and try again</code>"
 # =========================================================== #
 
 
-@icssbot.on(icss_cmd(pattern="(بحث|song320)($| (.*))"))
-@icssbot.on(sudo_cmd(pattern="(بحث|song320)($| (.*))", allow_sudo=True))
+@bot.on(admin_cmd(pattern="(بحث|song320)($| (.*))"))
+@bot.on(sudo_cmd(pattern="(بحث|song320)($| (.*))", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -107,8 +108,8 @@ async def delete_messages(event, chat, from_message):
     await event.client.send_read_acknowledge(chat)
 
 
-@icssbot.on(admin_cmd(pattern="يوتيوب( (.*)|$)"))
-@icssbot.on(sudo_cmd(pattern="يوتيوب( (.*)|$)", allow_sudo=True))
+@bot.on(admin_cmd(pattern="يوتيوب( (.*)|$)"))
+@bot.on(sudo_cmd(pattern="يوتيوب( (.*)|$)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -211,7 +212,7 @@ async def cat_song_fetcer(event):
         await event.client.send_file(
             event.chat_id,
             music,
-            caption=f"<b>⌔∮ الاغنيه :- <code>{song}</code></b>",
+            caption=f"<b>➥ Song :- <code>{song}</code></b>",
             parse_mode="html",
             reply_to=reply_id_,
         )
