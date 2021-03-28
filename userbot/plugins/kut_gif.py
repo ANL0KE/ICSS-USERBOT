@@ -4,16 +4,8 @@ from . import reply_id
 from .IcssGif import *
 
 
-@icssbot.on(
-    admin_cmd(
-       outgoing=True, pattern="ك1$"
-    )
-)
-@icssbot.on(
-    sudo_cmd(
-       pattern="ك1$", allow_sudo=True
-    )
-)
+@icssbot.on(admin_cmd(outgoing=True, pattern="ك1$"))
+@icssbot.on(sudo_cmd(pattern="ك1$", allow_sudo=True))
 async def kutgif(icss):
     if icss.fwd_from:
         return
