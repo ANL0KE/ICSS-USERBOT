@@ -15,7 +15,7 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(14)
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     animation_chars = [
         "**- عقلك** ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
         "**- عقلك** ➡️ 🧠\n\n🧠       <(^_^ <)  🗑",
@@ -42,7 +42,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     await event.edit("▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n")
     await asyncio.sleep(0.5)
     await event.edit("💣💣💣💣 \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n")
@@ -72,7 +72,7 @@ async def _(event):
         return
     animation_interval = 3
     animation_ttl = range(18)
-    event = await edit_or_reply(event, "Calling Pavel Durov (ceo of telegram)......")
+    event = await eor(event, "Calling Pavel Durov (ceo of telegram)......")
     animation_chars = [
         "`Connecting To Telegram Headquarters...`",
         "`Call Connected.`",
@@ -105,7 +105,7 @@ async def _(event):
         return
     animation_interval = 0.7
     animation_ttl = range(12)
-    event = await edit_or_reply(event, "ready to die dude.....")
+    event = await eor(event, "ready to die dude.....")
     animation_chars = [
         "Ｆｉｉｉｉｉｒｅ",
         "(　･ิω･ิ)︻デ═一-->",
@@ -132,7 +132,7 @@ async def _(event):
         return
     animation_interval = 0.8
     animation_ttl = range(5)
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     animation_chars = [
         "What",
         "What The",
@@ -163,7 +163,7 @@ async def _(event):
         "⬜⬜⬛⬜⬜\n⬜⬛⬜⬜⬜\n🔴⬜⬜⬜⬜",
         "🔴⬛⬛⬜⬜\n⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜",
     ]
-    event = await edit_or_reply(event, "ding..dong..ding..dong ...")
+    event = await eor(event, "ding..dong..ding..dong ...")
     await asyncio.sleep(4)
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -177,7 +177,7 @@ async def _(event):
         return
     animation_interval = 0.3
     animation_ttl = range(15)
-    event = await edit_or_reply(event, "hypno....")
+    event = await eor(event, "hypno....")
     animation_chars = [
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜",
         "⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬛⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜\n⬜⬜⬜⬜⬜⬜⬜",
@@ -205,7 +205,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     deq = deque(list("🍦🍧🍩🍪🎂🍰🧁🍫🍬🍭"))
     for _ in range(999):
         await asyncio.sleep(0.4)
@@ -218,7 +218,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "gangasta")
+    event = await eor(event, "gangasta")
     await event.edit("EVERyBOdy")
     await asyncio.sleep(0.3)
     await event.edit("iZ")
@@ -241,7 +241,7 @@ async def _(event):
 async def timer_blankx(e):
     if e.fwd_from:
         return
-    e = await edit_or_reply(e, "charging")
+    e = await eor(e, "charging")
     txt = (
         e.text[10:]
         + "\n\n`Tesla Wireless Charging (beta) Started...\nDevice Detected: Nokia 1100\nBattery Percentage:` "
