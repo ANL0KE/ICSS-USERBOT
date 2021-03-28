@@ -44,7 +44,7 @@ def load_module(shortname):
             install_pip,
             reply_id,
         )
-        from .managers import edit_delete, edit_or_reply
+        from .tosh import edit_delete, edit_or_reply
 
         path = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
@@ -534,7 +534,7 @@ def load_admin(shortname):
             install_pip,
             reply_id,
         )
-        from .tosh import ed, eor
+        from .tosh import *
 
         path = Path(f"userbot/plugins/Admin/{shortname}.py")
         name = "userbot.plugins.Admin.{}".format(shortname)
@@ -610,7 +610,7 @@ def load_tosha(shortname):
         import userbot.utils
 
         from .helpers.utils import reply_id
-        from .tosh import ed, eor
+        from .tosh import *
 
         path = Path(f"userbot/plugins/tosha/{shortname}.py")
         name = "userbot.plugins.tosha.{}".format(shortname)
