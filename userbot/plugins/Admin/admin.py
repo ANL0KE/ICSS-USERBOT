@@ -1,4 +1,7 @@
 # admin code for ICSS edit By: @rruuurr
+
+# =================== OWNER - ANL0KE =================== #
+
 from asyncio import sleep
 
 from telethon import functions
@@ -7,20 +10,36 @@ from telethon.errors import (
     ImageProcessFailedError,
     PhotoCropSizeSmallError,
 )
-from telethon.errors.rpcerrorlist import UserAdminInvalidError, UserIdInvalidError
+from telethon.errors.rpcerrorlist import (
+    UserAdminInvalidError, 
+    UserIdInvalidError, 
+)
 from telethon.tl.functions.channels import (
     EditAdminRequest,
     EditBannedRequest,
     EditPhotoRequest,
 )
 from telethon.tl.functions.users import GetFullUserRequest
-from telethon.tl.types import ChatAdminRights, ChatBannedRights, MessageMediaPhoto
+from telethon.tl.types import (
+    ChatAdminRights, 
+    ChatBannedRights, 
+    MessageMediaPhoto, 
+)
 
 from ...utils import errors_handler
-from .. import BOTLOG, BOTLOG_CHATID, LOGS, get_user_from_event
-from ..sql_helper.mute_sql import is_muted, mute, unmute
-
-# =================== CONSTANT ===================
+from .. import (
+    BOTLOG, 
+    BOTLOG_CHATID, 
+    LOGS, get_user_from_event, 
+)
+from ..sql_helper.mute_sql import (
+    is_muted,
+    mute,
+    unmute, 
+)
+# ====================================================== #
+#                   OWNER - ANL0KE
+# ====================================================== #
 
 PP_TOO_SMOL = "⪼ **الصورة صغيرة جدًا** 𓆰."
 PP_ERROR = "⪼ **فشل أثناء معالجة الصورة** 𓆰."
@@ -55,12 +74,11 @@ UNBAN_RIGHTS = ChatBannedRights(
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
-# ================================================
+# ====================================================== #
 
 
 @bot.on(admin_cmd(pattern="ضع صوره$"))
 @bot.on(sudo_cmd(pattern="ضع صوره$", allow_sudo=True))
-@errors_handler
 async def set_group_photo(gpic):
     if gpic.fwd_from:
         return
@@ -105,7 +123,6 @@ async def set_group_photo(gpic):
 
 @bot.on(admin_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote"))
 @bot.on(sudo_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote", allow_sudo=True))
-@errors_handler
 async def promote(promt):
     if promt.fwd_from:
         return
@@ -146,7 +163,6 @@ async def promote(promt):
 
 @bot.on(admin_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote"))
 @bot.on(sudo_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote", allow_sudo=True))
-@errors_handler
 async def promote(promt):
     if promt.fwd_from:
         return
@@ -187,7 +203,6 @@ async def promote(promt):
 
 @bot.on(admin_cmd(pattern="تك(?: |$)(.*)", command="demote"))
 @bot.on(sudo_cmd(pattern="تك(?: |$)(.*)", command="demote", allow_sudo=True))
-@errors_handler
 async def demote(dmod):
     if dmod.fwd_from:
         return
@@ -228,7 +243,6 @@ async def demote(dmod):
 
 @bot.on(admin_cmd(pattern="دي(?: |$)(.*)", command="ban"))
 @bot.on(sudo_cmd(pattern="دي(?: |$)(.*)", command="ban", allow_sudo=True))
-@errors_handler
 async def ban(bon):
     if bon.fwd_from:
         return
@@ -271,7 +285,6 @@ async def ban(bon):
 
 @bot.on(admin_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban"))
 @bot.on(sudo_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban", allow_sudo=True))
-@errors_handler
 async def nothanos(unbon):
     if unbon.fwd_from:
         return
@@ -468,7 +481,6 @@ async def endmute(event):
 
 @bot.on(admin_cmd(pattern="طرد(?: |$)(.*)", command="kick"))
 @bot.on(sudo_cmd(pattern="طرد(?: |$)(.*)", command="kick", allow_sudo=True))
-@errors_handler
 async def kick(usr):
     if usr.fwd_from:
         return
@@ -508,7 +520,6 @@ async def kick(usr):
 
 @bot.on(admin_cmd(pattern="تثبيت($| (.*))", command="pin"))
 @bot.on(sudo_cmd(pattern="تثبيت($| (.*))", command="pin", allow_sudo=True))
-@errors_handler
 async def pin(msg):
     if msg.fwd_from:
         return
@@ -544,7 +555,6 @@ async def pin(msg):
 
 @bot.on(admin_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin"))
 @bot.on(sudo_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin", allow_sudo=True))
-@errors_handler
 async def pin(msg):
     if msg.fwd_from:
         return
