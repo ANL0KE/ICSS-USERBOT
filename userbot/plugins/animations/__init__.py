@@ -1,6 +1,5 @@
 #   ICSS - USERBOT
-#   OWNER - ANL0KE 
-#   TELE - NIIIN2
+#   TELE - @NIIIN2
 
 # ======================================================= #
 
