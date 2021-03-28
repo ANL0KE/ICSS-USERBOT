@@ -11,7 +11,7 @@ from . import mention
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     deq = deque(list("🦋✨🦋✨🦋✨🦋✨"))
     for _ in range(48):
         await asyncio.sleep(0.3)
@@ -24,7 +24,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     deq = deque(list("🟥🟧🟨🟩🟦🟪🟫⬛⬜"))
     for _ in range(999):
         await asyncio.sleep(0.3)
@@ -37,7 +37,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     deq = deque(list("🌬☁️🌩🌨🌧🌦🌥⛅🌤"))
     for _ in range(48):
         await asyncio.sleep(0.3)
@@ -52,7 +52,7 @@ async def _(event):
         return
     animation_interval = 3
     animation_ttl = range(12)
-    event = await edit_or_reply(event, "`Deploying...`")
+    event = await eor(event, "`Deploying...`")
     animation_chars = [
         "**Heroku Connecting To Latest Github Build **",
         f"**Build started by user** {mention}",
@@ -84,7 +84,7 @@ async def _(message):
         inp = " ".join(obj)
     except IndexError:
         inp = "🥞 🎂 🍫"
-    event = await edit_or_reply(message, "⇆")
+    event = await eor(message, "⇆")
     u, t, g, o, s, n = inp.split(), "🗑", "<(^_^ <)", "(> ^_^)>", "⠀ ", "\n"
     h = [(u[0], u[1], u[2]), (u[0], u[1], ""), (u[0], "", "")]
     for something in reversed(
@@ -134,7 +134,7 @@ async def _(event):
         "⬛⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
         "↖️⬆️↗️\n⬅️🔄➡️\n↙️⬇️↘️",
     ]
-    event = await edit_or_reply(event, "fleaveme....")
+    event = await eor(event, "fleaveme....")
     await asyncio.sleep(2)
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -148,7 +148,7 @@ async def _(event):
         return
     animation_interval = 0.5
     animation_ttl = range(70)
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     animation_chars = [
         "😀",
         "👩‍🎨",
@@ -196,7 +196,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await edit_or_reply(event, "انتظر الطائره")
+    event = await eor(event, "انتظر الطائره")
     await event.edit("✈-------------")
     await event.edit("-✈------------")
     await event.edit("--✈-----------")
@@ -221,7 +221,7 @@ async def _(event):
         return
     animation_interval = 0.3
     animation_ttl = range(12)
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     animation_chars = [
         "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
         "🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴",
@@ -248,7 +248,7 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(19)
-    event = await edit_or_reply(event, "jio network boosting...")
+    event = await eor(event, "jio network boosting...")
     animation_chars = [
         "`Connecting To JIO NETWORK ....`",
         "`█ ▇ ▆ ▅ ▄ ▂ ▁`",
@@ -282,7 +282,7 @@ async def _(event):
         return
     animation_interval = 0.1
     animation_ttl = range(80)
-    event = await edit_or_reply(event, "⇆")
+    event = await eor(event, "⇆")
     animation_chars = [
         "`◼️◼️◼️◼️◼️\n◼️◼️◼️◼️☀\n◼️◼️🌎◼️◼️\n🌕◼️◼️◼️◼️\n◼️◼️◼️◼️◼️`",
         "`◼️◼️◼️◼️◼️\n🌕◼️◼️◼️◼️\n◼️◼️🌎◼️◼️\n◼️◼️◼️◼️☀\n◼️◼️◼️◼️◼️`",
