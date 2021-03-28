@@ -12,7 +12,7 @@ from telethon import TelegramClient
 from userbot.kimo import *
 from userbot import LOGS, bot
 from userbot.Config import Config
-from userbot.utils import load_module, load_admin
+from userbot.utils import load_module, load_admin, load_anim 
 
 
 async def add_bot(bot_token):
@@ -90,7 +90,7 @@ for name in files:
         shortname = path1.stem
         try:
             if shortname.replace(".py", "") not in Config.NO_LOAD:
-                load_admin(shortname.replace(".py", ""))
+                load_anim(shortname.replace(".py", ""))
             else:
                 os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
         except Exception as e:
