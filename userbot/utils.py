@@ -512,8 +512,7 @@ def command(**args):
     return decorator
 
 
-
-
+# For dmain 
 def load_admin(shortname):
     if shortname.startswith("__"):
         pass
@@ -560,4 +559,38 @@ def load_admin(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.Admin." + shortname] = mod
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+
+
+# For animations
+def load_anim(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        path = Path(f"userbot/plugins/animations/{shortname}.py")
+        name = "userbot.plugins.animations.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+    else:
+        import userbot.utils
+        from .tosh import ed, eor
+
+        path = Path(f"userbot/plugins/animations/{shortname}.py")
+        name = "userbot.plugins.animations.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.bot = bot
+        mod.LOGS = LOGS
+        mod.Config = Config
+        mod.sudo_cmd = sudo_cmd
+        mod.CMD_HELP = CMD_HELP
+        mod.admin_cmd = admin_cmd
+        mod.eor = eor
+        mod.logger = logging.getLogger(shortname)
+        sys.modules["uniborg.util"] = userbot.utils
+        mod.icssbot = bot
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins.animations." + shortname] = mod
         LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
