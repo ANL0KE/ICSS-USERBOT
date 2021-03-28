@@ -30,7 +30,6 @@ NO_PERM = "⪼ **ليس لدي أذونات كافية!** 𓆰."
 CHAT_PP_CHANGED = "⪼ **تغيرت صورة الدردشة** 𓆰."
 INVALID_MEDIA = "⪼ **ملحق غير صالح** 𓆰."
 
-
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=True)
 UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 
