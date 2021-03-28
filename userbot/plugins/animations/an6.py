@@ -8,7 +8,7 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(9)
-    event = await edit_or_reply(event, "unnoob")
+    event = await eor(event, "unnoob")
     animation_chars = [
         "EvErYbOdY",
         "iZ",
@@ -32,7 +32,7 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(9)
-    event = await edit_or_reply(event, "menoob")
+    event = await eor(event, "menoob")
     animation_chars = [
         "EvErYbOdY",
         "iZ",
@@ -56,7 +56,7 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(8)
-    event = await edit_or_reply(event, "upro")
+    event = await eor(event, "upro")
     animation_chars = [
         "EvErYbOdY",
         "iZ",
@@ -79,7 +79,7 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(8)
-    event = await edit_or_reply(event, "mepro")
+    event = await eor(event, "mepro")
     animation_chars = [
         "EvErYbOdY",
         "iZ",
@@ -128,7 +128,7 @@ async def _(event):
         return
     animation_interval = 0.1
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "sqh")
+    event = await eor(event, "sqh")
     animation_chars = [
         "`Downloading File..`",
         "`File Downloaded....`",
@@ -154,7 +154,7 @@ async def _(event):
         return
     animation_interval = 5
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "vquickheal")
+    event = await eor(event, "vquickheal")
     animation_chars = [
         "`Downloading File..`",
         "`File Downloaded....`",
@@ -180,7 +180,7 @@ async def _(event):
         return
     animation_interval = 0.5
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "macos")
+    event = await eor(event, "macos")
     animation_chars = [
         "`Connecting To Hackintosh...`",
         "`Initiating Hackintosh Login.`",
@@ -206,7 +206,7 @@ async def _(event):
         return
     animation_interval = 0.5
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "windows")
+    event = await eor(event, "windows")
     animation_chars = [
         "`Connecting To Windows 10...`",
         "`Initiating Windows 10 Login.`",
@@ -232,7 +232,7 @@ async def _(event):
         return
     animation_interval = 0.5
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "linux")
+    event = await eor(event, "linux")
     animation_chars = [
         "`Connecting To Linux...`",
         "`Initiating Linux Login.`",
@@ -258,7 +258,7 @@ async def _(event):
         return
     animation_interval = 0.5
     animation_ttl = range(11)
-    event = await edit_or_reply(event, "stock")
+    event = await eor(event, "stock")
     animation_chars = [
         "`Connecting To Symbian OS...`",
         "`Initiating Symbian OS Login.`",
@@ -284,7 +284,7 @@ async def _(event):
         return
     animation_interval = 0.1
     animation_ttl = range(7)
-    event = await edit_or_reply(event, "os")
+    event = await eor(event, "os")
     animation_chars = [
         "`Scanning OS...`",
         "`Scanning OS......`",
