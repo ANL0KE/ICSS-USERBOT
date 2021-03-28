@@ -1,6 +1,8 @@
-# admin code for ICSS edit By: @rruuurr
+#     Icss - Userbot
+#     edit - @rruuurr
+#     this code from sandy thnx to him
 
-# =================== OWNER - ANL0KE =================== #
+# ====================================================== #
 
 from asyncio import sleep
 
@@ -38,7 +40,7 @@ from ..sql_helper.mute_sql import (
     unmute, 
 )
 # ====================================================== #
-#                   OWNER - ANL0KE
+#                     OWNER - ANL0KE
 # ====================================================== #
 
 PP_TOO_SMOL = "⪼ **الصورة صغيرة جدًا** 𓆰."
@@ -120,6 +122,8 @@ async def set_group_photo(gpic):
                 f"الدردشه: {gpic.chat.title}(`{gpic.chat_id}`)",
             )
 
+# ====================================================== #
+
 
 @bot.on(admin_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote"))
 @bot.on(sudo_cmd(pattern="رفع مشرف(?: |$)(.*)", command="promote", allow_sudo=True))
@@ -159,6 +163,8 @@ async def promote(promt):
             f"المستخدم: [{user.first_name}](tg://user?id={user.id})\n"
             f"الدردشه: {promt.chat.title}(`{promt.chat_id}`)",
         )
+
+# ====================================================== #
 
 
 @bot.on(admin_cmd(pattern="رفع مالك(?: |$)(.*)", command="promote"))
@@ -201,6 +207,8 @@ async def promote(promt):
         )
 
 
+# ====================================================== #
+
 @bot.on(admin_cmd(pattern="تك(?: |$)(.*)", command="demote"))
 @bot.on(sudo_cmd(pattern="تك(?: |$)(.*)", command="demote", allow_sudo=True))
 async def demote(dmod):
@@ -239,6 +247,8 @@ async def demote(dmod):
             f"المستخدم: [{user.first_name}](tg://user?id={user.id})\n"
             f"الدردشه: {dmod.chat.title}(`{dmod.chat_id}`)",
         )
+
+# ====================================================== #
 
 
 @bot.on(admin_cmd(pattern="دي(?: |$)(.*)", command="ban"))
@@ -282,6 +292,8 @@ async def ban(bon):
             f"الدردشه: {bon.chat.title}(`{bon.chat_id}`)",
         )
 
+# ====================================================== #
+
 
 @bot.on(admin_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban"))
 @bot.on(sudo_cmd(pattern="رفع القيود(?: |$)(.*)", command="unban", allow_sudo=True))
@@ -312,6 +324,7 @@ async def nothanos(unbon):
     except UserIdInvalidError:
         await catevent.edit("**- ❝ ⌊  تم رفـع جميـع القيـود بنجـاح  𓆰.**")
 
+# ====================================================== #
 
 @bot.on(admin_cmd(incoming=True))
 async def watcher(event):
@@ -321,6 +334,7 @@ async def watcher(event):
         except Exception as e:
             LOGS.info(str(e))
 
+# ====================================================== #
 
 @bot.on(admin_cmd(pattern="تقيد(?: |$)(.*)", command="mute"))
 @bot.on(sudo_cmd(pattern="تقيد(?: |$)(.*)", command="mute", allow_sudo=True))
@@ -416,6 +430,7 @@ async def startmute(event):
                 f"الدردشه: {event.chat.title}(`{event.chat_id}`)",
             )
 
+# ====================================================== #
 
 @bot.on(admin_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute"))
 @bot.on(sudo_cmd(pattern="الغاء تقيد(?: |$)(.*)", command="unmute", allow_sudo=True))
@@ -478,6 +493,7 @@ async def endmute(event):
                 f"الدردشه: {event.chat.title}(`{event.chat_id}`)",
             )
 
+# ====================================================== #
 
 @bot.on(admin_cmd(pattern="طرد(?: |$)(.*)", command="kick"))
 @bot.on(sudo_cmd(pattern="طرد(?: |$)(.*)", command="kick", allow_sudo=True))
@@ -517,6 +533,7 @@ async def kick(usr):
             f"الدردشه: {usr.chat.title}(`{usr.chat_id}`)\n",
         )
 
+# ====================================================== #
 
 @bot.on(admin_cmd(pattern="تثبيت($| (.*))", command="pin"))
 @bot.on(sudo_cmd(pattern="تثبيت($| (.*))", command="pin", allow_sudo=True))
@@ -552,6 +569,7 @@ async def pin(msg):
         except:
             pass
 
+# ====================================================== #
 
 @bot.on(admin_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin"))
 @bot.on(sudo_cmd(pattern="الغاء تثبيت($| (.*))", command="unpin", allow_sudo=True))
