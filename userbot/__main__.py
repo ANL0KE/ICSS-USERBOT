@@ -12,7 +12,7 @@ from telethon import TelegramClient
 from userbot.kimo import *
 from userbot import LOGS, bot
 from userbot.Config import Config
-from userbot.utils import load_module
+from userbot.utils import load_module, load_admin
 
 
 async def add_bot(bot_token):
@@ -59,6 +59,21 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/{shortname}.py"))
+            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+
+path = "userbot/plugins/Admin/*.py"
+files = glob.glob(path)
+for name in files:
+    with open(name) as f:
+        path1 = Path(f.name)
+        shortname = path1.stem
+        try:
+            if shortname.replace(".py", "") not in Config.NO_LOAD:
+                load_admin(shortname.replace(".py", ""))
+            else:
+                os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
+        except Exception as e:
+            os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
             LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 LOGS.info("⫷ بوت اكسس يعمل بنجاح الان ⫸")
