@@ -23,12 +23,12 @@ from . import (
 
 @icssbot.on(
     icss_cmd(
-       pattern="(بحث|song320)($| (.*))"
+       pattern="(بحث|اغنيه)($| (.*))"
     )
 )
 @icssbot.on(
     sudo_cmd(
-       pattern="(بحث|song320)($| (.*))", 
+       pattern="(بحث|اغنيه)($| (.*))", 
        allow_sudo=True, 
     )
 )
