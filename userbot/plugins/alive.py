@@ -1,5 +1,5 @@
 """
-©icss : @rruuurr
+©icss - @rruuurr
   - Alive Code For Icss
   - Commend: .السورس
   - Commend: .البوت
