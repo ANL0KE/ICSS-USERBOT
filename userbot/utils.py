@@ -510,3 +510,34 @@ def command(**args):
         return func
 
     return decorator
+
+
+def load_admin(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/Admin/{shortname}.py")
+        name = "userbot.plugins.Admin.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        LOGS.info("⫷ يتم تنزيل الادمن ⫸")
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+    else:
+        import importlib
+        import sys
+        from pathlib import Path
+
+        path = Path(f"userbot/plugins/Admin/{shortname}.py")
+        name = "telebot.plugins.Admin.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.tgbot = bot.tgbot
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins.Admin." + shortname] = mod
+        LOGS.info("⫷ تم الاستيراد الادمن بنجاح ⫸ " + shortname)
+
