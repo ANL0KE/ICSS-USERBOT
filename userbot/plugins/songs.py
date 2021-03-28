@@ -2,7 +2,6 @@
 By  : @sandy1709 ( https://t.me/mrconfused  )
 Edit: @rruuurr ( https://t.me/rruuurr  )
 """
-# songs finder for Icss
 
 import asyncio
 import base64
@@ -13,11 +12,26 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from validators.url import url
 
-from . import mention, name_dl, song_dl, video_dl, yt_search
+from . import (
+    mention, 
+    name_dl, 
+    song_dl, 
+    video_dl, 
+    yt_search, 
+)
 
 
-@bot.on(admin_cmd(pattern="(بحث|song320)($| (.*))"))
-@bot.on(sudo_cmd(pattern="(بحث|song320)($| (.*))", allow_sudo=True))
+@icssbot.on(
+    icss_cmd(
+       pattern="(بحث|song320)($| (.*))"
+    )
+)
+@icssbot.on(
+    sudo_cmd(
+       pattern="(بحث|song320)($| (.*))", 
+       allow_sudo=True, 
+    )
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -97,8 +111,16 @@ async def delete_messages(event, chat, from_message):
     await event.client.send_read_acknowledge(chat)
 
 
-@bot.on(admin_cmd(pattern="يوتيوب( (.*)|$)"))
-@bot.on(sudo_cmd(pattern="يوتيوب( (.*)|$)", allow_sudo=True))
+@icssbot.on(
+    icss_cmd(
+       pattern="يوتيوب( (.*)|$)"
+    )
+)
+@icssbot.on(
+    sudo_cmd(
+       pattern="يوتيوب( (.*)|$)", allow_sudo=True
+    )
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -165,8 +187,8 @@ async def _(event):
             os.remove(files)
 
 
-@bot.on(admin_cmd(pattern="song2 (.*)"))
-@bot.on(sudo_cmd(pattern="song2 (.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="song2 (.*)"))
+@icssbot.on(sudo_cmd(pattern="song2 (.*)", allow_sudo=True))
 async def icssongfetcer(event):
     if event.fwd_from:
         return
