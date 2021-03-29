@@ -52,12 +52,12 @@ R = (
 K = "https://github.com/ANL0KE/ICSS-USERBOT"
 
 # Alive Bot 
-L = (
-    f"**⌔∮ بوت اكسس يعمل بنجاح - {ICSB}**\n"
-    f"**  - اصدار التليثون :** `{version.__version__}\n`"
-    f"**  - اصدار اكسس :** `{icsv}`\n"
-    f"**  - اصدار البايثون :** `{python_version()}\n`"
-    f"**  - المستخدم :** {mention}\n"
+TOSH = (
+       f"**⌔∮ بوت اكسس يعمل بنجاح - {ICSB}**\n"
+       f"**  - اصدار التليثون :** `{version.__version__}\n`"
+       f"**  - اصدار اكسس :** `{icsv}`\n"
+       f"**  - اصدار البايثون :** `{python_version()}\n`"
+       f"**  - المستخدم :** {mention}\n"
 )
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
