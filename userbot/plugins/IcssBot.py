@@ -21,8 +21,7 @@ async def dev(kimo):
     )
    
 
-TOSH = f"**- اهلا بك انا {ICSB} بوت اكسس مساعد **\n**- للمستخدم** : {mention}"
-TOSH_PIC = "https://telegra.ph/file/85dc02885566034ef51a4.jpg"
+TOSH_PIC = Config.ALIVE_PIC if Config.ALIVE_PIC else "https://telegra.ph/file/85dc02885566034ef51a4.jpg"
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)
@@ -31,7 +30,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         result = None
         query = event.text
         me = await bot.get_me()
-        if query.startswith("alive") and event.query.user_id == bot.uid:
+        if query.startswith("البوت") and event.query.user_id == bot.uid:
             buttons = [
                 [
                     Button.url("الرابط", K),
@@ -62,7 +61,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 )
             await event.answer([result] if result else None)
 
-@bot.on(admin_cmd(outgoing=True, pattern="alive"))
+@bot.on(admin_cmd(outgoing=True, pattern="البوت"))
 async def repo(event):
     if event.fwd_from:
         return
