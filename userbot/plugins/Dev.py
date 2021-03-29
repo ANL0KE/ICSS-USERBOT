@@ -17,14 +17,3 @@ async def dev(kimo):
 async def dev(kimo):
     await tgbot.send_message(kimo.chat, f"**- اني بوت مساعد للمستخدم** {mention}", buttons=[[Button.url("✨ المطور ✨", "https://t.me/rruuurr")]])
             
-
-@tgbot.on(
-    events.NewMessage(pattern=("/ics"))
-)
-async def repo(event):
-    if event.fwd_from:
-        return
-    if event.reply_to_msg_id:
-    response = await tgbot.send_message(event, "البوت")
-    await response[0].click(event.chat_id)
-    await event.delete()
