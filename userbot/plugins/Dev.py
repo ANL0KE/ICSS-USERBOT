@@ -21,13 +21,4 @@ async def dev(kimo):
     events.NewMessage(pattern=("/icss"))
 )
 async def owner(event):
-    await tgbot.send_message(event.chat,
-                             "هها حب",
-                             buttons=[
-                                 [Button.url(
-                                     "المطور ⚙️", "https://t.me/NIIIN2"),
-                                  Button.url(
-                                     "رابط السورس ⚙️", "https://github.com/ANL0KE/ICSS-USERBOT")],
-                                 [Button.url("للمساعده",
-                                             "https://t.me/rruuurr")]
-                             ])
+    await tgbot.send_message(event.chat, "هها حب", buttons=[[Button.url("المطور ⚙️", "https://t.me/NIIIN2")]])
