@@ -5,7 +5,7 @@
 
 import time
 from datetime import datetime
-from ..Config import Config
+from userbot.Config import Config
 
 OWNER_ID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
