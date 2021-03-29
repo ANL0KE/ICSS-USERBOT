@@ -2,7 +2,8 @@
 #    Owner - @rruuurr
 
 from telethon import events, Button
-from . import R, K
+from ..Config import Config
+from . import R, K, mention
 
 @icssbot.on(icss_cmd(pattern="repo$"))
 @icssbot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
