@@ -44,7 +44,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     buttons=buttons,
                     link_preview=False
                 )
-            elif ALIVE_PHOTTO:
+            elif TOSH_PIC:
                 result = builder.document(
                     TOSH_PIC,
                     title="ICSS - USERBOT",
