@@ -648,6 +648,7 @@ def load_assistant(shortname):
     else:
         import userbot.utils
         from .tosh import edit_delete, edit_or_reply
+        from .helpers.utils import _format
 
         path = Path(f"userbot/plugins/assistant/{shortname}.py")
         name = "userbot.plugins.assistant.{}".format(shortname)
