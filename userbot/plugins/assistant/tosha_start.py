@@ -7,8 +7,8 @@ import heroku3
 import asyncio
 import os
 import requests
-from userbot.plugins.assistant.toshty.toshty_Blist import all_bl_users
-from userbot.plugins.assistant.toshty.toshty_usr import add_to_userbase, present_in_userbase, full_userbase
+from userbot.plugins.assistant.sql_tosh.blacklist_sql import all_bl_users
+from userbot.plugins.assistant.sql_tosh.userbase_sql import add_to_userbase, present_in_userbase, full_userbase
 from datetime import datetime
 from telethon import events
 from userbot.Config import Config
