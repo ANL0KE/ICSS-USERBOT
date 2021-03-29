@@ -19,6 +19,7 @@ class Config(object):
     TG_BOT_USERNAME = os.environ.get("TG_BOT_USERNAME") or os.environ.get(
         "TG_BOT_USER_NAME_BF_HER", None
     )
+    LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")
     TZ = os.environ.get("TZ", "Asia/Baghdad")
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/ANL0KE/ICSS-USERBOT.git"
@@ -42,6 +43,7 @@ class Config(object):
     PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL") or 0)
     CUSTOM_ALIVE_TEXT = os.environ.get("CUSTOM_ALIVE_TEXT", None)
     CUSTOM_ALIVE_EMOJI = os.environ.get("CUSTOM_ALIVE_EMOJI", None)
+    CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "catuserbot")
     CLEAN_WELCOME = os.environ.get("CLEAN_WELCOME", True)
     THUMB_IMAGE = os.environ.get(
@@ -52,6 +54,7 @@ class Config(object):
     }
     NO_LOAD = [x for x in os.environ.get("NO_LOAD", "").split()]
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
+    BOT_PIC = os.environ.get("BOT_PIC", None)
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
     DIGITAL_PIC = os.environ.get("DIGITAL_PIC", None)
     DEFAULT_PIC = os.environ.get("DEFAULT_PIC", None)
