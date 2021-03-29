@@ -3,7 +3,7 @@ from . import *
 import asyncio
 
 
-@icssbot.on(icss_cmd(pattern=r"holi")
+@icssbot.on(icss_cmd(pattern=r"holi"))
 async def _(event):
     if event.fwd_from:
         return
