@@ -3,7 +3,7 @@
 
 from telethon import events, Button
 from ..Config import Config
-from . import ICSB, R, K, mention
+from . import TOSH, R, K, mention
 
 @icssbot.on(icss_cmd(pattern="repo$"))
 @icssbot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
@@ -33,8 +33,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         if query.startswith("البوت") and event.query.user_id == bot.uid:
             buttons = [
                 [
-                    Button.url("الرابط", K),
-                    Button.url("القناة", "https://t.me/rruuurr"),
+                    Button.url("🔗 الرابط 🔗", K),
+                    Button.url("⚙️ المطور ⚙️", "https://t.me/rruuurr"),
                 ]
             ]
             if TOSH_PIC and TOSH_PIC.endswith((".jpg", ".png", "gif", "mp4")):
@@ -68,7 +68,7 @@ async def repo(event):
     KIM = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await bot.inline_query(KIM, "alive")
+    response = await bot.inline_query(KIM, "البوت")
     await response[0].click(event.chat_id)
     await event.delete()
 
