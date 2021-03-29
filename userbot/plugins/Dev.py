@@ -2,6 +2,7 @@
 #  TELE - @NIIIN2
 
 from telethon import events, Button
+from ..Config import Config
 from . import ALIVE_NAME, tosh, mention
 
 @tgbot.on(
