@@ -7,8 +7,13 @@
 ![Repo Size](https://img.shields.io/github/repo-size/sandy1709/catuserbot?&style=flat-square&logo=github)
 
 
-### Session String 
-<a href="https://repl.it/@ANL0KE/ICSS#main.py" target="_blank"><img src="https://img.shields.io/badge/run-string session-red?style=for-the-badge&logo=repl.it" alt="generate_string" /></a>    
+## Deploy
+
+- Get your `API_ID` and `API_HASH` from [here](https://my.telegram.org/)    
+- Get your `SESSION` from [here](https://repl.it/@ANL0KE/ICSS#main.py).
+
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK)
+
 
   
 ## Dev
