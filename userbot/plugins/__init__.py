@@ -29,6 +29,14 @@ ICSBOT = Config.TG_BOT_USERNAME
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
 
+# Dev tag
+tosh = ( 
+    "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑫𝑬𝑽𝑬𝑳𝑶𝑷𝑬𝑹 𓆪\n"
+    "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+    "𓄂†  𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
+    "𓄂†  𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
+    "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+)
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
