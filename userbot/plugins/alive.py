@@ -56,24 +56,6 @@ async def ica(icss):
         )
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="البوت$"))
-@bot.on(sudo_cmd(pattern="البوت$", allow_sudo=True))
-async def amireallyalive(alive):
-    if alive.fwd_from:
-        return
-    icsbot = Config.TG_BOT_USERNAME
-    icsi = await rd(alive)
-    ics_caption = f"**⌔∮ بوت اكسس يعمل بنجاح - {ICSB}**\n"
-    ics_caption += f"**  - اصدار التليثون :** `{version.__version__}\n`"
-    ics_caption += f"**  - اصدار اكسس :** `{icsv}`\n"
-    ics_caption += f"**  - اصدار البايثون :** `{python_version()}\n`"
-    ics_caption += f"**  - المستخدم :** {mention}\n"
-    results = await bot.inline_query(icsbot, ics_caption)  # pylint:disable=E0602
-    await results[0].click(alive.chat_id, reply_to=icsi, hide_via=True)
-    await alive.delete()
-
-
-
 def check_data_base_heal_th():
     is_database_working = False
     output = "لم يتم تعيين قاعدة بيانات"
