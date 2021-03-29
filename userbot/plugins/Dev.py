@@ -1,12 +1,12 @@
 #  ICSS - USERBOT
 #  TELE - @NIIIN2
 
-from telethon import events
-from . import tosh, reply_id
+from telethon import events, Button
+from . import tosh
 
 @tgbot.on(
     events.NewMessage(pattern=("المطور"))
 )
 async def dev(kimo):
-    await tgbot.send_message(kimo.chat, tosh)
+    await tgbot.send_message(kimo.chat, "مطور بوت اكسس", buttons=[[Button.url("✨ المطور ✨", "https://t.me/rruuurr")]])
         
