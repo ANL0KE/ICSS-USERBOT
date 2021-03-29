@@ -659,8 +659,6 @@ def load_assistant(shortname):
         mod.Config = Config
         mod._format = _format
         mod.tgbot = bot.tgbot
-        mod.reply_id = reply_id
-        mod.rd = reply_id
         mod.admin_cmd = admin_cmd
         mod.icss_cmd = admin_cmd
         mod.edit_or_reply = edit_or_reply
