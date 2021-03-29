@@ -252,7 +252,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))
     async def on_plug_in_callback_query_handler(event):
-        statstext = await catalive()
+        statstext = await icsa()
         reply_pop_up_alert = statstext
         await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
