@@ -46,12 +46,7 @@ R = (
     "- 𝙎𝙊𝙐𝙍𝘾𝙀 𝙍𝙀𝙋𝙊 ⪼ [𝘾𝙇𝙄𝘾𝙆 𝙃𝙀𝙍𝙀](https://github.com/ANL0KE/ICSS-USERBOT) ⩫"
 )
 
-K = (
-    "**⌔∮ المستخدم : ⇱**\n"
-    f"**-** {mention}\n"
-    "**⌔∮ رابط السورس : ⇱**\n"
-    "**- [هنا](https://github.com/ANL0KE/ICSS-USERBOT) ⇲**"
-)
+K = "https://github.com/ANL0KE/ICSS-USERBOT"
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
