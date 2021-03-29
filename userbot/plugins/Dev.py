@@ -2,7 +2,7 @@
 #  TELE - @NIIIN2
 
 from telethon import events, Button
-from . import tosh, mention
+from . import ALIVE_NAME, tosh, mention
 
 @tgbot.on(
     events.NewMessage(pattern=("المطور"))
