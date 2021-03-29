@@ -648,8 +648,8 @@ def start_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("Initialising TGBot.")
-        print("TGBot - Imported " + shortname)
+        LOGS.info("Initialising TGBot.")
+        LOGS.info("TGBot - Imported " + shortname)
     else:
         import importlib
         import sys
@@ -662,4 +662,4 @@ def start_assistant(shortname):
         mod.tgbot = bot.tgbot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.assistant" + shortname] = mod
-        print("TGBot Has imported " + shortname)
+        LOGS.info("TGBot Has imported " + shortname)
