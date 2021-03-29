@@ -2,13 +2,13 @@
 #  TELE - @NIIIN2
 #  OWNER - KIMO
 
-from . import ALIVE_NAME
+
 import time
 from datetime import datetime
 from ..Config import Config
 
 OWNER_ID = Config.OWNER_ID
-
+ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 # start-other disabled
 startotherdis = f"Hi there. I am {ALIVE_NAME}'s bot. Nice to see you here."
 # start-other enabled
