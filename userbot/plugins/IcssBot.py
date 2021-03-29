@@ -69,7 +69,7 @@ async def repo(event):
     KIM = Config.TG_BOT_USERNAME
     if event.reply_to_msg_id:
         await event.get_reply_message()
-    response = await tgbot.inline_query(KIM, "alive")
+    response = await bot.inline_query(KIM, "alive")
     await response[0].click(event.chat_id)
     await event.delete()
 
