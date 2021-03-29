@@ -26,6 +26,7 @@ class Config(object):
     )
 
     AUTONAME = os.environ.get("AUTONAME", None)
+    PBS_MSSG = os.environ.get("PBS_MSSG", None)
     PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID") or 0)
     PRIVATE_GROUP_ID = int(os.environ.get("PRIVATE_GROUP_ID") or 0)
     PRIVATE_CHANNEL_BOT_API_ID = int(os.environ.get("PRIVATE_CHANNEL_BOT_API_ID") or 0)
