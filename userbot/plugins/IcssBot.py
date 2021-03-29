@@ -11,7 +11,7 @@ async def icsrepo(icsp):
 
 
 @tgbot.on(
-    events.NewMessage(pattern=("المطور"))
+    events.NewMessage(pattern=("/repo|#repo"))
 )
 async def dev(kimo):
     await tgbot.send_message(kimo.chat,
