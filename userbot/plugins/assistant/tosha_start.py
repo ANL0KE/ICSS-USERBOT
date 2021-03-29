@@ -17,7 +17,7 @@ from telegraph import Telegraph, upload_file
 # =================== OWNER - ANL0KE =================== #
 ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 CUSTOM_PMPERMIT = Config.CUSTOM_PMPERMIT
-LOAD_MYBOT = Config.LOAD_MYBOT
+LOAD_MYBOT = Config.TG_BOT_USERNAME
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 BOT_PIC = Config.BOT_PIC if Config.BOT_PIC else None
 heroku_api = "https://api.heroku.com"
