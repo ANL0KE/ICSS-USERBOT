@@ -635,31 +635,34 @@ def load_tosha(shortname):
 
 
 # for assistant
-def start_assistant(shortname):
+def load_assistant(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import importlib
-        import sys
-        from pathlib import Path
-
         path = Path(f"userbot/plugins/assistant/{shortname}.py")
         name = "userbot.plugins.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("Initialising TGBot.")
-        LOGS.info("TGBot - Imported " + shortname)
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
     else:
-        import importlib
-        import sys
-        from pathlib import Path
+        import userbot.utils
+        from .helpers.utils import _format
 
         path = Path(f"userbot/plugins/assistant/{shortname}.py")
         name = "userbot.plugins.assistant.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
+        mod.bot = bot
+        mod.LOGS = LOGS
+        mod.Config = Config
+        mod._format = _format
         mod.tgbot = bot.tgbot
+        mod.admin_cmd = admin_cmd
+        mod.logger = logging.getLogger(shortname)
+        sys.modules["uniborg.util"] = userbot.utils
+        mod.borg = bot
+        sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
-        sys.modules["userbot.plugins.assistant" + shortname] = mod
-        LOGS.info("TGBot Has imported " + shortname)
+        sys.modules["userbot.plugins." + shortname] = mod
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
