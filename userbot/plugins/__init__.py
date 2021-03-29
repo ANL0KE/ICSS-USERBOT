@@ -53,7 +53,7 @@ K = "https://github.com/ANL0KE/ICSS-USERBOT"
 
 # Alive Bot 
 TOSH = (
-       f"**⌔∮ بوت اكسس يعمل بنجاح - {ICSB}**\n"
+       f"**⌔∮ بوت اكسس يعمل بنجاح **\n"
        f"**  - اصدار التليثون :** `{version.__version__}\n`"
        f"**  - اصدار اكسس :** `{icsv}`\n"
        f"**  - اصدار البايثون :** `{python_version()}\n`"
