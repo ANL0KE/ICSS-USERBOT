@@ -13,7 +13,7 @@ Ulodya = [
    "⌭",
 ]
 
-@icss.on(
+@icssbot.on(
     icss_cmd(
        pattern="هاا", outgoing=True
     )
