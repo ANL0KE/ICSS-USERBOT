@@ -17,6 +17,7 @@ from userbot.utils import (
     load_admin, 
     load_anim, 
     load_tosha, 
+    load_assistant, 
 )
 
 
@@ -116,6 +117,22 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/tosha/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/tosha/{shortname}.py"))
+            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+
+# for assistant
+path = "userbot/plugins/assistant/*.py"
+files = glob.glob(path)
+for name in files:
+    with open(name) as f:
+        path1 = Path(f.name)
+        shortname = path1.stem
+        try:
+            if shortname.replace(".py", "") not in Config.NO_LOAD:
+                load_assistant(shortname.replace(".py", ""))
+            else:
+                os.remove(Path(f"userbot/plugins/assistant/{shortname}.py"))
+        except Exception as e:
+            os.remove(Path(f"userbot/plugins/assistant/{shortname}.py"))
             LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 
