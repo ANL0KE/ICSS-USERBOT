@@ -16,8 +16,10 @@ async def dev(kimo):
 async def dev(kimo):
     await tgbot.send_message(kimo.chat, f"اهلا بك - {mention}\n انا بوت مساعد للمستخدم {ALIVE_NAME} ", buttons=[[Button.url("✨ المطور ✨", "https://t.me/rruuurr")]])
              
-@tgbot.on(events.NewMessage(pattern="/icss",
-                            from_users=OWNER_ID))  # pylint: disable=oof
+
+@tgbot.on(
+    events.NewMessage(pattern=("/icss"))
+)
 async def owner(event):
     await tgbot.send_message(event.chat,
                              "هها حب",
@@ -28,5 +30,4 @@ async def owner(event):
                                      "رابط السورس ⚙️", "https://github.com/ANL0KE/ICSS-USERBOT")],
                                  [Button.url("للمساعده",
                                              "https://t.me/rruuurr")]
-                             ]
-    )
+                             ])
