@@ -633,3 +633,44 @@ def load_tosha(shortname):
         sys.modules["userbot.plugins.tosha." + shortname] = mod
         LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
 
+
+# for assistant
+def load_assistant(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+    else:
+        import userbot.utils
+        from .tosh import edit_delete, edit_or_reply
+
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.bot = bot
+        mod.LOGS = LOGS
+        mod.Config = Config
+        mod._format = _format
+        mod.tgbot = bot.tgbot
+        mod.reply_id = reply_id
+        mod.rd = reply_id
+        mod.admin_cmd = admin_cmd
+        mod.icss_cmd = admin_cmd
+        mod.edit_or_reply = edit_or_reply
+        mod.eor = edit_or_reply
+        mod.logger = logging.getLogger(shortname)
+        sys.modules["uniborg.util"] = userbot.utils
+        mod.borg = bot
+        mod.icssbot = bot
+        sys.modules["userbot.events"] = userbot.utils
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins.assistant." + shortname] = mod
+        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+
+
