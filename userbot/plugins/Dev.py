@@ -8,5 +8,5 @@ from . import tosh
     events.NewMessage(pattern=("المطور"))
 )
 async def dev(kimo):
-    await bot.send_message(kimo, tosh)
+    await bot.send_message(kimo.chat, tosh)
         
