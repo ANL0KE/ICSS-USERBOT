@@ -33,8 +33,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         if query.startswith("البوت") and event.query.user_id == bot.uid:
             buttons = [
                 [
-                    Button.url("🔗 الرابط 🔗", K),
-                    Button.url("⚙️ المطور ⚙️", "https://t.me/rruuurr"),
+                    Button.url("الرابط 🔗", K),
+                    Button.url("المطور ⚙️", "https://t.me/rruuurr"),
                 ]
             ]
             if TOSH_PIC and TOSH_PIC.endswith((".jpg", ".png", "gif", "mp4")):
