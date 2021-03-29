@@ -20,7 +20,7 @@ async def dev(kimo):
                             from_users=OWNER_ID))  # pylint: disable=oof
 async def owner(event):
     await tgbot.send_message(event.chat_id,
-                             startowner,
+                             "هها حب",
                              buttons=[
                                  [Button.url(
                                      "المطور ⚙️", "https://t.me/NIIIN2"),
