@@ -25,7 +25,6 @@ async def repo(event):
     if event.fwd_from:
         return
     if event.reply_to_msg_id:
-        await event.get_reply_message()
     response = await tgbot.send_message(event, "البوت")
     await response[0].click(event.chat_id)
     await event.delete()
