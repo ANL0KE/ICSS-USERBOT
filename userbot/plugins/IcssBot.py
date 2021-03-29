@@ -15,13 +15,7 @@ from . import mention
     )
 )
 async def icsrepo(icsp):
-    await eor(
-        icsp,
-        f"⌔∮ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙄𝘾𝙎𝙎 - 𝙍𝙀𝙋𝙊 𓆪 \n"
-        f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-        f"- 𝙎𝙊𝙐𝙍𝘾𝙀 𝘿𝙀𝙑 ⪼ [𝘾𝙇𝙄𝘾𝙆 𝙃𝙀𝙍𝙀](t.me/rruuurr) ⩫ \n"
-        f"- 𝙎𝙊𝙐𝙍𝘾𝙀 𝙍𝙀𝙋𝙊 ⪼ [𝘾𝙇𝙄𝘾𝙆 𝙃𝙀𝙍𝙀](https://github.com/ANL0KE/ICSS-USERBOT) ⩫",
-    )
+    await eor(icsp, R)
 
 
 @icssbot.on(
@@ -35,8 +29,4 @@ async def icsrepo(icsp):
     )
 )
 async def icsrepo(icsp):
-    await eor(
-        icsp,
-        f"**⌔∮ عزيزي {mention} ⇱**\n"
-        f"**⌔∮ رابط سورس اكسس ↫ [هنا](https://github.com/ANL0KE/ICSS-USERBOT) ⇲**",
-    )
+    await eor(icsp, K)
