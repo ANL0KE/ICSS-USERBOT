@@ -19,7 +19,7 @@ async def dev(kimo):
 @tgbot.on(events.NewMessage(pattern="^/icss",
                             from_users=OWNER_ID))  # pylint: disable=oof
 async def owner(event):
-    await tgbot.send_message(event.chat_id,
+    await tgbot.send_message(event.chat,
                              "هها حب",
                              buttons=[
                                  [Button.url(
