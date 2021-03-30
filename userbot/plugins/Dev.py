@@ -34,16 +34,16 @@ async def awake(event):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ICSUSERBOT")))
 async def callback_query_handler(event):
     TOSHA = [[Button.url("REPO-ICSS", "https://github.com/ANL0KE/ICSS-USERBOT")]]
-    TOSHA += [[Button.url("DEPLOY-ICSS", "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK")]]
-    TOSHA += [[Button.url("API_ID & HASH", "https://t.me/usetgxbot"), Button.url("REDIS", "https://redislabs.com")]]
-    TOSHA += [[Button.url("SUPPORT CHANNEL", "https://t.me/rruuurr"), Button.url("ICSS DEV", "https://t.me/NIIIN2")]]
-    TOSHA += [[Button.inline("ALIVE", data="KIMO")]]
-    await event.edit(text=f"𝙰𝙻𝙻 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 𝙾𝙵 𝚁𝙴𝙿𝙾𝚂", buttons=TOSHA)
+    TOSHA +=[[Button.url("DEPLOY-ICSS", "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK")]]
+    TOSHA +=[[Button.url("API_ID & HASH", "https://t.me/usetgxbot"), Button.url("REDIS", "https://redislabs.com")]]
+    TOSHA +=[[Button.url("SUPPORT CHANNEL", "https://t.me/rruuurr"), Button.url("ICSS DEV", "https://t.me/NIIIN2")]]
+    TOSHA +=[[Button.inline("ALIVE", data="KIMO")]]
+    await tgbot.edit(text=f"𝙰𝙻𝙻 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 𝙾𝙵 𝚁𝙴𝙿𝙾𝚂", buttons=TOSHA)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"KIMO")))
 async def callback_query_handler(event):
   TOSHA = f" - ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSB}\n"
   TOSHA += " - ᴀʟʟ sʏsᴛᴇᴍ ɪs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n"
-  TOSHA += [[Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
-  await event.edit(text=TOSHA, buttons=BUTTONS)
+  BUTTONS = [[Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
+  await tgbot.edit(text=TOSHA, buttons=BUTTONS)
