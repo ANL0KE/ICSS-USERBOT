@@ -1,7 +1,7 @@
 #   ICSS - USERBOT
 #   OWNER : ANL0KE
 #   TELE : @NIIIN2
-
+"""
 from .Tosh import *
 
 @icssbot.on(icss_cmd(pattern="م10"))
@@ -39,4 +39,4 @@ async def icss(tosh):
 @icssbot.on(icss_cmd(pattern="م18"))
 async def icss(tosh):
     await eor(tosh, S)
-
+"""
