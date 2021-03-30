@@ -7,23 +7,23 @@ from . import *
 
 @icssbot.on(icss_cmd(pattern="م20"))
 async def icss(tosh):
-    return await eor(tosh, T)
+    await eor(tosh, T)
 
 @icssbot.on(icss_cmd(pattern="متحركات تمبلر"))
 async def icss(tosh):
-    return await eor(tosh, O)
+    await eor(tosh, O)
 
 @icssbot.on(icss_cmd(pattern="متحركات كيوت"))
 async def icss(tosh):
-    return await eor(tosh, S)
+    await eor(tosh, S)
 
 @icssbot.on(icss_cmd(pattern="متحركات جريئه"))
 async def icss(tosh):
-    return await eor(tosh, H)
+    await eor(tosh, H)
 
 @icssbot.on(icss_cmd(pattern="متحركات تحشيش"))
 async def icss(tosh):
-    return await eor(tosh, A)
+    await eor(tosh, A)
 
 
 
