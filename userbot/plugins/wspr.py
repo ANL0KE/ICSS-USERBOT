@@ -11,14 +11,15 @@ async def wspr(kimo):
         "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑺𝑬𝑪𝑹𝑬𝑻 𝑴𝑺𝑮 𓆪\n"
         "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         "**⌔∮ قائـمه اوامر الهمسه :** \n"
-        "⪼ `.همسه` لعرض كيفيه ارسال همسه \n"
+        "⪼ `.الهمسه` لعرض كيفيه ارسال الهمسه من بوتك\n"
+        "⪼ `.همسه` لارسال همسه عن طريق بوت الهمسه  \n"    
         "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         "𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪"
     )
 
 
 # Wespr - همسه
-@icssbot.on(icss_cmd(outgoing=True, pattern="همسه$"))
+@icssbot.on(icss_cmd(outgoing=True, pattern="الهمسه$"))
 async def kimo(lon):
     if lon.fwd_from:
         return
@@ -30,12 +31,12 @@ async def kimo(lon):
 
 
 
-@bot.on(admin_cmd(pattern="wspr ?(.*)"))
+@bot.on(admin_cmd(pattern="همسه ?(.*)"))
 async def wspr(event):
     if event.fwd_from:
         return
     wwwspr = event.pattern_match.group(1)
-    bu = "@whisperBot"
+    bu = "@nnbbot"
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
     tap = await bot.inline_query(bu, wwwspr) 
