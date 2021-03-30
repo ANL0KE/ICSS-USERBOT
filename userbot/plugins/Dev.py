@@ -3,7 +3,7 @@
 
 from telethon import events, Button
 from ..Config import Config
-from . import ALIVE_NAME, tosh, mention, icsv
+from . import ALIVE_NAME, ICSB, tosh, mention, icsv
 
 ICSP = Config.ALIVE_PIC if Config.ALIVE_PIC else "https://telegra.ph/file/3d9adda877b7fc7fee418.jpg"
 @tgbot.on(
@@ -20,7 +20,7 @@ async def dev(kimo):
             
 @tgbot.on(events.NewMessage(pattern=("/alive")))
 async def awake(event):
-  TOSHA = f"ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSB}\n\n"
+  TOSHA = f"ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSB}\n"
   TOSHA += "ᴀʟʟ sʏsᴛᴇᴍ ɪs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n"
   TOSHA += f"{ICSB} VERSION : {icsv} ʟᴀsᴛᴇsᴛ\n"
   TOSHA += f"ᴍʏ ᴍᴀsᴛᴇʀ {mention} ☺️\n"
