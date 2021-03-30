@@ -33,11 +33,6 @@ async def awake(event):
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ICSUSERBOT")))
 async def callback_query_handler(event):
-    TOSHA = [[Button.url("REPO-ICSS", "https://github.com/ANL0KE/ICSS-USERBOT")]]
-    TOSHA +=[[Button.url("DEPLOY-ICSS", "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK")]]
-    TOSHA +=[[Button.url("API_ID & HASH", "https://t.me/usetgxbot"), Button.url("REDIS", "https://redislabs.com")]]
-    TOSHA +=[[Button.url("SUPPORT CHANNEL", "https://t.me/rruuurr"), Button.url("ICSS DEV", "https://t.me/NIIIN2")]]
-    TOSHA +=[[Button.inline("ALIVE", data="KIMO")]]
     await event.edit("ۿـا هلو",
                      buttons=[
                          [(Button.url("REPO-ICSS", "https://github.com/ANL0KE/ICSS-USERBOT")),
