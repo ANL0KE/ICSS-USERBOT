@@ -1,6 +1,6 @@
 # commands for source icss by ~ @rruuurr
 
-
+"""
 import random
 
 from telethon import events
@@ -1004,3 +1004,4 @@ async def amireallyalive(alive):
             f"**{EMOJI}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
             f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
         )
+"""
