@@ -3,12 +3,7 @@
 
 from telethon import events, Button
 from ..Config import Config
-from . import TOSH, R, K, mention
-
-@icssbot.on(icss_cmd(pattern="repo$"))
-@icssbot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
-async def icsrepo(icsp):
-    return await eor(icsp, R)
+from . import TOSH, K, mention
 
 
 @tgbot.on(
