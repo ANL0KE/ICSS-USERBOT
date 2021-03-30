@@ -9,10 +9,3 @@ from . import ALIVE_NAME, mention
 )
 async def dev(kimo):
     await tgbot.send_message(kimo.chat, "مطور بوت اكسس", buttons=[[Button.url("✨ المطور ✨", "https://t.me/rruuurr")]])
-   
-@tgbot.on(
-    events.NewMessage(pattern=("/start"))
-)
-async def dev(kimo):
-    await tgbot.send_message(kimo.chat, f"**- اني بوت مساعد للمستخدم** {mention}", buttons=[[Button.url("✨ المطور ✨", "https://t.me/rruuurr")]])
-            
