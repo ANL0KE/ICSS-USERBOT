@@ -37,7 +37,7 @@ async def callback_query_handler(event):
                      buttons=[
                          [(Button.url("REPO-ICSS", "https://github.com/ANL0KE/ICSS-USERBOT")),
                           (Button.url("DEPLOY-ICSS", "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK"))],
-                         [(Button.inline("ALIVE", data="KIMO"))],
+                         [Button.inline("ALIVE", data="KIMO")]
                      ])
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"KIMO")))
