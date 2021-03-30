@@ -2,10 +2,8 @@
 #  TELE - @NIIIN2
 
 from telethon import events, Button
-from ..Config import Config
-from . import ALIVE_NAME, ICSB, tosh, mention, icsv
+from . import ALIVE_NAME, mention
 
-ICSP = Config.ALIVE_PIC if Config.ALIVE_PIC else "https://telegra.ph/file/3d9adda877b7fc7fee418.jpg"
 @tgbot.on(
     events.NewMessage(pattern=("المطور"))
 )
