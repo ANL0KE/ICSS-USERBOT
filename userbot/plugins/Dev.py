@@ -38,7 +38,7 @@ async def callback_query_handler(event):
     TOSHA +=[[Button.url("API_ID & HASH", "https://t.me/usetgxbot"), Button.url("REDIS", "https://redislabs.com")]]
     TOSHA +=[[Button.url("SUPPORT CHANNEL", "https://t.me/rruuurr"), Button.url("ICSS DEV", "https://t.me/NIIIN2")]]
     TOSHA +=[[Button.inline("ALIVE", data="KIMO")]]
-    await tgbot.edit(text=f"𝙰𝙻𝙻 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 𝙾𝙵 𝚁𝙴𝙿𝙾𝚂", buttons=TOSHA)
+    await tgbot.send_file(text=f"𝙰𝙻𝙻 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 𝙾𝙵 𝚁𝙴𝙿𝙾𝚂", buttons=TOSHA)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"KIMO")))
@@ -46,4 +46,4 @@ async def callback_query_handler(event):
   TOSHA = f" - ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSB}\n"
   TOSHA += " - ᴀʟʟ sʏsᴛᴇᴍ ɪs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n"
   BUTTONS = [[Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
-  await tgbot.edit(text=TOSHA, buttons=BUTTONS)
+  await tgbot.send_file(text=TOSHA, buttons=BUTTONS)
