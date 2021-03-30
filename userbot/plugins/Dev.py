@@ -26,19 +26,19 @@ async def awake(event):
   TOSHA += f"ᴍʏ ᴍᴀsᴛᴇʀ {mention} ☺️\n"
   TOSHA += "ғᴜʟʟʏ ᴜᴘᴅᴀᴛᴇᴅ ʙᴏᴛ\n"
   TOSHA += "ᴛʜᴀɴᴋs ғᴏʀ ᴄʜᴇᴄᴋɪɴɢ ᴍᴇ"
-  BUTTON += [[custom.Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
+  BUTTON += [[Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
   await tgbot.send_file(event.chat, ICSP, caption=TOSHA,  buttons=BUTTON)
 
 
 
 
-@xbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ICSUSERBOT")))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ICSUSERBOT")))
 async def callback_query_handler(event):
   TOSHA = [[Button.url("REPO-ICSS", "https://github.com/ANL0KE/ICSS-USERBOT")]]
   TOSHA +=[[Button.url("DEPLOY-ICSS", "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK")]]
   TOSHA +=[[Button.url("API_ID & HASH", "https://t.me/usetgxbot"), Button.url("REDIS", "https://redislabs.com")]]
   TOSHA +=[[Button.url("SUPPORT CHANNEL", "https://t.me/rruuurr"), Button.url("ICSS DEV", "https://t.me/NIIIN2")]]
-  TOSHA +=[[custom.Button.inline("ALIVE", data="KIMO")]]
+  TOSHA +=[[Button.inline("ALIVE", data="KIMO")]]
   await event.edit(text=f"𝙰𝙻𝙻 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 𝙾𝙵 𝚁𝙴𝙿𝙾𝚂", buttons=TOSHA)
 
 
@@ -46,5 +46,5 @@ async def callback_query_handler(event):
 async def callback_query_handler(event):
   TOSHA = f" - ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSB}\n"
   TOSHA += " - ᴀʟʟ sʏsᴛᴇᴍ ɪs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n"
-  TOSHA += [[custom.Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
+  TOSHA += [[Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
   await event.edit(text= TOSHA, buttons=BUTTONS)
