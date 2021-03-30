@@ -38,12 +38,16 @@ async def callback_query_handler(event):
     TOSHA +=[[Button.url("API_ID & HASH", "https://t.me/usetgxbot"), Button.url("REDIS", "https://redislabs.com")]]
     TOSHA +=[[Button.url("SUPPORT CHANNEL", "https://t.me/rruuurr"), Button.url("ICSS DEV", "https://t.me/NIIIN2")]]
     TOSHA +=[[Button.inline("ALIVE", data="KIMO")]]
-    await tgbot.send_message(text=f"𝙰𝙻𝙻 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 𝙾𝙵 𝚁𝙴𝙿𝙾𝚂", buttons=TOSHA)
-
+    await event.edit("ۿـا هلو",
+                     buttons=[
+                         [(Button.url("REPO-ICSS", "https://github.com/ANL0KE/ICSS-USERBOT")),
+                          (Button.url("DEPLOY-ICSS", "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK"))],
+                         [(Button.inline("ALIVE", data="KIMO"))],
+                     ])
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"KIMO")))
 async def callback_query_handler(event):
-  TOSHA = f" - ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSB}\n"
-  TOSHA += " - ᴀʟʟ sʏsᴛᴇᴍ ɪs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n"
-  BUTTONS = [[Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]]
-  await tgbot.send_message(text=TOSHA, buttons=BUTTONS)
+    await event.edit(f" - ʜᴇʟʟᴏ ᴛʜɪs ɪs  {ICSB}\n - ᴀʟʟ sʏsᴛᴇᴍ ɪs ᴡᴏʀᴋɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n"
+                     buttons=[
+                         [Button.inline("𝚁𝙴𝙿𝙾𝚂𝙸𝚃𝙾𝚁𝚈", data="ICSUSERBOT")]
+                     ])
