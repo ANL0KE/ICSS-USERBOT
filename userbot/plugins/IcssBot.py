@@ -8,7 +8,7 @@ from . import TOSH, R, K, mention
 @icssbot.on(icss_cmd(pattern="repo$"))
 @icssbot.on(sudo_cmd(pattern="repo$", allow_sudo=True))
 async def icsrepo(icsp):
-    await eor(icsp, R)
+    return await eor(icsp, R)
 
 
 @tgbot.on(
