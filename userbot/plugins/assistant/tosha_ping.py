@@ -10,6 +10,6 @@ async def botping(event):
     start = datetime.now()
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.reply(
+    await tgbot.send_message(
         f"⌔∮ **سرعه الاستجابه ↫** `{ms}` ** ⇲**"
     )
