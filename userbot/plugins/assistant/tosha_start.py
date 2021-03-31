@@ -92,7 +92,7 @@ async def owner(event):
                                   Button.inline(
                                      "⚜️ الاحصائيات ⚜️", data="stats")],
                                  [Button.inline("⚜️ الاذاعه ⚜️",
-                                                data="telebroad")],
+                                                data="toshbroad")],
                                  [Button.url("⚜️ الدعم ⚜️",
                                              url="https://t.me/rruuurr")]
                              ])
