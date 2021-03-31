@@ -20,6 +20,7 @@ class Config(object):
         "TG_BOT_USER_NAME_BF_HER", None
     )
     LOAD_MYBOT = os.environ.get("LOAD_MYBOT", "True")
+    TOSH_START = os.environ.get("TOSH_START", None)
     TZ = os.environ.get("TZ", "Asia/Baghdad")
     UPSTREAM_REPO = os.environ.get(
         "UPSTREAM_REPO", "https://github.com/ANL0KE/ICSS-USERBOT.git"
