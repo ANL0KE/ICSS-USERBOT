@@ -8,4 +8,4 @@ from . import ALIVE_NAME, mention
     events.NewMessage(pattern=("المطور"))
 )
 async def dev(kimo):
-    await tgbot.send_message(kimo.chat, "مطور بوت اكسس", buttons=[[Button.url("✨ المطور ✨", "https://t.me/rruuurr")]])
+    await kimo.reply("مطور بوت اكسس", buttons=[[Button.url("🔱 المطور 🔱", "https://t.me/rruuurr")]])
