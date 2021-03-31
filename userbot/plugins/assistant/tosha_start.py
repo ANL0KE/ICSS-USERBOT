@@ -89,8 +89,7 @@ async def start_all(event):
 @tgbot.on(events.NewMessage(pattern="^/start",
                             from_users=OWNER_ID))  # pylint: disable=oof
 async def owner(event):
-    await tgbot.send_message(event.chat_id,
-                             startowner,
+    await event.reply(startowner,
                              buttons=[
                                  [Button.inline(
                                      "Settings ⚙️", data="settings"),
