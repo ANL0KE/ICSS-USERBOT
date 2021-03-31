@@ -19,7 +19,7 @@ else:
 startotherena = MSSG
 
 # start-owner
-startowner = f"Welcome back {ALIVE_NAME}. Choose the options available from below:"
+startowner = f"** ⌔∮ اهلا بك مجدداً {ALIVE_NAME}. اختر احد الخيارات الاتيه:"
 
 # for ping
 def get_readable_time(seconds: int) -> str:
