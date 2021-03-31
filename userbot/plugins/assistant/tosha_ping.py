@@ -11,6 +11,6 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await tgbot.send_message(
-        event.chat_id,
-        f"**Pong!!**\n `{ms}ms`",
+        event.chat,
+        f"**Pong!!**\n `{ms}ms`"
     )
