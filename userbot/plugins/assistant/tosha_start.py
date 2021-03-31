@@ -12,6 +12,7 @@ from userbot.plugins.assistant.sql_tosh.userbase_sql import add_to_userbase, pre
 from datetime import datetime
 from telethon import events
 from userbot.Config import Config
+from .. import mention
 from telegraph import Telegraph, upload_file
 
 # =================== OWNER - ANL0KE =================== #
@@ -138,8 +139,7 @@ async def settings(event):
           )  # pylint: disable=oof
 async def settings(event):
     await event.delete()
-    await tgbot.send_message(event.chat_id,
-                             f"⌔∮ انا اكسس مساعد {ALIVE_NAME}. الشخصي تستطيع الاتصال بي عن طريق هذا البوت",
+    await event.reply(f"⌔∮ انا اكسس مساعد {mention}. الشخصي تستطيع الاتصال بي عن طريق هذا البوت",
                              buttons=[
                                      [Button.inline(
                                          "⚜️ حصل على بوت اكسس بنفسك ⚜️", data="deployme")]
