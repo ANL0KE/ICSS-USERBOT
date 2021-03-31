@@ -45,7 +45,7 @@ async def start_all(event):
             pass
     if LOAD_MYBOT == "False":
         if BOT_PIC:
-            await event.reply(BOT_PIC,
+            await tgbot.sendmessage(event.chat, BOT_PIC,
                                   caption=startotherdis,
                                   buttons=[
                                       (Button.inline(
@@ -61,7 +61,7 @@ async def start_all(event):
                                      )
     elif LOAD_MYBOT == "True":
         if BOT_PIC:
-            await event.reply(BOT_PIC,
+            await tgbot.send_message(event.chat, BOT_PIC,
                                   caption=startotherena,
                                   buttons=[
                                       [Button.inline(
