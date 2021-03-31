@@ -10,7 +10,7 @@ from . import TOSH, K, mention
     events.NewMessage(pattern=("/repo|#repo"))
 )
 async def dev(kimo):
-    await tgbot.send_message(kimo.chat,
+    await kimo.reply(
         "⌔∮ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙄𝘾𝙎𝙎 - 𝙍𝙀𝙋𝙊 𓆪",
         buttons=[[Button.url("🔗 𝙍𝙀𝙋𝙊 🔗", K)]]
     )
