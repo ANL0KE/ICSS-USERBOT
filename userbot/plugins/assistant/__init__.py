@@ -17,10 +17,10 @@ ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 # start-other disabled
 startotherdis = f"**⌔∮ اهلا بك انا مساعد {mention} سعيد برؤيتك هنا**"
 # start-other enabled
-if Config.PBS_MSSG is None:
+if Config.TOSH_TEXT is None:
     MSSG = f"**⌔∮ اهلا بك انا مساعد {mention} تستطيع التواصل معه من خلالي**"
 else:
-    MSSG = Config.PBS_MSSG
+    MSSG = Config.TOSH_TEXT
 startotherena = MSSG
 
 # start-owner
