@@ -44,8 +44,7 @@ async def start_all(event):
             pass
     if LOAD_MYBOT == "False":
         if BOT_PIC:
-            await tgbot.send_file(event.chat_id,
-                                  BOT_PIC,
+            await event.reply(BOT_PIC,
                                   caption=startotherdis,
                                   buttons=[
                                       (Button.inline(
@@ -53,8 +52,7 @@ async def start_all(event):
                                           data="wew"))]
                                   )
         else:
-            await tgbot.send_message(event.chat_id,
-                                     startotherdis,
+            await event.reply(startotherdis,
                                      buttons=[
                                          (Button.inline(
                                              "What can I do here?",
@@ -62,8 +60,7 @@ async def start_all(event):
                                      )
     elif LOAD_MYBOT == "True":
         if BOT_PIC:
-            await tgbot.send_file(event.chat_id,
-                                  BOT_PIC,
+            await event.reply(BOT_PIC,
                                   caption=startotherena,
                                   buttons=[
                                       [Button.url(
@@ -73,8 +70,7 @@ async def start_all(event):
                                   ]
                                   )
         else:
-            await tgbot.send_message(event.chat_id,
-                                     startotherena,
+            await event.reply(startotherena,
                                      buttons=[
                                          [Button.url(
                                              "Icss", url="https://github.com/ANL0KE/ICSS-USERBOT")],
