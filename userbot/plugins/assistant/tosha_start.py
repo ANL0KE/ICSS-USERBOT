@@ -206,11 +206,13 @@ async def pmbot(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
         await tgbot.send_message(event.chat_id,
-                                 "Here are the availabe settings for PM bot.",
+                                 "**⌔∮ اختر احد اختيارات نضام الحمايه: **",
                                  buttons=[
-                                     [Button.inline("⚜️ لتفعيل وتعطيل الحمايه⚜️", data="onoff"), Button.inline(
-                                         "⚜️ لتغير رسالة بدء البوت ⚜️", data="cmssg")],
-                                     [Button.inline("⚜️ صورة البوت ⚜️", data="btpic")]
+                                     [Button.inline("⚜️ تفعيل | تعطيل ⚜️", data="onoff"), Button.inline(
+                                         "⚜️ رسالة البدء ⚜️", data="cmssg")],
+                                     [Button.inline("⚜️ صورة البوت ⚜️", data="btpic")],
+                                     [Button.inline("⚜️ رجوع ⚜️", data="settings")]
+
                                  ])
     else:
         await event.answer("لا تستطيع استخدام البوت.", alert=True)
@@ -224,8 +226,10 @@ async def pmbot(event):
         await tgbot.send_message(event.chat_id,
                                  f"** ⌔∮ اختر تفعيل او تعطيل لنضام الحمايه **.\n **- نضام الحمايه الان:** `{LOAD_MYBOT}`",
                                  buttons=[
-                                     [Button.inline("⚜️ للتفعيل⚜️", data="enable"), Button.inline(
-                                         "⚜️ للتعطيل ⚜️", data="disable")]
+                                     [Button.inline("⚜️ للتفعيل ⚜️", data="enable"), Button.inline(
+                                         "⚜️ للتعطيل ⚜️", data="disable")],
+                                     [Button.inline("⚜️ رجوع ⚜️", data="pmbot")]
+
                                  ])
     else:
         await event.answer("لا تستطيع استخدام البوت .", alert=True)
