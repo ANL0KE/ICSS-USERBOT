@@ -8,4 +8,4 @@ from . import K, D
     events.NewMessage(pattern=("المطور"))
 )
 async def dev(kimo):
-    await kimo.reply(D, buttons=[[Button.url("🔱 المطور 🔱", Kim)]])
+    await kimo.reply(D, buttons=[[Button.url("🔱 المطور 🔱", K)]])
