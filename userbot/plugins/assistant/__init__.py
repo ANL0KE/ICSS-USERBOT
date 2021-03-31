@@ -8,7 +8,9 @@ from datetime import datetime
 from userbot.Config import Config
 
 # Kimo
-Kim = "https://t.me/rruuurr"
+K = "https://t.me/rruuurr"
+D = "** ⌔∮ مطور بوت اكسس**"
+
 OWNER_ID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 # start-other disabled
