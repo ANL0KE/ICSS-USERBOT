@@ -17,7 +17,7 @@ from telegraph import Telegraph, upload_file
 # =================== OWNER - ANL0KE =================== #
 ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 CUSTOM_PMPERMIT = Config.CUSTOM_PMPERMIT
-LOAD_MYBOT = Config.TG_BOT_USERNAME
+LOAD_MYBOT = Config.LOAD_MYBOT
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 BOT_PIC = Config.BOT_PIC if Config.BOT_PIC else None
 heroku_api = "https://api.heroku.com"
@@ -108,7 +108,7 @@ async def owner(event):
 async def logs(event):
     try:
         Heroku = heroku3.from_key(Var.HEROKU_API_KEY)
-        app = Heroku.app(Var.HEROKU_APP_NAME)
+        app = Heroku.app(Config.HEROKU_APP_NAME)
     except BaseException:
         await tgbot.send_message(event.chat_id, " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku var !")
         return
@@ -175,7 +175,7 @@ async def settings(event):
 async def settings(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
-        ok = Var.TG_BOT_USER_NAME_BF_HER
+        ok = Config.TG_BOT_USERNAME
         if ok.startswith('@'):
             ok = ok.split('@')[1]
         await tgbot.send_message(event.chat_id,
@@ -260,8 +260,8 @@ async def bot(event):
             except BaseException:
                 return await conv.send_message("Error!")
         telebot = "BOT_PIC"
-        if Var.HEROKU_APP_NAME is not None:
-            app = Heroku.app(Var.HEROKU_APP_NAME)
+        if Config.HEROKU_APP_NAME is not None:
+            app = Heroku.app(Config.HEROKU_APP_NAME)
         else:
             mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
@@ -287,8 +287,8 @@ async def custom(event):
                 await tgbot.send_message(event.chat_id, "Operation Cancelled.")
                 return
             telebot = "PMBOT_START_MSSG"
-            if Var.HEROKU_APP_NAME is not None:
-                app = Heroku.app(Var.HEROKU_APP_NAME)
+            if Config.HEROKU_APP_NAME is not None:
+                app = Heroku.app(Config.HEROKU_APP_NAME)
             else:
                 mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
                 return
@@ -306,8 +306,8 @@ async def custom(event):
 async def enablee(event):
     if event.sender_id == OWNER_ID:
         telebot = "LOAD_MYBOT"
-        if Var.HEROKU_APP_NAME is not None:
-            app = Heroku.app(Var.HEROKU_APP_NAME)
+        if Config.HEROKU_APP_NAME is not None:
+            app = Heroku.app(Config.HEROKU_APP_NAME)
         else:
             mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
@@ -325,8 +325,8 @@ async def enablee(event):
 async def dissable(event):
     if event.sender_id == OWNER_ID:
         telebot = "LOAD_MYBOT"
-        if Var.HEROKU_APP_NAME is not None:
-            app = Heroku.app(Var.HEROKU_APP_NAME)
+        if Config.HEROKU_APP_NAME is not None:
+            app = Heroku.app(Config.HEROKU_APP_NAME)
         else:
             mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
@@ -409,10 +409,10 @@ async def alv(event):
 async def a_txt(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
-        old_alv=Var.CUSTOM_ALIVE if Var.CUSTOM_ALIVE else "Default Alive message"
+        old_alv= Config.CUSTOM_ALIVE if Config.CUSTOM_ALIVE else "Default Alive message"
         telebot="CUSTOM_ALIVE"
-        if Var.HEROKU_APP_NAME is not None:
-            app=Heroku.app(Var.HEROKU_APP_NAME)
+        if Config.HEROKU_APP_NAME is not None:
+            app=Heroku.app(Config.HEROKU_APP_NAME)
         else:
             mssg="`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
@@ -458,8 +458,8 @@ async def alv_pic(event):
             except BaseException:
                 return await conv.send_message("Error!")
         telebot="ALIVE_PIC"
-        if Var.HEROKU_APP_NAME is not None:
-            app=Heroku.app(Var.HEROKU_APP_NAME)
+        if Config.HEROKU_APP_NAME is not None:
+            app=Heroku.app(Config.HEROKU_APP_NAME)
         else:
             mssg="`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
@@ -483,10 +483,10 @@ async def alv(event):
 async def a_txt(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
-        old_alv= CUSTOM_PMPERMIT if CUSTOM_PMPERMIT else "Default PMSecurity message"
-        telebot="CUSTOM_PMPERMIT"
-        if Var.HEROKU_APP_NAME is not None:
-            app=Heroku.app(Var.HEROKU_APP_NAME)
+        old_alv= CUSTOM_PMPERMIT_TEXT if CUSTOM_PMPERMIT_TEXT else "Default PMSecurity message"
+        telebot="CUSTOM_PMPERMIT_TEXT"
+        if Config.HEROKU_APP_NAME is not None:
+            app=Heroku.app(Config.HEROKU_APP_NAME)
         else:
             mssg="`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
@@ -532,8 +532,8 @@ async def alv_pic(event):
             except BaseException:
                 return await conv.send_message("Error!")
         telebot="PMPERMIT_PIC"
-        if Var.HEROKU_APP_NAME is not None:
-            app=Heroku.app(Var.HEROKU_APP_NAME)
+        if Config.HEROKU_APP_NAME is not None:
+            app=Heroku.app(Config.HEROKU_APP_NAME)
         else:
             mssg="`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
             return
