@@ -45,7 +45,7 @@ async def start_all(event):
             pass
     if LOAD_MYBOT == "False":
         if BOT_PIC:
-            await tgbot.sendmessage(event.chat, BOT_PIC,
+            await tgbot.send_message(event.chat_id, BOT_PIC,
                                   caption=startotherdis,
                                   buttons=[
                                       (Button.inline(
@@ -61,7 +61,7 @@ async def start_all(event):
                                      )
     elif LOAD_MYBOT == "True":
         if BOT_PIC:
-            await tgbot.send_message(event.chat, BOT_PIC,
+            await tgbot.send_message(event.chat_id, BOT_PIC,
                                   caption=startotherena,
                                   buttons=[
                                       [Button.inline(
@@ -84,7 +84,7 @@ async def owner(event):
                                  [Button.inline(
                                      "⚜️ الاعدادات ⚜️", data="settings"),
                                   Button.inline(
-                                     "⚜️ الاحصائيات ⚜️", data="stats")],
+                                     "⚜️ البوت ⚜️", data="about")],
                                  [Button.inline("⚜️ الاذاعه ⚜️",
                                                 data="toshbroad")],
                                  [Button.url("⚜️ الدعم ⚜️",
@@ -175,17 +175,14 @@ async def settings(event):
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats"))
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"about"))
           )  # pylint: disable=oof
 async def settings(event):
     if event.sender_id == OWNER_ID:
-        allu = len(full_userbase())
-        blu = len(all_bl_users())
-        pop = "Here is the stats for your bot:\nTotal Users = {}\nBlacklisted Users = {}".format(
-            allu, blu)
-        await event.answer(pop, alert=True)
+        await event.delete()
+        await tgbot.send_message(event.chat_id, TOSH)
     else:
-        await event.answer("You can't use this bot.", alert=True)
+        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pmbot"))
