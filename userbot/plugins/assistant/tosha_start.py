@@ -184,7 +184,6 @@ async def settings(event):
                                          "⚜️ الدعم ⚜️ ", url=f"https://t.me/{ok}?start=logs")],
                                      [Button.url(
                                          "⚜️ رجوع ⚜️ ", data="settings")]                
-
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
