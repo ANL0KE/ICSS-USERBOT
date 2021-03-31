@@ -181,9 +181,7 @@ async def settings(event):
                                      [Button.inline(
                                          "⚜️ لتغير الايڤ وغيرها ⚜️ ⁦⁩", data="custom")],
                                      [Button.url(
-                                         "⚜️ الدعم ⚜️ ", url=f"https://t.me/{ok}?start=logs")],
-                                     [Button.url(
-                                         "⚜️ رجوع ⚜️ ", data="settings")]                
+                                         "⚜️ الدعم ⚜️ ", url=f"https://t.me/{ok}?start=logs")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
