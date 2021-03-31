@@ -265,7 +265,7 @@ async def bot(event):
           )  # pylint: disable=oof
 async def custom(event):
     if event.sender_id == OWNER_ID:
-        await event.reply("** ⌔∮ تستطيع تغير رساله البدء التي تضهر عندما يقوم شخص ببدء بوتك ارسل الان الرساله التي تريدها ** /n  - استخدم /cancel لالغاء هذا الخيار.")
+        await event.reply("** ⌔∮ تستطيع تغير رساله البدء التي تضهر عندما يقوم شخص ببدء بوتك ارسل الان الرساله التي تريدها ** \n  - استخدم /cancel لالغاء هذا الخيار.")
         async with event.client.conversation(OWNER_ID) as conv:
             response = conv.wait_event(events.NewMessage(chats=OWNER_ID))
             response = await response
