@@ -55,7 +55,7 @@ async def start_all(event):
             await event.reply(startotherdis,
                                      buttons=[
                                          (Button.inline(
-                                             "What can I do here?",
+                                             "⚜️ ماذا استطيع ان افعل هنا ⚜️",
                                              data="wew"))]
                                      )
     elif LOAD_MYBOT == "True":
@@ -64,7 +64,7 @@ async def start_all(event):
                                   caption=startotherena,
                                   buttons=[
                                       [Button.url(
-                                          "Icss", url="https://github.com/ANL0KE/ICSS-USERBOT")],
+                                          "⚜️ 𝙄𝘾𝙎𝙎 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ⁦⚜️", url="https://github.com/ANL0KE/ICSS-USERBOT")],
                                       [Button.inline(
                                           "Whats this?", data="Icss")]
                                   ]
@@ -134,10 +134,10 @@ async def logs(event):
 async def settings(event):
     await event.delete()
     await tgbot.send_message(event.chat_id,
-                             "There isn't much that you can do over here rn.",
+                             "⌔∮ ليس هناك الكثير للقيام به هنا.",
                              buttons=[
                                      [Button.inline(
-                                         "⌔∮ احصل على بوت اكسس بنفسك", data="deployme")]
+                                         "⚜️ احصل على بوت اكسس بنفسك ⚜️", data="deployme")]
                              ])
 
 
@@ -149,14 +149,14 @@ async def settings(event):
                              f"⌔∮ انا اكسس مساعد {ALIVE_NAME}. الشخصي تستطيع الاتصال بي عن طريق هذا البوت",
                              buttons=[
                                      [Button.inline(
-                                         "⌔∮ احصل على بوت اكسس بنفسك", data="deployme")]
+                                         "⚜️ حصل على بوت اكسس بنفسك ⚜️", data="deployme")]
                              ])
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"deployme"))
           )  # pylint: disable=oof
 async def settings(event):
-    await event.edit("Browse through the available options:",
+    await event.edit("** ⌔∮ هنا ستجد رابط اكسس ورابط التنصيب ايضا**:",
                      buttons=[
                          [(Button.url("🔗 رابط السورس🔗", url="https://github.com/ANL0KE/ICSS-USERBOT")),
                           (Button.url("🔗 رابط التنصيب 🔗", url="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK"))],
@@ -177,11 +177,14 @@ async def settings(event):
                                  "** ⌔∮ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
-                                         "𝙋𝙈 - 𝘽𝙊𝙏 ", data="pmbot")],
+                                         "⚜️ لنضام الحمايه ⚜️ ", data="pmbot")],
                                      [Button.inline(
-                                         "𝘾𝙐𝙎𝙏𝙊𝙈𝙎 ⁦⁩", data="custom")],
+                                         "⚜️ لتغير الايڤ وغيرها ⚜️ ⁦⁩", data="custom")],
                                      [Button.url(
-                                         "𝙇𝙊𝙂𝙎 ", url=f"https://t.me/{ok}?start=logs")]
+                                         "⚜️ الدعم ⚜️ ", url=f"https://t.me/{ok}?start=logs")],
+                                     [Button.url(
+                                         "⚜️ رجوع ⚜️ ", data="settings")]                
+
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
@@ -208,12 +211,12 @@ async def pmbot(event):
         await tgbot.send_message(event.chat_id,
                                  "Here are the availabe settings for PM bot.",
                                  buttons=[
-                                     [Button.inline("Enable/Disable", data="onoff"), Button.inline(
-                                         "Custom Message", data="cmssg")],
-                                     [Button.inline("Bot Pic", data="btpic")]
+                                     [Button.inline("⚜️ لتفعيل وتعطيل الحمايه⚜️", data="onoff"), Button.inline(
+                                         "⚜️ لتغير رسالة بدء البوت ⚜️", data="cmssg")],
+                                     [Button.inline("⚜️ صورة البوت ⚜️", data="btpic")]
                                  ])
     else:
-        await event.answer("You can't use this bot.", alert=True)
+        await event.answer("لا تستطيع استخدام البوت.", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"onoff"))
@@ -222,13 +225,13 @@ async def pmbot(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
         await tgbot.send_message(event.chat_id,
-                                 f"Turn the PM bot on or off.\nCurrently enabled: {LOAD_MYBOT}",
+                                 f"** ⌔∮ اختر تفعيل او تعطيل لنضام الحمايه **.\n **- نضام الحمايه الان:** `{LOAD_MYBOT}`",
                                  buttons=[
-                                     [Button.inline("Enable", data="enable"), Button.inline(
-                                         "Disable", data="disable")]
+                                     [Button.inline("⚜️ للتفعيل⚜️", data="enable"), Button.inline(
+                                         "⚜️ للتعطيل ⚜️", data="disable")]
                                  ])
     else:
-        await event.answer("You can't use this bot.", alert=True)
+        await event.answer("لا تستطيع استخدام البوت .", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"btpic"))
@@ -237,13 +240,13 @@ async def bot(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
         async with event.client.conversation(OWNER_ID) as conv:
-            await conv.send_message("Send the new pic you want to be shown when someone starts the bot:")
-            await conv.send_message("Send /cancel to cancel the operation!")
+            await conv.send_message("**⌔∮ ارسل لي الصوره التي تضهر عندما يقوم شخص ببدء بوتك :**")
+            await conv.send_message("⌔∮ ارسل /cancel لالغاء وضع الصوره")
             response = await conv.get_response()
             try:
                 themssg = response.message.message
                 if themssg == "/cancel":
-                    await conv.send_message("Operation cancelled!!")
+                    await conv.send_message("** ⌔∮ تم الالغاء **")
                     return
             except BaseException:
                 pass
@@ -253,66 +256,66 @@ async def bot(event):
                 url = f"https://telegra.ph/{x[0]}"
                 os.remove(media)
             except BaseException:
-                return await conv.send_message("Error!")
-        telebot = "BOT_PIC"
+                return await conv.send_message("** ⌔∮ خطا **")
+        tosh = "BOT_PIC"
         if Config.HEROKU_APP_NAME is not None:
             app = Heroku.app(Config.HEROKU_APP_NAME)
         else:
-            mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
+            mssg = "`**HEROKU**:" "\n رجاء ادخل الفار الاتي ` **HEROKU_APP_NAME**"
             return
-        xx = await tgbot.send_message(event.chat_id, "Changing your Bot Pic, please wait for a minute")
+        xx = await tgbot.send_message(event.chat_id, "** ⌔∮ يتم تغير صورة البوت انتظر قليلا**")
         heroku_var = app.config()
-        heroku_var[telebot] = f"{url}"
-        mssg = f"Successfully changed your bot pic. Please wait for a minute.\n"
+        heroku_var[tosh] = f"{url}"
+        mssg = f"** ⌔∮ تم تغير صورة البوت انتظر قليلا*.\n"
         await xx.edit(mssg)
     else:
-        await event.answer("You can't use this bot.", alert=True)
+        await event.answer("لا تستطيع استخدام هذا البوت.", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"cmssg"))
           )  # pylint: disable=oof
 async def custom(event):
     if event.sender_id == OWNER_ID:
-        await event.reply("You can change your PMBot start message here.\nSend the message you want to display when someone started the bot, /cancel to cancel the operation.")
+        await event.reply("** ⌔∮ تستطيع تغير رساله البدء التي تضهر عندما يقوم شخص ببدء بوتك ارسل الان الرساله التي تريدها ** /n  - استخدم /cancel لالغاء هذا الخيار.")
         async with event.client.conversation(OWNER_ID) as conv:
             response = conv.wait_event(events.NewMessage(chats=OWNER_ID))
             response = await response
             themssg = response.message.message
             if themssg == "/cancel":
-                await tgbot.send_message(event.chat_id, "Operation Cancelled.")
+                await tgbot.send_message(event.chat_id, "** ⌔∮ تم الالغاء **.")
                 return
-            telebot = "PMBOT_START_MSSG"
+            tosh = "TOSH_START"
             if Config.HEROKU_APP_NAME is not None:
                 app = Heroku.app(Config.HEROKU_APP_NAME)
             else:
-                mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
+                mssg = "`**HEROKU**:" "\n رجاء ادخل الفار` **HEROKU_APP_NAME**"
                 return
             heroku_var = app.config()
-            heroku_var[telebot] = f"{themssg}"
-            mssg = "Changed the PMBot start message!!\n**Restarting now**, please give me a minute."
+            heroku_var[tosh] = f"{themssg}"
+            mssg = "** ⌔∮ تم تغير رسالة البدء جاري اعادة التشغيل انتظر قليلا**"
             await event.delete()
             await tgbot.send_message(event.chat_id, mssg)
     else:
-        await event.answer("You can't use this bot.", alert=True)
+        await event.answer("لا تستطيع استخدام البوت.", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"enable"))
           )  # pylint: disable=oof
 async def enablee(event):
     if event.sender_id == OWNER_ID:
-        telebot = "LOAD_MYBOT"
+        tosh = "LOAD_MYBOT"
         if Config.HEROKU_APP_NAME is not None:
             app = Heroku.app(Config.HEROKU_APP_NAME)
         else:
-            mssg = "`**HEROKU**:" "\nPlease setup your` **HEROKU_APP_NAME**"
+            mssg = "`**HEROKU**:" "\nرجاء ادخل الفار` **HEROKU_APP_NAME**"
             return
         heroku_var = app.config()
-        heroku_var[telebot] = "True"
-        mssg = "Successfully turned on PM Bot. Restarting now, please give me a minute."
+        heroku_var[tosh] = "True"
+        mssg = "**⌔∮ تم تفعيل نضام الحمايه.**"
         await event.delete()
         await tgbot.send_message(event.chat_id, mssg)
     else:
-        await event.answer("⌔∮ انت لا تستطيع استخدام البوت.", alert=True)
+        await event.answer("انت لا تستطيع استخدام البوت.", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"disable"))
@@ -327,18 +330,18 @@ async def dissable(event):
             return
         heroku_var = app.config()
         heroku_var[tosh] = "False"
-        mssg = "**⌔∮ تم تفعيل نضام الحمايه في الخاص.**"
+        mssg = "**⌔∮ تم تعطيل نضام الحمايه في الخاص.**"
         await event.delete()
         await tgbot.send_message(event.chat_id, mssg)
     else:
-        await event.answer("⌔∮ انت لا تستطيع استخدام البوت.", alert=True)
+        await event.answer(" انت لا تستطيع استخدام البوت.", alert=True)
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"toshbroad"))
           )  # pylint: disable=oof
 async def broadcast(event):
     if event.sender_id != OWNER_ID:
-        await event.answer("⌔∮ انت لا تستطيع استخدام البوت")
+        await event.answer(" انت لا تستطيع استخدام البوت")
         return
     await tgbot.send_message(event.chat_id, "** ⌔∮ ارسل رساله للاذاعه بها **!\n  - ارسل /cancel لالغاء الاذاعه.")
     async with event.client.conversation(OWNER_ID) as conv:
@@ -388,7 +391,8 @@ async def custommm(event):
     await event.edit("** ⌔∮ اختر احد الخيارات الخاصه بتغير الاتي: **",
                      buttons=[
                          [Button.inline("⚜️ الايڤ ⚜️", data="alive_cus")],
-                         [Button.inline("⚜️ حماية الخاص ⚜️", data="pm_cus")]
+                         [Button.inline("⚜️ حماية الخاص ⚜️", data="pm_cus")],
+                         [Button.inline("⚜️ للرجوع ⚜️", data="settings")]
                      ]
                      )
 # fmt: off
@@ -397,14 +401,15 @@ async def alv(event):
     await event.edit("** ⌔∮ اختر احد الخيارات الخاصه بالايڤ:**",
                     buttons=[
                         [Button.inline("⚜️ لتغير نص الايڤ ⚜️", data="alv_txt")],
-                        [Button.inline("⚜️ لتغير صورة الايڤ ⚜️", data="alv_pic")]
+                        [Button.inline("⚜️ لتغير صورة الايڤ ⚜️", data="alv_pic")],
+                        [Button.inline("⚜️ للرجوع ⚜️", data="custom")]
                     ])
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"alv_txt")))
 async def a_txt(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
-        old_alv= Config.CUSTOM_ALIVE if Config.CUSTOM_ALIVE else "Default Alive message"
+        old_alv= Config.CUSTOM_ALIVE_TEXT if Config.CUSTOM_ALIVE_TEXT else None
         tosh="CUSTOM_ALIVE_TEXT"
         if Config.HEROKU_APP_NAME_TEXT is not None:
             app=Heroku.app(Config.HEROKU_APP_NAME_TEXT)
@@ -471,22 +476,23 @@ async def alv(event):
     await event.edit("** ⌔∮ اختر احد الخيارات الاتيه الخاصه بحماية الخاص:**",
                     buttons=[
                         [Button.inline("⚜️ لتغير رساله الحمايه ⚜️", data="pm_txt")],
-                        [Button.inline("⚜️ لتغير صوره الحمايه ⚜️", data="pm_pic")]
+                        [Button.inline("⚜️ لتغير صوره الحمايه ⚜️", data="pm_pic")],
+                        [Button.inline("⚜️ للرجوع ⚜️", data="custom")]
                     ])
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"pm_txt")))
 async def a_txt(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
-        old_alv= CUSTOM_PMPERMIT_TEXT if CUSTOM_PMPERMIT_TEXT else "ᴅᴇғᴀᴜʟᴛ ᴘᴍsᴇᴄᴜʀɪᴛʏ ᴍᴇssᴀɢᴇ 𖠛"
+        old_alv= CUSTOM_PMPERMIT_TEXT 
         tosh="CUSTOM_PMPERMIT_TEXT"
         if Config.HEROKU_APP_NAME is not None:
             app=Heroku.app(Config.HEROKU_APP_NAME)
         else:
-            mssg="`**HEROKU**:" "\n⌔∮ رجاء ادخل الفار الاتي` **HEROKU_APP_NAME**"
+            mssg="`**HEROKU**:" "\nرجاء ادخل الفار الاتي` **HEROKU_APP_NAME**"
             return
         async with event.client.conversation(OWNER_ID) as conv:
-            await conv.send_message("** ⌔∮ اعطني رساله التي تريد ان تكون رساله للحمايه في الخاص **\n** ⌔∮ استخدم /cancel للالغاء❕.**")
+            await conv.send_message("** ⌔∮ اعطني رساله التي تريد ان تكون رساله للحمايه في الخاص **\n ⌔∮ استخدم /cancel للالغاء❕.")
             response=conv.wait_event(events.NewMessage(chats=OWNER_ID))
             response=await response
             themssg=response.message.message
@@ -510,7 +516,7 @@ async def alv_pic(event):
         await event.delete()
         await tgbot.send_message(event.chat_id, "** ⌔∮ ارسل لي الصوره التي تريد وضعها في رساله الحمايه الخاصه بك **.")
         async with event.client.conversation(OWNER_ID) as conv:
-            await conv.send_message("** ⌔∮ ارسل /cancel للالغاء 🖤❕**")
+            await conv.send_message(" ⌔∮ ارسل /cancel للالغاء 🖤❕")
             response = await conv.get_response()
             try:
                 themssg=response.message.message
