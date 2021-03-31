@@ -12,10 +12,9 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    x = await eor(event, "البنك")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
-    await x.edit(
+    await tgbot.send_message(event.chat, 
         f"⌔∮ **سرعه الاستجابه ↫** `{ms}` ** ⇲**"
     )
