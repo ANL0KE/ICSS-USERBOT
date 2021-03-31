@@ -229,7 +229,7 @@ async def bot(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
         async with event.client.conversation(OWNER_ID) as conv:
-            await conv.send_message("**⌔∮ ارسل لي الصوره التي تضهر عندما يقوم شخص ببدء بوتك :**")
+            await conv.send_message("**⌔∮ ارسل لي الصوره التي تضهر عندما يقوم شخص ببدء بوتك يجب ارسالها على شكل ملف :**")
             await conv.send_message("⌔∮ ارسل /cancel لالغاء وضع الصوره")
             response = await conv.get_response()
             try:
@@ -255,7 +255,7 @@ async def bot(event):
         xx = await tgbot.send_message(event.chat_id, "** ⌔∮ يتم تغير صورة البوت انتظر قليلا**")
         heroku_var = app.config()
         heroku_var[tosh] = f"{url}"
-        mssg = f"** ⌔∮ تم تغير صورة البوت انتظر قليلا*.\n"
+        mssg = f"** ⌔∮ تم تغير صورة البوت انتظر قليلا**.\n"
         await xx.edit(mssg)
     else:
         await event.answer("لا تستطيع استخدام هذا البوت.", alert=True)
