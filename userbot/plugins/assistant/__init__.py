@@ -13,7 +13,7 @@ ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 startotherdis = f"Hi there. I am {ALIVE_NAME}'s bot. Nice to see you here."
 # start-other enabled
 if Config.PBS_MSSG is None:
-    MSSG = f"Hi there, I am {ALIVE_NAME}'s personal bot.\nYou can contact him through me 😌.\nHave a nice time!"
+    MSSG = f"**⌔∮ اهلا بك انا مساعد {ALIVE_NAME} تستطيع التواصل معه من خلالي**"
 else:
     MSSG = Config.PBS_MSSG
 startotherena = MSSG
