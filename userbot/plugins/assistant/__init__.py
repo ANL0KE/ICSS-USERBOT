@@ -6,6 +6,7 @@
 import time
 from datetime import datetime
 from userbot.Config import Config
+from .. import mention
 
 # Kimo
 K = "https://t.me/rruuurr"
@@ -14,10 +15,10 @@ D = "** ⌔∮ مطور بوت اكسس**"
 OWNER_ID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 # start-other disabled
-startotherdis = f"Hi there. I am {ALIVE_NAME}'s bot. Nice to see you here."
+startotherdis = f"**⌔∮ اهلا بك انا مساعد {mention} سعيد برؤيتك هنا**"
 # start-other enabled
 if Config.PBS_MSSG is None:
-    MSSG = f"**⌔∮ اهلا بك انا مساعد {ALIVE_NAME} تستطيع التواصل معه من خلالي**"
+    MSSG = f"**⌔∮ اهلا بك انا مساعد {mention} تستطيع التواصل معه من خلالي**"
 else:
     MSSG = Config.PBS_MSSG
 startotherena = MSSG
