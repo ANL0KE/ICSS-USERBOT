@@ -63,22 +63,15 @@ async def start_all(event):
             await event.reply(BOT_PIC,
                                   caption=startotherena,
                                   buttons=[
-                                      [Button.url(
-                                          "⚜️ 𝙄𝘾𝙎𝙎 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ⁦⚜️", url="https://github.com/ANL0KE/ICSS-USERBOT")],
                                       [Button.inline(
-                                          "Whats this?", data="Icss")]
-                                  ]
-                                  )
+                                          "⚜️ 𝙄𝘾𝙎𝙎 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ⁦⚜️", data="Icss")]
+                                  ])
         else:
             await event.reply(startotherena,
                                      buttons=[
-                                         [Button.url(
-                                             "Icss", url="https://github.com/ANL0KE/ICSS-USERBOT")],
                                          [Button.inline(
-                                             "Whats this?", data="icss")]
-                                     ]
-                                     )
-
+                                             "⚜️ 𝙄𝘾𝙎𝙎 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ⁦⚜️", data="icss")]
+                                     ])
 # start-owner
 
 
