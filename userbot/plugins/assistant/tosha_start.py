@@ -32,7 +32,7 @@ auth_url = r["auth_url"]
 # start-others
 @tgbot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
 async def start_all(event):
-    if event.chat_id == OWNER_ID:
+    if event.chat_id not in OWNER_ID:
         return
     target = event.sender_id
     if present_in_userbase(target):
@@ -48,7 +48,7 @@ async def start_all(event):
                                   caption=startotherdis,
                                   buttons=[
                                       (Button.inline(
-                                          "What can I do here?",
+                                          "⚜️ ماذا استطيع ان افعل هنا ⚜️",
                                           data="wew"))]
                                   )
         else:
@@ -94,7 +94,7 @@ async def owner(event):
                                  [Button.inline("⚜️ الاذاعه ⚜️",
                                                 data="toshbroad")],
                                  [Button.url("⚜️ الدعم ⚜️",
-                                             url="https://t.me/rruuurr")]
+                                             "https://t.me/rruuurr")]
                              ])
 
 
@@ -158,8 +158,8 @@ async def settings(event):
 async def settings(event):
     await event.edit("** ⌔∮ هنا ستجد رابط اكسس ورابط التنصيب ايضا**:",
                      buttons=[
-                         [(Button.url("🔗 رابط السورس🔗", url="https://github.com/ANL0KE/ICSS-USERBOT")),
-                          (Button.url("🔗 رابط التنصيب 🔗", url="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK"))],
+                         [Button.url("🔗 رابط السورس🔗", url="https://github.com/ANL0KE/ICSS-USERBOT")],
+                         [Button.url("🔗 رابط التنصيب 🔗", url="https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK")],
                          [Button.url("✨ الدعم ✨",
                                      url="https://t.me/rruuurr")]
                      ])
@@ -170,18 +170,13 @@ async def settings(event):
 async def settings(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
-        ok = Config.TG_BOT_USERNAME
-        if ok.startswith('@'):
-            ok = ok.split('@')[1]
         await tgbot.send_message(event.chat_id,
                                  "** ⌔∮ اختر احد الخيارات الاتيه. **",
                                  buttons=[
                                      [Button.inline(
                                          "⚜️ لنضام الحمايه ⚜️ ", data="pmbot")],
                                      [Button.inline(
-                                         "⚜️ لتغير الايڤ وغيرها ⚜️ ⁦⁩", data="custom")],
-                                     [Button.url(
-                                         "⚜️ الدعم ⚜️ ", url=f"https://t.me/{ok}?start=logs")]
+                                         "⚜️ لتغير الايڤ وغيرها ⚜️ ⁦⁩", data="custom")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
