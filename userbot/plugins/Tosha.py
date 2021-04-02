@@ -8,7 +8,7 @@ from .Tosh import *
 async def icss(tosh):
     await eor(tosh, K)
 """
-@icssbot.on(icss_cmd(pattern="م1))
+@icssbot.on(icss_cmd(pattern="م1"))
 async def icss(tosh)
     await eor(tosh, R)
 
