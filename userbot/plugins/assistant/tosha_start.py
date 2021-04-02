@@ -10,7 +10,6 @@ import requests
 from userbot.plugins.assistant.sql_tosh.blacklist_sql import all_bl_users
 from userbot.plugins.assistant.sql_tosh.userbase_sql import add_to_userbase, present_in_userbase, full_userbase
 from datetime import datetime
-from telethon import events
 from userbot.Config import Config
 from .. import mention
 from telegraph import Telegraph, upload_file
