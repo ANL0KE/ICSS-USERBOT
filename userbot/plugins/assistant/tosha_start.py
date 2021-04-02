@@ -72,9 +72,9 @@ async def start_all(event):
                                          [Button.inline(
                                              "⚜️ 𝙄𝘾𝙎𝙎 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏 ⁦⚜️", data="icss")]
                                      ])
+
+
 # start-owner
-
-
 @tgbot.on(events.NewMessage(pattern="^/start",
                             from_users=OWNER_ID))  # pylint: disable=oof
 async def owner(event):
