@@ -522,7 +522,7 @@ def load_admin(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ Admin - تم استيراد ⫸ " + shortname)
     else:
         import userbot.utils
 
@@ -559,7 +559,7 @@ def load_admin(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.Admin." + shortname] = mod
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ Admin - تم استيراد ⫸ " + shortname)
 
 
 # For animations
@@ -572,7 +572,7 @@ def load_anim(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ animations - تم استيراد ⫸ " + shortname)
     else:
         import userbot.utils
         from .tosh import ed, eor
@@ -593,7 +593,7 @@ def load_anim(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.animations." + shortname] = mod
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ animations - تم استيراد ⫸ " + shortname)
 
 # For Gif 
 def load_tosha(shortname):
@@ -605,7 +605,7 @@ def load_tosha(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ Tosha - تم استيراد ⫸ " + shortname)
     else:
         import userbot.utils
 
@@ -631,7 +631,7 @@ def load_tosha(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.tosha." + shortname] = mod
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ Tosha - تم استيراد ⫸ " + shortname)
 
 
 # for assistant
@@ -644,7 +644,7 @@ def load_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ assistant - تم استيراد ⫸ " + shortname)
     else:
         import userbot.utils
         from .helpers.utils import _format
@@ -665,4 +665,4 @@ def load_assistant(shortname):
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins." + shortname] = mod
-        LOGS.info("⫷ تم الاستيراد بنجاح ⫸ " + shortname)
+        LOGS.info("⫷ assistant - تم استيراد ⫸ " + shortname)
