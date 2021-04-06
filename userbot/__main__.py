@@ -37,15 +37,15 @@ else:
     bot.tgbot = None
     try:
         if Config.TG_BOT_USERNAME is not None:
-            LOGS.info("⫷ يتم تحميل انلاين اكسس ⫸")
+            print("⫷ يتم تحميل انلاين اكسس ⫸")
             # ForTheGreatrerGood of beautification
             bot.tgbot = TelegramClient(
                 "TG_BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
             ).start(bot_token=Config.TG_BOT_TOKEN)
-            LOGS.info("⫷ اكتمل تنزيل انلاين اكسس بدون اخطاء ⫸")
-            LOGS.info("⫷ يتم بدء بوت اكسس ⫸")
+            print("⫷ اكتمل تنزيل انلاين اكسس بدون اخطاء ⫸")
+            print("⫷ يتم بدء بوت اكسس ⫸")
             bot.loop.run_until_complete(add_bot(Config.TG_BOT_USERNAME))
-            LOGS.info("⫷ اكتمل بدء بوت اكسس ⫸")
+            print("⫷ اكتمل بدء بوت اكسس ⫸")
         else:
             bot.start()
     except Exception as e:
@@ -67,11 +67,11 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/{shortname}.py"))
-            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 
 # For admin tools
-print("⫷ Admin - جاري التنزيل ⫸")
+print("⫷ - ICSS ADMIN TOOLS - ⫸ جاري التنزيل")
 path = "userbot/plugins/Admin/*.py"
 files = glob.glob(path)
 for name in files:
@@ -89,7 +89,7 @@ for name in files:
 
 
 # for animations
-print("⫷ animations - جاري التنزيل ⫸")
+print("⫷ - ICSS ANIMATIONS - ⫸ جاري التنزيل")
 path = "userbot/plugins/animations/*.py"
 files = glob.glob(path)
 for name in files:
@@ -106,7 +106,7 @@ for name in files:
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 # for Gif
-print("⫷ Tosha - جاري التنزيل ⫸")
+print("⫷ - ICSS TOSHA - ⫸ جاري التنزيل")
 path = "userbot/plugins/tosha/*.py"
 files = glob.glob(path)
 for name in files:
@@ -123,7 +123,7 @@ for name in files:
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 # for assistant
-print("⫷ assistant - جاري التنزيل ⫸")
+print("⫷ - ICSS ASSISTANT - ⫸ جاري التنزيل")
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
@@ -140,8 +140,8 @@ for name in files:
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 
-LOGS.info("⫷ بوت اكسس يعمل بنجاح الان ⫸")
-LOGS.info("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
+print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
+print("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
 
 
 async def startupmessage():
