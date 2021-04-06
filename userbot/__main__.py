@@ -71,6 +71,7 @@ for name in files:
 
 
 # For admin tools
+LOGS.info("⫷ Admin - جاري التنزيل ⫸")
 path = "userbot/plugins/Admin/*.py"
 files = glob.glob(path)
 for name in files:
@@ -88,6 +89,7 @@ for name in files:
 
 
 # for animations
+LOGS.info("⫷ animations - جاري التنزيل ⫸")
 path = "userbot/plugins/animations/*.py"
 files = glob.glob(path)
 for name in files:
@@ -104,6 +106,7 @@ for name in files:
             LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 # for Gif
+LOGS.info("⫷ Tosha - جاري التنزيل ⫸")
 path = "userbot/plugins/tosha/*.py"
 files = glob.glob(path)
 for name in files:
@@ -120,6 +123,7 @@ for name in files:
             LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 # for assistant
+LOGS.info("⫷ assistant - جاري التنزيل ⫸")
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
