@@ -71,7 +71,7 @@ for name in files:
 
 
 # For admin tools
-LOGS.info("⫷ Admin - جاري التنزيل ⫸")
+print("⫷ Admin - جاري التنزيل ⫸")
 path = "userbot/plugins/Admin/*.py"
 files = glob.glob(path)
 for name in files:
@@ -85,11 +85,11 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
-            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 
 # for animations
-LOGS.info("⫷ animations - جاري التنزيل ⫸")
+print("⫷ animations - جاري التنزيل ⫸")
 path = "userbot/plugins/animations/*.py"
 files = glob.glob(path)
 for name in files:
@@ -103,10 +103,10 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
-            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 # for Gif
-LOGS.info("⫷ Tosha - جاري التنزيل ⫸")
+print("⫷ Tosha - جاري التنزيل ⫸")
 path = "userbot/plugins/tosha/*.py"
 files = glob.glob(path)
 for name in files:
@@ -120,10 +120,10 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/tosha/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/tosha/{shortname}.py"))
-            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 # for assistant
-LOGS.info("⫷ assistant - جاري التنزيل ⫸")
+print("⫷ assistant - جاري التنزيل ⫸")
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
@@ -137,7 +137,7 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/assistant/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/assistant/{shortname}.py"))
-            LOGS.info(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 
 LOGS.info("⫷ بوت اكسس يعمل بنجاح الان ⫸")
