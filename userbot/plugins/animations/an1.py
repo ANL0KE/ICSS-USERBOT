@@ -15,7 +15,7 @@ async def _(event):
         return
     animation_interval = 1
     animation_ttl = range(14)
-    event = await eor(event, "🧠")
+    event = await eor(event, "🧠.")
     animation_chars = [
         "**- عقلك** ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
         "**- عقلك** ➡️ 🧠\n\n🧠       <(^_^ <)  🗑",
@@ -42,7 +42,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "💣")
+    event = await eor(event, "💣.")
     await event.edit("▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n")
     await asyncio.sleep(0.5)
     await event.edit("💣💣💣💣 \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n▪️▪️▪️▪️ \n")
