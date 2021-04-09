@@ -9,7 +9,7 @@ from collections import deque
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "🧐")
+    event = await eor(event, ".🧐")
     deq = deque(list("🤔🧐🤔🧐🤔🧐"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -22,7 +22,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "🤣")
+    event = await eor(event, ".🤣")
     deq = deque(list("😂🤣😂🤣😂🤣"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -35,7 +35,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "🙂.")
     deq = deque(list("😁☹️😁☹️😁☹️😁"))
     for _ in range(48):
         await asyncio.sleep(0.4)
@@ -48,7 +48,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "🕙.")
     deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -61,7 +61,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "😗.")
     deq = deque(list("😗😙😚😚😘"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -74,7 +74,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "🧡.")
     deq = deque(list("❤️🧡💛💚💙💜🖤"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -87,7 +87,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "جيم")
     deq = deque(list("🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍🏃‍🏋‍🤸‍"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -100,7 +100,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "🌏.")
     deq = deque(list("🌏🌍🌎🌎🌍🌏🌍🌎"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -113,7 +113,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "🌗.")
     deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
     for _ in range(48):
         await asyncio.sleep(0.1)
@@ -126,7 +126,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "🌗.")
     animation_interval = 0.1
     animation_ttl = range(101)
     await event.edit("⇆")
@@ -150,7 +150,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "قمور..")
     animation_interval = 0.1
     animation_ttl = range(96)
     await event.edit("tmoon..")
