@@ -11,7 +11,7 @@ from . import mention
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "نجمه..")
     deq = deque(list("🦋✨🦋✨🦋✨🦋✨"))
     for _ in range(48):
         await asyncio.sleep(0.3)
@@ -24,7 +24,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "مكعبات..")
     deq = deque(list("🟥🟧🟨🟩🟦🟪🟫⬛⬜"))
     for _ in range(999):
         await asyncio.sleep(0.3)
@@ -37,7 +37,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "⇆")
+    event = await eor(event, "مطر..")
     deq = deque(list("🌬☁️🌩🌨🌧🌦🌥⛅🌤"))
     for _ in range(48):
         await asyncio.sleep(0.3)
@@ -84,7 +84,7 @@ async def _(message):
         inp = " ".join(obj)
     except IndexError:
         inp = "🥞 🎂 🍫"
-    event = await eor(message, "⇆")
+    event = await eor(message, "تفريغ..")
     u, t, g, o, s, n = inp.split(), "🗑", "<(^_^ <)", "(> ^_^)>", "⠀ ", "\n"
     h = [(u[0], u[1], u[2]), (u[0], u[1], ""), (u[0], "", "")]
     for something in reversed(
@@ -148,7 +148,7 @@ async def _(event):
         return
     animation_interval = 0.5
     animation_ttl = range(70)
-    event = await eor(event, "⇆")
+    event = await eor(event, "احبك..")
     animation_chars = [
         "😀",
         "👩‍🎨",
@@ -196,7 +196,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    event = await eor(event, "انتظر الطائره")
+    event = await eor(event, "انتظر الطائره..")
     await event.edit("✈-------------")
     await event.edit("-✈------------")
     await event.edit("--✈-----------")
@@ -221,7 +221,7 @@ async def _(event):
         return
     animation_interval = 0.3
     animation_ttl = range(12)
-    event = await eor(event, "⇆")
+    event = await eor(event, "شرطه..")
     animation_chars = [
         "🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵\n🔴🔴🔴⬜⬜⬜🔵🔵🔵",
         "🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴\n🔵🔵🔵⬜⬜⬜🔴🔴🔴",
@@ -282,7 +282,7 @@ async def _(event):
         return
     animation_interval = 0.1
     animation_ttl = range(80)
-    event = await eor(event, "⇆")
+    event = await eor(event, "🌗.")
     animation_chars = [
         "`◼️◼️◼️◼️◼️\n◼️◼️◼️◼️☀\n◼️◼️🌎◼️◼️\n🌕◼️◼️◼️◼️\n◼️◼️◼️◼️◼️`",
         "`◼️◼️◼️◼️◼️\n🌕◼️◼️◼️◼️\n◼️◼️🌎◼️◼️\n◼️◼️◼️◼️☀\n◼️◼️◼️◼️◼️`",
