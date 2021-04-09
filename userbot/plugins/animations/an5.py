@@ -2,7 +2,6 @@
 
 import asyncio
 
-
 @icssbot.on(admin_cmd(pattern=f"تحميل$", outgoing=True))
 @icssbot.on(sudo_cmd(pattern=f"تحميل$", allow_sudo=True))
 async def _(event):
