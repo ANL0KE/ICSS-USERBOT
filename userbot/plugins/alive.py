@@ -78,8 +78,5 @@ CMD_HELP.update(
         "alive": "**Plugin :** `alive`\
       \n\n  •  **Syntax : **`.السووس` \
       \n  •  **Function : **لعرض معلومات السورس\
-      \n\n  •  **Syntax : **`.البوت` \
-      \n  •  **Function : **لعرض معلومات البوت.__\
-      \nقم باضافه `ALIVE_PIC` var لعرض الصوره او الفيديو عند كتابتك لامر السورس"
     }
 )
