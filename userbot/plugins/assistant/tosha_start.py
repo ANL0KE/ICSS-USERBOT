@@ -11,6 +11,7 @@ from userbot.plugins.assistant.sql_tosh.blacklist_sql import all_bl_users
 from userbot.plugins.assistant.sql_tosh.userbase_sql import add_to_userbase, present_in_userbase, full_userbase
 from datetime import datetime
 from userbot.Config import Config
+from . import *
 from .. import mention
 from telegraph import Telegraph, upload_file
 
@@ -83,7 +84,7 @@ async def owner(event):
                                  [Button.inline(
                                      "⚜️ الاعدادات ⚜️", data="settings"),
                                   Button.inline(
-                                     "⚜️ البوت ⚜️", data="about")],
+                                     "⚜️ الزغرفه ⚜️", data="icszag")],
                                  [Button.inline("⚜️ الاذاعه ⚜️",
                                                 data="toshbroad")],
                                  [Button.url("⚜️ الدعم ⚜️",
@@ -174,12 +175,287 @@ async def settings(event):
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
 
 
-@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"about"))
+# icss zag - زغرفه اكسس
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icszag"))
+          )  # Icss - Userbot
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 "** ⌔∮ اختر احد خيارات الزغرفه : **",
+                                 buttons=[
+                                 [Button.inline(
+                                     "اسماء انكلش 🍇", data="icsname"),
+                                  Button.inline(
+                                     "البايو 🍇", data="icspio1")],
+                                 [Button.inline(
+                                     "الاشهر 🍇 ⁦⁩", data="icsmonth"),
+                                  Button.inline(
+                                     "اسماء القنوات 🍇", data="chanlan")]
+                                 ])
+
+
+# name zag - زغرفه الاسماء
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icsname"))
           )  # pylint: disable=oof
 async def settings(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
-        await tgbot.send_message(event.chat_id, TOSH)
+        await tgbot.send_message(event.chat_id,
+                                 "** ⌔∮ اختر احد الخيارات الاتيه. **",
+                                 buttons=[
+                                     [Button.inline(
+                                         "اسماء شباب 🍇 ", data="boysna"),
+                                      Button.inline(
+                                         "║ رجوع ║ ⁦⁩", data="icazag"),
+                                      Button.inline(
+                                         "اسماء بنات 🍇", data="girlan")]
+                                 ])
+
+
+
+# Boys zag - زغرفه اسماء الشباب
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"boysna"))
+          )  # pylint: disable=oof
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 "** ⌔∮ اختر احد الخيارات الاتيه. **",
+                                 buttons=[
+                                     [Button.inline(
+                                         "القائمه الاولى 🍇 ", data="boysna1"),
+                                      Button.inline(
+                                         "القائمه الثانيه 🍇", data="boysna2")],
+                                     [Button.inline(
+                                         "║ رجوع ║", data="icsname")]
+                                 ])
+
+
+# Boys zag list1 - قائمه اسماء الشباب الاولى
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"boysna1"))
+          )  # Icss - Userbot
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 Boysna1, 
+                                 buttons=[(Button.inline("║ رجوع ║", data="icsname")]
+                                 )
+    else:
+        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
+
+
+# Boys zag list2 - قائمه اسماء الشباب الثانيه
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"boysna2"))
+          )  # Icss - Userbot
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 Boysna2, 
+                                 buttons=[(Button.inline("║ رجوع ║", data="icsname")]
+                                 )
+    else:
+        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
+
+
+
+# girls zag - زغرفه اسماء البنات
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"girlan"))
+          )  # pylint: disable=oof
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 "** ⌔∮ اختر احد الخيارات الاتيه. **",
+                                 buttons=[
+                                     [Button.inline(
+                                         "القائمه الاولى 🍇 ", data="girlan1"),
+                                      Button.inline(
+                                         "القائمه الثانيه 🍇", data="girlan2")],
+                                     [Button.inline(
+                                         "║ رجوع ║", data="icsname")]
+                                 ])
+
+
+# girls zag list1 - قائمه اسماء بنات الاولى
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"girlan1"))
+          )  # Icss - Userbot
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 Girlan1, 
+                                 buttons=[(Button.inline("║ رجوع ║", data="icsname")]
+                                 )
+    else:
+        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
+
+
+
+# girls zag list2 - قائمه اسماء بنات الثانيه
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"girlan2"))
+          )  # Icss - Userbot
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 Girlan2, 
+                                 buttons=[(Button.inline("║ رجوع ║", data="icsname")]
+                                 )
+    else:
+        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
+
+
+# Pio - البايو
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icspio1"))
+          ) 
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 ICSPIO1,
+                                 buttons=[
+                                     [Button.inline(
+                                         "⫷ السابق ", data="icspio5"),
+                                      Button.inline(
+                                         "║ خروج ║ ⁦⁩", data="icszag"),
+                                      Button.inline(
+                                         "التالي ⫸", data="icspio2")]
+                                 ])
+
+
+# Pio - البايو
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icspio2"))
+          ) 
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 ICSPIO2,
+                                 buttons=[
+                                     [Button.inline(
+                                         "⫷ السابق ", data="icspio1"),
+                                      Button.inline(
+                                         "║ خروج ║ ⁦⁩", data="icszag"),
+                                      Button.inline(
+                                         "التالي ⫸", data="icspio3")]
+                                 ])
+
+
+# Pio - البايو
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icspio3"))
+          ) 
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 ICSPIO3,
+                                 buttons=[
+                                     [Button.inline(
+                                         "⫷ السابق ", data="icspio2"),
+                                      Button.inline(
+                                         "║ خروج ║ ⁦⁩", data="icszag"),
+                                      Button.inline(
+                                         "التالي ⫸", data="icspio4")]
+                                 ])
+
+
+
+# Pio - البايو
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icspio4"))
+          ) 
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 ICSPIO4,
+                                 buttons=[
+                                     [Button.inline(
+                                         "⫷ السابق ", data="icspio3"),
+                                      Button.inline(
+                                         "║ خروج ║ ⁦⁩", data="icszag"),
+                                      Button.inline(
+                                         "التالي ⫸", data="icspio5")]
+                                 ])
+
+
+
+# Pio - البايو
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icspio5"))
+          ) 
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 ICSPIO5,
+                                 buttons=[
+                                     [Button.inline(
+                                         "⫷ السابق ", data="icspio4"),
+                                      Button.inline(
+                                         "║ خروج ║⁦⁩", data="icszag"),
+                                      Button.inline(
+                                         "التالي ⫸", data="icspio1")]
+                                 ])
+
+
+# Boys zag - زغرفه اسماء الشباب
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icsmonth"))
+          )  # pylint: disable=oof
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id,
+                                 "** ⌔∮ اختر احد الخيارات الاتيه. **",
+                                 buttons=[
+                                     [Button.inline(
+                                         "المواليد 🍇 ", data="icsyear"),
+                                      Button.inline(
+                                         "الاشهر 🍇", data="months")],
+                                     [Button.inline(
+                                         "║ رجوع ║", data="icsname")]
+                                 ])
+
+
+# Months - الاشهر
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"months"))
+          )  # pylint: disable=oof
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id, 
+                                 MONTHS, 
+                                 buttons=[(Button.inline("║ رجوع ║", data="icszag")]
+                                 )
+    else:
+        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
+
+
+# years - السنوات
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icsyear"))
+          )  # pylint: disable=oof
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id, 
+                                 ICSYEAR, 
+                                 buttons=[(Button.inline("║ رجوع ║", data="icszag")]
+                                 )
+    else:
+        await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
+
+
+# channel names - اسماء القنوات
+@tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"chanlan"))
+          )  # pylint: disable=oof
+async def settings(event):
+    if event.sender_id == OWNER_ID:
+        await event.delete()
+        await tgbot.send_message(event.chat_id, 
+                                 CHANLAN, 
+                                 buttons=[(Button.inline("║ رجوع ║", data="icszag")]
+                                 )
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
 
@@ -200,6 +476,7 @@ async def pmbot(event):
                                  ])
     else:
         await event.answer("لا تستطيع استخدام البوت.", alert=True)
+
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"onoff"))
@@ -530,5 +807,3 @@ async def alv_pic(event):
         await xx.edit(mssg)
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr.", alert=True)
-
-# fmt: on
