@@ -328,11 +328,11 @@ async def settings(event):
                                  ICSPIO1,
                                  buttons=[
                                      [Button.inline(
-                                         "⫷ السابق ", data="icspio5"),
+                                         " السابق ⫸", data="icspio5"),
                                       Button.inline(
                                          "║ خروج ║ ⁦⁩", data="icszag"),
                                       Button.inline(
-                                         "التالي ⫸", data="icspio2")]
+                                         "⫷ التالي ", data="icspio2")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
@@ -349,11 +349,11 @@ async def settings(event):
                                  ICSPIO2,
                                  buttons=[
                                      [Button.inline(
-                                         "⫷ السابق ", data="icspio1"),
+                                         "السابق ⫸ ", data="icspio1"),
                                       Button.inline(
                                          "║ خروج ║ ⁦⁩", data="icszag"),
                                       Button.inline(
-                                         "التالي ⫸", data="icspio3")]
+                                         "⫷ التالي", data="icspio3")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
@@ -370,11 +370,11 @@ async def settings(event):
                                  ICSPIO3,
                                  buttons=[
                                      [Button.inline(
-                                         "⫷ السابق ", data="icspio2"),
+                                         "السابق ⫸ ", data="icspio2"),
                                       Button.inline(
                                          "║ خروج ║ ⁦⁩", data="icszag"),
                                       Button.inline(
-                                         "التالي ⫸", data="icspio4")]
+                                         "⫷ التالي", data="icspio4")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
@@ -391,11 +391,11 @@ async def settings(event):
                                  ICSPIO4,
                                  buttons=[
                                      [Button.inline(
-                                         "⫷ السابق ", data="icspio3"),
+                                         "السابق ⫸ ", data="icspio3"),
                                       Button.inline(
                                          "║ خروج ║ ⁦⁩", data="icszag"),
                                       Button.inline(
-                                         "التالي ⫸", data="icspio5")]
+                                         "⫷ التالي", data="icspio5")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
@@ -412,11 +412,11 @@ async def settings(event):
                                  ICSPIO5,
                                  buttons=[
                                      [Button.inline(
-                                         "⫷ السابق ", data="icspio4"),
+                                         "السابق ⫸ ", data="icspio4"),
                                       Button.inline(
                                          "║ خروج ║⁦⁩", data="icszag"),
                                       Button.inline(
-                                         "التالي ⫸", data="icspio1")]
+                                         "⫷ التالي", data="icspio1")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
