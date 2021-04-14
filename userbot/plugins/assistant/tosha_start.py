@@ -193,6 +193,9 @@ async def settings(event):
                                   Button.inline(
                                      "اسماء القنوات 🍇", data="chanlan")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
+
 
 
 # name zag - زغرفه الاسماء
@@ -211,7 +214,8 @@ async def settings(event):
                                       Button.inline(
                                          "اسماء بنات 🍇", data="girlan")]
                                  ])
-
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
 
 
 # Boys zag - زغرفه اسماء الشباب
@@ -230,6 +234,9 @@ async def settings(event):
                                      [Button.inline(
                                          "║ رجوع ║", data="icsname")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
+
 
 
 # Boys zag list1 - قائمه اسماء الشباب الاولى
@@ -277,6 +284,9 @@ async def settings(event):
                                      [Button.inline(
                                          "║ رجوع ║", data="icsname")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
+
 
 
 # girls zag list1 - قائمه اسماء بنات الاولى
@@ -324,6 +334,9 @@ async def settings(event):
                                       Button.inline(
                                          "التالي ⫸", data="icspio2")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
+
 
 
 # Pio - البايو
@@ -342,6 +355,9 @@ async def settings(event):
                                       Button.inline(
                                          "التالي ⫸", data="icspio3")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
+
 
 
 # Pio - البايو
@@ -360,6 +376,8 @@ async def settings(event):
                                       Button.inline(
                                          "التالي ⫸", data="icspio4")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
 
 
 
@@ -379,6 +397,8 @@ async def settings(event):
                                       Button.inline(
                                          "التالي ⫸", data="icspio5")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
 
 
 
@@ -398,6 +418,8 @@ async def settings(event):
                                       Button.inline(
                                          "التالي ⫸", data="icspio1")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
 
 
 # Boys zag - زغرفه اسماء الشباب
@@ -416,6 +438,8 @@ async def settings(event):
                                      [Button.inline(
                                          "║ رجوع ║", data="icsname")]
                                  ])
+    else:
+        await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
 
 
 # Months - الاشهر
