@@ -436,7 +436,7 @@ async def settings(event):
                                       Button.inline(
                                          "الاشهر 🍇", data="months")],
                                      [Button.inline(
-                                         "║ رجوع ║", data="icsmonth")]
+                                         "║ رجوع ║", data="icszag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
@@ -450,7 +450,7 @@ async def settings(event):
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  MONTHS, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="icszag")]
+                                 buttons=[[Button.inline("║ رجوع ║", data="icsmonth")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -464,7 +464,7 @@ async def settings(event):
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  ICSYEAR, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="icszag")]
+                                 buttons=[[Button.inline("║ رجوع ║", data="icsmonth")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
