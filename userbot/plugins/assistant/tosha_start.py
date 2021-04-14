@@ -247,7 +247,7 @@ async def settings(event):
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Boysna1, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="icsname")]
+                                 buttons=[[Button.inline("║ رجوع ║", data="boysna")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -261,7 +261,7 @@ async def settings(event):
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Boysna2, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="icsname")]
+                                 buttons=[[Button.inline("║ رجوع ║", data="boysna")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -297,7 +297,7 @@ async def settings(event):
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Girlan1, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="icsname")]
+                                 buttons=[[Button.inline("║ رجوع ║", data="girlan")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
@@ -312,7 +312,7 @@ async def settings(event):
         await event.delete()
         await tgbot.send_message(event.chat_id,
                                  Girlan2, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="icsname")]
+                                 buttons=[[Button.inline("║ رجوع ║", data="girlan")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
