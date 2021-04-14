@@ -450,7 +450,7 @@ async def settings(event):
         await event.delete()
         await tgbot.send_message(event.chat_id, 
                                  MONTHS, 
-                                 buttons=[[Button.inline("║ رجوع ║", data="icsmonth")]
+                                 buttons=[[Button.inline("║ رجوع ║", data="icszag")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام هذا البوت.", alert=True)
