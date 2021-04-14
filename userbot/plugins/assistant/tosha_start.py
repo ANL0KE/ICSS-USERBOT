@@ -436,7 +436,7 @@ async def settings(event):
                                       Button.inline(
                                          "الاشهر 🍇", data="months")],
                                      [Button.inline(
-                                         "║ رجوع ║", data="icsname")]
+                                         "║ رجوع ║", data="icsmonth")]
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
