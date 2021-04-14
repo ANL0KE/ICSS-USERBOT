@@ -449,7 +449,7 @@ async def settings(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
         await tgbot.send_message(event.chat_id, 
-                                 MONTHS, 
+                                 ICSMONT, 
                                  buttons=[[Button.inline("║ رجوع ║", data="icszag")]
                                  ])
     else:
