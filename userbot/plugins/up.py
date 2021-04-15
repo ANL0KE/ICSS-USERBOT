@@ -10,7 +10,13 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
-UPSTREAM_REPO = Config.UPSTREAM_REPO
+
+if Config.UPSTREAM_REPO == "kimo":
+    UPSTREAM_REPO_URL = "https://github.com/ANL0KE/ICSS-USERBOT"
+else:
+    UPSTREAM_REPO = Config.UPSTREAM_REPO
+
+T = Config.COMMAND_HAND_LER
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
@@ -138,7 +144,7 @@ async def upstream(event):
         event,
         "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ جاري البحث عن التحديثات  🌐.. 𓆰،**",
     )
-    off_repo = UPSTREAM_REPO
+    off_repo = UPSTREAM_REPO_URL
     force_update = False
     if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
         return await edit_or_reply(
@@ -221,17 +227,8 @@ async def upstream(event):
 
 CMD_HELP.update(
     {
-        "updater": "**Plugin : **`updater`"
-        "\n\n  •  **Syntax : **`.update`"
-        "\n  •  **Function :** Checks if the main userbot repository has any updates "
-        "and shows a changelog if so."
-        "\n\n  •  **Syntax : **`.update now`"
-        "\n  •  **Function :** Update your userbot, "
-        "if there are any updates in your userbot repository.if you restart these goes back to last time when you deployed"
-        "\n\n  •  **Syntax : **`.update deploy`"
-        "\n  •  **Function :** Deploy your userbot.So even you restart it doesnt go back to previous version"
-        "\nThis will triggered deploy always, even no updates."
-        "\n\n  •  **Syntax : **`.badcat`"
-        "\n  •  **Function :** Shifts from official cat repo to jisan's repo(for gali commands)"
+        "updater": "**Plugin : **`updater`\n"
+        " • `{T}تحديث` ~ لعرض تحديثات السورس\n"
+        " • `{T}تحديث الان` ~ لتحديث السرسع"
     }
 )
