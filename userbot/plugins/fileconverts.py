@@ -57,8 +57,8 @@ async def _(cat):
         await event.edit("Syntax : `.stoi` reply to a Telegram normal sticker")
 
 
-@icssbot.on(admin_cmd(pattern="الصوره لملصق$"))
-@icssbot.on(sudo_cmd(pattern="الصوره لملصق$", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="صور لملصق$"))
+@icssbot.on(sudo_cmd(pattern="صور لملصق$", allow_sudo=True))
 async def _(cat):
     if cat.fwd_from:
         return
