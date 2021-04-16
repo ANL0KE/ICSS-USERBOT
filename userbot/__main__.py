@@ -79,7 +79,7 @@ for name in files:
 
 
 # For admin tools
-print(ICSE)
+print(ICSW)
 print(ICSL)
 path = "userbot/plugins/Admin/*.py"
 files = glob.glob(path)
@@ -98,7 +98,7 @@ for name in files:
 
 
 # for animations
-print(ICSE)
+print(ICSW)
 print(ICSC)
 path = "userbot/plugins/animations/*.py"
 files = glob.glob(path)
@@ -117,7 +117,7 @@ for name in files:
 
 
 # for Gif
-print(ICSE)
+print(ICSW)
 print(ICST)
 path = "userbot/plugins/tosha/*.py"
 files = glob.glob(path)
@@ -136,7 +136,7 @@ for name in files:
 
 
 # for assistant
-print(ICSE)
+print(ICSW)
 print(ICSA)
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
@@ -154,7 +154,7 @@ for name in files:
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
 
 
-print(ICSE)
+print(ICSW)
 print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
 print("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
 
