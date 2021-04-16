@@ -25,7 +25,7 @@ TOSHA = Config.PRIVATE_GROUP_BOT_API_ID
 async def startupmessage():
     try:
         if TOSHA != 0:
-            await bot.send_message(TOSHA, {MSGE})
+            await bot.send_message(TOSHA, {MSGE}, link_preview=False)
     except Exception as e:
         LOGS.info(str(e))
 
