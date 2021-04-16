@@ -79,7 +79,7 @@ for name in files:
 
 
 # For admin tools
-print(ICSL)
+print(ADMIN)
 path = "userbot/plugins/Admin/*.py"
 files = glob.glob(path)
 for name in files:
@@ -97,7 +97,7 @@ for name in files:
 
 
 # for animations
-print(ICSC)
+print(ANIMATIONS)
 path = "userbot/plugins/animations/*.py"
 files = glob.glob(path)
 for name in files:
@@ -115,7 +115,7 @@ for name in files:
 
 
 # for Gif
-print(ICST)
+print(TOSHA)
 path = "userbot/plugins/tosha/*.py"
 files = glob.glob(path)
 for name in files:
@@ -133,7 +133,7 @@ for name in files:
 
 
 # for assistant
-print(ICSA)
+print(ASSISTANT)
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
 for name in files:
