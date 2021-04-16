@@ -20,6 +20,14 @@ from userbot.utils import (
     load_assistant, 
 )
 
+TOSHA = Config.PRIVATE_GROUP_BOT_API_ID
+
+async def startupmessage():
+    try:
+        if TOSHA != 0:
+            await bot.send_message(TOSHA, {MSGE})
+    except Exception as e:
+        LOGS.info(str(e))
 
 async def add_bot(bot_token):
     try:
@@ -150,23 +158,6 @@ print(ICSE)
 print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
 print("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
 
-
-async def startupmessage():
-    try:
-        if Config.PRIVATE_GROUP_BOT_API_ID != 0:
-            await bot.send_message(
-                Config.PRIVATE_GROUP_BOT_API_ID,
-                f"**⌔∮ تم تحديث سورس اكسس 𓄂 **\n"
-                f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
-                f"**- اكتب .بنك لتحقق اذا ما كان البوت يعمل **\n"
-                f"**- المستخدم :** {ICSM} \n"
-                f"**- بوت المستخدم : {ICSB}** \n"
-                f"**- للمساعده : {ICSE}**\n"
-                f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
-                link_preview=False,
-            )
-    except Exception as e:
-        LOGS.info(str(e))
 
 
 bot.loop.create_task(startupmessage())
