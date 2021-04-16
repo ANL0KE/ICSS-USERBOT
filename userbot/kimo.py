@@ -1,4 +1,4 @@
-# Hey Ther
+# Hey There
 
 from .Config import Config
 
@@ -6,6 +6,7 @@ USERID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+
 TBOT = Config.TG_BOT_USERNAME
 DEVL = "@rruuurr"
 
@@ -25,5 +26,5 @@ MSGE = (
     f"**- المستخدم :** {mention} \n"
     f"**- بوت المستخدم : {TBOT}** \n"
     f"**- للمساعده : {DEVL}**\n"
-    f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+    f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
 )
