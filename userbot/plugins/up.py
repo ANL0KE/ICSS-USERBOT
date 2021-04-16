@@ -10,11 +10,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
-
-if Config.UPSTREAM_REPO == "kimo":
-    UPSTREAM_REPO_URL = "https://github.com/ANL0KE/ICSS-USERBOT"
-else:
-    UPSTREAM_REPO = Config.UPSTREAM_REPO
+UPSTREAM_REPO = "https://github.com/ANL0KE/ICSS-USERBOT"
 
 T = Config.COMMAND_HAND_LER
 
@@ -144,7 +140,7 @@ async def upstream(event):
         event,
         "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ جاري البحث عن التحديثات  🌐.. 𓆰،**",
     )
-    off_repo = UPSTREAM_REPO_URL
+    off_repo = UPSTREAM_REPO
     force_update = False
     if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
         return await edit_or_reply(
