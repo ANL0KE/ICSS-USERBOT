@@ -1,5 +1,7 @@
-#    Icss - UserBot
-#    Owner - @rruuurr
+# -------------------- #
+#    Icss - UserBot    #
+#    Owner - @rruuurr  #
+# -------------------- #
 
 import asyncio
 import html
