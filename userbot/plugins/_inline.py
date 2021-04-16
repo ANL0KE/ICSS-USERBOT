@@ -50,7 +50,6 @@ if Config.TG_BOT_USER_NAME is not None and tgbot is not None:
                             "Dev",
                             "https://t.me/rruuurr",
                         )
-                    ],
                 ],
             )
         elif event.query.user_id == bot.uid and query == "repo":
@@ -74,8 +73,8 @@ if Config.TG_BOT_USER_NAME is not None and tgbot is not None:
                         ),
                         custom.Button.url(
                             "Deploy",
-                            "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK",
-                        ),
+                            "https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2FANL0KE%2FICSSBACK"
+                        )
                 ],
                 link_preview=False,
             )
