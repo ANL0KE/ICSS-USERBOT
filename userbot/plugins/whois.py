@@ -13,14 +13,14 @@ TMP_DOWNLOAD_DIRECTORY = Config.TMP_DOWNLOAD_DIRECTORY
 @icssbot.on(admin_cmd(pattern="ايدي(?: |$)(.*)"))
 @icssbot.on(sudo_cmd(pattern="ايدي(?: |$)(.*)", allow_sudo=True))
 async def who(event):
-    cat = await edit_or_reply(event, "⇆")
+    ics = await eor(event, "⇆")
     if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        await edit_or_reply(cat, "لايمكنني العثور ع المستخدم")
+        await eor(ics, "لايمكنني العثور ع المستخدم")
         return
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
@@ -37,13 +37,12 @@ async def who(event):
         )
         if not photo.startswith("http"):
             os.remove(photo)
-        await cat.delete()
+        await ics.delete()
     except TypeError:
-        await cat.edit(caption, parse_mode="html")
+        await ics.edit(caption, parse_mode="html")
 
 
 async def get_user(event):
-    """ Get the user from argument or replied message. """
     if event.reply_to_msg_id and not event.pattern_match.group(1):
         previous_message = await event.get_reply_message()
         replied_user = await event.client(
@@ -72,7 +71,6 @@ async def get_user(event):
 
 
 async def fetch_info(replied_user, event):
-    """ Get details from the User object. """
     replied_user_profile_photos = await event.client(
         GetUserPhotosRequest(
             user_id=replied_user.user.id, offset=42, max_id=0, limit=80
@@ -121,28 +119,30 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-@icssbot.on(admin_cmd(pattern="رابط الحساب(?: |$)(.*)"))
-@icssbot.on(sudo_cmd(pattern="رابط الحساب(?: |$)(.*)", allow_sudo=True))
-async def permalink(mention):
-    """ For .link command, generates a link to the user's PM with a custom text. """
-    user, custom = await get_user_from_event(mention)
+@icssbot.on(
+    icss_cmd(pattern="رابط الحساب(?: |$)(.*)")
+)
+@icssbot.on(
+    sudo_cmd(pattern="رابط الحساب(?: |$)(.*)", allow_sudo=True)
+)
+async def permalink(tosh):
+    user, custom = await get_user_from_event(tosh)
     if not user:
         return
     if custom:
-        await edit_or_reply(
-            mention, f"** ⪼ رابط الحساب ↫** [{custom}](tg://user?id={user.id}) **𓆰.**"
+        await eor(
+            tosh, f"** ⪼ رابط الحساب ↫** [{custom}](tg://user?id={user.id}) **𓆰.**"
         )
     else:
         tag = (
             user.first_name.replace("\u2060", "") if user.first_name else user.username
         )
-        await edit_or_reply(
-            mention, f"**⪼ رابط الحساب ↫** [{tag}](tg://user?id={user.id}) **𓆰.**"
+        await eor(
+            tosh, f"**⪼ رابط الحساب ↫** [{tag}](tg://user?id={user.id}) **𓆰.**"
         )
 
 
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and len(args) != 2:
@@ -156,7 +156,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("`Pass the user's username, id or reply!`")
+            await event.edit("اكتب اسم المستخدم أو المعرف أو قم برد على رسالة المستخدم!‌‌")
             return
         if event.message.entities:
             probable_user_mention_entity = event.message.entities[0]
@@ -185,12 +185,10 @@ async def ge(user, event):
 
 CMD_HELP.update(
     {
-        "whois": "**Plugin : **`whois`\
-    \n\n  •  **Syntax : **`.whois <username> or reply to someones text with .whois`\
-    \n  •  **Function : **__Gets info of an user.__\
-    \n\n  •  **Syntax : **`.userinfo <username> or reply to someones text with .userinfo`\
-    \n  •  **Function : **__Gets information of an user such as restrictions ban by spamwatch or cas__\
-    \n\n  •  **Syntax : **`.link id/username/reply`\
-    \n  •  **Function : **__Generates a link to the user's PM .__"
+        "whois": "**Plugin : **`whois`\n"
+        " • `.ايدي` ~ لاضهار معلومات المستخدم\n"
+        " **- الاستخدام :** قم بكتابة معرف او الايدي المستخدم او قم برد على رسالته\n"
+        " • `.رابط الحساب` ~ للحصول على رابط حساب المستخدم\n"
+        " **- الاستخدام :** قم بكتابة معرف او الايدي المستخدم او قم برد على رسالته"
     }
 )
