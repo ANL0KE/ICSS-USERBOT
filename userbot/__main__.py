@@ -91,7 +91,7 @@ for name in files:
 
 # for animations
 print(ICSE)
-print(ICSM)
+print(ICSC)
 path = "userbot/plugins/animations/*.py"
 files = glob.glob(path)
 for name in files:
