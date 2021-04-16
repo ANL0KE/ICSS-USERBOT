@@ -13,7 +13,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from . import ALIVE_NAME, CMD_HELP, CMD_LIST, CUSTOM_PMPERMIT, bot
 from ..Config import Config
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "TeleBot User"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "IcssBot User"
 
 
 CUSTOM_HELP_EMOJI = os.environ.get("CUSTOM_HELP_EMOJI", "⚡")
