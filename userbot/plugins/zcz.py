@@ -4,4 +4,4 @@ from .whois import first_name
     icss_cmd(pattern="تصحيح")
 )
 async def hii(tosh):
-   await eor(tosh, f"هها هلو - {first_name}")
+    await eor(tosh, f"هها هلو - {first_name}")
