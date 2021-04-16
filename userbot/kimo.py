@@ -8,3 +8,8 @@ ICSD = str(ICSN) if ICSN else "Icss Userbot"
 ICSB = Config.TG_BOT_USERNAME
 ICSE = "@rruuurr"
 ICSM = f"[{ICSD}](tg://user?id={ICSI})"
+ICSA = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ASSISTANT - ⫸ⵧⵧⵧⵧⵧⵧ>"
+ICST = "<ⵧⵧⵧⵧⵧⵧⵧⵧ⫷ - ICSS TOSHA - ⫸ⵧⵧⵧⵧⵧⵧⵧ>"
+ICSM = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ANIMATIONS - ⫸ⵧⵧⵧⵧⵧ>"
+ICSL = "<ⵧⵧⵧⵧⵧ⫷ - ICSS ADMIN TOOLS - ⫸ⵧⵧⵧⵧⵧ>"
+ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
