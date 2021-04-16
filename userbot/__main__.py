@@ -71,6 +71,7 @@ for name in files:
 
 
 # For admin tools
+print(ICSE)
 print(ICSL)
 path = "userbot/plugins/Admin/*.py"
 files = glob.glob(path)
@@ -86,9 +87,10 @@ for name in files:
         except Exception as e:
             os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
-            print(ICSE)
+
 
 # for animations
+print(ICSE)
 print(ICSM)
 path = "userbot/plugins/animations/*.py"
 files = glob.glob(path)
@@ -104,9 +106,10 @@ for name in files:
         except Exception as e:
             os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
-            print(ICSE)
+
 
 # for Gif
+print(ICSE)
 print(ICST)
 path = "userbot/plugins/tosha/*.py"
 files = glob.glob(path)
@@ -122,9 +125,10 @@ for name in files:
         except Exception as e:
             os.remove(Path(f"userbot/plugins/tosha/{shortname}.py"))
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
-            print(ICSE)
+
 
 # for assistant
+print(ICSE)
 print(ICSA)
 path = "userbot/plugins/assistant/*.py"
 files = glob.glob(path)
@@ -140,9 +144,9 @@ for name in files:
         except Exception as e:
             os.remove(Path(f"userbot/plugins/assistant/{shortname}.py"))
             print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
-            print(ICSE)
 
 
+print(ICSE)
 print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
 print("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
 
