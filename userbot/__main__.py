@@ -115,7 +115,7 @@ for name in files:
 
 
 # for Gif
-print(TOSHA)
+print(KIMOTOSHA)
 path = "userbot/plugins/tosha/*.py"
 files = glob.glob(path)
 for name in files:
