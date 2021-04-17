@@ -18,7 +18,19 @@ from telethon import events
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
 
-from . import CMD_HELP, CMD_LIST, LOAD_PLUG, LOGS, SUDO_LIST, bot
+from . import (
+    CMD_HELP, 
+    CMD_LIST,
+    LOAD_PLUG,
+    LOGS, 
+    SUDO_LIST,
+    usr,
+    adn,
+    ani,
+    tsh,
+    ast,
+    bot
+)
 from .Config import Config
 from .helpers.progress import CancelProcess
 
@@ -32,7 +44,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("- ICSS USERBOT - تم استرداد ⫸ " + shortname)
+        print("{} " + {}).format(usr, shortname)
     else:
         import userbot.utils
 
@@ -83,8 +95,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins." + shortname] = mod
-        print("- ICSS USERBOT - تم استيراد ⫸ " + shortname)
-
+        print("{} " + {}).format(usr, shortname)
 
 def remove_plugin(shortname):
     try:
@@ -517,7 +528,8 @@ def load_admin(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("- ICSS ADMIN TOOLS - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(adn, shortname)
+
     else:
         import userbot.utils
 
@@ -554,7 +566,7 @@ def load_admin(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.Admin." + shortname] = mod
-        print("- ICSS ADMIN TOOLS - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(adn, shortname)
 
 
 # For animations
@@ -567,7 +579,7 @@ def load_anim(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("- ICSS ANIMATIONS - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(ani, shortname)
     else:
         import userbot.utils
         from .tosh import ed, eor
@@ -588,7 +600,7 @@ def load_anim(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.animations." + shortname] = mod
-        print("- ICSS ANIMATIONS - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(ani, shortname)
 
 # For Gif 
 def load_tosha(shortname):
@@ -600,7 +612,7 @@ def load_tosha(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("- ICSS TOSHA - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(tsh, shortname)
     else:
         import userbot.utils
 
@@ -626,7 +638,7 @@ def load_tosha(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.tosha." + shortname] = mod
-        print("- ICSS TOSHA - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(tsh, shortname)
 
 
 # for assistant
@@ -639,7 +651,7 @@ def load_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("- ICSS ASSISTANT - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(ast, shortname)
     else:
         import userbot.utils
         from .helpers.utils import _format
@@ -660,4 +672,4 @@ def load_assistant(shortname):
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins." + shortname] = mod
-        print("- ICSS ASSISTANT - تم استيراد ⫸ " + shortname)
+        print("{} " + {}).format(ast, shortname)
