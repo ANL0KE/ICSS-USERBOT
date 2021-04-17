@@ -20,6 +20,6 @@ async def kimo(ics):
     return await eor(ics, I)
 
 
-@tosh_cmd(pattern=".poo", outgoing=True))
+@tosh_cmd(outgoing=True, pattern="^.demote(?: |$)(.*)")
 async def poo(pio):
     return await eor(pio, T)
