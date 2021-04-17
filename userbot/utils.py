@@ -44,7 +44,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("{} " + {}).format(usr, shortname)
+        print(f"{usr} " + shortname)
     else:
         import userbot.utils
 
@@ -95,7 +95,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins." + shortname] = mod
-        print("{} " + {}).format(usr, shortname)
+        print(f"{usr}" + shortname)
 
 def remove_plugin(shortname):
     try:
@@ -528,7 +528,7 @@ def load_admin(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("{} " + {}).format(adn, shortname)
+        print(f"{adn} " + shortname)
 
     else:
         import userbot.utils
@@ -566,7 +566,7 @@ def load_admin(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.Admin." + shortname] = mod
-        print("{} " + {}).format(adn, shortname)
+        print(f"{adn} " + shortname)
 
 
 # For animations
@@ -579,7 +579,7 @@ def load_anim(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("{} " + {}).format(ani, shortname)
+        print(f"{ani} " + shortname)
     else:
         import userbot.utils
         from .tosh import ed, eor
@@ -600,7 +600,7 @@ def load_anim(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.animations." + shortname] = mod
-        print("{} " + {}).format(ani, shortname)
+        print(f"{ani} " + shortname)
 
 # For Gif 
 def load_tosha(shortname):
@@ -612,7 +612,7 @@ def load_tosha(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("{} " + {}).format(tsh, shortname)
+        print(f"{tsh} " + shortname)
     else:
         import userbot.utils
 
@@ -638,7 +638,7 @@ def load_tosha(shortname):
         mod.icssbot = bot
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins.tosha." + shortname] = mod
-        print("{} " + {}).format(tsh, shortname)
+        print(f"{tsh} " + shortname)
 
 
 # for assistant
@@ -651,7 +651,7 @@ def load_assistant(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print("{} " + {}).format(ast, shortname)
+        print(f"{ast} " + shortname)
     else:
         import userbot.utils
         from .helpers.utils import _format
@@ -672,4 +672,4 @@ def load_assistant(shortname):
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins." + shortname] = mod
-        print("{} " + {}).format(ast, shortname)
+        print(f"{ast} " + shortname)
