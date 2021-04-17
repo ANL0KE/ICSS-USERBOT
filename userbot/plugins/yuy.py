@@ -8,7 +8,7 @@ from . import StartTime, mention, icsv, get_readable_time as grt
     icss_cmd(pattern="alive$")
 )
 async def lol(tosh):
-    pic = Config.ALIVE_PIC or "https://telegra.ph/file/648b0cab5d52daa8b19f6.jpg"
+    Tpic = Config.ALIVE_PIC or "https://telegra.ph/file/648b0cab5d52daa8b19f6.jpg"
     icsupt = await grt(time.time() - StartTime)
     kim = (alive_1.format(
         version.__version__,
@@ -16,7 +16,7 @@ async def lol(tosh):
         python_version(),
         mention
     )
-    if pic:
+    if Tpic:
             await tosh.reply(kim, file=pic)
             await tosh.delete()
         except ChatSendMediaForbiddenError:
@@ -28,5 +28,5 @@ async def lol(tosh):
             await tosh.delete()
         except ChatSendMediaForbiddenError:
             await eor(tosh, kim)
-    if pic is None:
+    elif Tpic is None:
         return await eor(tosh, kim)
