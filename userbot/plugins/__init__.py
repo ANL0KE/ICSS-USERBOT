@@ -116,16 +116,6 @@ if Config.THUMB_IMAGE is not None:
             LOGS.info(str(e))
 
 
-def check(tosh):
-    if "/start" in tosh:
-        return True
-    try:
-        hi = re.search(tosh.lower(), "(a|b|c|d)", flags=re.IGNORECASE)
-    except Exception:
-        hi = False
-    return bool(hi)
-
-
 def set_key(dictionary, key, value):
     if key not in dictionary:
         dictionary[key] = value
@@ -138,7 +128,6 @@ def set_key(dictionary, key, value):
 
 
 def check_data_base_heal_th():
-    # https://stackoverflow.com/a/41961968
     is_database_working = False
     output = "No Database is set"
     if not Config.DB_URI:
@@ -146,7 +135,6 @@ def check_data_base_heal_th():
     from userbot.plugins.sql_helper import SESSION
 
     try:
-        # to check database we will execute raw query
         SESSION.execute("SELECT 1")
     except Exception as e:
         output = f"❌ {str(e)}"
