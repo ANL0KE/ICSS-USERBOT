@@ -1,9 +1,11 @@
+alv = (
 """
 ©icss - @rruuurr
-  - Alive Code For Icss
-  - Commend: .السورس
+  - Plugin #Alive 
+  - **Commend:** `.السورس`
+  - **Function:** لعرض معلومات السورس
 """
-
+)
 
 import time
 from platform import python_version
@@ -73,10 +75,4 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-CMD_HELP.update(
-    {
-        "alive": "**Plugin :** `alive`\
-      \n\n  •  **Syntax : **`.السووس` \
-      \n  •  **Function : **لعرض معلومات السورس"
-    }
-)
+CMD_HELP.update({"alive": "{alv}"})
