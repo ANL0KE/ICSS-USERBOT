@@ -9,7 +9,7 @@ from . import ALIVE_NAME, CMD_LIST, SUDO_LIST
 from .sql_helper.globals import addgvar, gvarstatus
 
 
-@icssbot.on(
+@bot.on(
     icss_cmd(outgoing=True, 
     pattern="help ?(.*)")
 )
@@ -88,7 +88,7 @@ async def cmd_list(event):
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
 
-@icssbot.on(
+@bot.on(
     sudo_cmd(allow_sudo=True,
     pattern="help ?(.*)")
 )
@@ -182,10 +182,10 @@ async def info(event):
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
 
-@icssbot.on(
+@bot.on(
     icss_cmd(pattern="dc$")
 )
-@icssbot.on(
+@bot.on(
     sudo_cmd(pattern="dc$", 
     allow_sudo=True)
 )
