@@ -75,4 +75,4 @@ def check_data_base_heal_th():
     return is_database_working, output
 
 
-CMD_HELP.update({"alive": "{alv}"})
+CMD_HELP.update({"alive": f"{alv}"})
