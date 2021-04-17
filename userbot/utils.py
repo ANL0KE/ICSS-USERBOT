@@ -104,7 +104,7 @@ def remove_plugin(shortname):
         raise ValueError
 
 
-def tosh_cmd(**args):
+def tosh(**args):
     args["func"] = lambda e: e.via_bot_id is None
 
     stack = inspect.stack()
