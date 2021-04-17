@@ -20,6 +20,6 @@ async def kimo(ics):
     return await eor(ics, I)
 
 
-@icssbot.on(icss_cmd(pattern="poo", outgoing=True))
+@tosh_cmd(pattern=".poo", outgoing=True))
 async def poo(pio):
     return await eor(pio, T)
