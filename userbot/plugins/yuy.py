@@ -1,7 +1,7 @@
-from . import 2K, mention
+from . import ToK, mention
 
 @icssbot.on(
 icss_cmd(pattern="ختبار")
 )
 async def _(tosh):
-    await eor(tosh, 2K.format(mention))
+    await eor(tosh, ToK.format(mention))
