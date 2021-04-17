@@ -16,8 +16,14 @@ from .Config import Config
 StartTime = time.time()
 icsv = "1.0.0"
 
-CAT_ID = ["1035034432", "551290198"]
 ICS_ID = ["1588663614", "1233775025"]
+
+# for print :
+usr = "- ICSS USERBOT - تم استرداد ⫸"
+adn = "- ICSS ADMIN TOOLS - تم استيراد ⫸"
+ani = "- ICSS ANIMATIONS - تم استيراد ⫸"
+tsh = "- ICSS TOSHA - تم استيراد ⫸"
+ast = "- ICSS ASSISTANT - تم استيراد ⫸"
 
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
