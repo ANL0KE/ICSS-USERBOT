@@ -13,7 +13,6 @@ from . import (
     get_user_from_event,
     parse_pre,
     set_key,
-    pms
 )
 from .sql_helper import pmpermit_sql as pmpermit_sql
 
@@ -259,7 +258,11 @@ if Config.PRIVATE_GROUP_ID is not None:
                 )
             else:
 
-                USER_BOT_NO_WARN = (pms.format(mention, warns, totalwarns))
+                USER_BOT_NO_WARN = (
+                    f"𓆩𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑷𝑴 𝑺𝑬𝑪𝑼𝑹𝑰𝑻𝒀𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n❞ هها هلو  {mention} ❝\n ⤶ انا مشغول الان لاترسل لي رسائل كثيره والا سيتم حظرك."
+                    f"فقط قل سبب مجيئك ونتظر حته اعود لكي تتم الموافقه عليك.\
+                                    \n ⤶ ❨ **عندك** {warns}/{totalwarns} **تحذيرات** ❩\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+                )
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
                 USER_BOT_NO_WARN = Config.CUSTOM_PMPERMIT_TEXT.format(
@@ -278,7 +281,11 @@ if Config.PRIVATE_GROUP_ID is not None:
                     warns=warns,
                 )
             else:
-                USER_BOT_NO_WARN = (pms.format(mention, warns, totalwarns))
+                USER_BOT_NO_WARN = (
+                    f"𓆩𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑷𝑴 𝑺𝑬𝑪𝑼𝑹𝑰𝑻𝒀𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n❞ هها هلو  {mention} ❝\n ⤶ انا مشغول الان لاترسل لي رسائل كثيره والا سيتم حظرك."
+                    f"فقط قل سبب مجيئك ونتظر حته اعود لكي تتم الموافقه عليك.\
+                                    \n ⤶ ❨ **عندك** {warns}/{totalwarns} **تحذيرات** ❩\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+                )
         if PMPERMIT_PIC:
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)
         else:
