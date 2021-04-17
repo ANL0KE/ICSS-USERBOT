@@ -1,6 +1,7 @@
 import time
 from platform import python_version
 from telethon import version
+from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
 from . import StartTime, mention, icsv, get_readable_time as grt
 
 @icssbot.on(
