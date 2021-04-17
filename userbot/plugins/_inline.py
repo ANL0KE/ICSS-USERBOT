@@ -213,8 +213,8 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                 reply_pop_up_alert = "{} غير مجديه".format(plugin_name)
             else:
                 reply_pop_up_alert = help_string
-            reply_pop_up_alert += "استخدم .unload {} لحذف هذه الاضافه {}".format(
-                plugin_name, plugin_name
+            reply_pop_up_alert += "استخدم .unload {} لحذف هذه الاضافه ".format(
+                plugin_name
             )
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -285,11 +285,11 @@ def paginate_help(page_number, loaded_plugins, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "⫷ السابق", data="{}_prev({})".format(prefix, modulo_page)
+                    "السابق ⫸", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline("║ اغلاق ║", data="close"),
                 custom.Button.inline(
-                    "التالي ⫸ ", data="{}_next({})".format(prefix, modulo_page)
+                    "⫷ التالي ", data="{}_next({})".format(prefix, modulo_page)
                 ),
             )
         ]
