@@ -1,7 +1,7 @@
 import time
 from datetime import datetime as dt
 from . import StartTime, mention
-from .ping import get_readable_time as grt
+from . import get_readable_time as grt
 
 @icssbot.on(
     icss_cmd(pattern="ختبار$")
