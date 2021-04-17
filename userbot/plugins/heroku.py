@@ -1,5 +1,4 @@
-# Heroku manager for ur icssbot
-
+# Heroku manager for icssbot
 
 import asyncio
 import math
@@ -10,7 +9,6 @@ import requests
 import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-# =================
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
@@ -77,7 +75,7 @@ async def variable(var):
             return
     elif exe == "set":
         variable = "".join(var.text.split(maxsplit=2)[2:])
-        ics = await edit_or_reply(var, "⌔∮ جاري اعداد المعلومات")
+        ics = await edit_or_reply(var, "**⌔∮ جاري اعداد المعلومات**")
         if not variable:
             return await ics.edit("⌔∮ .set var `<ConfigVars-name> <value>`")
         value = "".join(variable.split(maxsplit=1)[1:])
@@ -89,7 +87,7 @@ async def variable(var):
             await ics.edit(f"⌔∮ `{variable}` **تم تغيـره بنجاح** \n  **->** `{value}`")
         else:
             await ics.edit(
-                f"⌔∮ `{variable}`** تم اضافته بنجاح مع value** \n **->**  `{value}`"
+                f"⌔∮ `{variable}`** تم اضافته بنجاح مع** \n **->**  `{value}`"
             )
         heroku_var[variable] = value
     elif exe == "del":
@@ -122,7 +120,7 @@ async def dyno_usage(dyno):
             dyno,
             "⌔∮ اضبط Var المطلوب في Heroku على وظيفة هذا بشكل طبيعي `HEROKU_API_KEY` اذا كنت لاتعلم اين يوجد فقط اذهب الى حسابك في هيروكو ثم الى الاعدادات ستجده بالاسفل انسخه ودخله في الفار. ",
         )
-    dyno = await edit_or_reply(dyno, "⌔∮ جاري المعـالجه..")
+    dyno = await edit_or_reply(dyno, "**⌔∮ جاري المعـالجه..**")
     useragent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
