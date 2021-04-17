@@ -62,7 +62,7 @@ TOSH = (
        f"**   - المستخدم :** {mention}\n"
 )
 
-ToK = "ها {}"
+ToK = "⌔∮ **سرعه الاستجابه ↫** `{}` ** ⇲**\n ⌔∮ **المستخدم ↫** {} **⇱**"
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
