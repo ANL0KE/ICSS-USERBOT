@@ -1,4 +1,3 @@
-
 # Hey there
 
 import math
@@ -62,6 +61,8 @@ TOSH = (
        f"**   - اصدار البايثون :** `{python_version()}\n`"
        f"**   - المستخدم :** {mention}\n"
 )
+
+ToK = "ها {}"
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
