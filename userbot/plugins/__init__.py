@@ -1,3 +1,4 @@
+
 # Hey there
 
 import math
@@ -29,6 +30,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 BOT_USERNAME = Config.TG_BOT_USERNAME
 ICSBOT = Config.TG_BOT_USERNAME
 ICSB = Config.TG_BOT_USERNAME
+
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
