@@ -4,7 +4,7 @@ from . import StartTime, mention
 from .ping import get_readable_time as grt
 
 @icssbot.on(
-    icss_cmd(pattern="بنك$")
+    icss_cmd(pattern="ختبار$")
 )
 async def _(tosh):
     start = dt.now()
