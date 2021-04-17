@@ -34,19 +34,6 @@ ICSB = Config.TG_BOT_USERNAME
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
 
-# alive
-_alv = (
-   f"**{ICSS_TEXT}**\n"
-   f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻 \n"
-   f"**{ICSEM} قاعدة البيانات ↫** `{check_sgnirts}`\n"
-   f"**{ICSEM} اصدار التليثون  ↫** `{version.__version__}\n`"
-   f"**{ICSEM} اصدار اڪسس ↫** `{icsv}`\n"
-   f"**{ICSEM} اصدار البايثون ↫** `{python_version()}\n`"
-   f"**{ICSEM} المستخدم ↫** {mention}\n"
-   f"**{ICSEM} مطور السورس ↫** [اضغط هنا](t.me/rruuurr) 𓆰.\n"
-   "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
-)
-
 # Dev tag
 tosh = ( 
     "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑫𝑬𝑽𝑬𝑳𝑶𝑷𝑬𝑹 𓆪\n"
