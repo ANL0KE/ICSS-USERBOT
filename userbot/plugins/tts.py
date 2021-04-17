@@ -1,8 +1,12 @@
+# Hey There
+
+_tts = (
 """ Google Text to Speech
 Available Commands:
 .tts LanguageCode as reply to a message
 .tts LangaugeCode | text to speak
 """
+)
 
 import asyncio
 import os
@@ -14,8 +18,10 @@ from gtts import gTTS
 from . import deEmojify
 
 
-@icssbot.on(admin_cmd(pattern="tts (.*)"))
-@icssbot.on(sudo_cmd(pattern="tts (.*)", allow_sudo=True))
+@icssbot.on(
+    icss_cmd(pattern="صوت كوكل (.*)")
+)
+@icssbot.on(sudo_cmd(pattern="صوت كوكل (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
@@ -28,7 +34,7 @@ async def _(event):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await edit_or_reply(event, "Invalid Syntax. Module stopping.")
+        await edit_or_reply(event, "**⌔∮ قم برد على الرساله**")
         return
     text = deEmojify(text.strip())
     lan = lan.strip()
@@ -59,7 +65,6 @@ async def _(event):
             )
         except (subprocess.CalledProcessError, NameError, FileNotFoundError) as exc:
             await event.edit(str(exc))
-            # continue sending required_file_name
         else:
             os.remove(required_file_name)
             required_file_name = required_file_name + ".opus"
@@ -68,27 +73,18 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             required_file_name,
-            # caption="Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms),
             reply_to=event.message.reply_to_msg_id,
             allow_cache=False,
             voice_note=True,
         )
         os.remove(required_file_name)
-        event = await edit_or_reply(
-            event, "Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms)
+        event = await eor(
+            event, "⌔∮ تم معالجة {} ({}) في وقت {} ثانيه!".format(text[0:97], lan, ms)
         )
         await asyncio.sleep(5)
         await event.delete()
     except Exception as e:
-        await edit_or_reply(event, str(e))
+        await eor(event, str(e))
 
 
-CMD_HELP.update(
-    {
-        "tts": "**Plugin :** `tts`\
-        \n\nAvailable Commands:\
-        \n.tts LanguageCode as reply to a message\
-        \n.tts LangaugeCode | text to speak\
-         "
-    }
-)
+CMD_HELP.update({"tts": "**Plugin : tts**\n + "{_tts}"})
