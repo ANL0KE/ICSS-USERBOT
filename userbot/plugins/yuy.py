@@ -12,13 +12,7 @@ kim = alive_1.format(version.__version__, icsv, python_version(), mention)
 )
 async def lol(tosh):
     if Tpic:
-        await tosh.reply(kim, file=Tpic)
+        await tosh.client.send_file(
+            tosh.chat_id, Tpic, kim
+        )  
         await tosh.delete()
-        await eor(tosh, kim)
-    else:
-        try:
-           await bot.send_message(tosh.chat_id, file=Tpic)
-           await bot.send_message(tosh.chat_id, kim)
-           await tosh.delete()
-           await eor(tosh, kim)
-  
