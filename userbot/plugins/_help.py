@@ -9,7 +9,10 @@ from . import ALIVE_NAME, CMD_LIST, SUDO_LIST
 from .sql_helper.globals import addgvar, gvarstatus
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="help ?(.*)"))
+@icssbot.on(
+    icss_cmd(outgoing=True, 
+    pattern="help ?(.*)")
+)
 async def cmd_list(event):
     if event.fwd_from:
         return
@@ -83,7 +86,10 @@ async def cmd_list(event):
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
 
-@bot.on(sudo_cmd(allow_sudo=True, pattern="help ?(.*)"))
+@icssbot.on(
+    sudo_cmd(allow_sudo=True,
+    pattern="help ?(.*)")
+)
 async def info(event):
     if event.fwd_from:
         return
@@ -174,8 +180,13 @@ async def info(event):
             await event.edit(string.format(count=catcount), parse_mode="HTML")
 
 
-@bot.on(admin_cmd(pattern="dc$"))
-@bot.on(sudo_cmd(pattern="dc$", allow_sudo=True))
+@icssbot.on(
+    icss_cmd(pattern="dc$")
+)
+@icssbot.on(
+    sudo_cmd(pattern="dc$", 
+    allow_sudo=True)
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -193,7 +204,10 @@ async def _(event):
     await edit_or_reply(event, result)
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="setinline (true|false)"))
+@icssbot.on(
+    icss_cmd(outgoing=True,
+    pattern="setinline (true|false)")
+)
 async def _(event):
     if event.fwd_from:
         return
