@@ -13,6 +13,7 @@ from . import (
     get_user_from_event,
     parse_pre,
     set_key,
+    pms
 )
 from .sql_helper import pmpermit_sql as pmpermit_sql
 
@@ -45,8 +46,9 @@ if Config.PRIVATE_GROUP_ID is not None:
         ):
             pmpermit_sql.approve(chat.id, "مرفوض")
 
-    @icssbot.on(admin_cmd(pattern="سماح ?(.*)"))
-    @icssbot.on(admin_cmd(pattern="a ?(.*)"))
+    @icssbot.on(
+        icss_cmd(pattern="سماح ?(.*)")
+    )
     async def approve_p_m(event):
         if event.is_private:
             user = await event.get_chat()
@@ -66,7 +68,7 @@ if Config.PRIVATE_GROUP_ID is not None:
             if user.id in PM_START:
                 PM_START.remove(user.id)
             pmpermit_sql.approve(user.id, reason)
-            await edit_delete(
+            await ed(
                 event,
                 f"**⪼ تمت الموافقه على** [{user.first_name}](tg://user?id={user.id}) 𓆰.",
                 5,
@@ -79,14 +81,15 @@ if Config.PRIVATE_GROUP_ID is not None:
                 except Exception as e:
                     LOGS.info(str(e))
         else:
-            await edit_delete(
+            await ed(
                 event,
                 f"[{user.first_name}](tg://user?id={user.id}) **موجود بـالفعل في قائمه السماح**",
                 5,
             )
 
-    @icssbot.on(admin_cmd(pattern="رفض ?(.*)"))
-    @icssbot.on(admin_cmd(pattern="da ?(.*)"))
+    @icssbot.on(
+        icss_cmd(pattern="رفض ?(.*)")
+    )
     async def disapprove_p_m(event):
         if event.is_private:
             user = await event.get_chat()
@@ -103,18 +106,20 @@ if Config.PRIVATE_GROUP_ID is not None:
             PM_START.remove(user.id)
         if pmpermit_sql.is_approved(user.id):
             pmpermit_sql.disapprove(user.id)
-            await edit_or_reply(
+            await eor(
                 event,
                 f"**⪼ تم رفض** [{user.first_name}](tg://user?id={user.id}) 𓆰",
             )
         else:
-            await edit_or_reply(
+            await eor(
                 event,
                 f"[{user.first_name}](tg://user?id={user.id}) **لم تتم الموافقه عليه بعد**",
                 5,
             )
 
-    @icssbot.on(admin_cmd(pattern="بلوك(?: |$)(.*)"))
+    @icssbot.on(
+        icss_cmd(pattern="بلوك(?: |$)(.*)")
+    )
     async def block_p_m(event):
         if event.is_private:
             user = await event.get_chat()
@@ -129,7 +134,9 @@ if Config.PRIVATE_GROUP_ID is not None:
         )
         await event.client(functions.contacts.BlockRequest(user.id))
 
-    @icssbot.on(admin_cmd(pattern="انبلوك(?: |$)(.*)"))
+    @icssbot.on(
+        icss_cmd(pattern="انبلوك(?: |$)(.*)")
+    )
     async def unblock_pm(event):
         if event.is_private:
             user = await event.get_chat()
@@ -142,7 +149,9 @@ if Config.PRIVATE_GROUP_ID is not None:
             f"** ⪼ أنت غير محظور الآن. يمكنك مراسلتي من الآن ..** [{user.first_name}](tg://user?id={user.id})"
         )
 
-    @icssbot.on(admin_cmd(pattern="المسموح لهم$"))
+    @icssbot.on(
+        icss_cmd(pattern="المسموح لهم$")
+    )
     async def approve_p_m(event):
         approved_users = pmpermit_sql.get_all_approved()
         APPROVED_PMs = "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑨𝑷𝑷𝑹𝑶𝑽𝑬𝑫𝑺 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
@@ -156,21 +165,22 @@ if Config.PRIVATE_GROUP_ID is not None:
                     )
         else:
             APPROVED_PMs = "**⪼ انت لم توافق على اي شخص حتى الان 𓆰.**"
-        await edit_or_reply(
+        await eor(
             event,
             APPROVED_PMs,
             file_name="approvedpms.txt",
             caption="**قائمه السماح**",
         )
 
-    @icssbot.on(admin_cmd(pattern="الكل$"))
-    @icssbot.on(admin_cmd(pattern="da all$"))
+    @icssbot.on(
+        icss_cmd(pattern="الكل$")
+    )
     async def disapprove_p_m(event):
         if event.fwd_from:
             return
         result = "⪼ حسنا، الجميع مرفوض الان 𓆰"
         pmpermit_sql.disapprove_all()
-        await edit_delete(event, result, parse_mode=parse_pre, time=10)
+        await ed(event, result, parse_mode=parse_pre, time=10)
 
     @bot.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
@@ -257,12 +267,7 @@ if Config.PRIVATE_GROUP_ID is not None:
                     warns=warns,
                 )
             else:
-
-                USER_BOT_NO_WARN = (
-                    f"𓆩𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑷𝑴 𝑺𝑬𝑪𝑼𝑹𝑰𝑻𝒀𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n❞ هها هلو  {mention} ❝\n ⤶ انا مشغول الان لاترسل لي رسائل كثيره والا سيتم حظرك."
-                    f"فقط قل سبب مجيئك ونتظر حته اعود لكي تتم الموافقه عليك.\
-                                    \n ⤶ ❨ **عندك** {warns}/{totalwarns} **تحذيرات** ❩\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
-                )
+                USER_BOT_NO_WARN = (pms.format(mention, warns, totalwarns))
         else:
             if Config.CUSTOM_PMPERMIT_TEXT:
                 USER_BOT_NO_WARN = Config.CUSTOM_PMPERMIT_TEXT.format(
@@ -281,11 +286,8 @@ if Config.PRIVATE_GROUP_ID is not None:
                     warns=warns,
                 )
             else:
-                USER_BOT_NO_WARN = (
-                    f"𓆩𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑷𝑴 𝑺𝑬𝑪𝑼𝑹𝑰𝑻𝒀𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n❞ هها هلو  {mention} ❝\n ⤶ انا مشغول الان لاترسل لي رسائل كثيره والا سيتم حظرك."
-                    f"فقط قل سبب مجيئك ونتظر حته اعود لكي تتم الموافقه عليك.\
-                                    \n ⤶ ❨ **عندك** {warns}/{totalwarns} **تحذيرات** ❩\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
-                )
+                USER_BOT_NO_WARN = (pms.format(mention, warns, totalwarns))
+
         if PMPERMIT_PIC:
             r = await event.reply(USER_BOT_NO_WARN, file=PMPERMIT_PIC)
         else:
