@@ -19,13 +19,13 @@ async def cmd_list(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
         string = (
-            "Total {count} commands found in {plugincount} plugins of catuserbot\n\n"
+            "Total {count} commands found in {plugincount} plugins of Icssbot\n\n"
         )
         catcount = 0
         plugincount = 0
         for i in sorted(CMD_LIST):
             plugincount += 1
-            string += f"{plugincount}) Commands found in Plugin " + i + " are \n"
+            string += f"⌔∮ {plugincount}) الاوامر الموجوده في هذه الاضافه " + i + " هيه: \n"
             for iter_list in CMD_LIST[i]:
                 string += "    " + str(iter_list)
                 string += "\n"
@@ -42,7 +42,7 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**All commands of the catuserbot can be seen [here]({url})**"
+            reply_text = f"**⌔∮ All commands of the IcssBot can be seen [here]({url})**"
             await event.edit(reply_text)
             return
         await event.edit(string.format(count=catcount, plugincount=plugincount))
@@ -64,9 +64,7 @@ async def cmd_list(event):
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"Userbot Helper. Provided by {ALIVE_NAME} to reveal all the plugins\
-                          \nCheck `.help plugin name` for commands, in case popup doesn't appear.\
-                          \nCheck `.info plugin name` for usage of thoose plugins and commands"
+            help_string = f"Welcome {ALIVE_NAME} to reveal all the plugins"
             tgbotusername = Config.TG_BOT_USERNAME
             results = await event.client.inline_query(tgbotusername, help_string)
             await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
