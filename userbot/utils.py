@@ -103,52 +103,6 @@ def remove_plugin(shortname):
     except BaseException:
         raise ValueError
 
-
-def tosh(**args):
-    args["func"] = lambda e: e.via_bot_id is None
-
-    stack = inspect.stack()
-    previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
-    file_test = file_test.stem.replace(".py", "")
-    pattern = args.get('pattern', None)
-    disable_edited = args.get('disable_edited', True)
-
-    if pattern is not None and not pattern.startswith('(?i)'):
-        args['pattern'] = '(?i)' + pattern
-
-    if "disable_edited" in args:
-        del args['disable_edited']
-    
-    reg = re.compile('(.*)')
-    if not pattern == None:
-        try:
-            cmd = re.search(reg, pattern)
-            try:
-                cmd = cmd.group(1).replace("$", "").replace("\\", "").replace("^", "")
-            except:
-                pass
-
-            try:
-                CMD_LIST[file_test].append(cmd)
-            except:
-                CMD_LIST.update({file_test: [cmd]})
-        except:
-            pass
-
-    def decorator(func):
-        if not disable_edited:
-            bot.add_event_handler(func, events.MessageEdited(**args))
-        bot.add_event_handler(func, events.NewMessage(**args))
-        try:
-            LOAD_PLUG[file_test].append(func)
-        except Exception as e:
-            LOAD_PLUG.update({file_test: [func]})
-
-        return func
-
-    return decorator
-
 def admin_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
@@ -170,12 +124,12 @@ def admin_cmd(pattern=None, command=None, **args):
                 CMD_LIST.update({file_test: [cmd]})
         else:
             if len(Config.COMMAND_HAND_LER) == 2:
-                catreg = "^" + Config.COMMAND_HAND_LER
+                icsreg = "^" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER[1]
             elif len(Config.COMMAND_HAND_LER) == 1:
-                catreg = "^\\" + Config.COMMAND_HAND_LER
+                icsreg = "^\\" + Config.COMMAND_HAND_LER
                 reg = Config.COMMAND_HAND_LER
-            args["pattern"] = re.compile(catreg + pattern)
+            args["pattern"] = re.compile(icsreg + pattern)
             if command is not None:
                 cmd = reg + command
             else:
@@ -328,7 +282,6 @@ def errors_handler(func):
 async def progress(
     current, total, event, start, type_of_ps, file_name=None, is_cancelled=None
 ):
-    """Generic progress_callback for uploads and downloads."""
     now = time.time()
     diff = now - start
     if is_cancelled is True:
@@ -357,9 +310,6 @@ async def progress(
 
 
 def humanbytes(size):
-    """Input size in bytes,
-    outputs in a human readable format"""
-    # https://stackoverflow.com/a/49361727/4723940
     if not size:
         return ""
     # 2 ** 10 = 1024
