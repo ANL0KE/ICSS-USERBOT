@@ -155,7 +155,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             buttons = paginate_help(current_page_number + 1, CMD_LIST, "helpme")
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr "
+            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr. "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(
@@ -171,7 +171,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             )
             await event.edit(buttons=buttons)
         else:
-            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr"
+            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr. "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"secret_(.*)")))
@@ -187,7 +187,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     encrypted_tcxt = message["text"]
                     reply_pop_up_alert = encrypted_tcxt
                 else:
-                    reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr"
+                    reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr. "
             except KeyError:
                 reply_pop_up_alert = "⌔∮ هذه الرسالة لم تعد موجودة في خادم بوت"
         else:
@@ -219,7 +219,6 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             try:
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             except BaseException:
-                # https://github.com/Dark-Princ3/X-tra-Telegram/commit/275fd0ec26b284d042bf56de325472e088e6f364#diff-2b2df8998ff11b6c15893b2c8d5d6af3
                 with io.BytesIO(str.encode(reply_pop_up_alert)) as out_file:
                     out_file.name = "{}.txt".format(plugin_name)
                     await event.client.send_file(
@@ -230,7 +229,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                         caption=plugin_name,
                     )
         else:
-            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr"
+            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr. "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
@@ -238,7 +237,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
         if event.query.user_id == bot.uid:
             await event.edit("**⌔∮ تم اغلاق القائمه**")
         else:
-            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr"
+            reply_pop_up_alert = "⌔∮ عليك الحصول على بوت اكسس للحصول عليه اذهب الى @rruuurr. "
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"stats")))
