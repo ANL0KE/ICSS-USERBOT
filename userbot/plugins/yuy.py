@@ -2,6 +2,7 @@ import time
 from platform import python_version
 from telethon import version
 from telethon.errors.rpcerrorlist import ChatSendMediaForbiddenError
+from ..Config import Config
 from . import StartTime, mention, icsv, get_readable_time as grt
 
 @icssbot.on(
@@ -17,13 +18,13 @@ async def lol(tosh):
         mention
     )
     if Tpic:
-            await tosh.reply(kim, file=pic)
+            await tosh.reply(kim, file=Tpic)
             await tosh.delete()
         except ChatSendMediaForbiddenError:
             await eor(tosh, kim)
     else:
         try:
-            await bot.send_message(tosh.chat_id, file=pic)
+            await bot.send_message(tosh.chat_id, file=Tpic)
             await bot.send_message(tosh.chat_id, kim)
             await tosh.delete()
         except ChatSendMediaForbiddenError:
