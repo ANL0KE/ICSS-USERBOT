@@ -1,7 +1,7 @@
 alv = (
 """
-©icss - @rruuurr
-  - Plugin #Alive 
+**©icss - @rruuurr
+  - Plugin Alive** 
   - **Commend:** `.السورس`
   - **Function:** لعرض معلومات السورس
 """
