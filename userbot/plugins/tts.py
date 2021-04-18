@@ -34,7 +34,7 @@ async def _(event):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await edit_or_reply(event, "**⌔∮ قم برد على الرساله**")
+        await eor(event, "**⌔∮ قم برد على الرساله**")
         return
     text = deEmojify(text.strip())
     lan = lan.strip()
@@ -42,7 +42,6 @@ async def _(event):
         os.makedirs("./temp/")
     required_file_name = "./temp/" + "voice.ogg"
     try:
-        # https://github.com/SpEcHiDe/UniBorg/commit/17f8682d5d2df7f3921f50271b5b6722c80f4106
         tts = gTTS(text, lang=lan)
         tts.save(required_file_name)
         command_to_execute = [
@@ -79,7 +78,7 @@ async def _(event):
         )
         os.remove(required_file_name)
         event = await eor(
-            event, "⌔∮ تم معالجة {} ({}) في وقت {} ثانيه!".format(text[0:97], lan, ms)
+            event, "**⌔∮ تم معالجة {} ({}) في وقت {} ثانيه !**".format(text[0:97], lan, ms)
         )
         await asyncio.sleep(5)
         await event.delete()
