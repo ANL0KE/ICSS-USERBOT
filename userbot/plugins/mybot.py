@@ -1,6 +1,7 @@
 # Hey There 
 
-from userbot.kimo import TBOT
+from . import Mb
+from ..kimo import TBOT
 
 @icssbot.on(
     icss_cmd(
@@ -8,4 +9,4 @@ from userbot.kimo import TBOT
     )
 )
 async def mybot(k):
-    await eor(k, f"**⌔∮ البوت المستخدم - {TBOT}**")
+    await eor(k, Mb.format(TBOT))
