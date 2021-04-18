@@ -139,4 +139,4 @@ async def get_full_user(event):
         return None, e
 
 
-CMD_HELP.update({"clone": "**Plugin : **clone\n + "{cle}"})
+CMD_HELP.update({"clone": "**Plugin : **clone\n " + "{cle}"})
