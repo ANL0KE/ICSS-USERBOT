@@ -50,9 +50,6 @@ else:
             bot.loop.run_until_complete(add_bot(TBOT))
             print("⫷ اكتمل بدء بوت اكسس ⫸")
         else:
-
-Xb = f"TG_BOT_TOKEN - {str(e)}"
-
             bot.start()
     except Exception as e:
         LOGS.error("{}".format(Xt) + f"{str(e)})
