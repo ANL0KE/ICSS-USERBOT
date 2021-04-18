@@ -44,7 +44,7 @@ else:
     try:
         if TBOT is not None:
             print("⫷ يتم تحميل انلاين اكسس ⫸")
-            bot.tgbot = TelegramClient("TG_BOT_TOKEN", api_id=Xapi, api_hash=Xhash).start(bot_token=Xtoken)
+            bot.tgbot = TelegramClient(Xtbot, api_id=Xapi, api_hash=Xhash).start(bot_token=Xtoken)
             print("⫷ اكتمل تنزيل انلاين اكسس بدون اخطاء ⫸")
             print("⫷ يتم بدء بوت اكسس ⫸")
             bot.loop.run_until_complete(add_bot(TBOT))
@@ -52,7 +52,7 @@ else:
         else:
             bot.start()
     except Exception as e:
-        LOGS.error(f"TG_BOT_TOKEN - {str(e)}")
+        LOGS.error(Xt)
         sys.exit()
 
 
