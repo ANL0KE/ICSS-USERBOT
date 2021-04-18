@@ -44,7 +44,7 @@ def load_module(shortname):
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
-        print(f"{usr} " + shortname)
+        print("{} " + shortname).format(usr)
     else:
         import userbot.utils
 
@@ -95,7 +95,7 @@ def load_module(shortname):
         spec.loader.exec_module(mod)
         # for imports
         sys.modules["userbot.plugins." + shortname] = mod
-        print(f"{usr}" + shortname)
+        print("{}" + shortname).format(usr)
 
 def remove_plugin(shortname):
     try:
