@@ -12,6 +12,7 @@ from telethon import TelegramClient
 from telethon.sessions import StringSession
 
 from .Config import Config
+from .kimo import Tlk
 
 StartTime = time.time()
 icsv = "1.0.0"
@@ -19,11 +20,11 @@ icsv = "1.0.0"
 ICS_ID = ["1588663614", "1233775025"]
 
 # for print :
-usr = "- ICSS USERBOT - تم استرداد ⫸"
-adn = "- ICSS ADMIN TOOLS - تم استيراد ⫸"
-ani = "- ICSS ANIMATIONS - تم استيراد ⫸"
-tsh = "- ICSS TOSHA - تم استيراد ⫸"
-ast = "- ICSS ASSISTANT - تم استيراد ⫸"
+usr = "- ICSS USERBOT - {}".format(Tlk)
+adn = "- ICSS ADMIN TOOLS - {}".format(Tlk)
+ani = "- ICSS ANIMATIONS - {}".format(Tlk)
+tsh = "- ICSS TOSHA - {}".format(Tlk)
+ast = "- ICSS ASSISTANT {}".format(Tlk)
 
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
