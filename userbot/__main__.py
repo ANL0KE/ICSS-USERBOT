@@ -46,7 +46,6 @@ else:
     try:
         if Config.TG_BOT_USERNAME is not None:
             print("⫷ يتم تحميل انلاين اكسس ⫸")
-            # ForTheGreatrerGood of beautification
             bot.tgbot = TelegramClient(
                 "TG_BOT_TOKEN", api_id=Config.APP_ID, api_hash=Config.API_HASH
             ).start(bot_token=Config.TG_BOT_TOKEN)
@@ -152,8 +151,8 @@ for name in files:
 
 print(ICSW)
 print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
+print(Masg.format(ALIVE_NAME, TBOT))
 print("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
-print(Masg.format(ALIVE_NAME, TBOT, DEVL))
 
 bot.loop.create_task(startupmessage())
 
