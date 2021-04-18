@@ -29,7 +29,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "icssbot"
 USER_BOT_WARN_ZERO = "⪼ لقد حذرتك من تكرار الرسائل . الآن تم حظرك والإبلاغ عنك حتى إشعار آخر.\n**- #ججـاو 🚶🏼‍♂️❕،** "
 
 
-if Config.PRIVATE_GROUP_ID is not None:
+if Config.PRIVATE_GROUP_ID is != 0:
 
     @bot.on(admin_cmd(outgoing=True))
     async def you_dm_niqq(event):
