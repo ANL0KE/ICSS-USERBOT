@@ -213,7 +213,7 @@ async def code_print(event):
     if event.fwd_from:
         return
     reply_to = await reply_id(event)
-    catevent = await edit_or_reply(event, "`printing the text on blank page`")
+    tosh = await eor(event, "`printing the text on blank page`")
     input_str = event.pattern_match.group(1)
     reply = await event.get_reply_message()
     text_to_print = ""
@@ -229,8 +229,8 @@ async def code_print(event):
         elif event.reply_to_msg_id:
             text_to_print = reply.message
         else:
-            await edit_delete(
-                catevent,
+            await ed(
+                tosh,
                 "`Either reply to document or reply to text message or give text along with command`",
             )
     pygments.highlight(
@@ -239,10 +239,13 @@ async def code_print(event):
         ImageFormatter(font_name="DejaVu Sans Mono", line_numbers=True),
         "out.png",
     )
-    await event.client.send_file(
-        event.chat_id, "out.png", force_document=False, reply_to=reply_to
-    )
-    await catevent.delete()
+    try:
+        await event.client.send_file(
+            event.chat_id, "out.png", force_document=False, reply_to=reply_to
+        )
+    except Excsption as e:
+        await ed(tosh, str(e), parse_mode=parse_pre)
+    await tosh.delete()
     os.remove("out.png")
     os.remove(d_file_name)
 
