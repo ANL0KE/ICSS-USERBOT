@@ -1,6 +1,9 @@
-"""من اجل نسخ صوره ومعلومات الحساب الشخص الاخر  
-Syntax: .نسخ @username"""
-# ©icss™
+cle = ("""
+ ©icss™
+ من اجل نسخ صوره ومعلومات الحساب الشخص الاخر  
+ Syntax: .نسخ @username
+""")
+
 
 import html
 
@@ -8,7 +11,7 @@ from telethon.tl import functions
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from . import ALIVE_NAME, AUTONAME, DEFAULT_BIO
+from . import ALIVE_NAME, AUTONAME, BOTLOG, BOTLOG_CHATID DEFAULT_BIO
 
 DEFAULTUSER = str(AUTONAME) if AUTONAME else str(ALIVE_NAME)
 DEFAULTUSERBIO = (
@@ -16,14 +19,10 @@ DEFAULTUSERBIO = (
     if DEFAULT_BIO
     else "- ‏وحدي أضيء، وحدي أنطفئ انا قمري و كُل نجومي..🤍"
 )
-if Config.PRIVATE_GROUP_BOT_API_ID is None:
-    BOTLOG = False
-else:
-    BOTLOG = True
-    BOTLOG_CHATID = Config.PRIVATE_GROUP_BOT_API_ID
 
-
-@icssbot.on(admin_cmd(pattern="نسخ ?(.*)"))
+@icssbot.on(
+    icss_cmd(pattern="^نسخ")
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -36,22 +35,15 @@ async def _(event):
     profile_pic = await event.client.download_profile_photo(
         user_id, Config.TMP_DOWNLOAD_DIRECTORY
     )
-    # some people have weird HTML in their names
     first_name = html.escape(replied_user.user.first_name)
-    # https://stackoverflow.com/a/5072031/4723940
-    # some Deleted Accounts do not have first_name
     if first_name is not None:
-        # some weird people (like me) have more than 4096 characters in their
-        # names
         first_name = first_name.replace("\u2060", "")
     last_name = replied_user.user.last_name
-    # last_name is not Manadatory in @Telegram
     if last_name is not None:
         last_name = html.escape(last_name)
         last_name = last_name.replace("\u2060", "")
     if last_name is None:
         last_name = "⁪⁬⁮⁮⁮⁮ ‌‌‌‌"
-    # inspired by https://telegram.dog/afsaI181
     user_bio = replied_user.about
     if user_bio is not None:
         user_bio = replied_user.about
@@ -71,7 +63,9 @@ async def _(event):
         )
 
 
-@icssbot.on(admin_cmd(pattern="اعاده$"))
+@icssbot.on(
+    icss_cmd(pattern="اعاده$")
+)
 async def _(event):
     if event.fwd_from:
         return
@@ -145,13 +139,4 @@ async def get_full_user(event):
         return None, e
 
 
-CMD_HELP.update(
-    {
-        "clone": "**Plugin : **`clone`\
-        \n\n  •  **Syntax :** `.نسخ`<قم برد على من تريد نسخ حسابه\
-        \n  •  **Function : **clone the replied user account\
-        \n\n  •  **Syntax : **`.اعاده`\
-        \n  •  **Function : **لاعاده حسابك كما ادخلت من معلومات في  AUTONAME, DEFAULT_BIO\
-    "
-    }
-)
+CMD_HELP.update({"clone": "**Plugin : **clone\n + "{cle}"})
