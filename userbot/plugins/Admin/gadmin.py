@@ -189,19 +189,6 @@ async def gablist(event):
                 GBANNED_LIST += f"⪼ [{a_user.chat_id}](tg://user?id={a_user.chat_id}) **تم حظر المستخدم 𓆰.**\n"
     else:
         GBANNED_LIST = "** ⪼ لم تقوم بحضر اي مستخدم 𓆰،**"
-    if len(GBANNED_LIST) > 4095:
-        with io.BytesIO(str.encode(GBANNED_LIST)) as out_file:
-            out_file.name = "Gbannedusers.text"
-            await event.client.send_file(
-                event.chat_id,
-                out_file,
-                force_document=True,
-                allow_cache=False,
-                caption="⪼ تم حظر المستدمين 𓆰،",
-                reply_to=event,
-            )
-            await event.delete()
-    else:
         await eor(event, GBANNED_LIST)
 
 
