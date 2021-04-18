@@ -19,7 +19,7 @@ from ..Config import Config
 from ..helpers import *
 from ..helpers import _format, _icsstools, _icssutils
 
-# =================== CONSTANT ===================
+# =================== Owner - Kimo ===================
 
 USERID = bot.uid if Config.OWNER_ID == 0 else Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME
@@ -29,6 +29,8 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 BOT_USERNAME = Config.TG_BOT_USERNAME
 ICSBOT = Config.TG_BOT_USERNAME
 ICSB = Config.TG_BOT_USERNAME
+
+# =================== Owner - Kimo ===================
 
 # mention user
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
@@ -61,6 +63,9 @@ TOSH = (
        f"**   - اصدار البايثون :** `{python_version()}\n`"
        f"**   - المستخدم :** {mention}\n"
 )
+
+# mybot
+Mb = "**⌔∮ البوت المستخدم - {}**"
 
 Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
 heroku_api = "https://api.heroku.com"
