@@ -87,4 +87,4 @@ async def _(event):
         await eor(event, str(e))
 
 
-CMD_HELP.update({"tts": "**Plugin : tts**\n + "{_tts}"})
+CMD_HELP.update({"tts": "**Plugin : tts**\n " + "{_tts}"})
