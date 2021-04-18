@@ -1,6 +1,6 @@
 Repo = "https://github.com/ANL0KE/kimo-kimo/blob/master/kimo.py"
 
-from repo import *
+from Repo import *
 
 @icss.on(
     icss_cmd(pattern="تيت")
