@@ -11,6 +11,7 @@ Xapid = Config.APP_ID
 Xhash = Config.API_HASH
 Xtoke = Config.TG_BOT_TOKEN
 
+TOSHA = Config.PRIVATE_GROUP_BOT_API_ID
 TBOT = Config.TG_BOT_USERNAME
 DEVL = "@rruuurr"
 
