@@ -7,6 +7,10 @@ ALIVE_NAME = Config.ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
+Xapid = Config.APP_ID
+Xhash = Config.API_HASH
+Xtoke = Config.TG_BOT_TOKEN
+
 TBOT = Config.TG_BOT_USERNAME
 DEVL = "@rruuurr"
 
