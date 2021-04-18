@@ -148,7 +148,7 @@ for name in files:
 print(ICSW)
 print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
 print(Masg.format(ALIVE_NAME, TBOT))
-print("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
+print("⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
 
 bot.loop.create_task(startupmessage())
 
