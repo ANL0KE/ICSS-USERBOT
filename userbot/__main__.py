@@ -44,7 +44,7 @@ else:
     try:
         if TBOT is not None:
             print("⫷ يتم تحميل انلاين اكسس ⫸")
-            bot.tgbot = TelegramClient(Xtbot, api_id=Xapid, api_hash=Xhash).start(bot_token=Xtoken)
+            bot.tgbot = TelegramClient(Xtbot, api_id=Xapid, api_hash=Xhash).start(bot_token=Xtoke)
             print("⫷ اكتمل تنزيل انلاين اكسس بدون اخطاء ⫸")
             print("⫷ يتم بدء بوت اكسس ⫸")
             bot.loop.run_until_complete(add_bot(TBOT))
