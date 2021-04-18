@@ -23,3 +23,4 @@ ADMIN = "<ⵧⵧⵧⵧⵧ⫷ - ICSS ADMIN TOOLS - ⫸ⵧⵧⵧⵧⵧ>"
 ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
 # --- MESSI IS THE BEST PLAYER IN THE WORLD --- #
 
+Tlk = " تم استرداد ⫸"
