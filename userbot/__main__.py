@@ -52,7 +52,7 @@ else:
         else:
             bot.start()
     except Exception as e:
-        LOGS.error("{}".format(Xt) + f"{str(e)})
+        LOGS.error("{} -".format(Xt) + f"{str(e)}")
         sys.exit()
 
 
