@@ -26,9 +26,9 @@ if Config.PLUGIN_CHANNEL:
             shortname = path1.stem
             load_module(shortname.replace(".py", ""))
             if BOTLOG:
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"Installed Plugin `{os.path.basename(downloaded_file_name)}` successfully.",
-            )
+                await bot.send_message(
+                    BOTLOG_CHATID,
+                    f"Installed Plugin `{os.path.basename(downloaded_file_name)}` successfully.",
+                )
 
     bot.loop.create_task(install())
