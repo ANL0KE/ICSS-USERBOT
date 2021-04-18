@@ -153,8 +153,7 @@ for name in files:
 print(ICSW)
 print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
 print("\n⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
-
-
+print(Masg.format(mention, TBOT, DEVL))
 
 bot.loop.create_task(startupmessage())
 
