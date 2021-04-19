@@ -70,7 +70,7 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/{shortname}.py"))
-            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(IS.format(shortname, e))
 
 
 # For admin tools
@@ -88,7 +88,7 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/Admin/{shortname}.py"))
-            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(IS.format(shortname, e))
 
 
 # for animations
@@ -106,7 +106,7 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/animations/{shortname}.py"))
-            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(IS.format(shortname, e))
 
 
 # for Gif
@@ -124,7 +124,7 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/tosha/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/tosha/{shortname}.py"))
-            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(IS.format(shortname, e))
 
 
 # for assistant
@@ -142,7 +142,7 @@ for name in files:
                 os.remove(Path(f"userbot/plugins/assistant/{shortname}.py"))
         except Exception as e:
             os.remove(Path(f"userbot/plugins/assistant/{shortname}.py"))
-            print(f"⫷ لايمكن تحميل - {shortname} بسبب {e} ⫸")
+            print(IS.format(shortname, e))
 
 
 print(ICSW)
