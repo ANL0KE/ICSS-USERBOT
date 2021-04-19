@@ -25,6 +25,7 @@ adn = "- ICSS ADMIN TOOLS - {}".format(Tlk)
 ani = "- ICSS ANIMATIONS - {}".format(Tlk)
 tsh = "- ICSS TOSHA - {}".format(Tlk)
 ast = "- ICSS ASSISTANT {}".format(Tlk)
+ext = "- ICSS EXTRA PLUGINS {}".format(Tlk)
 
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
