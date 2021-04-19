@@ -72,6 +72,23 @@ for name in Kim:
             print(IS.format(shortname, e))
 
 
+# For Axtra Plugins
+print(EXTRAPLUG)
+Kim = glob.glob(Ext)
+for name in Kim:
+    with open(name) as k:
+        Kim1 = P(k.name)
+        shortname = Kim1.stem
+        try:
+            if shortname.replace(".py", "") not in N:
+                load_module(shortname.replace(".py", ""))
+            else:
+                os.remove(P(Extras.format(shortname)))
+        except Exception as e:
+            os.remove(P(Extras.format(shortname)))
+            print(IS.format(shortname, e))
+
+
 # For admin tools
 print(ADMIN)
 Kim = glob.glob(Adm)
