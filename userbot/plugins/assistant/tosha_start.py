@@ -121,8 +121,6 @@ async def logs(event):
 
 
 # callbacks
-
-
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wew"))
           )  # pylint: disable=oof
 async def settings(event):
@@ -200,7 +198,7 @@ async def settings(event):
 
 # name zag - زغرفه الاسماء
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"icsname"))
-          )  # pylint: disable=oof
+          ) 
 async def settings(event):
     if event.sender_id == OWNER_ID:
         await event.delete()
@@ -216,7 +214,7 @@ async def settings(event):
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
-        await event.delete()      
+
 
 # Boys zag - زغرفه اسماء الشباب
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"boysna"))
