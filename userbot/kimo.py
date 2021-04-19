@@ -9,6 +9,7 @@ mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 Xtbot = "\"TG_BOT_TOKEN\""
 Xt = "TG_BOT_TOKEN"
+Xe = "STRING_SESSION"
 
 Xapid = Config.APP_ID
 Xhash = Config.API_HASH
