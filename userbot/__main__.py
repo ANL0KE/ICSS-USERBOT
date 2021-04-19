@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 
 import telethon.utils
-from telethon import TelegramClient
+from telethon import TelegramClient as TC
 
 from userbot.kimo import *
 from userbot import LOGS, bot
@@ -44,7 +44,7 @@ else:
     try:
         if TBOT is not None:
             print("⫷ يتم تحميل انلاين اكسس ⫸")
-            bot.tgbot = TelegramClient(Xtbot, A=Xapid, H=Xhash).start(B=Xtoke)
+            bot.tgbot = TC(Xtbot, A=Xapid, H=Xhash).start(B=Xtoke)
             print("⫷ اكتمل تنزيل انلاين اكسس بدون اخطاء ⫸")
             print("⫷ يتم بدء بوت اكسس ⫸")
             bot.loop.run_until_complete(add_bot(TBOT))
