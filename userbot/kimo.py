@@ -24,6 +24,7 @@ MSGE = (
 )
 
 Masg = "⫷ المستخدم: {} - البوت: {} ⫸"
+IS = "⫷ لايمكن تحميل - {} بسبب {} ⫸"
 
 #- TOSH is the most beautiful girl in the world -#
 ICSJ = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
