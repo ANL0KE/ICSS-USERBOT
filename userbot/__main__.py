@@ -67,9 +67,9 @@ for name in files:
             if shortname.replace(".py", "") not in Config.NO_LOAD:
                 load_module(shortname.replace(".py", ""))
             else:
-                os.remove(Path("userbot/plugins/{}.py".format(shortname)))
+                os.remove(Path(Plugin.format(shortname)))
         except Exception as e:
-            os.remove(Path("userbot/plugins/{}.py".format(shortname)))
+            os.remove(Path(Plugin.format(shortname)))
             print(IS.format(shortname, e))
 
 
@@ -85,9 +85,9 @@ for name in files:
             if shortname.replace(".py", "") not in Config.NO_LOAD:
                 load_admin(shortname.replace(".py", ""))
             else:
-                os.remove(Path("userbot/plugins/Admin/{}.py".format(shortname)))
+                os.remove(Path(Admin.format(shortname)))
         except Exception as e:
-            os.remove(Path("userbot/plugins/Admin/{}.py".format(shortname)))
+            os.remove(Path(Admin.format(shortname)))
             print(IS.format(shortname, e))
 
 
@@ -103,9 +103,9 @@ for name in files:
             if shortname.replace(".py", "") not in Config.NO_LOAD:
                 load_anim(shortname.replace(".py", ""))
             else:
-                os.remove(Path("userbot/plugins/animations/{}.py".format(shortname)))
+                os.remove(Path(Animation.format(shortname)))
         except Exception as e:
-            os.remove(Path("userbot/plugins/animations/{}.py".format(shortname)))
+            os.remove(Path(Animation.format(shortname)))
             print(IS.format(shortname, e))
 
 
@@ -121,9 +121,9 @@ for name in files:
             if shortname.replace(".py", "") not in Config.NO_LOAD:
                 load_tosha(shortname.replace(".py", ""))
             else:
-                os.remove(Path(l"userbot/plugins/tosha/{}.py".format(shortname)))
+                os.remove(Path(Tosh.format(shortname)))
         except Exception as e:
-            os.remove(Path("userbot/plugins/tosha/{}.py".format(shortname)))
+            os.remove(Path(Tosh.format(shortname)))
             print(IS.format(shortname, e))
 
 
@@ -139,9 +139,9 @@ for name in files:
             if shortname.replace(".py", "") not in Config.NO_LOAD:
                 load_assistant(shortname.replace(".py", ""))
             else:
-                os.remove(Path("userbot/plugins/assistant/{}.py".format(shortname)))
+                os.remove(Path(Assistant.format(shortname)))
         except Exception as e:
-            os.remove(Path("userbot/plugins/assistant/{}.py".format(shortname)))
+            os.remove(Path(Assistant.format(shortname)))
             print(IS.format(shortname, e))
 
 
