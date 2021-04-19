@@ -20,6 +20,7 @@ Xe = "STRING_SESSION"
 A = Config.APP_ID
 H = Config.API_HASH
 B = Config.TG_BOT_TOKEN
+N = Config.NO_LOAD
 
 TOSHA = Config.PRIVATE_GROUP_BOT_API_ID
 TBOT = Config.TG_BOT_USERNAME
@@ -44,3 +45,7 @@ ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ�
 Tlk = " تم استرداد ⫸"
 
 Plg = "userbot/plugins/*.py"
+Adm = "userbot/plugins/Admin/*.py"
+Inm = "userbot/plugins/animations/*.py"
+Tsh = "userbot/plugins/tosha/*.py"
+Ast = "userbot/plugins/assistant/*.py"
