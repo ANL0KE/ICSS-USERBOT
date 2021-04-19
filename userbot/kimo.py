@@ -42,3 +42,5 @@ ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ�
 # --- MESSI IS THE BEST PLAYER IN THE WORLD --- #
 
 Tlk = " تم استرداد ⫸"
+
+Plg = "userbot/plugins/*.py"
