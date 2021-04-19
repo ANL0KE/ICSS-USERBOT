@@ -8,7 +8,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 
 from ..utils import is_admin
 from . import BOTLOG, BOTLOG_CHATID, LOGS, spamwatch
-from .sql_helper.gban_sql_helper import get_gbanuser, is_gbanned
+from .userbot.plugins.sql_helper.gban_sql_helper import get_gbanuser, is_gbanned
 
 if Config.ANTISPAMBOT_BAN:
 
