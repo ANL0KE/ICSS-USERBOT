@@ -19,10 +19,6 @@ HEROKU_API_KEY = Config.HEROKU_API_KEY
 @icssbot.on(admin_cmd(pattern=r"(set|get|del) var (.*)", outgoing=True))
 @icssbot.on(sudo_cmd(pattern=r"(set|get|del) var (.*)", allow_sudo=True))
 async def variable(var):
-    """
-    Manage most of ConfigVars setting, set new var, get current var,
-    or delete var...
-    """
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
             var,
