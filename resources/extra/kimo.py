@@ -8,7 +8,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 Plugin = "userbot/plugins/{}.py"
-Exstras = "userbot/exstras/{}.py"
+Extras = "userbot/exstras/{}.py"
 Admin = "userbot/plugins/Admin/{}.py"
 Animation = "userbot/plugins/animations/{}.py"
 Tosh = "userbot/plugins/tosha/{}.py"
