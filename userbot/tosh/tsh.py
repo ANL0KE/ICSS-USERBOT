@@ -1,1 +1,1 @@
-from resources.exstra.kimo import *
+from resources.exstra import *
