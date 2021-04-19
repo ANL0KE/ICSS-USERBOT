@@ -1,7 +1,7 @@
 # Hey There 
 
 from . import Mb
-from ..kimo import TBOT
+from ..tosh.tsh import TBOT
 
 @icssbot.on(
     icss_cmd(
