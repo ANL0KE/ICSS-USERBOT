@@ -63,5 +63,5 @@ def load_extras(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.icssbot = bot
         spec.loader.exec_module(mod)
-        sys.modules["userbot.plugins.Admin." + shortname] = mod
+        sys.modules["userbot.extras." + shortname] = mod
         print(f"{ext} " + shortname)
