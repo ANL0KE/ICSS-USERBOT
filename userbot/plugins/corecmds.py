@@ -4,11 +4,10 @@ from datetime import datetime
 from pathlib import Path
 
 from ..utils import load_module, remove_plugin
-from . import ALIVE_NAME, CMD_LIST, SUDO_LIST
+from . import ALIVE_NAME, CMD_LIST, SUDO_LIST, mention
 
 DELETE_TIMEOUT = 5
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "cat"
 
 
 @icssbot.on(admin_cmd(pattern="اضافه$"))
@@ -62,8 +61,8 @@ async def load(event):
         )
 
 
-@icssbot.on(admin_cmd(pattern=r"send (.*)", outgoing=True))
-@icssbot.on(sudo_cmd(pattern=r"send (.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern=r"استدعي (.*)", outgoing=True))
+@icssbot.on(sudo_cmd(pattern=r"استدعي (.*)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
@@ -75,7 +74,7 @@ async def send(event):
     the_plugin_file = f"./userbot/plugins/{input_str}.py"
     if os.path.exists(the_plugin_file):
         start = datetime.now()
-        caat = await event.client.send_file(
+        ics = await event.client.send_file(
             event.chat_id,
             the_plugin_file,
             force_document=True,
@@ -86,11 +85,9 @@ async def send(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.delete()
-        await caat.edit(
-            f"__**➥ Plugin Name:- {input_str} .**__\n__**➥ Uploaded in {ms} seconds.**__\n__**➥ Uploaded by :-**__ {DEFAULTUSER}"
-        )
+        await ics.edit(Send.format(input_str, ms, mention))
     else:
-        await edit_or_reply(event, "404: File Not Found")
+        await eor(event, "**⌔∮ لاتوجد اضافه بهذا الاسم**")
 
 
 @icssbot.on(admin_cmd(pattern=r"unload (.*)", outgoing=True))
