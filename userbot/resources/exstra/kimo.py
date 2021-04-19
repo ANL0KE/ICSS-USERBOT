@@ -1,6 +1,6 @@
 # icss - UserBot
 
-from .Config import Config
+from userbot.Config import Config
 
 USERID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME
