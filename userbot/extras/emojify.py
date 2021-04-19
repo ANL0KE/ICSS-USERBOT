@@ -2,11 +2,12 @@
 
 import emoji
 
-from . import fonts as emojify
+from userbot.plugins import fonts as emojify
 
 
-@icssbot.on(admin_cmd(pattern="emoji(?: |$)(.*)"))
-@icssbot.on(sudo_cmd(pattern="emoji(?: |$)(.*)", allow_sudo=True))
+@icssbot.on(
+    icss_cmd(pattern="emoji(?: |$)(.*)")
+)
 async def itachi(event):
     args = event.pattern_match.group(1)
     if not args:
