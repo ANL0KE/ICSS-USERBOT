@@ -27,7 +27,7 @@ async def install(event):
                 load_module(shortname.replace(".py", ""))
                 await edit_or_reply(
                     event,
-                    f"**⌔∮ تم اضافه الملف** `{os.path.basename(downloaded_file_name)}` في سورس اكسس. ",
+                    f"**⌔∮ تم اضافه الملف** `{os.path.basename(downloaded_file_name)}` **في سورس اكسس.** ",
                 )
             else:
                 os.remove(downloaded_file_name)
