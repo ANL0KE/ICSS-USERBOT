@@ -7,11 +7,11 @@ ALIVE_NAME = Config.ALIVE_NAME
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
-Plugin = "\"userbot/plugins/{}.py\""
-Admin = "\"userbot/plugins/Admin/{}.py\""
-Animation = "\"userbot/plugins/animations/{}.py\""
-Tosh = "\"userbot/plugins/tosha/{}.py\""
-Assistant = "\"userbot/plugins/assistant/{}.py\""
+Plugin = "userbot/plugins/{}.py"
+Admin = "userbot/plugins/Admin/{}.py"
+Animation = "userbot/plugins/animations/{}.py"
+Tosh = "userbot/plugins/tosha/{}.py"
+Assistant = "userbot/plugins/assistant/{}.py"
 
 Xtbot = "\"TG_BOT_TOKEN\""
 Xt = "TG_BOT_TOKEN"
