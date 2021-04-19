@@ -1,5 +1,5 @@
 from . import reply_id as rd
-from userbot.kimo import *
+from userbot.tosh import *
 
 
 WPIC = "https://telegra.ph/file/dfd7fc05a81748a87761c.jpg"
