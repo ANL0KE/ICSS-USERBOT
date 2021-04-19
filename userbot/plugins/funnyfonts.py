@@ -1,4 +1,3 @@
-""" plugin is modified by @sn12384 edit by: @rruuurr """
 import random
 import re
 
@@ -36,7 +35,7 @@ async def zal(zgfy):
         message = textx.text
     else:
         await edit_or_reply(
-            zgfy, "`gͫ ̆ i̛ ̺ v͇̆ ȅͅ   a̢ͦ   s̴̪ c̸̢ ä̸ rͩͣ y͖͞   t̨͚ é̠ x̢͖  t͔͛`"
+            zgfy, "`gͫ ̆ i̛ ̺ v͇̆ ȅͅ   a̢ͦ   s̴̪ c̸̢ ä̸ rͩͣ y͖͞   t̨͚ é̠ x̢͖  t͔͛`"
         )
         return
 
