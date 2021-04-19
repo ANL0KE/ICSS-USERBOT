@@ -12,9 +12,9 @@ from telethon import TelegramClient as TC
 from userbot.tosh.tsh import *
 from userbot import LOGS, bot
 from userbot.Config import Config
-from .extra import load_exrtas
 from userbot.utils import (
-    load_module, 
+    load_module,
+    load_exrtas, 
     load_admin, 
     load_anim, 
     load_tosha, 
