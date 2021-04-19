@@ -12,7 +12,7 @@ from telethon import TelegramClient
 from telethon.sessions import StringSession
 
 from .Config import Config
-from .kimo import Tlk
+from .tsh import Tlk
 
 StartTime = time.time()
 icsv = "1.0.0"
