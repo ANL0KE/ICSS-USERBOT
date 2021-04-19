@@ -45,7 +45,7 @@ class Config(object):
     CUSTOM_ALIVE_TEXT = os.environ.get("CUSTOM_ALIVE_TEXT", None)
     CUSTOM_ALIVE_EMOJI = os.environ.get("CUSTOM_ALIVE_EMOJI", None)
     CUSTOM_PMPERMIT = os.environ.get("CUSTOM_PMPERMIT", None)
-    TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "catuserbot")
+    TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Icss - UserBot")
     CLEAN_WELCOME = os.environ.get("CLEAN_WELCOME", True)
     THUMB_IMAGE = os.environ.get(
         "THUMB_IMAGE", "https://telegra.ph/file/e294951013fdb88359650.jpg"
@@ -68,7 +68,7 @@ class Config(object):
     NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD = int(
         os.environ.get("NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD", 3)
     )
-    EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", " ")
+    EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "✨")
     COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r"\.")
     SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r"\.")
     TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads")
