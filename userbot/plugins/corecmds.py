@@ -61,8 +61,8 @@ async def load(event):
         )
 
 
-@icssbot.on(admin_cmd(pattern=r"استدعي (.*)", outgoing=True))
-@icssbot.on(sudo_cmd(pattern=r"استدعي (.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern=r"ارسل (.*)", outgoing=True))
+@icssbot.on(sudo_cmd(pattern=r"ارسل (.*)", allow_sudo=True))
 async def send(event):
     if event.fwd_from:
         return
