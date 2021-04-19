@@ -9,7 +9,7 @@ from coffeehouse.api import API
 from coffeehouse.lydia import LydiaAI
 
 from . import BOTLOG, BOTLOG_CHATID
-from .sql_helper.lydia_ai_sql import add_s, get_all_s, get_s, remove_s
+from userbot.plugins.sql_helper.lydia_ai_sql import add_s, get_all_s, get_s, remove_s
 
 if Config.LYDIA_API_KEY:
     api_key = Config.LYDIA_API_KEY
