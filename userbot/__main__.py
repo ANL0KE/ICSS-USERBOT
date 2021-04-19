@@ -12,6 +12,7 @@ from telethon import TelegramClient as TC
 from userbot.tosh.tsh import *
 from userbot import LOGS, bot
 from userbot.Config import Config
+from .extra import load_exrtas
 from userbot.utils import (
     load_module, 
     load_admin, 
@@ -81,7 +82,7 @@ for name in Kim:
         shortname = Kim1.stem
         try:
             if shortname.replace(".py", "") not in N:
-                load_module(shortname.replace(".py", ""))
+                load_extras(shortname.replace(".py", ""))
             else:
                 os.remove(P(Extras.format(shortname)))
         except Exception as e:
