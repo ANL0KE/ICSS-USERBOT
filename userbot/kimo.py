@@ -36,3 +36,7 @@ ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ�
 # --- MESSI IS THE BEST PLAYER IN THE WORLD --- #
 
 Tlk = " تم استرداد ⫸"
+
+A = "api_id"
+H = "api_hash"
+B = "bot_token"
