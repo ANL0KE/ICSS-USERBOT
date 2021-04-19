@@ -17,9 +17,9 @@ Xtbot = "\"TG_BOT_TOKEN\""
 Xt = "TG_BOT_TOKEN"
 Xe = "STRING_SESSION"
 
-Xapid = Config.APP_ID
-Xhash = Config.API_HASH
-Xtoke = Config.TG_BOT_TOKEN
+A = Config.APP_ID
+H = Config.API_HASH
+B = Config.TG_BOT_TOKEN
 
 TOSHA = Config.PRIVATE_GROUP_BOT_API_ID
 TBOT = Config.TG_BOT_USERNAME
@@ -42,7 +42,3 @@ ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ�
 # --- MESSI IS THE BEST PLAYER IN THE WORLD --- #
 
 Tlk = " تم استرداد ⫸"
-
-A = "api_id"
-H = "api_hash"
-B = "bot_token"
