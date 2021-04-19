@@ -2,7 +2,7 @@
 
 import emoji
 
-from userbot.plugins import fonts as emojify
+from . import fonts as emojify
 
 
 @icssbot.on(
