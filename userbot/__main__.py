@@ -14,7 +14,6 @@ from userbot import LOGS, bot
 from userbot.Config import Config
 from userbot.utils import (
     load_module,
-    load_exrtas, 
     load_admin, 
     load_anim, 
     load_tosha, 
