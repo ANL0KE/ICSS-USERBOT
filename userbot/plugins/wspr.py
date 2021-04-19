@@ -22,8 +22,10 @@ async def kimo(lon):
         await lon.client.send_file(lon.chat_id, WPIC, caption=ics_c, reply_to=ld)
 
 
-
-@bot.on(admin_cmd(pattern="همسه ?(.*)"))
+# Wespr - همسه
+@icssbot.on(
+    icss_cmd(pattern="همسه ?(.*)")
+)
 async def wspr(event):
     if event.fwd_from:
         return
