@@ -22,8 +22,8 @@ if not os.path.isdir("./temp"):
     os.makedirs("./temp")
 
 
-@icssbot.on(admin_cmd(pattern="ملصق لصوره$"))
-@bot.on(sudo_cmd(pattern="ملصق لصوره$", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="تحويل لصوره$"))
+@bot.on(sudo_cmd(pattern="تحويل لصوره$", allow_sudo=True))
 async def _(cat):
     if cat.fwd_from:
         return
@@ -54,11 +54,11 @@ async def _(cat):
         else:
             await event.edit("Can't Convert")
     else:
-        await event.edit("Syntax : `.stoi` reply to a Telegram normal sticker")
+        await event.edit("**⌔∮ قم بالرد على الملصق**")
 
 
-@icssbot.on(admin_cmd(pattern="صور لملصق$"))
-@icssbot.on(sudo_cmd(pattern="صور لملصق$", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="تحويل لملصق$"))
+@icssbot.on(sudo_cmd(pattern="تحويل لملصق$", allow_sudo=True))
 async def _(cat):
     if cat.fwd_from:
         return
