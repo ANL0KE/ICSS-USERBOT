@@ -6,7 +6,7 @@ import os
 import sys
 import traceback
 
-from . import *
+from userbot.plugins import *
 
 
 @icssbot.on(admin_cmd(pattern="exec(?: |$|\n)(.*)", command="exec"))
