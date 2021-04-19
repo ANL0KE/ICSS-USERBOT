@@ -44,7 +44,7 @@ else:
     try:
         if TBOT is not None:
             print("⫷ يتم تحميل انلاين اكسس ⫸")
-            bot.tgbot = TC(Xtbot, A=Xapid, H=Xhash).start(B=Xtoke)
+            bot.tgbot = TC(Xtbot, api_id=A, api_hash=H).start(bot_token=B)
             print("⫷ اكتمل تنزيل انلاين اكسس بدون اخطاء ⫸")
             print("⫷ يتم بدء بوت اكسس ⫸")
             bot.loop.run_until_complete(add_bot(TBOT))
