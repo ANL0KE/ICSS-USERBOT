@@ -20,12 +20,11 @@ icsv = "1.0.0"
 ICS_ID = ["1588663614", "1233775025"]
 
 # for print :
-usr = "- ICSS USERBOT - {}".format(Tlk)
-adn = "- ICSS ADMIN TOOLS - {}".format(Tlk)
-ani = "- ICSS ANIMATIONS - {}".format(Tlk)
-tsh = "- ICSS TOSHA - {}".format(Tlk)
-ast = "- ICSS ASSISTANT {}".format(Tlk)
-ext = "- ICSS EXTRA PLUGINS {}".format(Tlk)
+usr = "ICSS USERBOT - {}".format(Tlk)
+adn = "ICSS ADMIN TOOLS - {}".format(Tlk)
+ani = "ICSS ANIMATIONS - {}".format(Tlk)
+tsh = "ICSS TOSHA - {}".format(Tlk)
+ast = "ICSS ASSISTANT {}".format(Tlk)
 
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
