@@ -48,7 +48,7 @@ class Config(object):
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "catuserbot")
     CLEAN_WELCOME = os.environ.get("CLEAN_WELCOME", True)
     THUMB_IMAGE = os.environ.get(
-        "THUMB_IMAGE", "https://telegra.ph/file/36446bded392a66c53eda.jpg"
+        "THUMB_IMAGE", "https://telegra.ph/file/e294951013fdb88359650.jpg"
     )
     UB_BLACK_LIST_CHAT = {
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
