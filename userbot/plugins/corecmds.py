@@ -85,7 +85,9 @@ async def send(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.delete()
-        await ics.edit(Send.format(input_str, ms, mention))
+        await ics.edit(
+            "**⌔∮ اسم الاضافه : {input_str}**\n**⌔∮ الوقت المستغرق : {ms}ثانيه**\n**⌔∮ للمستخدم :** {mention}"
+        )
     else:
         await eor(event, "**⌔∮ لاتوجد اضافه بهذا الاسم**")
 
