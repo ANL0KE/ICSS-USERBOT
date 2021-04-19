@@ -679,8 +679,8 @@ def load_extras(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        path = Path(f"userbot/extras/{shortname}.py")
-        name = "userbot.extras.{}".format(shortname)
+        path = Path(f"userbot/plugins/extras/{shortname}.py")
+        name = "userbot.plugins.extras.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
@@ -699,8 +699,8 @@ def load_extras(shortname):
         )
         from .tosh import ed, eor
 
-        path = Path(f"userbot/extras/{shortname}.py")
-        name = "userbot.extras.{}".format(shortname)
+        path = Path(f"userbot/plugins/extras/{shortname}.py")
+        name = "userbot.plugins.extras.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -721,6 +721,6 @@ def load_extras(shortname):
         sys.modules["uniborg.util"] = userbot.utils
         mod.icssbot = bot
         spec.loader.exec_module(mod)
-        sys.modules["userbot.extras." + shortname] = mod
+        sys.modules["userbot.plugins.extras." + shortname] = mod
         print(f"{ext} " + shortname)
 
