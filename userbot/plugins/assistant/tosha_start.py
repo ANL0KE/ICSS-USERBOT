@@ -216,7 +216,7 @@ async def settings(event):
                                  ])
     else:
         await event.answer("انت لا تستطيع استخدام البوت احصل على بوتك من @rruuurr", alert=True)
-
+        await event.delete()      
 
 # Boys zag - زغرفه اسماء الشباب
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"boysna"))
