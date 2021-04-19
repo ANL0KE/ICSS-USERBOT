@@ -4,21 +4,21 @@ import random
 @icssbot.on(admin_cmd(pattern=f"gm$", outgoing=True))
 @icssbot.on(sudo_cmd(pattern="gm$", allow_sudo=True))
 async def morning(morning):
-    txt = random.choice(catmemes.GDMORNING)
+    txt = random.choice(icsmemes.GDMORNING)
     await edit_or_reply(morning, txt)
 
 
 @icssbot.on(admin_cmd(pattern=f"gnoon$", outgoing=True))
 @icssbot.on(sudo_cmd(pattern="gnoon$", allow_sudo=True))
 async def noon(noon):
-    txt = random.choice(catmemes.GDNOON)
+    txt = random.choice(icsmemes.GDNOON)
     await edit_or_reply(noon, txt)
 
 
 @icssbot.on(admin_cmd(pattern=f"gn$", outgoing=True))
 @icssbot.on(sudo_cmd(pattern="gn$", allow_sudo=True))
 async def night(night):
-    txt = random.choice(catmemes.GDNIGHT)
+    txt = random.choice(icsmemes.GDNIGHT)
     await edit_or_reply(night, txt)
 
 
@@ -47,12 +47,12 @@ async def gn(event):
 @icssbot.on(sudo_cmd(pattern=r"hi ?(.*)", allow_sudo=True))
 async def hi(event):
     giveVar = event.text
-    cat = giveVar[4:5]
-    if not cat:
-        cat = "🌺"
-    await edit_or_reply(
+    ics = giveVar[4:5]
+    if not ics:
+        ics = "🌺"
+    await eor(
         event,
-        f"{cat}✨✨{cat}✨{cat}{cat}{cat}\n{cat}✨✨{cat}✨✨{cat}✨\n{cat}{cat}{cat}{cat}✨✨{cat}✨\n{cat}✨✨{cat}✨✨{cat}✨\n{cat}✨✨{cat}✨{cat}{cat}{cat}\n☁☁☁☁☁☁☁☁",
+        f"{ics}✨✨{ics}✨{ics}{ics}{ics}\n{ics}✨✨{ics}✨✨{ics}✨\n{ics}{ics}{ics}{ics}✨✨{ics}✨\n{ics}✨✨{ics}✨✨{ics}✨\n{ics}✨✨{ics}✨{ics}{ics}{ics}\n☁☁☁☁☁☁☁☁",
     )
 
 
@@ -61,7 +61,7 @@ async def hi(event):
 async def cheer(event):
     if event.fwd_from:
         return
-    await edit_or_reply(
+    await eor(
         event,
         "💐💐😉😊💐💐\n☕ Cheer Up  🍵\n🍂 ✨ )) ✨  🍂\n🍂┃ (( * ┣┓ 🍂\n🍂┃*💗 ┣┛ 🍂 \n🍂┗━━┛  🍂🎂 For YOU  🍰\n💐💐😌😚💐💐",
     )
@@ -72,7 +72,7 @@ async def cheer(event):
 async def getwell(event):
     if event.fwd_from:
         return
-    await edit_or_reply(
+    await eor(
         event, "🌹🌹🌹🌹🌹🌹🌹🌹 \n🌹😷😢😓😷😢💨🌹\n🌹💝💉🍵💊💐💝🌹\n🌹 GetBetter Soon! 🌹\n🌹🌹🌹🌹🌹🌹🌹🌹"
     )
 
@@ -82,7 +82,7 @@ async def getwell(event):
 async def luck(event):
     if event.fwd_from:
         return
-    await edit_or_reply(
+    await eor(
         event, "💚~🍀🍀🍀🍀🍀\n🍀╔╗╔╗╔╗╦╗✨🍀\n🍀║╦║║║║║║👍🍀\n🍀╚╝╚╝╚╝╩╝。 🍀\n🍀・・ⓁⓊⒸⓀ🍀\n🍀🍀🍀 to you💚"
     )
 
@@ -92,7 +92,7 @@ async def luck(event):
 async def sprinkle(event):
     if event.fwd_from:
         return
-    await edit_or_reply(
+    await eor(
         event,
         "✨.•*¨*.¸.•*¨*.¸¸.•*¨*• ƸӜƷ\n🌸🌺🌸🌺🌸🌺🌸🌺\n Sprinkled with love❤\n🌷🌻🌷🌻🌷🌻🌷🌻\n ¨*.¸.•*¨*. ¸.•*¨*.¸¸.•*¨`*•.✨\n🌹🍀🌹🍀🌹🍀🌹🍀",
     )
