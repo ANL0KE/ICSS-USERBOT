@@ -8,6 +8,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 Plugin = "userbot/plugins/{}.py"
+Exstras = "userbot/exstras/{}.py"
 Admin = "userbot/plugins/Admin/{}.py"
 Animation = "userbot/plugins/animations/{}.py"
 Tosh = "userbot/plugins/tosha/{}.py"
@@ -39,12 +40,14 @@ ASSISTANT = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ASSISTANT - ⫸ⵧⵧⵧⵧⵧⵧ>"
 KIMOTOSHA = "<ⵧⵧⵧⵧⵧⵧⵧⵧ⫷ - ICSS TOSHA - ⫸ⵧⵧⵧⵧⵧⵧⵧ>"
 ANIMATIONS = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ANIMATIONS - ⫸ⵧⵧⵧⵧⵧ>"
 ADMIN = "<ⵧⵧⵧⵧⵧ⫷ - ICSS ADMIN TOOLS - ⫸ⵧⵧⵧⵧⵧ>"
+EXTRAPLUG = "<ⵧⵧⵧⵧⵧ⫷ - ICSS AXTRAS PLUGIN - ⫸ⵧⵧⵧⵧⵧ>"
 ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
 # --- MESSI IS THE BEST PLAYER IN THE WORLD --- #
 
 Tlk = " تم استرداد ⫸"
 
 Plg = "userbot/plugins/*.py"
+Ext = "userbot/extras/*.py"
 Adm = "userbot/plugins/Admin/*.py"
 Inm = "userbot/plugins/animations/*.py"
 Tsh = "userbot/plugins/tosha/*.py"
