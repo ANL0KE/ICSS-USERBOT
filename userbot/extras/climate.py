@@ -11,7 +11,7 @@ from pytz import country_timezones as c_tz
 from pytz import timezone as tz
 
 from ..utils import errors_handler
-from .sql_helper.globals import addgvar, gvarstatus
+from userbot.plugins.sql_helper.globals import addgvar, gvarstatus
 
 
 async def get_tz(con):
