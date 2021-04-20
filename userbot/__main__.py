@@ -141,9 +141,7 @@ for name in Kim:
 
 
 print(ICSW)
-print("⫷ بوت اكسس يعمل بنجاح الان ⫸")
-print(Masg.format(ALIVE_NAME, TBOT))
-print("⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸")
+print(Message.format(ALIVE_NAME, TBOT))
 
 bot.loop.create_task(startupmessage())
 
