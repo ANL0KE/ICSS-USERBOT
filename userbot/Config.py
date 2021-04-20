@@ -1,1 +1,1 @@
-from recsorces.Config import Config
+from resources.Config import Config
