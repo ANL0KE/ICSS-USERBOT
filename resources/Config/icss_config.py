@@ -68,7 +68,7 @@ class Config(object):
     NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD = int(
         os.environ.get("NO_OF_COLOUMS_DISPLAYED_IN_H_ME_CMD", 3)
     )
-    EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "✨")
+    EMOJI_TO_DISPLAY_IN_HELP = os.environ.get("EMOJI_TO_DISPLAY_IN_HELP", "•")
     COMMAND_HAND_LER = os.environ.get("COMMAND_HAND_LER", r"\.")
     SUDO_COMMAND_HAND_LER = os.environ.get("SUDO_COMMAND_HAND_LER", r"\.")
     TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./downloads")
