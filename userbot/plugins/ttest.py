@@ -1,4 +1,4 @@
-from datetame import datetime
+from datetime import datetime
 
 @icssbot.on(
     icss_cmd(pattern="ها")
