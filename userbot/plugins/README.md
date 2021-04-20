@@ -12,7 +12,7 @@ H = "Hi im Kimo"
     icss_cmd(pattern="hello")
 )
 async def hi(ics):
-    await eor(kim, H)
+    await eor(ics, H)
 ```
 
 - استمتعو به 💕
