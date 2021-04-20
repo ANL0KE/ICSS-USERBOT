@@ -7,7 +7,7 @@ async def _(e):
     icst = e.txt
     yar = icst[4:5]
     if not yar:
-       await eor(e, "هها هلو")
+       yar = "2"
     YearNow = datetime.now().year
     MyAge = YearNow - yar
     await eor(e, "عمرك هوه {}".format(MyAge))
