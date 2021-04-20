@@ -1,6 +1,5 @@
 import datetime
 
-emsg = "يجب ادخال مواليدك السنه فقط"
 
 @icssbot.on(
     icss_cmd(pattern="العمر$")
@@ -11,4 +10,4 @@ async def _(e):
     Dbt = yar
     YearNow = datetime.now().year
     MyAge = (int(YearNow) - int(Dbt))
-    await eor(e, "عمرك هوه %s"% MyAge)
+    await eor(e, "عمرك هوه {}".format(MyAge))
