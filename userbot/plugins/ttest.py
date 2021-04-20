@@ -5,9 +5,9 @@ from datetime import datetime
 )
 async def _(e):
     icst = e.txt
-    yar = icst[4:9]
+    yar = icst[4:5]
     if not yar:
        await eor(e, "هها هلو")
     YearNow = datetime.now().year
-    MyAge = (int(YearNow) - int(yar))
+    MyAge = YearNow - yar
     await eor(e, "عمرك هوه {}".format(MyAge))
