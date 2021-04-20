@@ -6,10 +6,13 @@
 
 الآن سأظهر نص قصير لإظهار تكوين البرنامج النصي المطلوب.
 ```python3
-@icssbot.on(icss_cmd(pattern="اكسس", outgoing=True))
-@icssbot.on(sudo_cmd(pattern="اكسس", allow_sudo=True))
-async def icsbot(ics):
-    await eor(kim, "**- اهلا بك في بوت اكسس**\n- هذا بوت معرب من اجلك استمتع")
+H = "Hi im Kimo"
+
+@icssbot.on(
+    icss_cmd(pattern="hello")
+)
+async def hi(ics):
+    await eor(kim, H)
 ```
 
 - استمتعو به 💕
