@@ -1,2 +1,2 @@
-# ok
-from ._string import *
+
+from ._string import * # Ok
