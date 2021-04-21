@@ -1,8 +1,8 @@
 # im noob in this but I try, from Ultroid
 
+import yaml
 from os import listdir, path
 from typing import Any, Dict, List, Union
-import yaml
 
 strfile = {}
 strings = path.join(path.dirname(path.realpath(__file__)), "strings")
