@@ -9,7 +9,7 @@ from pathlib import Path as P
 import telethon.utils
 from telethon import TelegramClient as TC
 
-from userbot.tosh.tsh import *
+from userbot.tosh import *
 from userbot import LOGS, bot
 from userbot.Config import Config
 from userbot.utils import (
