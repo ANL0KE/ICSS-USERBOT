@@ -21,7 +21,7 @@ def string(key: str) -> Any:
         return strfile[("cmd")][key]
     
 
-def strnigfile() -> Dict[str, Union[str, List[str]]]:
+def stringfile() -> Dict[str, Union[str, List[str]]]:
     return {
         code: {
             "name": strfile[code]["name"],
