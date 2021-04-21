@@ -17,8 +17,7 @@ for file in listdir(strings):
 
 
 def string(key: str) -> Any:
-    try:
-        return strfile[("cmd")][key]
+    return strfile[("cmd")][key]
     
 
 def stringfile() -> Dict[str, Union[str, List[str]]]:
