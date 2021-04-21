@@ -1,1 +1,1 @@
-from resources.extra import *
+from resources.strgins import *
