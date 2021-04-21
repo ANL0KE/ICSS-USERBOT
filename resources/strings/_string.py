@@ -52,11 +52,11 @@ Inm = "userbot/plugins/animations/*.py"
 Tsh = "userbot/plugins/tosha/*.py"
 Ast = "userbot/plugins/assistant/*.py"
 
-Message = ("""
-       ⫷ بوت اكسس يعمل بنجاح الان ⫸
+Message = (
+"""       ⫷ بوت اكسس يعمل بنجاح الان ⫸
    ⫷ المستخدم: {} - البوت: {} ⫸
-⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸
-""")
+⫷ @rruuurr - اذا كنت بحاجه الى مساعده فتوجه الى ⫸"""
+)
 
 Mesg = [
     '⫷ يتم تحميل انلاين اكسس ⫸',
