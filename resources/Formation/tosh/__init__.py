@@ -1,5 +1,4 @@
-#    ICSS - USERBOT
-#    KIMO - ANL0KE
+#    𝑰𝑪𝑺𝑺 - 𝑼𝑺𝑬𝑹𝑩𝑶𝑻
 
-from ._Utils import *
-from ._Tosh import *
+from ._utils import *
+from ._tosh import *
