@@ -31,8 +31,8 @@ from userbot import (
     ast,
     bot
 )
-from .Config import Config
-from .helpers.progress import CancelProcess
+from userbot.Config import Config
+from userbot.helpers.progress import CancelProcess
 
 
 def load_module(shortname):
