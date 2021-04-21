@@ -10,7 +10,7 @@ alv = (
 import time
 from platform import python_version
 from telethon import version
-from resources.extra import *
+from resources.strings import *
 
 from . import ALIVE_NAME, StartTime, get_readable_time, icsv, mention
 from . import reply_id as rd
