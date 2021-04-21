@@ -8,6 +8,6 @@ WORKDIR /root/userbot
 # لتنـزيل اضافات السورس
 RUN pip3 install -U -r resources/requirements.txt
 
-ENV PATH="/home/userbot/resources/bin:$PATH"
+ENV PATH="/home/userbot/resources/setup/bin:$PATH"
 
 CMD ["python3","-m","userbot"]
