@@ -1,6 +1,6 @@
 # im noob in this but I try, from Ultroid
 
-import yaml
+from yaml import salf_load
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
