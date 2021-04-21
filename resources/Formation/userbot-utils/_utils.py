@@ -1,6 +1,3 @@
-        print('%s'% ast + shortname)
-
-
 # Icss - Userbot
 # Icss - Utils
 
