@@ -54,7 +54,6 @@ pySmartDL
 python-barcode
 pytuneteller
 pytz
-pyyaml
 qrcode
 regex
 requests
@@ -70,5 +69,6 @@ validators
 vcsi
 wand
 wikipedia
+yaml
 youtube_dl
 youtube-search-python
