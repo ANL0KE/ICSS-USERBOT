@@ -43,12 +43,12 @@ else:
     bot.tgbot = None
     try:
         if TBOT is not None:
-            print("⫷ يتم تحميل انلاين اكسس ⫸")
+            print(Mesg[0])
             bot.tgbot = TC(Xtbot, api_id=A, api_hash=H).start(bot_token=B)
-            print("⫷ اكتمل تنزيل انلاين اكسس بدون اخطاء ⫸")
-            print("⫷ يتم بدء بوت اكسس ⫸")
+            print(Mesg[1])
+            print(Mesg[2])
             bot.loop.run_until_complete(add_bot(TBOT))
-            print("⫷ اكتمل بدء بوت اكسس ⫸")
+            print(Mesg[3])
         else:
             bot.start()
     except Exception as e:
