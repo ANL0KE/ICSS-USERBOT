@@ -1,6 +1,6 @@
 # im noob in this but I try, from Ultroid
-
-from yaml import salf_load
+"""
+import yaml
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
@@ -27,3 +27,4 @@ def stringfile() -> Dict[str, Union[str, List[str]]]:
         }
         for code in strfile
     }
+"""
