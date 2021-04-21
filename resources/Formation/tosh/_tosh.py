@@ -1,1 +1,1 @@
-from resources.strgins import *
+from resources.strings import *
