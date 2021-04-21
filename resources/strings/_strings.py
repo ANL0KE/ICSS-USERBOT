@@ -1,6 +1,6 @@
 # im noob in this but I try, from Ultroid
-"""
-import yaml
+
+from pyyaml import safe_load
 from os import listdir, path
 from typing import Any, Dict, List, Union
 
@@ -27,4 +27,4 @@ def stringfile() -> Dict[str, Union[str, List[str]]]:
         }
         for code in strfile
     }
-"""
+
