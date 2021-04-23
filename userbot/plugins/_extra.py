@@ -63,7 +63,7 @@ async def get_user_from_event(event):
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
         try:
-            user_obj = await event.client.get_entity(user)
+            user_obj = await event.client.get_entity("user")
         except (TypeError, ValueError) as err:
             await event.edit(str(err))
             return None
