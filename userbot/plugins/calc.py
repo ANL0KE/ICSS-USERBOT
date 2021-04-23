@@ -6,33 +6,32 @@ SOURCE ICSS
 import io
 import sys
 import traceback
-from ..tosh import C
 
 
 @icssbot.on(
-    icss_cmd(pattern="حاسبه (.*)")
+    icss_cmd(pattern="calc (.*)")
 )
 @icssbot.on(sudo_cmd(
-               pattern="حاسبه (.*)", 
+               pattern="calc (.*)", 
                allow_sudo=True)
            )
 async def _(ics):
     tosh = ics.text.split(" ", maxsplit=1)[1]
-    tsh = await eor(ics, "**⌔∮ يتم الحل… **")
-    osr = sys.stderr
-    ost = sys.stdout
-    rot = sys.stdout = io.StringIO()
-    reor = sys.stderr = io.StringIO()
+    event = await eor(ics, "Calculating ...")
+    old_stderr = sys.stderr
+    old_stdout = sys.stdout
+    redirected_output = sys.stdout = io.StringIO()
+    redirected_error = sys.stderr = io.StringIO()
     stdout, stderr, exc = None, None, None
-    kim = "print(%s)"% tosh
+    san = "print(%s)"% tosh
     try:
-        await aexec(kim, tsh)
+        await aexec(kim, event)
     except Exception:
         exc = traceback.format_exc()
-    stdout = rot.getvalue()
-    stderr = reor.getvalue()
-    sys.stdout = ost
-    sys.stderr = osr
+    stdout = redirected_output.getvalue()
+    stderr = redirected_error.getvalue()
+    sys.stdout = old_stdout
+    sys.stderr = old_stderr
     evaluation = ""
     if exc:
         evaluation = exc
@@ -42,8 +41,8 @@ async def _(ics):
         evaluation = stdout
     else:
         evaluation = "Sorry I can't find result for the given equation"
-    fot = (C.format(tosh, evaluation)
-    await eor(tsh, fot)
+    final_output = (C.format(tosh, evaluation))
+    await event.edit(final_output)
 
 
 async def aexec(code, event):
@@ -54,7 +53,7 @@ async def aexec(code, event):
 tosh_HELP.update(
     {
         "calc": "**Plugin : **`calc`\
-        \n\n• **Syntax : **`.حاسبه ` \
-        \n• **Function : **للحساب مثال (2*2) "
+        \n\n**Syntax : **`.calc expression` \
+        \n**Function : **solves the given maths equation by BODMAS rule. "
     }
 )
