@@ -2,6 +2,7 @@
 
 import asyncio
 import sys
+from resources.string._strings import *
 from os import environ, execle, path, remove
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
