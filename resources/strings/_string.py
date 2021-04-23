@@ -1,6 +1,7 @@
 # icss - UserBot
+# kimo: 
+#   - strings for Icss - Userbot
 
-import random
 from userbot.Config import Config # Ok
 
 USERID = Config.OWNER_ID
