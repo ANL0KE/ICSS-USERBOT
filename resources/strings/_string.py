@@ -1,5 +1,6 @@
 # icss - UserBot
 
+import random
 from userbot.Config import Config # Ok
 
 USERID = Config.OWNER_ID
@@ -8,7 +9,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 
 Plugin = "userbot/plugins/{}.py"
-Extras = "userbot/plugins/extras/{}.py"
 Admin = "userbot/plugins/Admin/{}.py"
 Animation = "userbot/plugins/animations/{}.py"
 Tosh = "userbot/plugins/tosha/{}.py"
@@ -30,6 +30,15 @@ DEVL = "@rruuurr"
 
 C = "⌔∮ المعادله ⪼ {}\n  - الحل ⪼ {}"
 
+kk = [
+   "╭━━━╮\n┃╭━━╯\n┃╰━━╮\n┃╭━━╯\n┃┃\n╰╯",
+   "┏━━━┓\n┃┏━━┛\n┃┗━━┓\n┃┏━━┛\n┃┃\n┗┛"
+]
+
+urs = "**⌔∮ نسبة نجاحك هيه -** {}"
+Fm = "⌔∮ نسبه الرجوله لــ [{}](tg://user?id={}) هيه {}"
+Fl = ["+100% 🔱🖤","100% 🖤","95%","90%","85%","80%","75%","70%","65%","60%","55%","50%","45%","40%","35%","30%","25%","20%","15%","10%","0%","-0%"]
+
 MSGE = (
    f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⌔∮ المستخدم -** {mention}\n**⌔∮ البوت - {TBOT}**\n**⌔∮ للمساعده - {DEVL}**\n**اكتب {T}بنك لتحقق اذا ما كان البوت يعمل**"
 )
@@ -49,7 +58,6 @@ ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ�
 Tlk = " تم استرداد ⫸"
 
 Plg = "userbot/plugins/*.py"
-Ext = "userbot/plugins/extras/*.py"
 Adm = "userbot/plugins/Admin/*.py"
 Inm = "userbot/plugins/animations/*.py"
 Tsh = "userbot/plugins/tosha/*.py"
