@@ -3,7 +3,7 @@
 #   - for extra thing for Userbot
 
 import random
-from ..tosh import Fl, Fm, kk, urs
+from ..tosh import Fl, Fm, kk, urs, usre
 from telethon import events
 from telethon.tl.types import MessageEntityMentionName
 
@@ -21,7 +21,7 @@ async def _(tosh):
     icss_cmd(pattern="نسبه نجاحك")
 )
 async def icss(ics):
-    await eor(ics, user.format(L))
+    await eor(ics, urs.format(L))
 
 # ^--------------------------------^
 
@@ -54,7 +54,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("**⌔∮ قم برد على المستخدم او قم بكتابة المعرف اوالايدي.**")
+            await event.edit(usre)
             return
         if event.message.entities:
             probable_user_mention_entity = event.message.entities[0]
