@@ -11,7 +11,7 @@ L = random.choice(Fl)
 K = random.choice(kk)
   
 # ^--------------------------------^
-@icssbot.on(icss_cmd(pattern="^kk"))
+@icssbot.on(icss_cmd(pattern="kk"))
 async def _(tosh):
     await eor(tosh, K)
 
@@ -26,7 +26,7 @@ async def icss(ics):
 # ^--------------------------------^
 
 @icssbot.on(
-    icss_cmd(pattern="^نسبه الرجوله")
+    icss_cmd(pattern="نسبه الرجوله")
 )
 async def permalink(mention):
     user, custom = await get_user_from_event(mention)
