@@ -2,7 +2,7 @@
 # kimo: 
 #   - strings for Icss - Userbot
 
-from userbot.Config import Config # Ok
+from userbot.Config import Config # Ok - 🖤 
 
 USERID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME
