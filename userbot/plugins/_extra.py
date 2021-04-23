@@ -33,7 +33,7 @@ async def permalink(mention):
     if not user:
         return
     if custom:
-        await eor(mention, Fm.fotmat(custom, user.id, L))
+        await eor(mention, Fm.format(custom, user.id, L))
     else:
         tag = (
             user.first_name.replace("\u2060", "") if user.first_name else user.username
