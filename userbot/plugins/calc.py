@@ -6,24 +6,24 @@ SOURCE ICSS
 import io
 import sys
 import traceback
-
+from . import C
 
 @icssbot.on(
-    icss_cmd(pattern="calc (.*)")
+    icss_cmd(pattern="حاسبه (.*)")
 )
 @icssbot.on(sudo_cmd(
-               pattern="calc (.*)", 
+               pattern="حاسبه (.*)", 
                allow_sudo=True)
            )
 async def _(ics):
     tosh = ics.text.split(" ", maxsplit=1)[1]
-    event = await eor(ics, "Calculating ...")
+    event = await eor(ics, "**⌔∮ جاري الحل… **")
     old_stderr = sys.stderr
     old_stdout = sys.stdout
     redirected_output = sys.stdout = io.StringIO()
     redirected_error = sys.stderr = io.StringIO()
     stdout, stderr, exc = None, None, None
-    san = "print(%s)"% tosh
+    kim = "print(%s)"% tosh
     try:
         await aexec(kim, event)
     except Exception:
