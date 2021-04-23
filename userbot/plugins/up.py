@@ -21,7 +21,7 @@ async def gen_chlog(repo, diff):
     return ch_log
 
 async def print_changelogs(event, ac_br, changelog):
-    changelog_str = (Up_1.format(changelog))
+    changelog_str = Up_1.format(changelog)
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
         with open("output.txt", "w+") as file:
