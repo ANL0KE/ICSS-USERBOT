@@ -28,6 +28,8 @@ TBOT = Config.TG_BOT_USERNAME
 T = Config.COMMAND_HAND_LER
 DEVL = "@rruuurr"
 
+C = "⌔∮ المعادله ⪼ {}\n  - الحل ⪼ {}"
+
 MSGE = (
    f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⌔∮ المستخدم -** {mention}\n**⌔∮ البوت - {TBOT}**\n**⌔∮ للمساعده - {DEVL}**\n**اكتب {T}بنك لتحقق اذا ما كان البوت يعمل**"
 )
