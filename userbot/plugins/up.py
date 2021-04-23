@@ -2,14 +2,21 @@
 
 import asyncio
 import sys
-from resources.string._strings import *
 from os import environ, execle, path, remove
+
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
+
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
+HEROKU_API_KEY = Config.HEROKU_API_KEY or None
+UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
+UPSTREAM_REPO = Config.UPSTREAM_REPO
+T = Config.COMMAND_HAND_LER
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), "requirements.txt"
 )
+
 
 async def gen_chlog(repo, diff):
     ch_log = ""
@@ -20,8 +27,9 @@ async def gen_chlog(repo, diff):
         )
     return ch_log
 
+
 async def print_changelogs(event, ac_br, changelog):
-    changelog_str = Up_1.format(changelog)
+    changelog_str = f"𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ يوجـد تحـديث جديد لسورس اكسس ༗. \n\n⪼ التحديثات ⱒ**\n`{changelog}`\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n 𓆰 𝙎𝙊𝙐𝙍𝘾𝞝 𝘿𝙀𝙑 - @rruuurr 𓆪"
     if len(changelog_str) > 4096:
         await event.edit("`Changelog is too big, view the file to see it.`")
         with open("output.txt", "w+") as file:
@@ -40,6 +48,7 @@ async def print_changelogs(event, ac_br, changelog):
         )
     return True
 
+
 async def update_requirements():
     reqs = str(requirements_path)
     try:
@@ -52,6 +61,7 @@ async def update_requirements():
         return process.returncode
     except Exception as e:
         return repr(e)
+
 
 async def deploy(event, repo, ups_rem, ac_br, txt):
     if HEROKU_API_KEY is not None:
@@ -72,9 +82,11 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
                 heroku_app = app
                 break
         if heroku_app is None:
-            await event.edit(f"{txt}\n" "{}".format(Upeor_1))
+            await event.edit(f"{txt}\n" "بيانات اعتماد هيروكو غير صالحة لتنصيب اكسس")
             return repo.__del__()
-        await event.edit("{}".format(Up_2))
+        await event.edit(
+            "**تنصيب تحديث اكسس قيد التقدم ، يرجى الانتظار حتى تنتهي العملية ، وعادة ما يستغرق التحديث من 4 إلى 5 دقائق.**"
+        )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
@@ -109,7 +121,9 @@ async def update(event, repo, ups_rem, ac_br):
     except GitCommandError:
         repo.git.reset("--hard", "FETCH_HEAD")
     await update_requirements()
-    await event.edit("{}".format(Up_3))
+    await event.edit(
+        "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ تم التحديث بنجاح ✅**\n ** جارٍ إعادة تشغيل بوت اكسس ، انتظر 𓆰.**"
+    )
     # Spin a new instance of bot
     args = [sys.executable, "-m", "userbot"]
     execle(sys.executable, *args, environ)
@@ -119,15 +133,22 @@ async def update(event, repo, ups_rem, ac_br):
 @icssbot.on(admin_cmd(outgoing=True, pattern=r"تحديث($| (الان|البوت))"))
 @icssbot.on(sudo_cmd(pattern="تحديث($| (الان|البوت))", allow_sudo=True))
 async def upstream(event):
+    "بالنسبة لأمر التحديث ، تحقق مما إذا كان بوت اكسس محدثًا ، أو قم بالتحديث إذا تم بتحديثه"
     conf = event.pattern_match.group(1).strip()
-    event = await eor(event, Up_4)
+    event = await edit_or_reply(
+        event,
+        "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ جاري البحث عن التحديثات  🌐.. 𓆰،**",
+    )
     off_repo = UPSTREAM_REPO
     force_update = False
     if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
-        return await eor(event, Upeor_4)
+        return await edit_or_reply(
+            event,
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n** ⪼ اضبط المتغيرات المطلوبة أولاً لتحديث بوت اكسس 𓆰،**",
+        )
     try:
-        txt = "{}".format(Upeor_2)
-        txt += "{}".format(Upeor_3)
+        txt = "`عفوًا .. لا يمكن لبرنامج التحديث المتابعة بسبب "
+        txt += "حدثت بعض المشاكل`\n\n**تتبع السجل:**\n"
         repo = Repo()
     except NoSuchPathError as error:
         await event.edit(f"{txt}\nالدليل {error} غير موجود")
@@ -169,23 +190,32 @@ async def upstream(event):
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     # Special case for deploy
     if conf == "البوت":
-        await event.edit(Up_5)
+        await event.edit(
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تنصيب التحديث  انتظر 🌐 𓆰،**"
+        )
         await deploy(event, repo, ups_rem, ac_br, txt)
         return
     if changelog == "" and not force_update:
-        await event.edit(Upend)
+        await event.edit(
+            "\n𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ سورس اكسس محدث لأخر اصدار ༗. **"
+            #             f"**{UPSTREAM_REPO_BRANCH}**\n"
+        )
         return repo.__del__()
     if conf == "" and not force_update:
         await print_changelogs(event, ac_br, changelog)
         await event.delete()
-        return await event.respond(UpMsg)
+        return await event.respond(
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n⪼ اضغط هنا **للتحديث السريع ↫ **[`.تحديث الان`] او اضغط هنا **لتنصيب التحديث** وقد يستغرق 5 دقائق ↫ [`.تحديث البوت`]"
+        )
 
     if force_update:
         await event.edit(
             "`Force-Syncing to latest stable userbot code, please wait...`"
         )
     if conf == "الان":
-        await event.edit(Up_6)
+        await event.edit(
+            "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺  - 𝑼𝑷𝑫𝑨𝑻𝑬 𝑴𝑺𝑮 𓆪\n 𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n**⪼ يتم تحديث بوت اكسس انتظر 🌐..𓆰،**"
+        )
         await update(event, repo, ups_rem, ac_br)
     return
 
