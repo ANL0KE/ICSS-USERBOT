@@ -30,7 +30,7 @@ DEVL = "@rruuurr"
 
 C = "⌔∮ المعادله ⪼ {}\n  - الحل ⪼ {}"
 
-kk = [
+kkk = [
    "╭━━━╮\n┃╭━━╯\n┃╰━━╮\n┃╭━━╯\n┃┃\n╰╯",
    "┏━━━┓\n┃┏━━┛\n┃┗━━┓\n┃┏━━┛\n┃┃\n┗┛"
 ]
@@ -44,6 +44,7 @@ MSGE = (
 )
 
 IS = "⫷ لايمكن تحميل - {} بسبب {} ⫸"
+Tlk = " تم استرداد ⫸"
 
 #- TOSH is the most beautiful girl in the world -#
 ICSJ = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
@@ -54,8 +55,6 @@ ADMIN = "<ⵧⵧⵧⵧⵧ⫷ - ICSS ADMIN TOOLS - ⫸ⵧⵧⵧⵧⵧ>"
 EXTRAPLUG = "<ⵧⵧⵧⵧⵧ⫷ - ICSS AXTRAS PLUGIN - ⫸ⵧⵧⵧⵧⵧ>"
 ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
 # --- MESSI IS THE BEST PLAYER IN THE WORLD --- #
-
-Tlk = " تم استرداد ⫸"
 
 Plg = "userbot/plugins/*.py"
 Adm = "userbot/plugins/Admin/*.py"
