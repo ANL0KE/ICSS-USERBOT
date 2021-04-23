@@ -40,7 +40,7 @@ async def _(ics):
     elif stdout:
         evaluation = stdout
     else:
-        evaluation = "Sorry I can't find result for the given equation"
+        evaluation = "اسف لايمكنني حلها"
     final_output = (C.format(tosh, evaluation))
     await event.edit(final_output)
 
