@@ -54,7 +54,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit(usre)
+            await event.edit("{}".format(usre))
             return
         if event.message.entities:
             probable_user_mention_entity = event.message.entities[0]
