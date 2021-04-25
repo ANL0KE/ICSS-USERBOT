@@ -3,7 +3,7 @@
 #   - for extra thing for Userbot
 
 import random
-from ..tosh import Fl, Fm, kk, urs, usre
+from ..tosh import Fl, kk, urs, usre
 from telethon import events
 from telethon.tl.types import MessageEntityMentionName
 
@@ -33,12 +33,12 @@ async def permalink(mention):
     if not user:
         return
     if custom:
-        await eor(mention, Fm.format(custom, user.id, L))
+        await eor(mention, "⌔∮ نسبه الرجوله لــ [{}](tg://user?id={}) هيه {}".format(custom, user.id, L))
     else:
         tag = (
             user.first_name.replace("\u2060", "") if user.first_name else user.username
         )
-        await eor(mention, Fm.format(tag, user.id, L))
+        await eor(mention, "⌔∮ نسبه الرجوله لــ [{}](tg://user?id={}) هيه {}".format(tag, user.id, L))
 
 async def get_user_from_event(event):
     args = event.pattern_match.group(1).split(":", 1)
