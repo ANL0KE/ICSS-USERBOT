@@ -6,11 +6,7 @@ SOURCE ICSS
 import io
 import sys
 import traceback
-from . import C, CC
-
-@icssbot.on(icss_cmd(pattern="م23"))
-async def calc(cmd):
-    await eor(cmd, CC)
+from . import Calc, C
 
 @icssbot.on(
     icss_cmd(pattern="حاسبه (.*)")
@@ -53,6 +49,9 @@ async def aexec(code, event):
     exec(f"async def __aexec(event): " + "".join(f"\n {l}" for l in code.split("\n")))
     return await locals()["__aexec"](event)
 
+@icss.on(icss_cmd(pattern="م23"))
+async def calc(cmd):
+    await eor(cmd, Calc)
 
 tosh_HELP.update(
     {
