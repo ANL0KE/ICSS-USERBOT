@@ -19,7 +19,7 @@ from .sql_helper import pmpermit_sql as pmpermit_sql
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 CACHE = {}
-PMPERMIT_PIC = Config.PMPERMIT_PIC
+PMPERMIT_PIC = Config.PMPERMIT_PIC or None
 ICSS_PIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
