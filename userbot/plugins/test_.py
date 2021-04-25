@@ -3,5 +3,6 @@ F = "- نـوࢪت "
 
 @icss.on(icss_cmd(patter="ila"))
 async def tt(icss):
-    await icss.client.send_file(F, pic)
-    await icss.delete()
+    if Pic:
+        await icss.client.send_file(F)
+        await icss.delete()
