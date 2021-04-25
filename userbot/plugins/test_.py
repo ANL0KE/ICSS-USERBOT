@@ -4,5 +4,5 @@ F = "- نـوࢪت "
 @icss.on(icss_cmd(patter="ila"))
 async def tt(icss):
     if Pic:
-        await icss.client.send_file(F)
+        await icss.client.send_file(icss.chat_id, F)
         await icss.delete()
