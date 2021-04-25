@@ -33,12 +33,15 @@ async def permalink(mention):
     if not user:
         return
     if custom:
-        await eor(mention, "⌔∮ نسبه الرجوله لــ [{}](tg://user?id={}) هيه {}".format(custom, user.id, L))
+        await eor(
+            mention, 
+            f"⌔∮ نسبه الرجوله لــ [{custom}](tg://user?id={user.id}) هيه {L}"
+        )
     else:
         tag = (
             user.first_name.replace("\u2060", "") if user.first_name else user.username
         )
-        await eor(mention, "⌔∮ نسبه الرجوله لــ [{}](tg://user?id={}) هيه {}".format(tag, user.id, L))
+        await eor(mention, f"⌔∮ نسبه الرجوله لــ [{tag}](tg://user?id={user.id}) هيه {L}")
 
 async def get_user_from_event(event):
     args = event.pattern_match.group(1).split(":", 1)
@@ -54,7 +57,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("{}".format(usre))
+            await event.edit("**⌔∮ قم برد على المستخدم او قم بكتابة المعرف اوالايدي.**")
             return
         if event.message.entities:
             probable_user_mention_entity = event.message.entities[0]
