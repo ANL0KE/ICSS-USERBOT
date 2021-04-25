@@ -6,7 +6,11 @@ SOURCE ICSS
 import io
 import sys
 import traceback
-from . import C
+from . import C, CC
+
+@icssbot.on(icss_cmd(pattern="م23"))
+async def calc(cmd):
+    await eor(cmd, CC)
 
 @icssbot.on(
     icss_cmd(pattern="حاسبه (.*)")
