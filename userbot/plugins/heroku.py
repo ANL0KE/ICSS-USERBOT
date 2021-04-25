@@ -80,11 +80,9 @@ async def variable(var):
             return await ics.edit("⌔∮ .set var `<ConfigVars-name> <value>`")
         await asyncio.sleep(1.5)
         if variable in heroku_var:
-            await ics.edit(f"⌔∮ `{variable}` **تم تغيـره بنجاح** \n  **->** `{value}`")
+            await ics.edit("⌔∮ تم تغيـر {} :\n - المتغير :  {}".format(variable, value))
         else:
-            await ics.edit(
-                f"⌔∮ `{variable}`** تم اضافته بنجاح مع** \n **->**  `{value}`"
-            )
+            await ics.edit("⌔∮ تم اضافه {}: \n- المضاف اليه :  {}".format(variable, value))
         heroku_var[variable] = value
     elif exe == "del":
         ics = await edit_or_reply(var, "⌔∮ الحصول على معلومات لحذف المتغير. ")
