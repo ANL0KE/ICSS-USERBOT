@@ -15,6 +15,16 @@ heroku_api = "https://api.heroku.com"
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME
 HEROKU_API_KEY = Config.HEROKU_API_KEY
 
+Heroku_cmd = (
+    "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑯𝑬𝑹𝑶𝑲𝑼 𝑽𝑨𝑹𝑺 𓆪\n"
+    "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+    "**⌔∮ قائـمه اوامر هيروكو :** \n"
+    "⪼ `.set var` + الفار + المتغير\n"
+    "⪼ `.get var` + الفار لعرض ما في المتغير \n"
+    "⪼ `.del var` + الفار لحذف الفار \n"
+    "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+    "𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪"
+)
 
 @icssbot.on(admin_cmd(pattern=r"(set|get|del) var (.*)", outgoing=True))
 @icssbot.on(sudo_cmd(pattern=r"(set|get|del) var (.*)", allow_sudo=True))
@@ -212,6 +222,11 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     )
     return indentitems(items, indent, level=0)
 
+@icssbot.on(
+    icss_cmd(pattern="م24")
+)
+async def cmd(hero):
+    await eor(hero, Heroku_cmd)
 
 CMD_HELP.update(
     {
