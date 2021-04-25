@@ -25,25 +25,29 @@ async def icss(ics):
 
 # ^--------------------------------^
 
-@icssbot.on(
-    icss_cmd(pattern="نسبه الرجوله")
-)
+@icss.on(icss_cmd(pattern="نسبه الرجوله"))
 async def permalink(mention):
+    ioi = random.choice(ppp)
     user, custom = await get_user_from_event(mention)
     if not user:
         return
     if custom:
-        await eor(
-            mention, 
-            f"⌔∮ نسبه الرجوله لــ [{custom}](tg://user?id={user.id}) هيه {L}"
+        await edit_or_reply(
+            mention,
+            f"⌔∮ نسبه الرجوله لـ [{custom}](tg://user?id={user.id}) هيه {L} ",
         )
     else:
         tag = (
             user.first_name.replace("\u2060", "") if user.first_name else user.username
         )
-        await eor(mention, f"⌔∮ نسبه الرجوله لــ [{tag}](tg://user?id={user.id}) هيه {L}")
+        await edit_or_reply(
+            mention,
+            f"⌔∮ نسبه الرجوله لـ [{tag}](tg://user?id={user.id}) هيه {L} ",
+        )
+
 
 async def get_user_from_event(event):
+    """ Get the user from argument or replied message. """
     args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and len(args) != 2:
@@ -57,7 +61,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("**⌔∮ قم برد على المستخدم او قم بكتابة المعرف اوالايدي.**")
+            await event.edit("`Pass the user's username, id or reply!`")
             return
         if event.message.entities:
             probable_user_mention_entity = event.message.entities[0]
@@ -66,7 +70,7 @@ async def get_user_from_event(event):
                 user_obj = await event.client.get_entity(user_id)
                 return user_obj
         try:
-            user_obj = await event.client.get_entity("user")
+            user_obj = await event.client.get_entity(user)
         except (TypeError, ValueError) as err:
             await event.edit(str(err))
             return None
@@ -82,5 +86,6 @@ async def ge(user, event):
         await event.edit(str(err))
         return None
     return user_obj
+
 # ^--------------------------------^
-# extra_1 end:.
+# extra_1 end:
