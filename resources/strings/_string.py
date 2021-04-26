@@ -29,7 +29,7 @@ TBOT = Config.TG_BOT_USERNAME
 T = Config.COMMAND_HAND_LER
 DEVL = "@rruuurr"
 
-C = "⌔∮ المعادله ⪼ {}\n  - الحل ⪼ {}"
+C = "**⌔∮ المعادله ⪼** {}\n  **- الحل ⪼** {}"
 Calc = (
     "𓆰 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑪𝑨𝑳𝑪𝑼𝑳𝑨𝑻𝑶𝑹 𓆪\n"
     "𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
