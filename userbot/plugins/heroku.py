@@ -27,18 +27,18 @@ Heroku_cmd = (
     "𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎 - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪"
 )
 
-@icssbot.on(admin_cmd(pattern=r"(set|get|del) var (.*)", outgoing=True))
-@icssbot.on(sudo_cmd(pattern=r"(set|get|del) var (.*)", allow_sudo=True))
+@icss.on(icss_cmd(pattern=r"(set|get|del) var (.*)", outgoing=True))
+@icss.on(sudo_cmd(pattern=r"(set|get|del) var (.*)", allow_sudo=True))
 async def variable(var):
     if Config.HEROKU_API_KEY is None:
-        return await edit_delete(
+        return await ed(
             var,
             "⌔∮ اضبط Var المطلوب في Heroku على وظيفة هذا بشكل طبيعي `HEROKU_API_KEY` اذا كنت لاتعلم اين يوجد فقط اذهب الى حسابك في هيروكو ثم الى الاعدادات ستجده بالاسفل انسخه ودخله في الفار. ",
         )
     if Config.HEROKU_APP_NAME is not None:
         app = Heroku.app(Config.HEROKU_APP_NAME)
     else:
-        return await edit_delete(
+        return await ed(
             var,
             "⌔∮ اضبط Var المطلوب في Heroku على وظيفة هذا بشكل طبيعي `HEROKU_APP_NAME` اسم التطبيق اذا كنت لاتعلم.",
         )
@@ -109,19 +109,19 @@ async def variable(var):
         del heroku_var[variable]
 
 
-@icssbot.on(admin_cmd(pattern="استخدامي$", outgoing=True))
-@icssbot.on(sudo_cmd(pattern="استخدامي$", allow_sudo=True))
+@icss.on(icss_cmd(pattern="استخدامي$", outgoing=True))
+@icss.on(sudo_cmd(pattern="استخدامي$", allow_sudo=True))
 async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
     """
     if HEROKU_APP_NAME is None:
-        return await edit_delete(
+        return await ed(
             dyno,
             "⌔∮ اضبط Var المطلوب في Heroku على وظيفة هذا بشكل طبيعي `HEROKU_APP_NAME` اسم التطبيق اذا كنت لاتعلم.",
         )
     if HEROKU_API_KEY is None:
-        return await edit_delete(
+        return await ed(
             dyno,
             "⌔∮ اضبط Var المطلوب في Heroku على وظيفة هذا بشكل طبيعي `HEROKU_API_KEY` اذا كنت لاتعلم اين يوجد فقط اذهب الى حسابك في هيروكو ثم الى الاعدادات ستجده بالاسفل انسخه ودخله في الفار. ",
         )
@@ -179,16 +179,16 @@ async def dyno_usage(dyno):
     )
 
 
-@icssbot.on(admin_cmd(pattern="herokulogs$", outgoing=True))
-@icssbot.on(sudo_cmd(pattern="herokulogs$", allow_sudo=True))
+@icss.on(icss_cmd(pattern="herokulogs$", outgoing=True))
+@icss.on(sudo_cmd(pattern="herokulogs$", allow_sudo=True))
 async def _(dyno):
     if HEROKU_APP_NAME is None:
-        return await edit_delete(
+        return await ed(
             dyno,
             "Set the required var in heroku to function this normally `HEROKU_APP_NAME`.",
         )
     if HEROKU_API_KEY is None:
-        return await edit_delete(
+        return await ed(
             dyno,
             "Set the required var in heroku to function this normally `HEROKU_API_KEY`.",
         )
@@ -212,7 +212,6 @@ async def _(dyno):
 
 
 def prettyjson(obj, indent=2, maxlinelength=80):
-    """Renders JSON content with indentation and line splits/concatenations to fit maxlinelength.
     Only dicts, lists and basic types are supported"""
     items, _ = getsubitems(
         obj,
@@ -223,7 +222,7 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     )
     return indentitems(items, indent, level=0)
 
-@icssbot.on(
+@icss.on(
     icss_cmd(pattern="م24")
 )
 async def cmd(hero):
