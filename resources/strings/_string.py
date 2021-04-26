@@ -1,6 +1,6 @@
-# icss - UserBot
-# kimo: 
-#   - strings for Icss - Userbot
+#   icss - UserBot
+#  kimo: 
+#     - strings for Icss - Userbot
 
 from userbot.Config import Config # Ok - 🖤 
 
