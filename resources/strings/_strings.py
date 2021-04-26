@@ -1,5 +1,5 @@
-from userbot.Config import Config
-
+from userbot.Config import Config # Ok
+# for update code when i need it
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
