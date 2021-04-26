@@ -26,7 +26,7 @@ N = Config.NO_LOAD
 
 TOSHA = Config.PRIVATE_GROUP_BOT_API_ID
 TBOT = Config.TG_BOT_USERNAME
-T = Config.COMMAND_HAND_LER
+T = Config.COMMAND_HAND_LER or "."
 DEVL = "@rruuurr"
 
 C = "**⌔∮ المعادله ⪼** {}\n  **- الحل ⪼** {}"
