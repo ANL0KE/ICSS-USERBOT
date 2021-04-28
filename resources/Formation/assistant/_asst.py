@@ -56,7 +56,7 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
     return ping_time
 # Ping Message
-Ping = "⌔∮ سرعة الاستجابه {} \n ⌔∮ مدة التشغيل {}"
+Ping = "**⌔∮ سرعة الاستجابه** `{}`\n**⌔∮ مدة التشغيل** `{}`"
 
 
 # Boys name1 - اسماء الشباب الاولى
