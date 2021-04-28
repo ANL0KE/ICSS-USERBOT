@@ -10,20 +10,14 @@ from telethon.utils import pack_bot_file_id
 async def _(e):
     if e.reply_to_msg_id:
         await e.get_input_chat()
-        r_msg = await e.get_reply_message()
-        if r_msg.media:
-            bot_api_file_id = pack_bot_file_id(r_msg.media)
-            await asst.send_message(
-                e.chat_id, Asstid[0].form(str(e.chat_id),
-                                          str(r_msg.sender_id), 
-                                          bot_api_file_id),
+        R = await e.get_reply_message()
+        if R.media:
+            B = pack_bot_file_id(R.media)
+            await e.reply(Asstid[0].form(str(e.chat_id), str(R.sender_id), B),
             )
         else:
-            await asst.send_message(
-                e.chat_id, Asstid[1].format(str(e.chat_id),
-                                            str(r_msg.sender_id)),
+            await e.reply(Asstid[1].format(str(e.chat_id), str(R.sender_id)),
             )
     else:
-        await asst.send_message(
-            e.chat_id, Asstid[2].format(str(e.chat_id))
-        )
+        await e.reply(Asstid[2].format(str(e.chat_id)))
+    # end
