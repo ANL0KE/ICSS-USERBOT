@@ -2,11 +2,7 @@
 # translater for Icss - Userbot
 # Owner ~ <@rruuurr>
 
-from google_trans_new import google_translator
-import requests
-from PyDictionary import PyDictionary
-from telethon import events
-from telethon.tl import functions
+from googletrans import Translator
 
 @asst_cmd("ترجمه")
 @owner
@@ -23,7 +19,7 @@ async def _(e):
         return
     text = text.strip()
     lan = lan.strip()
-    translator = google_translator()  
+    translator = Translator()  
     try:
         translated = translator.translate(text,lang_tgt=lan)  
         after_tr_text = translated
