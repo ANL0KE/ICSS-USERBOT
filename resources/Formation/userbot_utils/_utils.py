@@ -645,30 +645,26 @@ def load_tosha(shortname):
 import functools
 from telethon import events
 
-def asst_cmd(dec):
-    def kim(func):
-        pattern = "^/" + dec
-        bot.tgbot.add_event_handler(
+bothandler = Config.BOT_HANDLER
+
+def asst_cmd(add_cmd, is_args=False):
+    def cmd(func):
+        asst = bot.tgbot
+        if is_args:
+            pattern = bothandler + add_cmd + "(?: |$)(.*)"
+        elif is_args == "stark":
+            pattern = bothandler + add_cmd + " (.*)"
+        elif is_args == "heck":
+            pattern = bothandler + add_cmd
+        elif is_args == "snips":
+            pattern = bothandler + add_cmd + " (\S+)"
+        else:
+            pattern = bothandler + add_cmd + "$"
+        asst.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
         )
 
-    return kim
-
-# commend for owner
-def owner():
-    def decorator(function):
-        @functools.wraps(function)
-        async def wrapper(event):
-            if event.sender_id in Config.OWNER_ID:
-                await function(event)
-            else:
-                try:
-                    await event.answer(f"⌔∮ هذا بوت {ALIVE_NAME}!!")
-                except BaseException:
-                    pass
-
-        return wrapper
-    return decorator
+    return cmd
 
 # for assistant
 def load_assistant(shortname):
@@ -693,6 +689,8 @@ def load_assistant(shortname):
         mod.LOGS = LOGS
         mod.Config = Config
         mod.tgbot = bot.tgbot
+        tosh
+        mod._format = _format
         mod.asst_cmd = asst_cmd
         mod.owner = owner()
         mod.asst = tgbot
