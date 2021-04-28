@@ -67,6 +67,7 @@ def load_module(shortname):
         mod.Config = Config
         mod._format = _format
         mod.tgbot = bot.tgbot
+        mod.icss_cmd = icss_cmd
         mod.sudo_cmd = sudo_cmd
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
