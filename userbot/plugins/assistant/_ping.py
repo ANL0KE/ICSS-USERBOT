@@ -7,6 +7,7 @@ from datetime import datetime
 from . import *
 
 @asst_cmd("بنك")
+@owner
 async def _(e):
     Start = datetime.now()
     End = datetime.now()
