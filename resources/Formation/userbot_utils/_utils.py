@@ -246,7 +246,7 @@ def Tosh_cmd(allow_sudo=on, **args):
         except:
             pass
     args["blacklist_chats"] = True
-    black_list_chats = list(Config.UB_BLACKLIST_CHAT)
+    black_list_chats = list(Config.UB_BLACK_LIST_CHAT)
     if len(black_list_chats) > 0:
         args["chats"] = black_list_chats
 
