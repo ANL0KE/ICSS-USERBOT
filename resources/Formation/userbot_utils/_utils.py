@@ -696,7 +696,7 @@ def load_assistant(shortname):
         mod._format = _format
         mod.asst_cmd = asst_cmd
         mod.owner = owner()
-        mod.asst = bor.tgbot
+        mod.asst = bot.tgbot
         mod.logger = logging.getLogger(shortname)
         sys.modules["uniborg.util"] = userbot.utils
         mod.borg = bot
