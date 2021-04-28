@@ -40,6 +40,15 @@ startotherena = MSSG
 # start-owner
 startowner = f"** ⌔∮ اهلا بك مجدداً {ALIVE_NAME}. اختر احد الخيارات الاتيه:**"
 
+# for alive
+Def = str(ALIVE_NAME) if ALIVE_NAME else "Icss - User"
+asst_p = "https://telegra.ph/file/67cee497e773af0654c2b.jpg"
+asst_c = "➥ **ASSISTANT IS:** `ONLINE`\n"
+asst_c += f"➥ **My Boss** : {Def} \n"
+asst_c += "➥ **Heroku Database** : `AWS - Working Properly`\n"
+asst_c += "➥ **Copyright** : By [ANL0KE](github.com/ANL0KE)\n"
+asst_c += "[Assistant By ](https://t.me/rruuurr)"
+
 # for ping
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -65,6 +74,7 @@ def get_readable_time(seconds: int) -> str:
     time_list.reverse()
     ping_time += ":".join(time_list)
     return ping_time
+
 # Ping Message
 Ping = "**⌔∮ سرعة الاستجابه** `{}`\n**⌔∮ مدة التشغيل** `{}`"
 
