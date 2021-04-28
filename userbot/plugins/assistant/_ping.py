@@ -13,4 +13,4 @@ async def _(e):
     End = datetime.now()
     Ms = (end - start).microseconds / 1000
     UpTime = get_readable_time((time.time() - StartTime))
-    await tgbot.send_message(e.chat_id, Ping.format(Ms, UpTime)
+    await tgbot.send_message(e.chat_id, Ping.format(Ms, UpTime))
