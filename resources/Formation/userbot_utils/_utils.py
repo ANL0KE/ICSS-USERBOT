@@ -682,8 +682,8 @@ from telethon import events
 
 def asst_cmd(dec):
     def kim(func):
-        pattern = "^-" + dec
-        tgbot.add_event_handler(
+        pattern = "^/" + dec
+        bot.tgbot.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
         )
 
