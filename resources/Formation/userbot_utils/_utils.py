@@ -67,7 +67,7 @@ def load_module(shortname):
         mod.Config = Config
         mod._format = _format
         mod.tgbot = bot.tgbot
-        mod.icss_cmd = icss_cmd
+        mod.Tosh_cmd = Tosh_cmd
         mod.sudo_cmd = sudo_cmd
         mod.CMD_HELP = CMD_HELP
         mod.reply_id = reply_id
@@ -181,7 +181,7 @@ def admin_cmd(pattern=None, command=None, **args):
 
 hndlr = Config.COMMAND_HAND_LER
 
-def icss_cmd(allow_sudo=on, **args):
+def icss_cmd(bot=on, allow_sudo=on, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
