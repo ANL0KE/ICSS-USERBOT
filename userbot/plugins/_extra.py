@@ -3,7 +3,7 @@
 #   - for extra thing for Userbot
 
 import random
-from ..tosh import Fl, kk, urs, usre
+from ..tosh import Fl, kk, urs
 from telethon import events
 from telethon.tl.types import MessageEntityMentionName
 
