@@ -14,6 +14,9 @@ D = "** ⌔∮ مطور بوت اكسس**"
 OWNER_ID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 
+# for time
+StartTime = time.time()
+
 # start-other disabled
 startotherdis = f"**⌔∮ اهلا بك انا مساعد {mention} سعيد برؤيتك هنا**"
 
