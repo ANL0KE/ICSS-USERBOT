@@ -27,5 +27,15 @@ async def _(e):
     source_lan = LANGUAGES[f"{reply_text.src.lower()}"]
     transl_lan = LANGUAGES[f"{reply_text.dest.lower()}"]
     reply_text = f"⌔∮ **تمت الترجمه من {source_lan.title()}({reply_text.src.lower()}) الى {transl_lan.title()}({reply_text.dest.lower()}) :**\n  - {reply_text.text}"
-
     await e.reply(reply_text)
+
+async def getTranslate(text, **kwargs):
+    translator = Translator()
+    result = None
+    for _ in range(10):
+        try:
+            result = translator.translate(text, **kwargs)
+        except Exception:
+            translator = Translator()
+            await sleep(0.1)
+    return result
