@@ -666,6 +666,21 @@ def asst_cmd(add_cmd, is_args=False):
 
     return cmd
 
+def owner():
+    def decorator(func):
+        @functools.wraps(func)
+        async def wrapper(event):
+            kek = list(Config.SUDO_USERS)
+            kek.append(bot.uid)
+            if event.sender_id in kek:
+                await func(event)
+            else:
+                pass
+
+        return wrapper
+
+    return decorator
+
 # for assistant
 def load_assistant(shortname):
     if shortname.startswith("__"):
@@ -689,11 +704,10 @@ def load_assistant(shortname):
         mod.LOGS = LOGS
         mod.Config = Config
         mod.tgbot = bot.tgbot
-        tosh
         mod._format = _format
         mod.asst_cmd = asst_cmd
         mod.owner = owner()
-        mod.asst = tgbot
+        mod.asst = bor.tgbot
         mod.logger = logging.getLogger(shortname)
         sys.modules["uniborg.util"] = userbot.utils
         sys.modules["userbot.events"] = userbot.utils
