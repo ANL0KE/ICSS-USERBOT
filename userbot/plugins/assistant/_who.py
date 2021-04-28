@@ -9,35 +9,35 @@ import os
 
 @asst_cmd("ايدي")
 @owner
-async def _(e):
-    replied_user = await get_user(e)
+async def who(event):
+    replied_user = await get_user(event)
     try:
-        caption = await detail(replied_user, e)
+        caption = await detail(replied_user, event)
     except AttributeError:
-        e.edit("`Could not fetch info of that user.`")
+        event.edit("`Could not fetch info of that user.`")
         return
-    message_id_to_reply = e.message.reply_to_msg_id
+    message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
         message_id_to_reply = None
-    await e.reply(caption, parse_mode="html")
+    await event.reply(caption, parse_mode="html")
 
 
-async def get_user(e):
-    if e.reply_to_msg_id:
-        previous_message = await e.get_reply_message()
+async def get_user(event):
+    if event.reply_to_msg_id:
+        previous_message = await event.get_reply_message()
         replied_user = await asst(GetFullUserRequest(previous_message.sender_id))
     else:
-        user = e.pattern_match.group(1)
+        user = event.pattern_match.group(1)
 
         if user.isnumeric():
             user = int(user)
 
         if not user:
-            self_user = await e.get_sender()
+            self_user = await event.get_sender()
             user = self_user.id
 
-        if e.message.entities is not None:
-            probable_user_mention_entity = e.message.entities[0]
+        if event.message.entities is not None:
+            probable_user_mention_entity = event.message.entities[0]
 
             if isinstance(probable_user_mention_entity, MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
@@ -47,15 +47,15 @@ async def get_user(e):
             user_object = await asst.get_entity(user)
             replied_user = await asst(GetFullUserRequest(user_object.id))
         except (TypeError, ValueError) as err:
-            await e.reply("I don't seem to have interacted with this user before - please forward a message from them to give me control! (like a voodoo doll, I need a piece of them to be able to execute certain commands...)")
+            await event.reply("I don't seem to have interacted with this user before - please forward a message from them to give me control! (like a voodoo doll, I need a piece of them to be able to execute certain commands...)")
             return None
 
     return replied_user
 
-async def detail(replied_user, e):
+async def detail(replied_user, event):
  try:
     pro = await bot.get_me()
-    tosh = pro.id
+    boy = pro.id
     user_id = replied_user.user.id
     first_name = replied_user.user.first_name
     last_name = replied_user.user.last_name
@@ -76,12 +76,12 @@ async def detail(replied_user, e):
     if username:
       caption += f"<b>➥ Username:</b> <i>{username}</i> \n"
     caption += f'<b>➥ User link:</b> <i><a href="tg://user?id={user_id}">Perma Link</a></i>'
-    if user_id in Kimo:
-        caption += "\n<b>╚⊶⊶⊶⊶⊶ This is one of my DEV ;) ⊷⊷⊷⊷⊷╝</b>"
-    if not e.sender_id == tosh:
-       if user_id == tosh:
+    if user_id in kimo:
+        caption += "\n<b>╚⊶⊶⊶⊶⊶ This is my DEV ;) ⊷⊷⊷⊷⊷╝</b>"
+    if not event.sender_id == boy:
+       if user_id == boy:
         caption += "\n<b>╚⊶⊶⊶⊶⊶ This is My Master Beware! ⊷⊷⊷⊷⊷╝</b>"
-    elif e.sender_id == tosh and user_id == tosh:
+    elif event.sender_id == boy and user_id == boy:
         caption += "\n<b>Hello Master ☺️</b>"
     return caption
  except Exception:
