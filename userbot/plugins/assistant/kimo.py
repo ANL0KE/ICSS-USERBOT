@@ -4,8 +4,7 @@
 from telethon import events, Button
 from . import K, D
 
-@tgbot.on(
-    events.NewMessage(pattern=("المطور"))
-)
+@asst_cmd("المطور")
+# for all
 async def dev(kimo):
     await kimo.reply(D, buttons=[[Button.url("🔱 المطور 🔱", K)]])
