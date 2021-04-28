@@ -1,3 +1,6 @@
+# Ping for assistant bot 
+# by: @rruuurr
+
 import time
 from telethon import events
 from datetime import datetime
