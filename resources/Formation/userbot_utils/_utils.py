@@ -722,7 +722,7 @@ def load_tosha(shortname):
         sys.modules["userbot.plugins.tosha." + shortname] = mod
         print('%s'% tsh + shortname)
 
-# for assistant cmd
+# for assistant 
 
 import functools
 from telethon import events
@@ -743,7 +743,7 @@ def owner():
         @functools.wraps(func)
         async def wrapper(event):
             Kud = list(Config.SUDO_USERS)
-            Kud.append(bot.uid)
+            Kud = Config.OWNER_ID
             if event.sender_id in Kud:
                 await func(event)
             else:
