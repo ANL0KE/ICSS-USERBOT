@@ -9,6 +9,6 @@ from . import *
 async def _(e):
     Start = datetime.now()
     End = datetime.now()
-    Ms = (end - start).microseconds / 1000
+    Ms = (End - Start).microseconds / 1000
     UpTime = get_readable_time((time.time() - StartTime))
     await e.reply(Ping.format(Ms, UpTime))
