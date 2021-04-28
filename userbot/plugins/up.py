@@ -10,10 +10,7 @@ from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
 HEROKU_API_KEY = Config.HEROKU_API_KEY or None
 UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
-
-if Config.UPSTREAM_REPO == "kimo":
-    UPSTREAM_REPO = "https://github.com/ANL0KE/ICSS-USERBOT"
-
+UPSTREAM_REPO = "https://github.com/ANL0KE/ICSS-USERBOT"
 T = Config.COMMAND_HAND_LER
 
 requirements_path = path.join(
