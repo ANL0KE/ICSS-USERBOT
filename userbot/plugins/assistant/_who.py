@@ -1,6 +1,7 @@
 # Icss - Userbot
-# translater for Icss - Userbot
-# Owner ~ <@rruuurr>
+# Whois for Icss - Userbot
+# edit ~ <@rruuurr>
+# from ~ <ULTRA-X>
 
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
