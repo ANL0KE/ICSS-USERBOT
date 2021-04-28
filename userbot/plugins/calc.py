@@ -53,7 +53,7 @@ async def aexec(code, event):
 async def calc(cmd):
     await eor(cmd, Calc)
 
-tosh_HELP.update(
+CMD_HELP.update(
     {
         "calc": "**Plugin : **`calc`\
         \n\n**Syntax : **`.calc expression` \
