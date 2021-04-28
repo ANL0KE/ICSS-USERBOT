@@ -20,6 +20,13 @@ OId = Config.OWNER_ID
 # for time
 StartTime = time.time()
 
+# Users id - Chat id
+Asstid = [
+   "**⌔∮ ايدي الدردشه:** `{}`\n**⌔∮ ايدي المستخدم:** `{}`\n**⌔∮ ايدي ملفات البوت:** `{}`",
+   "**⌔∮ ايدي الدردشه:** `{}`\n**⌔∮ ايدي المستخدم:** `{}`",
+   "**⌔∮ ايدي الدردشه:** `{}`"
+]
+
 # start-other disabled
 startotherdis = f"**⌔∮ اهلا بك انا مساعد {mention} سعيد برؤيتك هنا**"
 
