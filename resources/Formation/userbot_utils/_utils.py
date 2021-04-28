@@ -742,7 +742,6 @@ def owner():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            Kud = list(Config.SUDO_USERS)
             Kud = Config.OWNER_ID
             if event.sender_id in Kud:
                 await func(event)
