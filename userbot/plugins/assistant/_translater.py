@@ -4,34 +4,28 @@
 
 from googletrans import Translator
 
+Tr = "ar"
+
 @asst_cmd("ترجمه")
 @owner
 async def _(e):
-    input_str = e.pattern_match.group(1)
-    if e.reply_to_msg_id:
-        previous_message = await e.get_reply_message()
-        text = previous_message.message
-        lan = input_str or "ar"
-    elif "|" in input_str:
-        lan, text = input_str.split("|")
+    Translator()
+    textx = await e.get_reply_message()
+    message = e.pattern_match.group(1)
+    if message:
+        pass
+    elif textx:
+        message = textx.text
     else:
-        await e.reply("**⌔∮ ترجمه + كود اللغه وتقوم برد على الكبمه او الجمله \n**⌔∮ او **\n **- ترجمه كود اللغه| الكلمه او الجمله**")
+        await e.reply("**⌔∮ قم باعطائي الكلمه او قم برد عليها لكي اقوم بترجمتها**")
         return
-    text = text.strip()
-    lan = lan.strip()
-    translator = Translator()  
     try:
-        translated = translator.translate(text,lang_tgt=lan)  
-        after_tr_text = translated
-        detect_result = translator.detect(text)
-        output_str = (
-            "** ⌔∮ تمت الترجمه بواسطه بوت اكسس**: \n من {} الى {}\n"
-            "{}"
-        ).format(
-            detect_result[0],
-            lan,
-            after_tr_text
-        )
-        await e.reply(output_str)
-    except Exception as ex:
-        await e.reply(str(ex))
+        reply_text = await getTranslate(deEmojify(message), dest=Tr)
+    except ValueError:
+        await e.reply("** ⌔∮ كود اللغه غير صحيح !**")
+        return
+    source_lan = LANGUAGES[f"{reply_text.src.lower()}"]
+    transl_lan = LANGUAGES[f"{reply_text.dest.lower()}"]
+    reply_text = f"⌔∮ **تمت الترجمه من {source_lan.title()}({reply_text.src.lower()}) الى {transl_lan.title()}({reply_text.dest.lower()}) :**\n  - {reply_text.text}"
+
+    await e.reply(reply_text)
