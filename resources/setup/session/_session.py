@@ -1,5 +1,6 @@
 # Icss - Userbot
 # 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑺𝑺𝑻𝑹𝑰𝑵𝑮_𝑺𝑬𝑺𝑺𝑰𝑶𝑵
+# Owner ~ @rruuurr
 
 from telethon.sessions import StringSession as ss
 from telethon.sync import TelegramClient as tc
