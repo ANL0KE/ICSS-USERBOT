@@ -198,7 +198,7 @@ if on == "True":
 
 hndlr = Config.COMMAND_HAND_LER
 
-def icss_cmd(allow_sudo=on, **args):
+def Tosh_cmd(allow_sudo=on, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
