@@ -2,7 +2,7 @@
 # translater for Icss - Userbot
 # Owner ~ <@rruuurr>
 
-from googletrans import Translator
+from googletrans import Translator, LANGUAGES
 
 Tr = "ar"
 
