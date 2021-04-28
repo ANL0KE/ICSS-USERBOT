@@ -6,8 +6,8 @@ from telethon import events
 from datetime import datetime
 from . import *
 
-@asst_cmd("بنك")
-@owner
+@asst_cmd("بنك", from_users=OId)
+# for owner
 async def _(e):
     Start = datetime.now()
     End = datetime.now()
