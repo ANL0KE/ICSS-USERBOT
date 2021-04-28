@@ -660,8 +660,7 @@ def owner():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            TSH.append(bot.uid)
-            if event.sender_id in TSH:
+            if event.sender_id == bot.uid:
                 await func(event)
             else:
                 pass
