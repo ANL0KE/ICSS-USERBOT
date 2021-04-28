@@ -15,17 +15,17 @@ async def _(e):
             await asst.send_message(
                 e.chat_id,
                 "Current Chat ID: `{}`\nFrom User ID: `{}`\nBot API File ID: `{}`".format(
-                    str(event.chat_id), str(r_msg.sender_id), bot_api_file_id
+                    str(e.chat_id), str(r_msg.sender_id), bot_api_file_id
                 ),
             )
         else:
             await asst.send_message(
                 e.chat_id,
                 "Current Chat ID: `{}`\nFrom User ID: `{}`".format(
-                    str(event.chat_id), str(r_msg.sender_id)
+                    str(e.chat_id), str(r_msg.sender_id)
                 ),
             )
     else:
         await asst.send_message(
-            e.chat_id, "Current Chat ID: `{}`".format(str(event.chat_id))
+            e.chat_id, "Current Chat ID: `{}`".format(str(e.chat_id))
         )
