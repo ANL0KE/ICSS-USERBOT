@@ -56,6 +56,7 @@ class Config(object):
     NO_LOAD = [x for x in os.environ.get("NO_LOAD", "").split()]
     ALIVE_PIC = os.environ.get("ALIVE_PIC", None)
     BOT_PIC = os.environ.get("BOT_PIC", None)
+    BOT_HANDLER = os.environ.get("BOT_HANDLER", "^;")
     PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
     DIGITAL_PIC = os.environ.get("DIGITAL_PIC", None)
     DEFAULT_PIC = os.environ.get("DEFAULT_PIC", None)
