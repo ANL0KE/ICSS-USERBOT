@@ -640,42 +640,6 @@ def load_tosha(shortname):
         sys.modules["userbot.plugins.tosha." + shortname] = mod
         print('%s'% tsh + shortname)
 
-
-# for assistant
-def load_assistant(shortname):
-    if shortname.startswith("__"):
-        pass
-    elif shortname.endswith("_"):
-        path = Path(f"userbot/plugins/assistant/{shortname}.py")
-        name = "userbot.plugins.assistant.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
-        mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
-        print('%s'% ast + shortname)
-    else:
-        import userbot.utils
-        from userbot.helpers.utils import _format
-
-        path = Path(f"userbot/plugins/assistant/{shortname}.py")
-        name = "userbot.plugins.assistant.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
-        mod = importlib.util.module_from_spec(spec)
-        mod.bot = bot
-        mod.LOGS = LOGS
-        mod.Config = Config
-        mod._format = _format
-        mod.tgbot = bot.tgbot
-        mod.asst_cmd = asst_cmd
-        mod.asst = tgbot
-        mod.admin_cmd = admin_cmd
-        mod.logger = logging.getLogger(shortname)
-        sys.modules["uniborg.util"] = userbot.utils
-        mod.borg = bot
-        sys.modules["userbot.events"] = userbot.utils
-        spec.loader.exec_module(mod)
-        sys.modules["userbot.plugins." + shortname] = mod
-        print('%s'% ast + shortname)
-
 # for assistant cmd
 
 import functools
@@ -705,3 +669,39 @@ def owner():
 
         return wrapper
     return decorator
+
+# for assistant
+def load_assistant(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print('%s'% ast + shortname)
+    else:
+        import userbot.utils
+        from userbot.helpers.utils import _format
+
+        path = Path(f"userbot/plugins/assistant/{shortname}.py")
+        name = "userbot.plugins.assistant.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod.bot = bot
+        mod.LOGS = LOGS
+        mod.Config = Config
+        mod.tgbot = bot.tgbot
+        mod.asst_cmd = asst_cmd
+        mod.owner = owner()
+        mod.asst = tgbot
+        mod.logger = logging.getLogger(shortname)
+        sys.modules["uniborg.util"] = userbot.utils
+        sys.modules["userbot.events"] = userbot.utils
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins." + shortname] = mod
+        print('%s'% ast + shortname)
+
+# ==============
+# Icss - Userbot: Utils end
