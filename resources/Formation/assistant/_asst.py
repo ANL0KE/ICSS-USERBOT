@@ -53,11 +53,7 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
     return ping_time
 
-
-xstart = datetime.now()
-xend = datetime.now()
-ms = (xend - xstart).microseconds / 1000
-ping = "⌔∮ {}".format(ms)
+Ping = "⌔∮ {} \n {}"
 
 
 # Boys name1 - اسماء الشباب الاولى
