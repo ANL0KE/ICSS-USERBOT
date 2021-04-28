@@ -6,9 +6,7 @@ from telethon import events
 from datetime import datetime
 from . import *
 
-@tgbot.on(
-    events.NewMessage(pattern=("بنك"))
-)
+@asst_cmd("بنك")
 async def _(e):
     Start = datetime.now()
     End = datetime.now()
