@@ -699,6 +699,7 @@ def load_assistant(shortname):
         mod.asst = bor.tgbot
         mod.logger = logging.getLogger(shortname)
         sys.modules["uniborg.util"] = userbot.utils
+        mod.borg = bot
         sys.modules["userbot.events"] = userbot.utils
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins." + shortname] = mod
