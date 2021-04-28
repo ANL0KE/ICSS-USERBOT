@@ -196,7 +196,7 @@ on = Config.SUDO_USERS if Config.SUDO_USERS is not None else "False"
 if on == "True":
     sed = [bot.uid, *sudos]
 else:
-    sed  = [bot.uid]
+    sed  = bot.uid
 
 hndlr = Config.COMMAND_HAND_LER
 
