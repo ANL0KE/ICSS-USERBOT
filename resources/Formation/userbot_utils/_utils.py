@@ -657,13 +657,16 @@ def asst_cmd(dec):
     return kim
 
 def owner():
-    def decorator(func):
-        @functools.wraps(func)
+    def decorator(function):
+        @functools.wraps(function)
         async def wrapper(event):
-            if event.sender_id == bot.uid:
-                await func(event)
+            if event.sender_id in bot.uid:
+                await function(event)
             else:
-                pass
+                try:
+                    await event.answer(f"هذا بوت {ALIVE_NAME}!!")
+                except BaseException:
+                    pass
 
         return wrapper
 
