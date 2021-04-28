@@ -182,7 +182,7 @@ def admin_cmd(pattern=None, command=None, **args):
 
 ok = Config.SUDO_USERS
 if ok:
-     SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+    SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 else:
     SUDO_USERS = ""
 
