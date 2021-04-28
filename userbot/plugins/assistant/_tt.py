@@ -1,6 +1,6 @@
 H = "تيست واحد"
 
-@asst_cmd("توتو", is_args=False)
+@asst_cmd("توتو")
 @owner
 async def _(e):
     await eor(e, H)
