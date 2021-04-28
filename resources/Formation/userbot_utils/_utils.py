@@ -178,6 +178,70 @@ def admin_cmd(pattern=None, command=None, **args):
 
     return events.NewMessage(**args)
 
+hndlr = Config.COMMAND_HAND_LER
+
+def icss_cmd(allow_sudo=on, **args):
+    args["func"] = lambda e: e.via_bot_id is None
+    stack = inspect.stack()
+    previous_stack_frame = stack[1]
+    file_test = Path(previous_stack_frame.filename)
+    file_test = file_test.stem.replace(".py", "")
+    pattern = args.get("pattern", None)
+    groups_only = args.get("groups_only", False)
+    admins_only = args.get("admins_only", False)
+    disable_errors = args.get("disable_errors", False)
+    args["outgoing"] = True
+
+    if allow_sudo == "True":
+        args["from_users"] = list(Config.SUDO_USERS)
+        args["incoming"] = True
+
+    else:
+        args["outgoing"] = True
+
+    if pattern is not None:
+        if pattern.startswith(r"\#"):
+            args["pattern"] = re.compile(pattern)
+        else:
+            args["pattern"] = re.compile(hndlr + pattern)
+        reg = re.compile("(.*)")
+        try:
+            cmd = re.search(reg, pattern)
+            try:
+                cmd = (
+                    cmd.group(1)
+                    .replace("$", "")
+                    .replace("?(.*)", "")
+                    .replace("(.*)", "")
+                    .replace("(?: |)", "")
+                    .replace("| ", "")
+                    .replace("( |)", "")
+                    .replace("?((.|//)*)", "")
+                    .replace("?P<shortname>\\w+", "")
+                )
+            except:
+                pass
+            try:
+                CMD_LIST[file_test].append(cmd)
+            except:
+                CMD_LIST.update({file_test: [cmd]})
+        except:
+            pass
+    args["blacklist_chats"] = True
+    black_list_chats = list(Config.UB_BLACKLIST_CHAT)
+    if len(black_list_chats) > 0:
+        args["chats"] = black_list_chats
+
+    if "allow_edited_updates" in args and args["allow_edited_updates"]:
+        args["allow_edited_updates"]
+        del args["allow_edited_updates"]
+    if "admins_only" in args:
+        del args["admins_only"]
+    if "groups_only" in args:
+        del args["groups_only"]
+    if "disable_errors" in args:
+        del args["disable_errors"]
+
 
 def sudo_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
