@@ -743,7 +743,7 @@ def owner():
         @functools.wraps(func)
         async def wrapper(event):
             Kud = Config.OWNER_ID
-            if event.sender_id in Kud:
+            if event.sender_id == Kud:
                 await func(event)
             else:
                 pass
