@@ -665,6 +665,7 @@ def load_assistant(shortname):
         mod.Config = Config
         mod._format = _format
         mod.tgbot = bot.tgbot
+        mod.asst_cmd = asst_cmd
         mod.asst = tgbot
         mod.admin_cmd = admin_cmd
         mod.logger = logging.getLogger(shortname)
