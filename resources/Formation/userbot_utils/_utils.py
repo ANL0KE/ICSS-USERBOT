@@ -179,9 +179,28 @@ def admin_cmd(pattern=None, command=None, **args):
 
     return events.NewMessage(**args)
 
+
+ok = Config.SUDO_USERS
+if ok:
+     SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+else:
+    SUDO_USERS = ""
+
+if SUDO_USERS:
+    sudos = list(SUDO_USERS)
+else:
+    sudos = ""
+
+on = Config.SUDO_USERS if Config.SUDO_USERS is not None else "False"
+
+if on == "True":
+    sed = [bot.uid, *sudos]
+else:
+    sed  = [bot.uid]
+
 hndlr = Config.COMMAND_HAND_LER
 
-def icss_cmd(bot=on, allow_sudo=on, **args):
+def icss_cmd(allow_sudo=on, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
