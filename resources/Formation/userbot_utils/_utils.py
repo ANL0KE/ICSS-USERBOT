@@ -647,32 +647,21 @@ from telethon import events
 
 bothandler = Config.BOT_HANDLER
 
-def asst_cmd(add_cmd, is_args=False):
-    def cmd(func):
-        asst = bot.tgbot
-        if is_args:
-            pattern = bothandler + add_cmd + "(?: |$)(.*)"
-        elif is_args == "stark":
-            pattern = bothandler + add_cmd + " (.*)"
-        elif is_args == "heck":
-            pattern = bothandler + add_cmd
-        elif is_args == "snips":
-            pattern = bothandler + add_cmd + " (\S+)"
-        else:
-            pattern = bothandler + add_cmd + "$"
-        asst.add_event_handler(
+def asst_cmd(dec):
+    def kim(func):
+        pattern = bothandler + dec
+        bot.tgbot.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
         )
 
-    return cmd
+    return kim
 
 def owner():
     def decorator(func):
         @functools.wraps(func)
         async def wrapper(event):
-            kek = list(Config.SUDO_USERS)
-            kek.append(bot.uid)
-            if event.sender_id in kek:
+            TSH.append(bot.uid)
+            if event.sender_id in TSH:
                 await func(event)
             else:
                 pass
