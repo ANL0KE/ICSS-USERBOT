@@ -14,6 +14,9 @@ D = "** ⌔∮ مطور بوت اكسس**"
 OWNER_ID = Config.OWNER_ID
 ALIVE_NAME = Config.ALIVE_NAME if Config.ALIVE_NAME else "@rruuurr"
 
+# for OWNER_ID
+OId = Config.OWNER_ID
+
 # for time
 StartTime = time.time()
 
