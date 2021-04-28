@@ -665,6 +665,7 @@ def load_assistant(shortname):
         mod.Config = Config
         mod._format = _format
         mod.tgbot = bot.tgbot
+        mod.asst = tgbot
         mod.admin_cmd = admin_cmd
         mod.logger = logging.getLogger(shortname)
         sys.modules["uniborg.util"] = userbot.utils
@@ -673,3 +674,33 @@ def load_assistant(shortname):
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins." + shortname] = mod
         print('%s'% ast + shortname)
+
+# for assistant cmd
+
+import functools
+from telethon import events
+
+def asst_cmd(dec):
+    def kim(func):
+        pattern = "^-" + dec
+        tgbot.add_event_handler(
+            func, events.NewMessage(incoming=True, pattern=pattern)
+        )
+
+    return kim
+
+# commend for owner
+def owner():
+    def decorator(function):
+        @functools.wraps(function)
+        async def wrapper(event):
+            if event.sender_id in Config.OWNER_ID:
+                await function(event)
+            else:
+                try:
+                    await event.answer(f"⌔∮ هذا بوت {ALIVE_NAME}!!")
+                except BaseException:
+                    pass
+
+        return wrapper
+    return decorator
