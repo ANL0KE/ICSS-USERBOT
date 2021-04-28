@@ -731,7 +731,7 @@ bothandler = Config.BOT_HANDLER
 
 def asst_cmd(dec):
     def kim(func):
-        pattern = bothandler + dec
+        pattern = dec
         bot.tgbot.add_event_handler(
             func, events.NewMessage(incoming=True, pattern=pattern)
         )
