@@ -70,7 +70,7 @@ else:
 
 
 # For all plugins
-Print(Start)
+print(Start)
 print(StartLoaded)
 Kim = glob.glob(Plg)
 for name in Kim:
