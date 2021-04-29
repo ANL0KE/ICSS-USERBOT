@@ -17,7 +17,8 @@ from userbot.utils import (
     load_admin, 
     load_anim, 
     load_tosha, 
-    load_assistant, 
+    load_assistant,
+    setbot, 
 )
 
 async def startupmessage():
@@ -143,6 +144,7 @@ for name in Kim:
 print(ICSW)
 print(Message.format(ALIVE_NAME, TBOT))
 
+bot.loop.run_until_complete(setbot())
 bot.loop.create_task(startupmessage())
 
 if len(sys.argv) not in (1, 3, 4):
