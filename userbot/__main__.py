@@ -145,7 +145,6 @@ for name in Kim:
 print(ICSW)
 print(Message.format(ALIVE_NAME, TBOT))
 
-bot.loop.create_task(setbot())
 bot.loop.create_task(startupmessage())
 
 if len(sys.argv) not in (1, 3, 4):
