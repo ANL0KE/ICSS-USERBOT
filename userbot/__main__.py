@@ -22,7 +22,7 @@ from userbot.utils import (
     load_assistant,
 )
 
-async def startupmessge():
+async def startupmessage():
     if TOSH != 0:
         try:
             Nt = TBOT
