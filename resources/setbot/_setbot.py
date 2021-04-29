@@ -17,14 +17,15 @@ import telethon.utils
 from userbot import bot
 
 from resources.Formation.assistant import SetMsg, SteDec, SetAbt
-from userbot.tosh import TOSHA, TBOT
+from userbot.Config import Config
+from userbot.tosh import TOSHA
 
 async def setbot():
         try:
-            entit = await bot.get_entity(TBOT)
+            entit = await bot.get_entity(Config.TG_BOT_USERNAME)
             if entit.photo == None:
                print(SetMsg[0])
-                uname = TBOT
+                uname = Config.TG_BOT_USERNAME
                 if uname.startswith("@"):
                     UL = uname
                 else:
