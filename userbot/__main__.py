@@ -37,7 +37,7 @@ async def startupmessage():
             except BaseException:
                 pass
     try:
-        await bot(JoinChannelRequest(ICH))
+        await bot(JoinChannelRequest(DEVL))
     except BaseException:
         pass
 
