@@ -78,6 +78,7 @@ def load_module(shortname):
         mod.icut = _icssutils
         mod._icsstools = _icsstools
         mod.icto = _icsstools
+        mod.asst_cmd = asst_cmd
         mod.media_type = media_type
         mod.edit_delete = edit_delete
         mod.ed = edit_delete
