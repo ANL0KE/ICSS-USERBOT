@@ -14,6 +14,7 @@ Admin = "userbot/plugins/Admin/{}.py"
 Animation = "userbot/plugins/animations/{}.py"
 Tosh = "userbot/plugins/tosha/{}.py"
 Assistant = "userbot/plugins/assistant/{}.py"
+AssistantPm = "userbot/plugins/assistant/PmTosh/{}.py"
 
 Xtbot = "\"TG_BOT_TOKEN\""
 Xt = "TG_BOT_TOKEN"
@@ -81,6 +82,7 @@ Adm = "userbot/plugins/Admin/*.py"
 Inm = "userbot/plugins/animations/*.py"
 Tsh = "userbot/plugins/tosha/*.py"
 Ast = "userbot/plugins/assistant/*.py"
+Pmt = "userbot/plugins/assistant/PmTosh/*.py"
 
 Message = (
 """       ⫷ بوت اكسس يعمل بنجاح الان ⫸
