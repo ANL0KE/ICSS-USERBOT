@@ -29,6 +29,7 @@ from userbot import (
     ani,
     tsh,
     ast,
+    pmt,
     bot
 )
 from userbot.Config import Config
@@ -787,6 +788,36 @@ def load_assistant(shortname):
         spec.loader.exec_module(mod)
         sys.modules["userbot.plugins." + shortname] = mod
         print('%s'% ast + shortname)
+
+# Asstistamt pm
+def load_asstpm(shortname):
+    if shortname.startswith("__"):
+        pass
+    elif shortname.endswith("_"):
+        path = Path(f"userbot/plugins/assistant/PmTosh/{shortname}.py")
+        name = "userbot.plugins.assistant.PmTosh.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        print('%s'% pmt + shortname)
+    else:
+        import userbot.utils
+        from userbot.helpers.utils import _format
+
+        path = Path(f"userbot/plugins/assistant/PmTosh/{shortname}.py")
+        name = "userbot.plugins.assistant.PmTosh.{}".format(shortname)
+        spec = importlib.util.spec_from_file_location(name, path)
+        mod = importlib.util.module_from_spec(spec)
+        mod._format = _format
+        mod.asst_cmd = asst_cmd
+        mod.asst = bot.tgbot
+        mod.logger = logging.getLogger(shortname)
+        sys.modules["uniborg.util"] = userbot.utils
+        sys.modules["userbot.events"] = userbot.utils
+        mod.owner = owner()
+        spec.loader.exec_module(mod)
+        sys.modules["userbot.plugins.assistant.PmTosh" + shortname] = mod
+        print('%s'% pmt + shortname)
 
 # ==============
 # Icss - Userbot: Utils end
