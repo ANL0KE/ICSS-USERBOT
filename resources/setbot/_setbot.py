@@ -61,7 +61,8 @@ async def setbot():
                await asyncio.sleep(1)
                await bot.send_message(TOSHA, SetMsg[1])
                LOGS.info(SetMsg[2])
-
+        except Exception as e:
+            LOGS.info(str(e))
 
 # End For icss bot Only
 # Owner ~ ANL0KE
