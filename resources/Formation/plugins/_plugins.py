@@ -37,6 +37,9 @@ ICSB = Config.TG_BOT_USERNAME
 mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
 hmention = f"<a href = tg://user?id={USERID}>{DEFAULTUSER}</a>"
 
+TOSHA_NAME = bot.me.first_name
+TOSHA_ID = bot.me.id
+
 # Dev tag
 tosh = ( 
     "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑫𝑬𝑽𝑬𝑳𝑶𝑷𝑬𝑹 𓆪\n"
