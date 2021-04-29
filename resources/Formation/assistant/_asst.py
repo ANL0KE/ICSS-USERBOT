@@ -368,3 +368,14 @@ CHANLAN = (
      ":   ˹𝙍𝙄𝙏𝘼˼ 𓆪 .\n"
      ": ..................."
 )
+
+# Set Icss-Bot in @botfather
+SetMsg = [
+    "⌔∮ يتم تنصيب بوتك في @botfather",
+    "⌔∮ يتم اكمال تنصيب بوتك في @BotFather",
+    "⌔∮ تم تنصيب بوتك"
+]
+SetDec = "- 𝙄𝘾𝙎𝙎 𝘼𝙎𝙎𝙄𝙎𝙏𝘼𝙉𝙏 𝘽𝙊𝙏 🔱\n- 𝙄𝘾𝙎𝙎 𝘽𝙊𝙏 𝙁𝙊𝙍 ~ {}\n- 𝙎𝙊𝙐𝙍𝘾𝙀 𝘿𝙀𝙑 ~ @rruuurr 𖤨"
+SetAbt = "- 𝙎𝙊𝙐𝙍𝘾𝙀 𝙄𝘾𝙎𝙎 🔱\n- 𝙄𝘾𝙎𝙎 𝘽𝙊𝙏 𝙁𝙊𝙍 ~ {}"
+
+# This is For Icss - Userbot only!!
