@@ -18,7 +18,6 @@ from userbot.utils import (
     load_anim, 
     load_tosha, 
     load_assistant,
-    setbot, 
 )
 
 async def startupmessage():
