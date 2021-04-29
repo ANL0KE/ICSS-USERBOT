@@ -13,8 +13,6 @@ from datetime import datetime
 from userbot.Config import Config
 from . import *
 from .. import mention
-from userbot import bot
-from userbot.plugins import TOSHA_ID
 from telegraph import Telegraph, upload_file
 
 # =================== OWNER - ANL0KE =================== #
@@ -35,7 +33,7 @@ auth_url = r["auth_url"]
 # start-others
 @tgbot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
 async def start_all(event):
-    if event.chat_id == TOSHA_ID:
+    if event.chat_id == OWNER_ID:
         return
     target = event.sender_id
     if present_in_userbase(target):
@@ -79,7 +77,7 @@ async def start_all(event):
 
 # start-owner
 @tgbot.on(events.NewMessage(pattern="^/start",
-                            from_users=TOSHA_ID))  # pylint: disable=oof
+                            from_users=OWNER_ID))  # pylint: disable=oof
 async def owner(event):
     await event.reply(startowner,
                              buttons=[
@@ -95,7 +93,7 @@ async def owner(event):
 
 
 @tgbot.on(events.NewMessage(pattern="^/logs",
-                            from_users=TOSHA_ID))  # pylint: disable=oof
+                            from_users=OWNER_ID))  # pylint: disable=oof
 async def logs(event):
     try:
         Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
