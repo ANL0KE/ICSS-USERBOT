@@ -7,6 +7,7 @@ import sys
 from pathlib import Path as P
 
 import telethon.utils
+from telethon.tl.functions.channels import JoinChannelRequest 
 from telethon import TelegramClient as TC
 
 from userbot.tosh import *
@@ -21,12 +22,24 @@ from userbot.utils import (
     load_assistant,
 )
 
-async def startupmessage():
+async def startupmessge():
+    if TOSH != 0:
+        try:
+            Nt = TBOT
+            if Nt.startswith("@"):
+                Ntosh = Nt
+            else:
+                Ntosh = f"@{Nt}"
+            await bot.tgbot.send_message(TOSH, MAGE)
+        except BaseException:
+            try:
+                await bot.send_message(TOSH, MASG)
+            except BaseException:
+                pass
     try:
-        if TOSHA != 0:
-            await bot.send_message(TOSHA, MSGE)
-    except Exception as e:
-        LOGS.info(str(e))
+        await bot(JoinChannelRequest(ICH))
+    except BaseException:
+        pass
 
 async def add_bot(bot_token):
     try:
