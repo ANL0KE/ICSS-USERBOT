@@ -10,7 +10,7 @@ import telethon.utils
 from telethon import TelegramClient as TC
 
 from userbot.tosh import *
-from resources import *
+from resources.setbot import *
 from userbot import LOGS, bot
 from userbot.Config import Config
 from userbot.utils import (
