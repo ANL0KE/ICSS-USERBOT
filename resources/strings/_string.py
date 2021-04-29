@@ -59,6 +59,7 @@ IS = "⫷ لايمكن تحميل - {} بسبب {} ⫸"
 
 #- TOSH is the most beautiful girl in the world -#
 ICSJ = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
+StartLoaded = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS PLUGINS - ⫸ⵧⵧⵧⵧⵧⵧ>"
 ASSISTANT = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ASSISTANT - ⫸ⵧⵧⵧⵧⵧⵧ>"
 KIMOTOSHA = "<ⵧⵧⵧⵧⵧⵧⵧⵧ⫷ - ICSS TOSHA - ⫸ⵧⵧⵧⵧⵧⵧⵧ>"
 ANIMATIONS = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ANIMATIONS - ⫸ⵧⵧⵧⵧⵧ>"
