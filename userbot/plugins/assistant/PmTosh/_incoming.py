@@ -1,5 +1,5 @@
 from userbot.plugins.assistant.sql_tosh.users_sql import add_user_to_db
-from userbot.plugins.assistant.sqltosh.blacklist_sql import check_is_black_list
+from userbot.plugins.assistant.sql_tosh.blacklist_sql import check_is_black_list
 from telethon import events
 from userbot.plugins import TOSHA_ID
 
