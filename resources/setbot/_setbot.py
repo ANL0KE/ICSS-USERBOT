@@ -14,18 +14,17 @@
 
 import asyncio
 import telethon.utils
-from userbot import bot
+from userbot import LOGS, bot
 
 from resources.Formation.assistant import SetMsg, SteDec, SetAbt
-from userbot.Config import Config
-from userbot.tosh import TOSHA
+from userbot.tosh import TOSHA, TBOT
 
 async def setbot():
         try:
-            entit = await bot.get_entity(Config.TG_BOT_USERNAME)
+            entit = await bot.get_entity(TBOT)
             if entit.photo == None:
                print(SetMsg[0])
-               uname = Config.TG_BOT_USERNAME
+               uname = TBOT
                if uname.startswith("@"):
                    UL = uname
                else:
@@ -63,7 +62,7 @@ async def setbot():
                await bot.send_message(TOSHA, SetMsg[1])
                print(SetMsg[2])
        except Exception as e:
-           print(str(e))
+           LOGS.warning(str(e))
 
 # End For icss bot Only
 # Owner ~ ANL0KE
