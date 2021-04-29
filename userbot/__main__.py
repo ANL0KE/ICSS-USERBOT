@@ -22,24 +22,11 @@ from userbot.utils import (
 )
 
 async def startupmessage():
-    if TBOT in TOSHA:
-        try:
-            Nt = TBOT
-            if Nt.startswith("@"):
-                Ntosh = Nt
-            else:
-                Ntosh = f"@{Nt}"
-            await bot.tgbot.send_message(TOSHA, MSGE)
-        except BaseException:
-    else:
-        try:
-            await bot.send_message(TOSHA, MSGE)
-        except BaseException:
-            pass
     try:
-        await bot(JoinChannelRequest(DEVL))
-    except BaseException:
-        pass
+        if TOSHA != 0:
+            await bot.send_message(TOSHA, MSGE)
+    except Exception as e:
+        LOGS.info(str(e))
 
 async def add_bot(bot_token):
     try:
