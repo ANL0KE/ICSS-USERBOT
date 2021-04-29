@@ -13,6 +13,7 @@ from datetime import datetime
 from userbot.Config import Config
 from . import *
 from .. import mention
+from userbot import bot
 from telegraph import Telegraph, upload_file
 
 # =================== OWNER - ANL0KE =================== #
@@ -33,7 +34,7 @@ auth_url = r["auth_url"]
 # start-others
 @tgbot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
 async def start_all(event):
-    if event.chat_id != OWNER_ID:
+    if event.chat_id != bot.uid:
         return
     target = event.sender_id
     if present_in_userbase(target):
