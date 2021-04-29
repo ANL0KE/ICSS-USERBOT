@@ -22,7 +22,7 @@ from userbot.utils import (
 )
 
 async def startupmessage():
-    if TOSHA != 0:
+    if TOSHA:
         try:
             Nt = TBOT
             if Nt.startswith("@"):
