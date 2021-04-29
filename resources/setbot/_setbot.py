@@ -25,42 +25,46 @@ async def setbot():
             entit = await bot.get_entity(Config.TG_BOT_USERNAME)
             if entit.photo == None:
                print(SetMsg[0])
-                uname = Config.TG_BOT_USERNAME
-                if uname.startswith("@"):
-                    UL = uname
-                else:
-                    UL = f"@{uname}"
-                if bot.me.username == None:
-                    first_name = bot.me.first_name
-                else:
-                    first_name = f"@{bot.me.username}"
-                await bot.send_message(TOSHA, SetMsg[0])
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", "/cancel")
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", "/start")
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", "/setuserpic")
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", UL)
-                await asyncio.sleep(1)
-                await bot.send_file("botfather", "userbot/extras/ex_7.jpeg")
-                await asyncio.sleep(2)
-                await bot.send_message("botfather", "/setabouttext")
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", UL)
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", SetAbt.format(first_name))
-                await asyncio.sleep(2)
-                await bot.send_message("botfather", "/setdescription")
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", UL)
-                await asyncio.sleep(1)
-                await bot.send_message("botfather", SetDec.format(first_name))
-                await asyncio.sleep(2)
-                await bot.send_message("botfather", "/start")
-                await asyncio.sleep(1)
-                await bot.send_message(TOSHA, SetMsg[1])
-                print(SetMsg[2])
-        except Exception as e:
-            print(str(e))
+               uname = Config.TG_BOT_USERNAME
+               if uname.startswith("@"):
+                   UL = uname
+               else:
+                   UL = f"@{uname}"
+               if bot.me.username == None:
+                   first_name = bot.me.first_name
+               else:
+                   first_name = f"@{bot.me.username}"
+               await bot.send_message(TOSHA, SetMsg[0])
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", "/cancel")
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", "/start")
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", "/setuserpic")
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", UL)
+               await asyncio.sleep(1)
+               await bot.send_file("botfather", "userbot/extras/ex_7.jpeg")
+               await asyncio.sleep(2)
+               await bot.send_message("botfather", "/setabouttext")
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", UL)
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", SetAbt.format(first_name))
+               await asyncio.sleep(2)
+               await bot.send_message("botfather", "/setdescription")
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", UL)
+               await asyncio.sleep(1)
+               await bot.send_message("botfather", SetDec.format(first_name))
+               await asyncio.sleep(2)
+               await bot.send_message("botfather", "/start")
+               await asyncio.sleep(1)
+               await bot.send_message(TOSHA, SetMsg[1])
+               print(SetMsg[2])
+       except Exception as e:
+           print(str(e))
+
+# End For icss bot Only
+# Owner ~ ANL0KE
+# Tele ~ @NIIIN2
