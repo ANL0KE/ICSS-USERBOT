@@ -72,7 +72,7 @@ ASSISTANT = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ASSISTANT - ⫸ⵧⵧⵧⵧⵧⵧ>"
 KIMOTOSHA = "<ⵧⵧⵧⵧⵧⵧⵧⵧ⫷ - ICSS TOSHA - ⫸ⵧⵧⵧⵧⵧⵧⵧ>"
 ANIMATIONS = "<ⵧⵧⵧⵧⵧⵧ⫷ - ICSS ANIMATIONS - ⫸ⵧⵧⵧⵧⵧ>"
 ADMIN = "<ⵧⵧⵧⵧⵧ⫷ - ICSS ADMIN TOOLS - ⫸ⵧⵧⵧⵧⵧ>"
-EXTRAPLUG = "<ⵧⵧⵧⵧⵧ⫷ - ICSS AXTRAS PLUGIN - ⫸ⵧⵧⵧⵧⵧ>"
+ASSISTANTPM = "<ⵧⵧⵧⵧⵧ⫷ - ICSS ASSISTANT PM - ⫸ⵧⵧⵧⵧⵧ>"
 ICSW = "<ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ>"
 # --- MESSI IS THE BEST PLAYER IN THE WORLD --- #
 
