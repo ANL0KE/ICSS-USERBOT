@@ -31,9 +31,9 @@ auth_url = r["auth_url"]
 # =================== OWNER - ANL0KE =================== #
 
 # start-others
-@asst_cmd("/start")
+@tgbot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
 async def start_all(event):
-    if event.chat_id != OWNER_ID:
+    if event.chat_id != bot.uid:
         return
     target = event.sender_id
     if present_in_userbase(target):
@@ -76,10 +76,10 @@ async def start_all(event):
 
 
 # start-owner
-@asst_cmd("/start")
-@owner  
-async def _(e):
-    await e.reply(startowner,
+@tgbot.on(events.NewMessage(pattern="^/start",
+                            from_users=OWNER_ID))  # pylint: disable=oof
+async def owner(event):
+    await event.reply(startowner,
                              buttons=[
                                  [Button.inline(
                                      "⚜️ الاعدادات ⚜️", data="settings"),
@@ -91,9 +91,9 @@ async def _(e):
                                              "https://t.me/rruuurr")]
                              ])
 
-# For Heroku logs
-@asst_cmd("/logs")
-@owner  # Just-Owner
+
+@tgbot.on(events.NewMessage(pattern="^/logs",
+                            from_users=OWNER_ID))  # pylint: disable=oof
 async def logs(event):
     try:
         Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
