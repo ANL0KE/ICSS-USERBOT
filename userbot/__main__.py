@@ -22,7 +22,7 @@ from userbot.utils import (
 )
 
 async def startupmessage():
-    if TOSH != 0:
+    if TOSHA != 0:
         try:
             Nt = TBOT
             if Nt.startswith("@"):
@@ -70,6 +70,7 @@ else:
 
 
 # For all plugins
+Print(Start)
 print(StartLoaded)
 Kim = glob.glob(Plg)
 for name in Kim:
