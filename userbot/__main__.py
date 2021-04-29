@@ -58,6 +58,7 @@ else:
 
 
 # For all plugins
+print(StartLoaded)
 Kim = glob.glob(Plg)
 for name in Kim:
     with open(name) as k:
