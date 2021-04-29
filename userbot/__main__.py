@@ -146,7 +146,6 @@ print(ICSW)
 print(Message.format(ALIVE_NAME, TBOT))
 
 bot.loop.create_task(startupmessage())
-bot.loop.create_task(setbot())
 
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
