@@ -6,9 +6,7 @@ from ..Config import Config
 from . import TOSH, K, mention
 
 
-@tgbot.on(
-    events.NewMessage(pattern=("/repo|#repo"))
-)
+@asst_cmd("/repo|#repo")
 async def dev(kimo):
     await kimo.reply(
         "⌔∮ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙄𝘾𝙎𝙎 - 𝙍𝙀𝙋𝙊 𓆪",
