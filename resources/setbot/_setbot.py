@@ -23,7 +23,7 @@ async def setbot():
         try:
             entit = await bot.get_entity(TBOT)
             if entit.photo == None:
-               print(SetMsg[0])
+               LOGS.info(SetMsg[0])
                uname = TBOT
                if uname.startswith("@"):
                    UL = uname
@@ -60,9 +60,9 @@ async def setbot():
                await bot.send_message("botfather", "/start")
                await asyncio.sleep(1)
                await bot.send_message(TOSHA, SetMsg[1])
-               print(SetMsg[2])
+               LOGS.info(SetMsg[2])
        except Exception as e:
-           LOGS.warning(str(e))
+           LOGS.info(str(e))
 
 # End For icss bot Only
 # Owner ~ ANL0KE
