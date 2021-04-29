@@ -29,10 +29,10 @@ async def startupmessage():
                 Ntosh = Nt
             else:
                 Ntosh = f"@{Nt}"
-            await tgbot.send_message(TOSHA, MAGE)
+            await tgbot.send_message(TOSHA, MSGE)
         except BaseException:
             try:
-                await bot.send_message(TOSHA, MASG)
+                await bot.send_message(TOSHA, MSGE)
             except BaseException:
                 pass
     try:
