@@ -34,7 +34,7 @@ auth_url = r["auth_url"]
 # start-others
 @tgbot.on(events.NewMessage(pattern="^/start"))  # pylint: disable=oof
 async def start_all(event):
-    if event.chat_id != bot.uid:
+    if event.chat_id != OWNER_ID:
         return
     target = event.sender_id
     if present_in_userbase(target):
