@@ -794,7 +794,7 @@ async def setbot():
         try:
             entit = await bot.get_entity(TBOT)
             if entit.photo == None:
-                LOGS.info(SetMsg[0]")
+                LOGS.info(SetMsg[0])
                 uname = TBOT
                 if uname.startswith("@"):
                     UL = uname
