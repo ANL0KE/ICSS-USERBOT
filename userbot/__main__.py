@@ -22,7 +22,7 @@ from userbot.utils import (
 )
 
 async def startupmessage():
-    if TOSHA:
+    if TBOT in TOSHA:
         try:
             Nt = TBOT
             if Nt.startswith("@"):
@@ -31,10 +31,11 @@ async def startupmessage():
                 Ntosh = f"@{Nt}"
             await bot.tgbot.send_message(TOSHA, MSGE)
         except BaseException:
-            try:
-                await bot.send_message(TOSHA, MSGE)
-            except BaseException:
-                pass
+    elif TBOT not in TOSHA:
+        try:
+            await bot.send_message(TOSHA, MSGE)
+        except BaseException:
+            pass
     try:
         await bot(JoinChannelRequest(DEVL))
     except BaseException:
