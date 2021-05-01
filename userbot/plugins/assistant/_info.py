@@ -1,5 +1,4 @@
 # Icss - Userbot
-# translater for Icss - Userbot
 # Owner ~ <@rruuurr>
 
 from . import Asstid
