@@ -56,7 +56,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "©IcssBot Help",
-                text="{}\n\n**⌔∮ عدد الاضافات : {}**".format(query, len(CMD_LIST)),
+                text="{}\n\n⌔∮ عدد الاضافات : {}**".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
