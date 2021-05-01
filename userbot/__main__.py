@@ -143,23 +143,6 @@ for name in Kim:
             print(IS.format(shortname, e))
 
 
-# for assistant pm
-print(ASSISTANTPM)
-Kim = glob.glob(Pmt)
-for name in Kim:
-    with open(name) as k:
-        Kim1 = P(k.name)
-        shortname = Kim1.stem
-        try:
-            if shortname.replace(".py", "") not in N:
-                load_assistant(shortname.replace(".py", ""))
-            else:
-                os.remove(P(AssistantPm.format(shortname)))
-        except Exception as e:
-            os.remove(P(AssistantPm.format(shortname)))
-            print(IS.format(shortname, e))
-
-
 print(ICSW)
 print(Message.format(ALIVE_NAME, TBOT))
 
