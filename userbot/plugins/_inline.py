@@ -51,12 +51,12 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     buttons=buttons,
                 )
             await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("⌔∮"):
+        elif event.query.user_id == bot.uid and query.startswith("𓆩"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "©IcssBot Help",
-                text="{}\n**- عدد الاضافات :** {}".format(query, len(CMD_LIST)),
+                text="{}\n\n**⌔∮ عدد الاضافات :** {}".format(query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False,
             )
