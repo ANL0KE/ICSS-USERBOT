@@ -51,7 +51,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
                     buttons=buttons,
                 )
             await event.answer([result] if result else None)
-        elif event.query.user_id == bot.uid and query.startswith("Userbot"):
+        elif event.query.user_id == bot.uid and query.startswith("⌔∮"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
