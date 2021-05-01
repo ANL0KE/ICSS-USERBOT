@@ -5,7 +5,7 @@ import asyncio
 import requests
 from telethon import functions
 
-from . import mention, CMD_LIST, SUDO_LIST
+from . import mention, CMD_LIST, HelpString, SUDO_LIST
 from .sql_helper.globals import addgvar, gvarstatus
 
 
@@ -69,9 +69,7 @@ async def cmd_list(event):
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"⌔∮ اهلا بك عزيزي {mention} في قائمه الانلاين\
-                           \n- استخدم `.help plugin name` لاضهار الاوامر بدون الاستخدام.\
-                           \n- استخدم `.info plugin name` لاضهار الاوامر وطريقه استخدامها وفوائدها"
+            help_string = (HelpString.format(mention))
             tgbotusername = Config.TG_BOT_USERNAME
             results = await event.client.inline_query(tgbotusername, help_string)
             await results[0].click(event.chat_id, reply_to=reply_to_id, hide_via=True)
