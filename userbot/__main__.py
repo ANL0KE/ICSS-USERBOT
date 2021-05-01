@@ -11,6 +11,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from telethon import TelegramClient as TC
 
 from userbot.tosh import *
+from resources.setbot import *
 from userbot import LOGS, bot
 from userbot.Config import Config
 from userbot.utils import (
@@ -146,6 +147,7 @@ for name in Kim:
 print(ICSW)
 print(Message.format(ALIVE_NAME, TBOT))
 
+bot.loop.run_until_complete(setbot())
 bot.loop.create_task(startupmessage())
 
 if len(sys.argv) not in (1, 3, 4):
