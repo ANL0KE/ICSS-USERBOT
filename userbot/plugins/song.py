@@ -46,7 +46,7 @@ async def _(event):
         await eor(event, "** ⌔∮ يجب عليك كتابت اسم الاغنيه لكي اقوم بالبحث عنها 🖤،** `")
         return
     ics = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icse = await eor(event, "** ⌔∮ جاري البحث عن الاغنـيه 🖤🎧 ،**")
+    icse = await eor(event, "** ⌔∮ جاري البحث عن الاغنـيه 🤍🎧 ،**")
     video_link = await yt_search(str(query))
     if not url(video_link):
         return await icse.edit(
@@ -80,7 +80,7 @@ async def _(event):
         return await icse.edit(
             f"**⌔∮ آسف** {mention}\n **-لا يمكنني العثور على أي #فيديو او #صوت كهذا \n - `{query}` ⇲"
         )
-    await icse.edit("** ⌔∮ جاري تحميل الاغنيه انتظر قليلا🖤🎧 .**")
+    await icse.edit("** ⌔∮ جاري تحميل الاغنيه انتظر قليلا 🤍🎧 .**")
     icsthb = Path(f"{icsn}.jpg")
     if not os.path.exists(icsthb):
         icsthb = Path(f"{icsn}.webp")
@@ -135,7 +135,7 @@ async def _(event):
         event = await eor(event, "What I am Supposed to find")
         return
     ics = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
-    icse = await eor(event, "** ⌔∮ جاري البحث عن الاغنـيه 🖤🎧 ،**")
+    icse = await eor(event, "** ⌔∮ جاري البحث عن الفيديو 🤍🎧 ،**")
     video_link = await yt_search(str(query))
     if not url(video_link):
         return await icse.edit(
@@ -166,7 +166,7 @@ async def _(event):
         return await icse.edit(
             f"**⌔∮ آسف** {mention}\n **-لا يمكنني العثور على أي #فيديو او #صوت كهذا \n - `{query}` ⇲"
         )
-    await icse.edit("** ⌔∮ جاري تحميل الاغنيه انتظر قليلا🖤🎧 .**")
+    await icse.edit("** ⌔∮ جاري تحميل الفيديو انتظر قليلا 🤍🎧 .**")
     icsthb = Path(f"{icsn}.jpg")
     if not os.path.exists(icsthb):
         icsthb = Path(f"{icsn}.webp")
@@ -176,7 +176,7 @@ async def _(event):
         event.chat_id,
         vsong_file,
         force_document=False,
-        caption=query,
+        caption=f"**⌔∮ البحث :** {query}\n**⌔∮ للمستخدم :** {mention}",
         thumb=icsthb,
         supports_streaming=True,
         reply_to=rd,
