@@ -710,7 +710,7 @@ async def fetch_info(chat, event):
         #         caption += f"تم التحقق بواسطة تلكرام: {verified}\n"
         #     if description:
         caption += f"الوصف: \n<code>{description}</code>\n"
-        caption = f"<b>𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝙞𝘾𝙎𝙎  - [𝘿𝙀𝙑](t.me/rruuurr) 𓆪</b>"
+        caption = f"<b>𓆩 𝙎𝙊𝙐𝙍𝘾𝞝 𝘿𝙀𝙑 - @rruuurr 𓆪</b>"
     return caption
 
 
