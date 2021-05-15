@@ -97,14 +97,14 @@ async def autopic(event):
     await bloom_pfploop()
 
 
-@icssbot.on(admin_cmd(pattern="autoname$"))
+@icssbot.on(admin_cmd(pattern="تفعيل الوقت$"))
 async def _(event):
     if event.fwd_from:
         return
     if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
-        return await edit_delete(event, f"`Autoname is already enabled`")
+        return await edit_delete(event, f"**⌔∮ الوقت مفعل**")
     addgvar("autoname", True)
-    await edit_delete(event, "`AutoName has been started by my Master `")
+    await edit_delete(event, "**⌔∮ تم تفعيل الوقت**")
     await autoname_loop()
 
 
@@ -119,7 +119,7 @@ async def _(event):
     await autobio_loop()
 
 
-@icssbot.on(admin_cmd(pattern="end (.*)"))
+@icssbot.on(admin_cmd(pattern="ايقاف (.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -164,8 +164,8 @@ async def _(event):
             await event.client(
                 functions.account.UpdateProfileRequest(first_name=DEFAULTUSER)
             )
-            return await edit_delete(event, "`Autoname has been stopped now`")
-        return await edit_delete(event, "`Autoname haven't enabled`")
+            return await edit_delete(event, "**⌔∮ تم ايقاف الوقت**")
+        return await edit_delete(event, "**⌔∮ الوقت تم ايقافه سابقا**")
     if input_str == "autobio":
         if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
             delgvar("autobio")
@@ -302,7 +302,7 @@ async def autoname_loop():
     while AUTONAMESTART:
         DM = time.strftime("%d-%m-%y")
         HM = time.strftime("%H:%M")
-        name = f"⌚️ {HM}||›  {DEFAULTUSER} ‹||📅 {DM}"
+        name = f"- {HM} |"
         LOGS.info(name)
         try:
             await bot(functions.account.UpdateProfileRequest(first_name=name))
