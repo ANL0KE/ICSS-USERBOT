@@ -158,7 +158,7 @@ async def _(event):
                     return
             return await edit_delete(event, "`Bloom has been stopped now`")
         return await edit_delete(event, "`Bloom haven't enabled`")
-    if input_str == "autoname":
+    if input_str == "تفعيل الوقت":
         if gvarstatus("autoname") is not None and gvarstatus("autoname") == "true":
             delgvar("autoname")
             await event.client(
