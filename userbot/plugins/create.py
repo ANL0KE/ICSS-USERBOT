@@ -2,7 +2,6 @@
 """ لانشاء بوت او كروب او قناة """
 
 from telethon.tl import functions
-from userbot bot
 
 Username = bot.me.username
 
