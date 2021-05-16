@@ -5,7 +5,7 @@
 from userbot.Config import Config # Ok - 🖤 
 from userbot import bot
 
-USERID = bot.me.id
+USERID = Config.OWNER_ID
 Name = bot.me.first_name
 mention = f"[{Name}](tg://user?id={USERID})"
 
