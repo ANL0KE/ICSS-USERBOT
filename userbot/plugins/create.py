@@ -2,7 +2,9 @@
 """ لانشاء بوت او كروب او قناة """
 
 from telethon.tl import functions
+from userbot bot
 
+Username = bot.me.username
 
 @icssbot.on(admin_cmd(pattern="انشئ (بوت|كروب|قناة) (.*)"))  # pylint:disable=E0602
 @icssbot.on(sudo_cmd(pattern="انشئ (بوت|كروب|قناة) (.*)", allow_sudo=True))
@@ -12,9 +14,9 @@ async def _(event):
     type_of_group = event.pattern_match.group(1)
     group_name = event.pattern_match.group(2)
     if type_of_group == "قناة":
-        descript = "**⌔∮ هذه القناة اختبار تم انشائها بواسطه بوت اكسس**"
+        descript = "⌔∮ هذا كروب تم انشائه بواسطه - {}".format(Username)
     else:
-        descript = "**⌔∮ هذا كروب اختبار تم انشائه بواسطه بوت اكسس**"
+        descript = "⌔∮ هذه القناة تم انشائه بواسطه - {}".format(Username)
     event = await edit_or_reply(event, "**⌔∮ جاري الانشاء. **")
     if type_of_group == "بوت":
         try:
