@@ -1,15 +1,15 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
 
-@icssbot.on(admin_cmd(pattern="tagall$"))
-@icssbot.on(sudo_cmd(pattern="tagall$", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="الكل$"))
+@icssbot.on(sudo_cmd(pattern="الكل$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     reply_to_id = event.message
     if event.reply_to_msg_id:
         reply_to_id = await event.get_reply_message()
-    mentions = "@all"
+    mentions = "هها حباب"
     chat = await event.get_input_chat()
     async for x in event.client.iter_participants(chat, 100):
         mentions += f"[\u2063](tg://user?id={x.id})"
@@ -17,14 +17,14 @@ async def _(event):
     await event.delete()
 
 
-@icssbot.on(admin_cmd(pattern="all( (.*)|$)"))
-@icssbot.on(sudo_cmd(pattern="all( (.*)|$)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="للكل( (.*)|$)"))
+@icssbot.on(sudo_cmd(pattern="للكل( (.*)|$)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
     reply_to_id = await reply_id(event)
     input_str = event.pattern_match.group(1)
-    mentions = input_str or "@all"
+    mentions = input_str or "**ههها اخوان**"
     chat = await event.get_input_chat()
     async for x in event.client.iter_participants(chat, 100):
         mentions += f"[\u2063](tg://user?id={x.id})"
