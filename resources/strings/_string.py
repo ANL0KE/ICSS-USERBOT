@@ -3,11 +3,11 @@
 #     - strings for Icss - Userbot
 
 from userbot.Config import Config # Ok - 🖤 
+from userbot import bot
 
-USERID = Config.OWNER_ID
-ALIVE_NAME = Config.ALIVE_NAME
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Icss Userbot"
-mention = f"[{DEFAULTUSER}](tg://user?id={USERID})"
+USERID = bot.me.id
+Name = bot.me.first_name
+mention = f"[{Name}](tg://user?id={USERID})"
 
 Plugin = "userbot/plugins/{}.py"
 Admin = "userbot/plugins/Admin/{}.py"
