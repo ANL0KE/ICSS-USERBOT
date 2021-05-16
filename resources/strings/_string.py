@@ -3,7 +3,6 @@
 #     - strings for Icss - Userbot
 
 from userbot.Config import Config # Ok - 🖤 
-from userbot import bot
 
 USERID = Config.OWNER_ID
 Name = Config.ALIVE_NAME
