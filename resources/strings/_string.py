@@ -6,7 +6,8 @@ from userbot.Config import Config # Ok - 🖤
 from userbot import bot
 
 USERID = Config.OWNER_ID
-Name = bot.me.first_name
+Name = Config.ALIVE_NAME
+DEFAULTUSER = str(Name) if Name else "Icss Userbot"
 mention = f"[{Name}](tg://user?id={USERID})"
 
 Plugin = "userbot/plugins/{}.py"
