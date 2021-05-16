@@ -70,7 +70,7 @@ async def apk(event):
             + app_link
             + "'>لتحميلها من سوق بلي</a>"
         )
-        app_details += f"\n\n    𓍹 {NAME} 𓍻"
+        app_details += f"\n\n    𓍹 {Name} 𓍻"
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await event.edit("No result found in search. Please enter **Valid app name**")
