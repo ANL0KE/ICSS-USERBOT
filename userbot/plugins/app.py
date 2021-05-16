@@ -6,7 +6,7 @@
 import bs4
 import requests
 
-from . import mention
+from . import ALIVE_NAME
 
 
 @icss.on(icss_cmd(pattern="برنامج (.*)"))
