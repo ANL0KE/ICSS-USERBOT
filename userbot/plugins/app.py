@@ -6,8 +6,8 @@
 import bs4
 import requests
 
-from . import ALIVE_NAME
-
+from userbot import bot
+Name = bot.me.first_name
 
 @icss.on(icss_cmd(pattern="برنامج (.*)"))
 @icss.on(sudo_cmd(pattern="برنامج (.*)", allow_sudo=True))
@@ -50,16 +50,15 @@ async def apk(event):
             .findNext("div", "uzcko")
             .img["data-src"]
         )
-        app_details = "<a href='" + app_icon + "'>𓆰&#8203;</a>"
-        app_details += " <b>" + app_name + " 𓆪</b>"
+        app_details = "<b>𓆰 " + app_name + " 𓆪</b>"
         app_details += (
-            "\n\n<u>⌔∮ المطور :</u> <a href='"
+            "\n\n<b>⌔∮ المطور :</b> <a href='"
             + app_dev_link
             + "'>"
             + app_dev
             + "</a>"
         )
-        app_details += "\n<u>⌔∮ تقييم التطبيق :</u> " + app_rating.replace(
+        app_details += "\n<b>⌔∮ تقييم التطبيق :</b> " + app_rating.replace(
             "Rated ", "☆ "
         ).replace(" out of ", "/").replace(" stars", "", 1).replace(
             " stars", "☆ "
@@ -67,11 +66,11 @@ async def apk(event):
             "five", "5"
         )
         app_details += (
-            "\n<u>**⌔∮ للتحميل :</u> <a href='"
+            "\n<b>⌔∮ للتحميل :</b> <a href='"
             + app_link
             + "'>لتحميلها من سوق بلي</a>"
         )
-        app_details += f"\n\n    𓍹 {ALIVE_NAME} 𓍻"
+        app_details += f"\n\n    𓍹 {NAME} 𓍻"
         await event.edit(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await event.edit("No result found in search. Please enter **Valid app name**")
