@@ -144,7 +144,7 @@ for name in Kim:
 
 
 print(ICSW)
-print(Message.format(ALIVE_NAME, TBOT))
+print(Message.format(Name, TBOT))
 
 bot.loop.create_task(startupmessage())
 
