@@ -13,7 +13,7 @@ async def _(event):
     type_of_group = event.pattern_match.group(1)
     group_name = event.pattern_match.group(2)
     if type_of_group == "قناة":
-        descript = "⌔∮ هذه القناة تم انشائه بواسطه - @{}".format(Username)
+        descript = "⌔∮ هذه القناة تم انشائها بواسطه - @{}".format(Username)
     else:
         descript = "⌔∮ هذا الكروب تم انشائه بواسطه - @{}".format(Username)
     event = await edit_or_reply(event, "**⌔∮ جاري الانشاء. **")
