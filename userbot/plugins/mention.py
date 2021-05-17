@@ -1,8 +1,8 @@
 from telethon.tl.types import ChannelParticipantsAdmins
 
 
-@icssbot.on(admin_cmd(pattern="الكل$"))
-@icssbot.on(sudo_cmd(pattern="الكل$", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="all$"))
+@icssbot.on(sudo_cmd(pattern="all$", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
