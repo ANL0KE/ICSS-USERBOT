@@ -5,7 +5,6 @@ from . import Asstid
 from telethon.utils import pack_bot_file_id
 
 @asst_cmd("الايدي")
-@owner
 async def _(e):
     if e.reply_to_msg_id:
         await e.get_input_chat()
