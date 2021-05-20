@@ -66,7 +66,7 @@ async def carbon_api(e):
     await e.client.send_file(
         e.chat_id,
         file,
-        caption="**⌔∮ هذا هو الكاربون الخاص بك, \n **تم انشاء هذا الكاربون بواسطه اكسس. **",
+        caption="**⌔∮ هذا هو الكاربون الخاص بك,** \n **تم انشاء هذا الكاربون بواسطه اكسس. **",
         force_document=True,
         reply_to=e.message.reply_to_msg_id,
     )
