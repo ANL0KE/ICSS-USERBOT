@@ -27,6 +27,11 @@ async def startupmessage():
             await bot.send_message(TOSHA, MSGE)
     except Exception as e:
         LOGS.info(str(e))
+    try:
+        await bot(JoinChannelRequest("{}".format(DEVL)))
+    except BaseException:
+        pass
+
 
 async def add_bot(bot_token):
     try:
