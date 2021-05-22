@@ -9,7 +9,7 @@ import os
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
-from . import convert_tosticker, process
+from . import Quotly, convert_tosticker, process
 from userbot import bot
 
 # ---------------------- #
