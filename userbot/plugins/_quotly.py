@@ -56,12 +56,12 @@ async def _(e):
         return
     reply = await e.get_reply_message()
     if not reply:
-        await eor(e, Quotly[0])
+        await eor(e, Quotly[0].format(Mention))
         return
     fetchmsg = reply.message
     repliedreply = await reply.get_reply_message()
     if reply.media and reply.media.document.mime_type in ("mp4"):
-        await eor(e, Quotly[1])
+        await eor(e, Quotly[1].format(Mention))
         return
     ie = await eor(e, Quotly[2])
     user = (
