@@ -1,8 +1,8 @@
 from telethon import functions
 
 
-@icssbot.on(admin_cmd(pattern="ثبت ?(.*)"))
-@icssbot.on(sudo_cmd(pattern="ثبت ?(.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern="اضف ?(.*)"))
+@icssbot.on(sudo_cmd(pattern="اضف ?(.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
