@@ -949,41 +949,26 @@ async def ge(user, event):
 
 ########################  SOURCE ICSS ~ BY: KIMO (@RRUUURR)  ########################
 
+from . import reply_id
 
-import time
-
-from . import StartTime, get_readable_time, reply_id
-
-DEFAULTUSER = "ICSS"
-CAT_IMG = "https://telegra.ph/file/b02c0afc76b7ae6cb111a.mp4"
-CUSTOM_ALIVE_TEXT = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑫𝑬𝑽𝑬𝑳𝑶𝑷𝑬𝑹 𓆪"
+DEV_IMG = "https://telegra.ph/file/b02c0afc76b7ae6cb111a.mp4"
+DEV_TEXT = "𓆩 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑪𝑺𝑺 - 𝑫𝑬𝑽𝑬𝑳𝑶𝑷𝑬𝑹 𓆪"
 EMOJI = "  𓄂† "
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="المطور$"))
-@bot.on(sudo_cmd(pattern="المطور$", allow_sudo=True))
-async def amireallyalive(alive):
-    if alive.fwd_from:
+@icssbot.on(icss_cmd(outgoing=True, pattern="المطور$"))
+@icssbot.on(sudo_cmd(pattern="المطور$", allow_sudo=True))
+async def _(e):
+    if e.fwd_from:
         return
-    reply_to_id = await reply_id(alive)
-    await get_readable_time((time.time() - StartTime))
-    _, check_sgnirts = check_data_base_heal_th()
-    if CAT_IMG:
-        cat_caption = f"**{CUSTOM_ALIVE_TEXT}**\n"
-        cat_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-        cat_caption += f"**{EMOJI}** 𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
-        cat_caption += f"**{EMOJI}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
-        cat_caption += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
-        await alive.client.send_file(
-            alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
+    reply_to_id = await reply_id(e)
+    if DEV_IMG:
+        dev_c = f"**{DEV_TEXT}**\n"
+        dev_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
+        dev_c += f"**{EMOJI}** 𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
+        dev_c += f"**{EMOJI}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
+        dev_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻"
+        await e.client.send_file(
+            e.chat_id, DEV_IMG, caption=dev_c, reply_to=reply_to_id
         )
-        await alive.delete()
-    else:
-        await edit_or_reply(
-            alive,
-            f"**{CUSTOM_ALIVE_TEXT}**\n"
-            f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
-            f"**{EMOJI}** 𝑫𝑬𝑽 𝑼𝑺𝑬𝑹 ↬ @rruuurr ༗\n"
-            f"**{EMOJI}** 𝑫𝑬𝑽 𝑰𝑫 ↬ 1588663614 ༗\n"
-            f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𝐢𝐜𝐬𝐬ⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻",
-        )
+        await e.delete()
