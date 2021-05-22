@@ -1,4 +1,4 @@
-# for plugins __init__
+# for plugins:
 from resources.Formation.plugins import *
 
 # for Calc text - HelpText & Quotly text
