@@ -10,7 +10,13 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from . import convert_tosticker, process
+from userbot import bot
 
+# ---------------------- #
+UserId = bot.me.id
+Name = bot.me.first_name
+Mention = "[{}](tg://user?id={})".format(Name, UserId)
+# ---------------------- #
 
 @icssbot.on(icss_cmd(pattern="q(?: |$)(.*)", outgoing=True))
 @icssbot.on(sudo_cmd(pattern="q(?: |$)(.*)", allow_sudo=True))
@@ -19,12 +25,12 @@ async def _(e):
         return
     reply = await e.get_reply_message()
     if not reply:
-        await eor(e, Quotly[0])
+        await eor(e, Quotly[0].format(Mention))
         return
     fetchmsg = reply.message
     repliedreply = None
     if reply.media and reply.media.document.mime_type in ("mp4"):
-        await eor(e, Quotly[1])
+        await eor(e, Quotly[1].format(Mention))
         return
     ie = await eor(e, Quotly[2])
     user = (
@@ -115,7 +121,7 @@ async def _(e):
             elif message != "":
                 await e.client.send_message(conv.chat_id, message)
             else:
-                return await ed(ie, Quotly[4])
+                return await ed(ie, Quotly[4].format(Mention))
             response = await response
         except YouBlockedUserError:
             await ie.edit(Quotly[5])
