@@ -52,7 +52,7 @@ async def _(event):
         # for good measure to make the scroll bars disappear
         im_png = driver.get_screenshot_as_png()
         # saves screenshot of entire page
-        await catevent.edit("**⪼ ا ڪـٓـتمل الالتـٰقـاط ༗**")
+        await icsevent.edit("**⪼ ا ڪـٓـتمل الالتـٰقـاط ༗**")
         driver.close()
         message_id = None
         if event.reply_to_msg_id:
