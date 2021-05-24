@@ -20,6 +20,6 @@ Ulodya = [
 )
 async def icss(ics):
    Ulo = random.choics(Ulodya)
-   await icss.edit("وجع انتظر")
+   await ics.edit("وجع انتظر")
    await asyncio.sleep(3)
    await eor(ics, Ulo)
