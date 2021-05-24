@@ -1,10 +1,8 @@
 #  ICSS - USERBOT
 #  TELE - @NIIIN2
 
-from telethon import events, Button
-from . import K, D
+from . import Devt
 
 @asst_cmd("المطور")
-# for all
-async def dev(kimo):
-    await kimo.reply(D, buttons=[[Button.url("🔱 المطور 🔱", K)]])
+async def _(kimo):
+    await kimo.reply(Devt)
