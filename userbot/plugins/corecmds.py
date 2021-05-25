@@ -105,8 +105,8 @@ async def unload(event):
         await edit_or_reply(event, f"Successfully unload {shortname}\n{str(e)}")
 
 
-@icssbot.on(admin_cmd(pattern=r"uninstall (.*)", outgoing=True))
-@icssbot.on(sudo_cmd(pattern=r"uninstall (.*)", allow_sudo=True))
+@icssbot.on(admin_cmd(pattern=r"الغاء الاضافه (.*)", outgoing=True))
+@icssbot.on(sudo_cmd(pattern=r"الغاء الاضافه (.*)", allow_sudo=True))
 async def unload(event):
     if event.fwd_from:
         return
@@ -125,9 +125,9 @@ async def unload(event):
         CMD_HELP.pop(shortname)
     try:
         remove_plugin(shortname)
-        await edit_or_reply(event, f"{shortname} is Uninstalled successfully")
+        await eor(event, "**⌔∮ اهلا عزيزي : {}**\n**⌔∮ تم الغاء تنزيل الاضافه {} بنجاح **".format(M, shortname))
     except Exception as e:
-        await edit_or_reply(event, f"Successfully uninstalled {shortname}\n{str(e)}")
+        await eor(event, f"**⌔∮ تم الغاء تنزيل الاضافه {shortname} بنجاح ** {shortname}\n{str(e)}")
 
 
 CMD_HELP.update(
