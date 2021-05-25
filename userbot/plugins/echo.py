@@ -6,8 +6,6 @@ from telethon import events
 from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from .sql_helper.echo_sql import addecho, get_all_echos, is_echo, remove_echo
-
-
 from . import Echo, M
 
 @icssbot.on(icss_cmd(pattern="الازعاج$"))
@@ -33,6 +31,7 @@ async def _(e):
     else:
         await eor(e, Echo[2].format(M))
 
+# خمط كسمك 
 
 @icssbot.on(icss_cmd(pattern="الغاء الازعاج$"))
 @icssbot.on(sudo_cmd(pattern="الغاء الازعاج$", allow_sudo=True))
@@ -100,7 +99,6 @@ async def samereply(e):
             pass
         if e.message.text or e.message.sticker:
             await e.reply(e.message)
-
 
 
 CMD_HELP.update(
