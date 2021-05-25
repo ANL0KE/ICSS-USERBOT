@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 from ..utils import load_module, remove_plugin
-from . import ALIVE_NAME, CMD_LIST, SUDO_LIST, mention
+from . import ALIVE_NAME, CMD_LIST, SUDO_LIST, M
 
 DELETE_TIMEOUT = 5
 thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
@@ -86,7 +86,7 @@ async def send(event):
         ms = (end - start).seconds
         await event.delete()
         await ics.edit(
-            f"**⌔∮ اسم الاضافه : {input_str}**\n**⌔∮ الوقت المستغرق : {ms}ثانيه**\n**⌔∮ للمستخدم :** {mention}"
+            f"**⌔∮ اسم الاضافه : {input_str}**\n**⌔∮ الوقت المستغرق : {ms}ثانيه**\n**⌔∮ للمستخدم :** {M}"
         )
     else:
         await eor(event, "**⌔∮ لاتوجد اضافه بهذا الاسم**")
