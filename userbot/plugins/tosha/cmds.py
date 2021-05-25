@@ -17,6 +17,7 @@ async def icss(tosh):
 async def icss(tosh):
     await eor(tosh, S)
 
+"""
 @icssbot.on(icss_cmd(pattern="متحركات جريئه"))
 async def icss(tosh):
     await eor(tosh, H)
@@ -24,7 +25,7 @@ async def icss(tosh):
 @icssbot.on(icss_cmd(pattern="متحركات تحشيش"))
 async def icss(tosh):
     await eor(tosh, A)
-
+"""
 
 
 
