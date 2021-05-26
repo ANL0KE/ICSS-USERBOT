@@ -21,7 +21,7 @@ DEFAULTUSERBIO = (
 )
 
 @icssbot.on(
-    icss_cmd(pattern="^نسخ")
+    icss_cmd(pattern="نسخ")
 )
 async def _(event):
     if event.fwd_from:
