@@ -33,7 +33,7 @@ class Config(object):
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     OWNER_ID = int(os.environ.get("OWNER_ID") or 0)
-    MAX_FLOOD_IN_P_M_s = int(os.environ.get("MAX_FLOOD_IN_P_M_s", 5))
+    MAX_FLOOD_IN_PMS = int(os.environ.get("MAX_FLOOD_IN_PMS", 5))
     PM_LOGGER_GROUP_ID = int(
         os.environ.get("PM_LOGGER_GROUP_ID")
         or os.environ.get("PM_LOGGR_BOT_API_ID")
