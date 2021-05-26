@@ -16,6 +16,7 @@ from . import (
 )
 from .sql_helper import pmpermit_sql as pmpermit_sql
 
+MAX_FLOOD_IN_PMS = Config.MAX_FLOOD_IN_P_M_S 
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 CACHE = {}
