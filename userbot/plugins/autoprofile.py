@@ -108,14 +108,14 @@ async def _(event):
     await autoname_loop()
 
 
-@icssbot.on(admin_cmd(pattern="autobio$"))
+@icssbot.on(admin_cmd(pattern="تفعيل البايو$"))
 async def _(event):
     if event.fwd_from:
         return
     if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
-        return await edit_delete(event, f"`Autobio is already enabled`")
+        return await edit_delete(event, f"**⌔∮ البايو مفعل**")
     addgvar("autobio", True)
-    await edit_delete(event, "`Autobio has been started by my Master `")
+    await edit_delete(event, "**⌔∮ تم تفعيل البايو**")
     await autobio_loop()
 
 
@@ -172,8 +172,8 @@ async def _(event):
             await event.client(
                 functions.account.UpdateProfileRequest(about=DEFAULTUSERBIO)
             )
-            return await edit_delete(event, "`Autobio has been stopped now`")
-        return await edit_delete(event, "`Autobio haven't enabled`")
+            return await edit_delete(event, "**⌔∮ تم ايقاف البايو**")
+        return await edit_delete(event, "**⌔∮ البايو ليس مفعل**")
 
 
 async def autopicloop():
