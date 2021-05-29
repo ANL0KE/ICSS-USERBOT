@@ -318,7 +318,7 @@ async def autobio_loop():
     while AUTOBIOSTART:
         DMY = time.strftime("%d.%m.%Y")
         HM = time.strftime("%H:%M:%S")
-        bio = f"- | {DEFAULTUSERBIO} {HM}"
+        bio = f"- {DEFAULTUSERBIO} | {HM}"
         LOGS.info(bio)
         try:
             await bot(functions.account.UpdateProfileRequest(about=bio))
