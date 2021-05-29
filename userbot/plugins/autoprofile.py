@@ -166,7 +166,7 @@ async def _(event):
             )
             return await edit_delete(event, "**⌔∮ تم ايقاف الوقت**")
         return await edit_delete(event, "**⌔∮ الوقت تم ايقافه سابقا**")
-    if input_str == "autobio":
+    if input_str == "تفعيل البايو":
         if gvarstatus("autobio") is not None and gvarstatus("autobio") == "true":
             delgvar("autobio")
             await event.client(
