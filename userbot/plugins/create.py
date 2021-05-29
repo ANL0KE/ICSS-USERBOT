@@ -39,7 +39,7 @@ async def _(event):
                 )
             )
             await event.edit(
-                "**⌔∮ الكروب `{}` تم انشائه بنجاح.** انضم {}".format(
+                "**⌔∮ القناة `{}` تم انشائها بنجاح.** انضم {}".format(
                     group_name, result.link
                 )
             )
@@ -62,7 +62,7 @@ async def _(event):
                 )
             )
             await event.edit(
-                "**⌔∮ القناة `{}` تم انشائها بنجاح.** انضم {}".format(
+                "**⌔∮ الكروب `{}` تم انشائه بنجاح.** انضم {}".format(
                     group_name, result.link
                 )
             )
