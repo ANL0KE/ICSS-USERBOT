@@ -39,7 +39,6 @@ async def ica(icss):
         #        ics_c += f"**{ICSEM} مدة التشغيل ↫** `{icsupt}\n`"
         ics_c += f"**{ICSEM} المستخدم ↫** {mention}\n"
         ics_c += f"**{ICSEM} مطور السورس ↫** [اضغط هنا](t.me/rruuurr) 𓆰.\n"
-        ics_c += f"**{ICSEM} قناة السورس ↫** [اضغط هنا](t.me/iqthon) 𓆰.\n"
         ics_c += f"𓍹ⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧⵧ𓍻\n"
         await icss.client.send_file(
             icss.chat_id, ICSS_IMG, caption=ics_c, reply_to=ics_id
