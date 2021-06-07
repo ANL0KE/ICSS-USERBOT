@@ -1,7 +1,7 @@
 from asyncio import sleep
 
 from ..utils import errors_handler
-from . import BOTLOG, BOTLOG_CHATID
+from . import BOTLOG, BOTLOG_CHATID, p_me
 
 
 @icssbot.on(admin_cmd(outgoing=True, pattern="تنظيف$"))
