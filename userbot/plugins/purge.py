@@ -44,22 +44,27 @@ async def fastpurger(purg):
     await sleep(2)
     await done.delete()
 
-@icss.on(icss_cmd(pattern="حذف رسائلي"))
-@icss.on(sudo_cmd(allow_sudo=True, pattern="حذف رسائلي"))
-@errors_handler
-async def p_me(e):
-    if e.fwd_from: 
-        return
-    message = e.text
+@icssbot.on(icss_cmd(pattern="حذف رسائلي"))
+async def purgeme(event):
+    "To purge your latest messages."
+    message = event.text
     count = int(message[9:])
     i = 1
-
-    async for message in e.client.iter_messages(e.chat_id, from_user="me"):
+    async for message in event.client.iter_messages(event.chat_id, from_user="me"):
         if i > count + 1:
             break
         i += 1
         await message.delete()
-    smsg = await e.client.send_message(e.chat_id, f"**⌔∮ اهلا {M} تم حذف**" + str(count) + "**رساله بنجاح**",)
+
+    smsg = await event.client.send_message(
+        event.chat_id,
+        "**- اهلا {M} تم!**` حذف " + str(count) + " رساله.`",
+    )
+    if BOTLOG:
+        await event.client.send_message(
+            BOTLOG_CHATID,
+            "#حذف_الرسائل \n`تم حذف" + str(count) + " رساله بنجاح.`",
+        )
     await sleep(5)
     await smsg.delete()
 
