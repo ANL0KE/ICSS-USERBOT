@@ -4,25 +4,6 @@ from ..utils import errors_handler
 from . import BOTLOG, BOTLOG_CHATID, M
 
 
-
-async def p_me(e):
-    if e.fwd_from: 
-        return
-    message = e.text
-    count = int(message[9:])
-    i = 1
-
-    async for message in e.client.iter_messages(e.chat_id, from_user="me"):
-        if i > count + 1:
-            break
-        i += 1
-        await message.delete()
-    smsg = await e.client.send_message(e.chat_id, "**⌔∮ اهلا {} تم حذف** + `str(count)` + **رساله بنجاح**".format(M))
-    await sleep(5)
-    await smsg.delete()
-
-
-
 @icssbot.on(admin_cmd(outgoing=True, pattern="تنظيف$"))
 @icssbot.on(sudo_cmd(allow_sudo=True, pattern="تنظيف$"))
 @errors_handler
@@ -66,8 +47,21 @@ async def fastpurger(purg):
 @icss.on(icss_cmd(pattern="حذف رسائلي"))
 @icss.on(sudo_cmd(allow_sudo=True, pattern="حذف رسائلي"))
 @errors_handler
-async def _(e):
-    await p_me(e)
+async def p_me(e):
+    if e.fwd_from: 
+        return
+    message = e.text
+    count = int(message[9:])
+    i = 1
+
+    async for message in e.client.iter_messages(e.chat_id, from_user="me"):
+        if i > count + 1:
+            break
+        i += 1
+        await message.delete()
+    smsg = await e.client.send_message(e.chat_id, "**⌔∮ اهلا {} تم حذف** + `str(count)` + **رساله بنجاح**".format(M))
+    await sleep(5)
+    await smsg.delete()
 
 CMD_HELP.update(
     {
