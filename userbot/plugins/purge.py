@@ -44,7 +44,7 @@ async def fastpurger(purg):
     await sleep(2)
     await done.delete()
 
-@icssbot.on(icss_cmd(pattern="حذف رسائلي"))
+@icssbot.on(icss_cmd(pattern="pme"))
 async def purgeme(event):
     "To purge your latest messages."
     message = event.text
