@@ -44,6 +44,11 @@ async def fastpurger(purg):
     await sleep(2)
     await done.delete()
 
+@icss.on(icss_cmd(pattern="حذف رسائلي"))
+@icss.on(sudo_cmd(allow_sudo=True, pattern="حذف رسائلي"))
+@errors_handler
+async def _(e):
+    await p_me(e)
 
 CMD_HELP.update(
     {
