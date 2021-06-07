@@ -18,3 +18,20 @@ from userbot.tosh import (
     Echo
 )
 
+# for purge me
+async def p_me(e):
+    if event.fwd_from:
+        return
+    message = e.text
+    count = int(message[9:])
+    i = 1
+
+    async for message in e.client.iter_messages(e.chat_id, from_user="me"):
+        if i > count + 1:
+            break
+        i += 1
+        await message.delete()
+    smsg = await e.client.send_message(e.chat_id, "**⌔∮ اهلا {} تم حذف** + `str(count)` + **رساله بنجاح**".format(M))
+    await sleep(5)
+    await smsg.delete()
+
