@@ -59,7 +59,7 @@ async def p_me(e):
             break
         i += 1
         await message.delete()
-    smsg = await e.client.send_message(e.chat_id, "**⌔∮ اهلا {} تم حذف** + `str(count)` + **رساله بنجاح**".format(M))
+    smsg = await e.client.send_message(e.chat_id, f"**⌔∮ اهلا {M} تم حذف**" + str(count) + "**رساله بنجاح**")
     await sleep(5)
     await smsg.delete()
 
