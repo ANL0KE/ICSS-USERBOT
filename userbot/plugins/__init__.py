@@ -19,6 +19,8 @@ from userbot.tosh import (
 )
 
 # for purge me
+from asyncio sleep
+
 async def p_me(e):
     message = e.text
     count = int(message[9:])
