@@ -58,7 +58,7 @@ async def purgeme(event):
 
     smsg = await event.client.send_message(
         event.chat_id,
-        f"**- اهلا {M} تم!**` حذف " + str(count) + " رساله.`",
+        f"**⌔∮ اهلا {M} تم حذف** " + str(count) + " رساله.",
     )
     if BOTLOG:
         await event.client.send_message(
