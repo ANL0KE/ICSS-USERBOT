@@ -20,8 +20,6 @@ from userbot.tosh import (
 
 # for purge me
 async def p_me(e):
-    if event.fwd_from:
-        return
     message = e.text
     count = int(message[9:])
     i = 1
