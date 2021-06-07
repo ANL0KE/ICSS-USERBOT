@@ -4,7 +4,10 @@ from ..utils import errors_handler
 from . import BOTLOG, BOTLOG_CHATID, M
 
 
+
 async def p_me(e):
+    if e.fwd_from: 
+        return
     message = e.text
     count = int(message[9:])
     i = 1
