@@ -1,5 +1,5 @@
 #    Icss - Userbot
-#    Owner - @rruuurr
+#    Owner - @ph_7v
 
 from telethon import events, Button
 from ..Config import Config
@@ -9,8 +9,8 @@ from . import TOSH, K, mention
 @asst_cmd("/repo|#repo")
 async def dev(kimo):
     await kimo.reply(
-        "⌔∮ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙄𝘾𝙎𝙎 - 𝙍𝙀𝙋𝙊 𓆪",
-        buttons=[[Button.url("🔗 𝙍𝙀𝙋𝙊 🔗", K)]]
+        "⌔∮ 𝐒𝐎𝐔𝐑𝐂𝐄 𝐏𝐄𝐋𝐄 - 𝐏𝐄𝐋𝐄 𓆪",
+        buttons=[[Button.url("🔗 𝐏𝐄𝐋𝐄 🔗", K)]]
     )
    
 
@@ -27,7 +27,7 @@ if Config.TG_BOT_USERNAME is not None and tgbot is not None:
             buttons = [
                 [
                     Button.url("الرابط 🔗", K),
-                    Button.url("المطور ⚙️", "https://t.me/rruuurr"),
+                    Button.url("المطور ⚙️", "https://t.me/ph_7v"),
                 ]
             ]
             if TOSH_PIC and TOSH_PIC.endswith((".jpg", ".png", "gif", "mp4")):
